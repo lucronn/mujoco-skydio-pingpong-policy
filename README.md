@@ -1,4 +1,5 @@
 # MuJoCo Skydio X2 Ping-Pong Window-Gate Policy
+<img width="400" height="225" alt="low_fast_actuated_rollout" src="https://github.com/user-attachments/assets/673777fd-5afe-4521-bc78-3e991f61a5c7" />
 
 Analytical (non-learning) closed-loop policy for the MuJoCo Skydio X2 quadrotor ping-pong window-gate task. It commands the four rotor thrusts using a deterministic launch sequence, a delayed-measurement ball-state filter, geometric gate planning, and cascaded PID-style control. No reinforcement learning, no neural networks, numpy only.
 
