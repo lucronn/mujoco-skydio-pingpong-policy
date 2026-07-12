@@ -1,0 +1,13 @@
+{
+  "scenario": "nominal",
+  "score": 0.19487999999999997,
+  "raw_gates_passed": 2,
+  "bounced_gate_passes": 2,
+  "drone_windows_passed": 0,
+  "safety_score": 0.0,
+  "target_box_score": 0.0,
+  "drone_crash": true,
+  "max_tilt_deg": 84.16331305012736,
+  "policy_sha256": "28e9136d0b20ef51e9603c1221c4add46d84d80e5d9fdeaa8717f7ddb447290f",
+  "video_sha256": "a89ca3170eb09d83b0be35bcf47b01b2fdd1d8ed5df38d4550d3df52abcd484b"
+}

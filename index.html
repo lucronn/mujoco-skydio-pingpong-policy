@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MuJoCo Skydio X2 Ping-Pong Policy - Rollout Render</title>
+<style>
+  :root { color-scheme: dark; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; margin:0; padding:48px 7%; background:#0b1020; color:#eef2ff; }
+  main { max-width:980px; margin:0 auto; }
+  h1 { font-size:clamp(1.8rem,4vw,3.2rem); line-height:1.05; margin:0 0 .5rem; }
+  p { color:#cbd5e1; line-height:1.6; }
+  video { width:100%; border-radius:16px; background:#000; box-shadow:0 24px 80px rgba(0,0,0,.5); margin:18px 0; }
+  .metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:20px 0; }
+  .card { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:12px 14px; }
+  .label { color:#94a3b8; font-size:.8rem; } .value { font-size:1.3rem; font-weight:700; margin-top:2px; }
+  a { color:#93c5fd; }
+</style>
+</head>
+<body><main>
+  <h1>MuJoCo Skydio X2 Ping-Pong Policy</h1>
+  <p>Native MuJoCo rollout render for the analytical <code>policy_one.py</code> candidate (nominal scenario). Rendered on Linux with <code>xvfb-run</code>.</p>
+  <video src="assets/nominal_actuated_rollout.mp4" controls muted playsinline preload="metadata"></video>
+  <div class="metrics">
+    <div class="card"><div class="label">Score</div><div class="value">0.19488</div></div>
+    <div class="card"><div class="label">Raw gates</div><div class="value">2</div></div>
+    <div class="card"><div class="label">Bounced gates</div><div class="value">2</div></div>
+    <div class="card"><div class="label">Windows</div><div class="value">0</div></div>
+    <div class="card"><div class="label">Max tilt</div><div class="value">84.16 deg</div></div>
+  </div>
+  <p><a href="assets/nominal_actuated_rollout.mp4">Open the MP4 directly</a> &middot; <a href="policy_one.py">policy_one.py</a> &middot; <a href="https://github.com/lucronn/mujoco-skydio-pingpong-policy">Repository</a></p>
+</main></body>
+</html>
