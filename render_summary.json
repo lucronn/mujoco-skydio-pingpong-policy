@@ -9,5 +9,7 @@
   "drone_crash": true,
   "max_tilt_deg": 84.16331305012736,
   "policy_sha256": "28e9136d0b20ef51e9603c1221c4add46d84d80e5d9fdeaa8717f7ddb447290f",
-  "video_sha256": "a89ca3170eb09d83b0be35bcf47b01b2fdd1d8ed5df38d4550d3df52abcd484b"
+  "native_rollout_mp4_sha256": "a89ca3170eb09d83b0be35bcf47b01b2fdd1d8ed5df38d4550d3df52abcd484b",
+  "trajectory_diagnostic_mp4_sha256": "3f64e10c3af6f033949ab00e910f9bc6c37cba226281fb22a396dc862c364862",
+  "trajectory_summary_png_sha256": "094244d4f9d2c2711420aeacf4bfa4539dd102c30c5cb16f93a25ab97e8a221c"
 }

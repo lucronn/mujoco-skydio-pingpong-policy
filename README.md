@@ -2,28 +2,38 @@
 
 Analytical (non-learning) closed-loop policy for the MuJoCo Skydio X2 quadrotor ping-pong window-gate task. It commands the four rotor thrusts using a deterministic launch sequence, a delayed-measurement ball-state filter, geometric gate planning, and cascaded PID-style control. No reinforcement learning, no neural networks, numpy only.
 
-## Rollout render (plays in the browser)
+## Visual comparison
 
-GitHub Pages player (recommended, always plays in-browser): **https://lucronn.github.io/mujoco-skydio-pingpong-policy/**
+GitHub Pages comparison gallery, with both videos playable in-browser:
 
-Inline preview:
+**https://lucronn.github.io/mujoco-skydio-pingpong-policy/**
 
-https://github.com/lucronn/mujoco-skydio-pingpong-policy/assets/nominal_actuated_rollout.mp4
-
-<video src="https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/nominal_actuated_rollout.mp4" controls muted playsinline width="720">
-  Your browser can not play this embed. Direct link: https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/nominal_actuated_rollout.mp4
-</video>
+### Native MuJoCo rollout render
 
 Direct MP4: [assets/nominal_actuated_rollout.mp4](https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/nominal_actuated_rollout.mp4)
 
-> If the inline player above does not render on the repo front page, use the GitHub Pages link (https://lucronn.github.io/mujoco-skydio-pingpong-policy/) or the direct MP4 link, both of which play in the browser.
+https://github.com/lucronn/mujoco-skydio-pingpong-policy/assets/nominal_actuated_rollout.mp4
+
+### Trajectory diagnostic render
+
+This is a generated diagnostic video showing side/top trajectory plots for the ball, drone, gates, windows, and target. It is useful for understanding why the policy earns early gate credit but fails to complete the back half.
+
+Direct MP4: [assets/policy_one_trajectory_diagnostic.mp4](https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/policy_one_trajectory_diagnostic.mp4)
+
+https://github.com/lucronn/mujoco-skydio-pingpong-policy/assets/policy_one_trajectory_diagnostic.mp4
+
+### Static trajectory summary
+
+![Trajectory diagnostic summary](assets/policy_one_trajectory_summary.png)
 
 ## Files
 
 - `policy_one.py` - final policy candidate (numpy-only `Policy` with `reset()` / `act()`).
-- `assets/nominal_actuated_rollout.mp4` - native MuJoCo render (generated on this host with `xvfb-run`).
-- `index.html` - browser-playable render page (served by GitHub Pages).
-- `render_summary.json` - metrics + checksums for the rendered rollout.
+- `assets/nominal_actuated_rollout.mp4` - native MuJoCo render generated on Kali with `xvfb-run`.
+- `assets/policy_one_trajectory_diagnostic.mp4` - diagnostic plot-based render showing ball/drone trajectories.
+- `assets/policy_one_trajectory_summary.png` - final-frame trajectory summary image.
+- `index.html` - browser-playable comparison gallery served by GitHub Pages.
+- `render_summary.json` - metrics + checksums.
 
 ## Rendered nominal rollout metrics
 
@@ -53,9 +63,4 @@ Direct MP4: [assets/nominal_actuated_rollout.mp4](https://github.com/lucronn/muj
 
 ## Known limitation
 
-The high-energy launch that reliably earns gates 1-2 also sends the ball to ~3.9 m; it then descends too fast for the current back-half planner to convert into gates 3-4. Reduced-energy launches break gates 1-2, and recovery/descent/estimator-reset variants did not improve the hidden-like suite. A stronger candidate likely needs a redesigned lower, controlled multi-bounce launch rather than back-half tuning.
-
-## Checksums (sha256)
-
-- policy_one.py: `28e9136d0b20ef51e9603c1221c4add46d84d80e5d9fdeaa8717f7ddb447290f`
-- assets/nominal_actuated_rollout.mp4: `a89ca3170eb09d83b0be35bcf47b01b2fdd1d8ed5df38d4550d3df52abcd484b`
+This is a verified partial-credit policy, not a full solution. The high-energy launch that reliably earns gates 1-2 also sends the ball to roughly 3.9 m; it then descends too fast for the current back-half planner to convert into gates 3-4. Reduced-energy launches break gates 1-2, and recovery/descent/estimator-reset variants did not robustly improve the hidden-like suite.

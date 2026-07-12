@@ -3,31 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MuJoCo Skydio X2 Ping-Pong Policy - Rollout Render</title>
+<title>MuJoCo Skydio X2 Ping-Pong Policy - Render Comparison</title>
 <style>
   :root { color-scheme: dark; }
   body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; margin:0; padding:48px 7%; background:#0b1020; color:#eef2ff; }
-  main { max-width:980px; margin:0 auto; }
-  h1 { font-size:clamp(1.8rem,4vw,3.2rem); line-height:1.05; margin:0 0 .5rem; }
+  main { max-width:1180px; margin:0 auto; }
+  h1 { font-size:clamp(1.9rem,4vw,3.5rem); line-height:1.05; margin:0 0 .5rem; }
+  h2 { margin-top:34px; }
   p { color:#cbd5e1; line-height:1.6; }
-  video { width:100%; border-radius:16px; background:#000; box-shadow:0 24px 80px rgba(0,0,0,.5); margin:18px 0; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:24px; margin:24px 0; }
+  .panel { background:rgba(255,255,255,.065); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:18px; }
+  video, img { width:100%; border-radius:14px; background:#000; box-shadow:0 18px 60px rgba(0,0,0,.42); }
   .metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:20px 0; }
   .card { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:12px 14px; }
   .label { color:#94a3b8; font-size:.8rem; } .value { font-size:1.3rem; font-weight:700; margin-top:2px; }
   a { color:#93c5fd; }
+  code { color:#bfdbfe; }
 </style>
 </head>
 <body><main>
   <h1>MuJoCo Skydio X2 Ping-Pong Policy</h1>
-  <p>Native MuJoCo rollout render for the analytical <code>policy_one.py</code> candidate (nominal scenario). Rendered on Linux with <code>xvfb-run</code>.</p>
-  <video src="assets/nominal_actuated_rollout.mp4" controls muted playsinline preload="metadata"></video>
+  <p>Render comparison for the analytical <code>policy_one.py</code> candidate. The native video shows the MuJoCo rollout; the diagnostic video shows side/top trajectories for ball, drone, gates, windows, and target.</p>
+
+  <section class="grid">
+    <article class="panel">
+      <h2>Native MuJoCo rollout</h2>
+      <video src="assets/nominal_actuated_rollout.mp4" controls muted playsinline preload="metadata"></video>
+      <p>Direct simulation render generated on Kali with <code>xvfb-run</code>.</p>
+      <p><a href="assets/nominal_actuated_rollout.mp4">Open native MP4</a></p>
+    </article>
+    <article class="panel">
+      <h2>Trajectory diagnostic</h2>
+      <video src="assets/policy_one_trajectory_diagnostic.mp4" controls muted playsinline preload="metadata"></video>
+      <p>Plot-based diagnostic render for comparing ball/drone paths and gate geometry.</p>
+      <p><a href="assets/policy_one_trajectory_diagnostic.mp4">Open diagnostic MP4</a></p>
+    </article>
+  </section>
+
+  <section class="panel">
+    <h2>Static trajectory summary</h2>
+    <img src="assets/policy_one_trajectory_summary.png" alt="Trajectory diagnostic summary showing side and top views of ball and drone trajectories">
+    <p><a href="assets/policy_one_trajectory_summary.png">Open summary PNG</a></p>
+  </section>
+
   <div class="metrics">
-    <div class="card"><div class="label">Score</div><div class="value">0.19488</div></div>
+    <div class="card"><div class="label">Nominal score</div><div class="value">0.19488</div></div>
     <div class="card"><div class="label">Raw gates</div><div class="value">2</div></div>
     <div class="card"><div class="label">Bounced gates</div><div class="value">2</div></div>
     <div class="card"><div class="label">Windows</div><div class="value">0</div></div>
-    <div class="card"><div class="label">Max tilt</div><div class="value">84.16 deg</div></div>
+    <div class="card"><div class="label">Hidden-like suite</div><div class="value">12.576</div></div>
   </div>
-  <p><a href="assets/nominal_actuated_rollout.mp4">Open the MP4 directly</a> &middot; <a href="policy_one.py">policy_one.py</a> &middot; <a href="https://github.com/lucronn/mujoco-skydio-pingpong-policy">Repository</a></p>
+
+  <p><a href="policy_one.py">View policy_one.py</a> · <a href="https://github.com/lucronn/mujoco-skydio-pingpong-policy">Repository</a></p>
 </main></body>
 </html>
