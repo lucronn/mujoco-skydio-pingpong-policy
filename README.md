@@ -2,51 +2,41 @@
 
 Analytical (non-learning) closed-loop policy for the MuJoCo Skydio X2 quadrotor ping-pong window-gate task. It commands the four rotor thrusts using a deterministic launch sequence, a delayed-measurement ball-state filter, geometric gate planning, and cascaded PID-style control. No reinforcement learning, no neural networks, numpy only.
 
-## Visual comparison
+## Visualize and compare
 
-GitHub Pages comparison gallery, with both videos playable in-browser:
+Browser comparison gallery (all videos play in-browser):
 
 **https://lucronn.github.io/mujoco-skydio-pingpong-policy/**
 
-### Native MuJoCo rollout render
+The gallery shows native MuJoCo renders of the **same policy** across all four public scenarios side by side, a per-scenario metrics table, and the trajectory diagnostic.
 
-Direct MP4: [assets/nominal_actuated_rollout.mp4](https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/nominal_actuated_rollout.mp4)
+### Native rollout renders (four public scenarios)
 
-https://github.com/lucronn/mujoco-skydio-pingpong-policy/assets/nominal_actuated_rollout.mp4
+| Scenario | Score | Raw gates | Bounced | Windows | Crash | MP4 |
+|---|---:|---:|---:|---:|:--:|---|
+| nominal | 0.195 | 2 | 2 | 0 | yes | [mp4](https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/nominal_actuated_rollout.mp4) |
+| ball_x_pos | 0.207 | 3 | 2 | 1 | yes | [mp4](https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/ball_x_pos_actuated_rollout.mp4) |
+| ball_y_pos | 0.126 | 1 | 1 | 0 | no | [mp4](https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/ball_y_pos_actuated_rollout.mp4) |
+| low_fast | 0.190 | 3 | 2 | 1 | yes | [mp4](https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/low_fast_actuated_rollout.mp4) |
 
-### Trajectory diagnostic render
+### Trajectory diagnostic
 
-This is a generated diagnostic video showing side/top trajectory plots for the ball, drone, gates, windows, and target. It is useful for understanding why the policy earns early gate credit but fails to complete the back half.
+Plot-based side/top trajectory render (ball, drone, gates, windows, target):
 
-Direct MP4: [assets/policy_one_trajectory_diagnostic.mp4](https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/policy_one_trajectory_diagnostic.mp4)
-
-https://github.com/lucronn/mujoco-skydio-pingpong-policy/assets/policy_one_trajectory_diagnostic.mp4
-
-### Static trajectory summary
-
-![Trajectory diagnostic summary](assets/policy_one_trajectory_summary.png)
+- Video: [assets/policy_one_trajectory_diagnostic.mp4](https://github.com/lucronn/mujoco-skydio-pingpong-policy/raw/main/assets/policy_one_trajectory_diagnostic.mp4)
+- Static summary: ![Trajectory diagnostic summary](assets/policy_one_trajectory_summary.png)
 
 ## Files
 
 - `policy_one.py` - final policy candidate (numpy-only `Policy` with `reset()` / `act()`).
-- `assets/nominal_actuated_rollout.mp4` - native MuJoCo render generated on Kali with `xvfb-run`.
-- `assets/policy_one_trajectory_diagnostic.mp4` - diagnostic plot-based render showing ball/drone trajectories.
-- `assets/policy_one_trajectory_summary.png` - final-frame trajectory summary image.
-- `index.html` - browser-playable comparison gallery served by GitHub Pages.
+- `assets/nominal_actuated_rollout.mp4` - native MuJoCo render, nominal scenario.
+- `assets/ball_x_pos_actuated_rollout.mp4` - native render, ball_x_pos scenario.
+- `assets/ball_y_pos_actuated_rollout.mp4` - native render, ball_y_pos scenario.
+- `assets/low_fast_actuated_rollout.mp4` - native render, low_fast scenario.
+- `assets/policy_one_trajectory_diagnostic.mp4` - diagnostic plot-based render.
+- `assets/policy_one_trajectory_summary.png` - final-frame trajectory summary.
+- `index.html` - browser comparison gallery served by GitHub Pages.
 - `render_summary.json` - metrics + checksums.
-
-## Rendered nominal rollout metrics
-
-| Metric | Value |
-|---|---:|
-| Score | 0.19488 |
-| Raw gates passed | 2 |
-| Bounced gates passed | 2 |
-| Drone windows passed | 0 |
-| Safety score | 0.0 |
-| Target box score | 0.0 |
-| Drone crash | true |
-| Max tilt | 84.16 deg |
 
 ## Documented-range local validation (28 hidden-like cases)
 
@@ -63,4 +53,4 @@ https://github.com/lucronn/mujoco-skydio-pingpong-policy/assets/policy_one_traje
 
 ## Known limitation
 
-This is a verified partial-credit policy, not a full solution. The high-energy launch that reliably earns gates 1-2 also sends the ball to roughly 3.9 m; it then descends too fast for the current back-half planner to convert into gates 3-4. Reduced-energy launches break gates 1-2, and recovery/descent/estimator-reset variants did not robustly improve the hidden-like suite.
+This is a verified partial-credit policy, not a full solution. Across all four public scenarios it clears at most 3 raw gates and never completes the full course (four bounced gates + windows + target dwell). The high-energy launch that reliably earns the early gates sends the ball to roughly 3.9 m; it then descends too fast for the current back-half planner to convert into gates 3-4. Reduced-energy launches break gates 1-2, and recovery/descent/estimator-reset variants did not robustly improve the hidden-like suite.

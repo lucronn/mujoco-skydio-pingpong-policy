@@ -6,54 +6,92 @@
 <title>MuJoCo Skydio X2 Ping-Pong Policy - Render Comparison</title>
 <style>
   :root { color-scheme: dark; }
-  body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; margin:0; padding:48px 7%; background:#0b1020; color:#eef2ff; }
-  main { max-width:1180px; margin:0 auto; }
-  h1 { font-size:clamp(1.9rem,4vw,3.5rem); line-height:1.05; margin:0 0 .5rem; }
-  h2 { margin-top:34px; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; margin:0; padding:44px 6%; background:#0b1020; color:#eef2ff; }
+  main { max-width:1280px; margin:0 auto; }
+  h1 { font-size:clamp(1.9rem,4vw,3.3rem); line-height:1.05; margin:0 0 .4rem; }
+  h2 { margin:36px 0 6px; }
   p { color:#cbd5e1; line-height:1.6; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:24px; margin:24px 0; }
-  .panel { background:rgba(255,255,255,.065); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:18px; }
-  video, img { width:100%; border-radius:14px; background:#000; box-shadow:0 18px 60px rgba(0,0,0,.42); }
-  .metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:20px 0; }
-  .card { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:12px 14px; }
-  .label { color:#94a3b8; font-size:.8rem; } .value { font-size:1.3rem; font-weight:700; margin-top:2px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:22px; margin:20px 0; }
+  .panel { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:16px; }
+  .panel h3 { margin:0 0 4px; font-size:1.15rem; }
+  .sub { color:#93a4c4; font-size:.82rem; margin:0 0 10px; }
+  video, img { width:100%; border-radius:12px; background:#000; box-shadow:0 16px 50px rgba(0,0,0,.42); }
+  .badges { display:flex; flex-wrap:wrap; gap:7px; margin-top:11px; }
+  .badge { background:rgba(147,197,253,.14); border:1px solid rgba(147,197,253,.34); color:#dbeafe; border-radius:999px; padding:3px 10px; font-size:.76rem; }
+  .badge.warn { background:rgba(248,180,120,.14); border-color:rgba(248,180,120,.4); color:#fde3c7; }
+  .badge.good { background:rgba(134,239,172,.14); border-color:rgba(134,239,172,.4); color:#dcfce7; }
+  table { border-collapse:collapse; width:100%; margin:14px 0 4px; font-size:.92rem; }
+  th,td { border:1px solid rgba(255,255,255,.14); padding:7px 10px; text-align:right; }
+  th:first-child, td:first-child { text-align:left; }
+  th { background:rgba(255,255,255,.06); }
   a { color:#93c5fd; }
   code { color:#bfdbfe; }
+  .note { background:rgba(248,180,120,.08); border:1px solid rgba(248,180,120,.3); border-radius:12px; padding:14px 16px; margin-top:26px; }
 </style>
 </head>
 <body><main>
   <h1>MuJoCo Skydio X2 Ping-Pong Policy</h1>
-  <p>Render comparison for the analytical <code>policy_one.py</code> candidate. The native video shows the MuJoCo rollout; the diagnostic video shows side/top trajectories for ball, drone, gates, windows, and target.</p>
+  <p>Native MuJoCo renders of the same analytical <code>policy_one.py</code> across all four public scenarios, plus a plot-based trajectory diagnostic. Use these to visualize and compare how one policy responds to different initial ball states and sensor delays.</p>
 
+  <h2>Native rollout comparison — four public scenarios</h2>
   <section class="grid">
     <article class="panel">
-      <h2>Native MuJoCo rollout</h2>
+      <h3>nominal</h3>
+      <p class="sub">ball_pos (0.00, 0.00, 1.72) · vel (0, 0, -0.45) · delay 3</p>
       <video src="assets/nominal_actuated_rollout.mp4" controls muted playsinline preload="metadata"></video>
-      <p>Direct simulation render generated on Kali with <code>xvfb-run</code>.</p>
-      <p><a href="assets/nominal_actuated_rollout.mp4">Open native MP4</a></p>
+      <div class="badges"><span class="badge">score 0.195</span><span class="badge">raw 2</span><span class="badge">bounced 2</span><span class="badge">windows 0</span><span class="badge warn">crash</span></div>
     </article>
     <article class="panel">
-      <h2>Trajectory diagnostic</h2>
-      <video src="assets/policy_one_trajectory_diagnostic.mp4" controls muted playsinline preload="metadata"></video>
-      <p>Plot-based diagnostic render for comparing ball/drone paths and gate geometry.</p>
-      <p><a href="assets/policy_one_trajectory_diagnostic.mp4">Open diagnostic MP4</a></p>
+      <h3>ball_x_pos</h3>
+      <p class="sub">ball_pos (0.03, -0.012, 1.72) · vel (0, 0, -0.45) · delay 4</p>
+      <video src="assets/ball_x_pos_actuated_rollout.mp4" controls muted playsinline preload="metadata"></video>
+      <div class="badges"><span class="badge good">score 0.207</span><span class="badge">raw 3</span><span class="badge">bounced 2</span><span class="badge">windows 1</span><span class="badge warn">crash</span></div>
+    </article>
+    <article class="panel">
+      <h3>ball_y_pos</h3>
+      <p class="sub">ball_pos (-0.015, 0.03, 1.74) · vel (0.02, 0, -0.48) · delay 4</p>
+      <video src="assets/ball_y_pos_actuated_rollout.mp4" controls muted playsinline preload="metadata"></video>
+      <div class="badges"><span class="badge">score 0.126</span><span class="badge">raw 1</span><span class="badge">bounced 1</span><span class="badge">windows 0</span><span class="badge good">no crash</span></div>
+    </article>
+    <article class="panel">
+      <h3>low_fast</h3>
+      <p class="sub">ball_pos (0.005, -0.02, 1.66) · vel (0, 0.018, -0.58) · delay 5</p>
+      <video src="assets/low_fast_actuated_rollout.mp4" controls muted playsinline preload="metadata"></video>
+      <div class="badges"><span class="badge">score 0.190</span><span class="badge">raw 3</span><span class="badge">bounced 2</span><span class="badge">windows 1</span><span class="badge warn">crash</span></div>
     </article>
   </section>
 
-  <section class="panel">
-    <h2>Static trajectory summary</h2>
-    <img src="assets/policy_one_trajectory_summary.png" alt="Trajectory diagnostic summary showing side and top views of ball and drone trajectories">
-    <p><a href="assets/policy_one_trajectory_summary.png">Open summary PNG</a></p>
+  <h2>Per-scenario metrics</h2>
+  <table>
+    <thead><tr><th>Scenario</th><th>Score</th><th>Raw gates</th><th>Bounced</th><th>Windows</th><th>Max tilt (deg)</th><th>Crash</th></tr></thead>
+    <tbody>
+      <tr><td>nominal</td><td>0.195</td><td>2</td><td>2</td><td>0</td><td>84.16</td><td>yes</td></tr>
+      <tr><td>ball_x_pos</td><td>0.207</td><td>3</td><td>2</td><td>1</td><td>179.90</td><td>yes</td></tr>
+      <tr><td>ball_y_pos</td><td>0.126</td><td>1</td><td>1</td><td>0</td><td>58.17</td><td>no</td></tr>
+      <tr><td>low_fast</td><td>0.190</td><td>3</td><td>2</td><td>1</td><td>180.00</td><td>yes</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Trajectory diagnostic</h2>
+  <section class="grid">
+    <article class="panel">
+      <h3>Diagnostic video</h3>
+      <p class="sub">Plot-based side/top trajectories: ball, drone, gates, windows, target</p>
+      <video src="assets/policy_one_trajectory_diagnostic.mp4" controls muted playsinline preload="metadata"></video>
+      <p><a href="assets/policy_one_trajectory_diagnostic.mp4">Open diagnostic MP4</a></p>
+    </article>
+    <article class="panel">
+      <h3>Static summary</h3>
+      <p class="sub">Final-frame trajectory summary</p>
+      <img src="assets/policy_one_trajectory_summary.png" alt="Trajectory diagnostic summary showing side and top views of ball and drone trajectories">
+      <p><a href="assets/policy_one_trajectory_summary.png">Open summary PNG</a></p>
+    </article>
   </section>
 
-  <div class="metrics">
-    <div class="card"><div class="label">Nominal score</div><div class="value">0.19488</div></div>
-    <div class="card"><div class="label">Raw gates</div><div class="value">2</div></div>
-    <div class="card"><div class="label">Bounced gates</div><div class="value">2</div></div>
-    <div class="card"><div class="label">Windows</div><div class="value">0</div></div>
-    <div class="card"><div class="label">Hidden-like suite</div><div class="value">12.576</div></div>
+  <div class="note">
+    <strong>What to compare.</strong> All four clips run the identical policy. ball_x_pos and low_fast reach 3 raw gates with a window pass but end in a crash; ball_y_pos stays upright (no crash) but only clears 1 gate. This is a verified <em>partial-credit</em> policy — no scenario completes all four gates, windows, and target dwell. The launch that earns the early gates over-energizes the ball (~3.9 m apex), which the back-half planner cannot convert into gates 3-4.
   </div>
 
-  <p><a href="policy_one.py">View policy_one.py</a> · <a href="https://github.com/lucronn/mujoco-skydio-pingpong-policy">Repository</a></p>
+  <p style="margin-top:22px"><a href="policy_one.py">View policy_one.py</a> · <a href="https://github.com/lucronn/mujoco-skydio-pingpong-policy">Repository</a></p>
 </main></body>
 </html>
