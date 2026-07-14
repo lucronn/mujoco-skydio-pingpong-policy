@@ -1,0 +1,23 @@
+{
+  "conf": {
+    "name": "g1y0.35_g2y0.48_t10.95_t20.80_sc0.26_ss0.28",
+    "y_g1": 0.35,
+    "y_g2": 0.48,
+    "ty_g1": 0.95,
+    "ty_g2": 0.8,
+    "sep_c": 0.26,
+    "sep_s": 0.28
+  },
+  "raw_score_100": 16.689359087525922,
+  "mean": 0.21046598479209871,
+  "q25": 0.14504999999999998,
+  "mean_bg": 1.7857142857142858,
+  "mean_win": 0.14285714285714285,
+  "crash_rate": 0.6785714285714286,
+  "nominal_bg": 4,
+  "nominal_win": 0,
+  "nominal_sc": 0.7119791936779466,
+  "count": 28,
+  "stamp": "20260714T072402Z",
+  "path": "/mnt/openfoam/pingpong-venv/repair_work/policy_logic_g1y035_g2y048_t1095_t2080_sc026_ss028.py"
+}

@@ -1,0 +1,27 @@
+BEST_START {"raw_score_100": 16.484472500579354, "name": "v109_selective_rematch", "nominal_bg": 4, "mean_bg": 1.79}
+TRIAL ym0.70_zs0.15_ty0.90_s0.18_w0.00 raw=16.59 bg=1.79 win=0.18 nom=4/0 crash=0.57 sc=0.712
+NEW_BEST installed 16.589855780740237
+TRIAL ym0.65_zs0.15_ty0.55_s0.18_w0.55 raw=16.44 bg=1.79 win=0.11 nom=4/0 crash=0.57 sc=0.712
+TRIAL ym0.55_zs0.15_ty0.90_s0.18_w0.90 raw=16.43 bg=1.79 win=0.11 nom=4/0 crash=0.61 sc=0.712
+TRIAL ym0.90_zs0.30_ty1.10_s0.18_w0.90 raw=16.42 bg=1.79 win=0.11 nom=4/0 crash=0.61 sc=0.712
+TRIAL ym0.70_zs0.30_ty0.90_s0.18_w0.55 raw=16.46 bg=1.79 win=0.18 nom=4/0 crash=0.57 sc=0.712
+TRIAL ym0.70_zs0.15_ty0.90_s0.18_w0.55 raw=16.46 bg=1.79 win=0.18 nom=4/0 crash=0.57 sc=0.712
+TRIAL ym0.55_zs0.05_ty1.10_s0.12_w0.90 raw=16.44 bg=1.79 win=0.14 nom=4/0 crash=0.64 sc=0.712
+TRIAL ym0.55_zs0.05_ty0.90_s0.28_w0.90 raw=16.43 bg=1.79 win=0.11 nom=4/0 crash=0.61 sc=0.712
+TRIAL ym0.90_zs0.15_ty0.70_s0.12_w0.00 raw=16.54 bg=1.79 win=0.11 nom=4/0 crash=0.61 sc=0.712
+TRIAL ym0.65_zs0.05_ty1.10_s0.12_w0.00 raw=16.57 bg=1.79 win=0.18 nom=4/0 crash=0.61 sc=0.712
+TRIAL ym0.70_zs0.30_ty1.10_s0.18_w0.00 raw=16.60 bg=1.79 win=0.18 nom=4/0 crash=0.57 sc=0.712
+TRIAL ym0.80_zs0.30_ty1.10_s0.12_w0.00 raw=16.56 bg=1.79 win=0.14 nom=4/0 crash=0.57 sc=0.712
+TRIAL ym0.65_zs0.05_ty0.55_s0.28_w0.55 raw=16.44 bg=1.79 win=0.11 nom=4/0 crash=0.57 sc=0.712
+TRIAL ym0.65_zs0.15_ty0.70_s0.12_w0.00 raw=16.58 bg=1.79 win=0.14 nom=4/0 crash=0.61 sc=0.712
+TRIAL ym0.90_zs0.15_ty1.10_s0.12_w0.90 raw=16.42 bg=1.79 win=0.14 nom=4/0 crash=0.61 sc=0.712
+TRIAL ym0.65_zs0.15_ty0.70_s0.28_w0.90 raw=16.46 bg=1.79 win=0.11 nom=4/0 crash=0.61 sc=0.712
+TRIAL ym0.55_zs0.05_ty0.90_s0.18_w0.55 raw=16.43 bg=1.79 win=0.14 nom=4/0 crash=0.61 sc=0.712
+TRIAL ym0.70_zs0.05_ty0.55_s0.18_w0.90 raw=16.46 bg=1.79 win=0.11 nom=4/0 crash=0.54 sc=0.712
+TRIAL ym0.65_zs0.30_ty0.55_s0.28_w0.00 raw=16.57 bg=1.79 win=0.11 nom=4/0 crash=0.57 sc=0.712
+TRIAL ym0.70_zs0.05_ty1.10_s0.12_w0.00 raw=16.59 bg=1.79 win=0.18 nom=4/0 crash=0.57 sc=0.712
+TRIAL ym0.55_zs0.05_ty0.90_s0.12_w0.00 raw=16.55 bg=1.79 win=0.14 nom=4/0 crash=0.61 sc=0.712
+TRIAL ym0.70_zs0.30_ty0.90_s0.12_w0.00 raw=16.58 bg=1.79 win=0.18 nom=4/0 crash=0.57 sc=0.712
+TRIAL ym0.80_zs0.05_ty0.55_s0.18_w0.90 raw=16.43 bg=1.79 win=0.07 nom=4/0 crash=0.54 sc=0.712
+TRIAL ym0.70_zs0.30_ty0.70_s0.18_w0.00 raw=16.61 bg=1.79 win=0.14 nom=4/0 crash=0.61 sc=0.712
+DONE best ym0.70_zs0.15_ty0.90_s0.18_w0.00 16.589855780740237

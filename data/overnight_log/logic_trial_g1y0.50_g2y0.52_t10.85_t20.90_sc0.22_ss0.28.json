@@ -1,0 +1,12 @@
+{
+  "error": "y_thr needle missing",
+  "conf": {
+    "name": "g1y0.50_g2y0.52_t10.85_t20.90_sc0.22_ss0.28",
+    "y_g1": 0.5,
+    "y_g2": 0.52,
+    "ty_g1": 0.85,
+    "ty_g2": 0.9,
+    "sep_c": 0.22,
+    "sep_s": 0.28
+  }
+}

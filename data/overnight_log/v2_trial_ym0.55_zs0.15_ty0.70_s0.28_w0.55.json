@@ -1,0 +1,11 @@
+{
+  "error": "win4 needle missing",
+  "conf": {
+    "name": "ym0.55_zs0.15_ty0.70_s0.28_w0.55",
+    "y_miss": 0.55,
+    "z_slop": 0.15,
+    "ty_gain": 0.7,
+    "sep": 0.28,
+    "win4": 0.55
+  }
+}

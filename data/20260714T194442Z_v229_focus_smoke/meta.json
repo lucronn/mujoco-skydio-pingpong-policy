@@ -1,0 +1,7 @@
+{
+  "label": "v229_focus_smoke",
+  "created_utc": "20260714T194442Z",
+  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260714T194442Z_v229_focus_smoke",
+  "policy_path": "/mnt/openfoam/pingpong-venv/repair_work/policy_v229.py",
+  "policy_sha256": "9b5711919dfc6b9510437c9373d8f5725d6658b8a5ffca30b3215ece0e53701f"
+}

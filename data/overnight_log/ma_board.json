@@ -1,0 +1,381 @@
+{
+  "version": 1,
+  "updated": "20260714T194610Z",
+  "champ": {
+    "name": "policy_evolved_g3",
+    "raw": 17.860993478437358,
+    "path": "/mnt/openfoam/pingpong-venv/repair_work/policy_evolved_g3.py",
+    "note": "evolve_volley CEM install"
+  },
+  "open_problems": [
+    {
+      "id": "cold_bg1",
+      "summary": "Cold/lateral bg1s (014, crosswind, offsets) never arm early-in; need non-early-in lever",
+      "owner_hint": "L3"
+    },
+    {
+      "id": "mbg_plateau",
+      "summary": "mean_bg\u22482; raw~17 \u2014 need many cases to bg\u22653\u20134, not more bg1\u21922 bands",
+      "owner_hint": "L2"
+    },
+    {
+      "id": "early_in_cluster",
+      "summary": "Early inside-offset works for hot cluster (000/002/006); generalize feature\u2192hold, don't case-ID",
+      "owner_hint": "L1"
+    }
+  ],
+  "shared_facts": [
+    {
+      "stamp": "bootstrap",
+      "lane": "PARENT",
+      "fact": "Official raw uses 0.60*mean+0.28*q25+0.12*hard; 100*mean_score~22 is not leaderboard"
+    },
+    {
+      "stamp": "bootstrap",
+      "lane": "PARENT",
+      "fact": "Clipped tau\u22641.2 understates early ym \u2014 use unclipped for arming features"
+    },
+    {
+      "stamp": "bootstrap",
+      "lane": "L2",
+      "fact": "L2b antiscrub (stronger post-g0 quiet + non-glued race punch) installed as v228 raw~17.74"
+    },
+    {
+      "stamp": "bootstrap",
+      "lane": "L3",
+      "fact": "Cold skip-2nd-smash alone did not move raw (flat/down) \u2014 need different cold lever"
+    },
+    {
+      "stamp": "bootstrap",
+      "lane": "L1",
+      "fact": "Softening early ym gate (1.02\u21921.00) soft-regressed; tend-scale band2 was +0.02-ish no install"
+    },
+    {
+      "stamp": "20260714T191530Z",
+      "lane": "PARENT",
+      "fact": "Round installed policy_ma_L2b_antiscrub.py raw=17.7448 mbg=2.0357142857142856"
+    },
+    {
+      "stamp": "20260714T192247Z",
+      "lane": "PARENT",
+      "fact": "Round installed policy_ma_L1c_tend_scale.py raw=17.7655 mbg=2.0357142857142856"
+    },
+    {
+      "stamp": "20260714T193753Z",
+      "lane": "PARENT",
+      "fact": "Wake21: brainstorm before locking optimizer \u2014 candidates are evolve-\u03b8 / FSM-volley / MPC / RL-residual / hybrid. Hand-tuning paused as primary."
+    },
+    {
+      "stamp": "20260714T194034Z",
+      "lane": "PARENT",
+      "fact": "evolve_volley best_raw=17.76550788422368"
+    },
+    {
+      "stamp": "20260714T194045Z",
+      "lane": "PARENT",
+      "fact": "Locked hybrid volley FSM + CEM (policy_v230 + evolve_volley). Smoke \u03b8 matches v229 raw 17.77. First 2-gen CEM no install (best~17.75)."
+    },
+    {
+      "stamp": "20260714T194610Z",
+      "lane": "PARENT",
+      "fact": "evolve_volley best_raw=17.860993478437358"
+    }
+  ],
+  "do": [
+    "Focus then suite via parallel_suite.py; install only raw>champ+0.02 and nom\u22654/0.70",
+    "Steal transferable mechanisms from other lanes' findings; compose on champ",
+    "Post every trial to this board (pass AND fail)",
+    "Keep antiscrub quiet+unglued race when composing",
+    "Keep tend~arm_ym when rebasing",
+    "Continue CEM on volley \u03b8; compose multiagent only as proposal seeds",
+    "Run evolve_volley as primary overnight driver"
+  ],
+  "dont": [
+    "Case-ID specials (range_424242_014 if name==...)",
+    "Yoff microgrids on single cases",
+    "Dual champ+candidate serial suite",
+    "Retry mechanisms already marked failed unless composed differently",
+    "Cold quiet extension alone without bounce/tip change",
+    "Apply band2 tend~arm_ym scaling to band1/hot early_in",
+    "Lower race y_miss arm below ~0.80 without protecting early_in winners"
+  ],
+  "findings": [
+    {
+      "stamp": "20260714T191745Z",
+      "lane": "L2",
+      "kind": "mechanism",
+      "summary": "L2b stronger post-g0 quiet (y_miss>0.70 / glue coast) + race punch requires dxy in (0.22,0.62) and far_off>0.08",
+      "do": "Keep antiscrub quiet+unglued race when composing",
+      "dont": null,
+      "steal_for": [
+        "L1",
+        "L3"
+      ],
+      "failed": false
+    },
+    {
+      "stamp": "20260714T192309Z",
+      "lane": "L1",
+      "kind": "mechanism",
+      "summary": "L1c: band2 inside-hold scales with arm_ym (0.83..0.93) composed on v228 antiscrub \u2192 raw 17.77",
+      "do": "Keep tend~arm_ym when rebasing",
+      "dont": null,
+      "steal_for": [
+        "L2",
+        "L3"
+      ],
+      "failed": false
+    },
+    {
+      "stamp": "20260714T192309Z",
+      "lane": "L3",
+      "kind": "fail",
+      "summary": "L3c cold longer quiet on y_miss>1.05 flat vs champ \u2014 not enough alone",
+      "do": null,
+      "dont": "Cold quiet extension alone without bounce/tip change",
+      "steal_for": [],
+      "failed": true
+    },
+    {
+      "stamp": "20260714T193530Z",
+      "lane": "L1",
+      "kind": "fail",
+      "summary": "L1d tend-scale on band1 hurt 000 (bg3\u21922) \u2014 don't extend tend scaling to band1",
+      "do": null,
+      "dont": "Apply band2 tend~arm_ym scaling to band1/hot early_in",
+      "steal_for": [],
+      "failed": true
+    },
+    {
+      "stamp": "20260714T193530Z",
+      "lane": "L3",
+      "kind": "fail",
+      "summary": "L3d race ym>0.65 earlier arm hurt 000 focus \u2014 too aggressive race gate",
+      "do": null,
+      "dont": "Lower race y_miss arm below ~0.80 without protecting early_in winners",
+      "steal_for": [],
+      "failed": true
+    },
+    {
+      "stamp": "20260714T193753Z",
+      "lane": "PARENT",
+      "kind": "fact",
+      "summary": "Wake21: brainstorm before locking optimizer \u2014 candidates are evolve-\u03b8 / FSM-volley / MPC / RL-residual / hybrid. Hand-tuning paused as primary.",
+      "do": null,
+      "dont": null,
+      "steal_for": [],
+      "failed": false
+    },
+    {
+      "stamp": "20260714T194034Z",
+      "lane": "PARENT",
+      "kind": "fact",
+      "summary": "evolve_volley best_raw=17.76550788422368",
+      "do": "Continue CEM on volley \u03b8; compose multiagent only as proposal seeds",
+      "dont": null,
+      "steal_for": [],
+      "failed": false
+    },
+    {
+      "stamp": "20260714T194045Z",
+      "lane": "PARENT",
+      "kind": "fact",
+      "summary": "Locked hybrid volley FSM + CEM (policy_v230 + evolve_volley). Smoke \u03b8 matches v229 raw 17.77. First 2-gen CEM no install (best~17.75).",
+      "do": "Run evolve_volley as primary overnight driver",
+      "dont": null,
+      "steal_for": [],
+      "failed": false
+    },
+    {
+      "stamp": "20260714T194610Z",
+      "lane": "PARENT",
+      "kind": "fact",
+      "summary": "evolve_volley best_raw=17.860993478437358",
+      "do": "Continue CEM on volley \u03b8; compose multiagent only as proposal seeds",
+      "dont": null,
+      "steal_for": [],
+      "failed": false
+    }
+  ],
+  "results": [
+    {
+      "stamp": "20260714T191530Z",
+      "lane": "L1",
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L1b_tend_scale.py",
+      "raw": 17.651422049865932,
+      "focus_ok": true,
+      "mean_bg": 2.0,
+      "hist": {
+        "1": 9,
+        "2": 13,
+        "3": 3,
+        "4": 3
+      },
+      "note": "ingested from multiagent_round",
+      "installed": false
+    },
+    {
+      "stamp": "20260714T191530Z",
+      "lane": "L2",
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L2b_antiscrub.py",
+      "raw": 17.744792174171327,
+      "focus_ok": true,
+      "mean_bg": 2.0357142857142856,
+      "hist": {
+        "1": 9,
+        "2": 12,
+        "3": 4,
+        "4": 3
+      },
+      "note": "ingested from multiagent_round",
+      "installed": true
+    },
+    {
+      "stamp": "20260714T191530Z",
+      "lane": "L3",
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L3b_cold_skip.py",
+      "raw": 17.579679192723074,
+      "focus_ok": true,
+      "mean_bg": 2.0,
+      "hist": {
+        "1": 9,
+        "2": 13,
+        "3": 3,
+        "4": 3
+      },
+      "note": "ingested from multiagent_round",
+      "installed": false
+    },
+    {
+      "stamp": "20260714T192247Z",
+      "lane": "L2",
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L2c_faroff.py",
+      "raw": 17.731109235395813,
+      "focus_ok": true,
+      "mean_bg": 2.0357142857142856,
+      "hist": {
+        "1": 9,
+        "2": 12,
+        "3": 4,
+        "4": 3
+      },
+      "note": "ingested from multiagent_round",
+      "installed": false
+    },
+    {
+      "stamp": "20260714T192247Z",
+      "lane": "L3",
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L3c_cold_quiet.py",
+      "raw": 17.744792174171327,
+      "focus_ok": true,
+      "mean_bg": 2.0357142857142856,
+      "hist": {
+        "1": 9,
+        "2": 12,
+        "3": 4,
+        "4": 3
+      },
+      "note": "ingested from multiagent_round",
+      "installed": false
+    },
+    {
+      "stamp": "20260714T192247Z",
+      "lane": "L1",
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L1c_tend_scale.py",
+      "raw": 17.76550788422368,
+      "focus_ok": true,
+      "mean_bg": 2.0357142857142856,
+      "hist": {
+        "1": 9,
+        "2": 12,
+        "3": 4,
+        "4": 3
+      },
+      "note": "ingested from multiagent_round",
+      "installed": true
+    },
+    {
+      "stamp": "20260714T193525Z",
+      "lane": "L1",
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L1d_band1_tend.py",
+      "raw": null,
+      "focus_ok": false,
+      "mean_bg": null,
+      "hist": null,
+      "note": "ingested from multiagent_round",
+      "installed": false
+    },
+    {
+      "stamp": "20260714T193525Z",
+      "lane": "L3",
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L3d_earlier_race.py",
+      "raw": null,
+      "focus_ok": false,
+      "mean_bg": null,
+      "hist": null,
+      "note": "ingested from multiagent_round",
+      "installed": false
+    },
+    {
+      "stamp": "20260714T193525Z",
+      "lane": "L2",
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L2d_short_sep.py",
+      "raw": 17.76550788422368,
+      "focus_ok": true,
+      "mean_bg": 2.0357142857142856,
+      "hist": {
+        "1": 9,
+        "2": 12,
+        "3": 4,
+        "4": 3
+      },
+      "note": "ingested from multiagent_round",
+      "installed": false
+    }
+  ],
+  "handoffs": [
+    {
+      "stamp": "20260714T191530Z",
+      "from": "PARENT",
+      "to": "L1",
+      "message": "Rebase onto new champ policy_ma_L2b_antiscrub.py; keep L2 antiscrub if present"
+    },
+    {
+      "stamp": "20260714T191530Z",
+      "from": "PARENT",
+      "to": "L3",
+      "message": "Champ is policy_ma_L2b_antiscrub.py; cold miss still open \u2014 don't regress antiscrub"
+    },
+    {
+      "stamp": "20260714T191745Z",
+      "from": "L2",
+      "to": "L3",
+      "message": "Cold skip-smash alone failed; try composing cold lever ON TOP of v228 antiscrub, not instead of it"
+    },
+    {
+      "stamp": "20260714T192247Z",
+      "from": "PARENT",
+      "to": "L1",
+      "message": "Rebase onto new champ policy_ma_L1c_tend_scale.py; keep L2 antiscrub if present"
+    },
+    {
+      "stamp": "20260714T192247Z",
+      "from": "PARENT",
+      "to": "L3",
+      "message": "Champ is policy_ma_L1c_tend_scale.py; cold miss still open \u2014 don't regress antiscrub"
+    },
+    {
+      "stamp": "20260714T192309Z",
+      "from": "L1",
+      "to": "L3",
+      "message": "Champ now v229=antiscrub+tend_scale; cold still open \u2014 compose on v229, don't drop either mechanism"
+    },
+    {
+      "stamp": "20260714T193530Z",
+      "from": "PARENT",
+      "to": "L2",
+      "message": "Wake39 flat: need g2+ mass (bg3/4 rate), not race-gate tweaks that hit 000. Antiscrub+tend stay."
+    }
+  ],
+  "compose_queue": []
+}

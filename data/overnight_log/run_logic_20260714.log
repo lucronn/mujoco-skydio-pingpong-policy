@@ -1,0 +1,218 @@
+BEST_START {"raw_score_100": 16.67, "name": "policy_v116", "nominal_bg": 4, "mean_bg": 1.79}
+Traceback (most recent call last):
+  File "/mnt/openfoam/pingpong-venv/repair_work/overnight_logic_drive.py", line 186, in <module>
+    main(rounds=args.rounds)
+    ~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/openfoam/pingpong-venv/repair_work/overnight_logic_drive.py", line 129, in main
+    rng = np.random.default_rng(int(stamp()[-6:]) % 100000)
+                                ~~~^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '72302Z'
+BEST_START {"raw_score_100": 16.67, "name": "policy_v116", "nominal_bg": 4, "mean_bg": 1.79}
+TRIAL g1y0.50_g2y0.56_t11.05_t20.80_sc0.26_ss0.28 raw=16.66 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.50_g2y0.60_t11.05_t20.90_sc0.26_ss0.20 raw=16.69 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.35_g2y0.48_t10.95_t20.80_sc0.26_ss0.28 raw=16.69 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.50_g2y0.60_t10.85_t20.80_sc0.30_ss0.24 raw=16.62 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.35_g2y0.56_t10.85_t20.80_sc0.26_ss0.28 raw=16.69 bg=1.79 nom=4 crash=0.68
+NEW_BEST installed 16.693747658954496
+TRIAL g1y0.50_g2y0.48_t10.95_t20.70_sc0.30_ss0.24 raw=16.62 bg=1.79 nom=4 crash=0.68
+DONE best g1y0.35_g2y0.56_t10.85_t20.80_sc0.26_ss0.28 16.693747658954496
+BEST_START {"raw_score_100": 16.693747658954496, "name": "g1y0.35_g2y0.56_t10.85_t20.80_sc0.26_ss0.28", "nominal_bg": 4, "mean_bg": 1.7857142857142858}
+FAIL g1y0.35_g2y0.48_t10.95_t20.90_sc0.30_ss0.20 y_thr needle missing
+FAIL g1y0.35_g2y0.60_t10.95_t20.80_sc0.22_ss0.20 y_thr needle missing
+FAIL g1y0.50_g2y0.48_t11.05_t20.90_sc0.22_ss0.20 y_thr needle missing
+FAIL g1y0.50_g2y0.52_t10.85_t20.90_sc0.22_ss0.28 y_thr needle missing
+FAIL g1y0.35_g2y0.56_t10.95_t20.70_sc0.22_ss0.20 y_thr needle missing
+FAIL g1y0.45_g2y0.52_t11.05_t20.70_sc0.22_ss0.24 y_thr needle missing
+DONE best g1y0.35_g2y0.56_t10.85_t20.80_sc0.26_ss0.28 16.693747658954496
+BEST_START {"raw_score_100": 16.693747658954496, "name": "g1y0.35_g2y0.56_t10.85_t20.80_sc0.26_ss0.28", "nominal_bg": 4, "mean_bg": 1.7857142857142858}
+TRIAL g1y0.35_g2y0.56_t10.95_t20.70_sc0.26_ss0.24 raw=16.65 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.45_g2y0.48_t10.95_t20.80_sc0.30_ss0.28 raw=16.68 bg=1.79 nom=4 crash=0.71
+TRIAL g1y0.50_g2y0.56_t11.05_t20.80_sc0.22_ss0.28 raw=16.62 bg=1.79 nom=4 crash=0.57
+TRIAL g1y0.45_g2y0.60_t11.05_t20.90_sc0.30_ss0.20 raw=16.66 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.45_g2y0.56_t10.95_t20.70_sc0.26_ss0.28 raw=16.67 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.45_g2y0.48_t10.95_t20.70_sc0.30_ss0.20 raw=16.63 bg=1.79 nom=4 crash=0.68
+DONE best g1y0.35_g2y0.56_t10.85_t20.80_sc0.26_ss0.28 16.693747658954496
+BEST_START {"raw_score_100": 16.693747658954496, "name": "g1y0.35_g2y0.56_t10.85_t20.80_sc0.26_ss0.28", "nominal_bg": 4, "mean_bg": 1.7857142857142858}
+TRIAL g1y0.45_g2y0.48_t11.05_t20.90_sc0.26_ss0.24 raw=16.58 bg=1.79 nom=4 crash=0.61
+TRIAL g1y0.35_g2y0.48_t10.95_t20.90_sc0.30_ss0.28 raw=16.71 bg=1.79 nom=4 crash=0.71
+TRIAL g1y0.35_g2y0.60_t10.85_t20.90_sc0.26_ss0.28 raw=16.68 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.45_g2y0.60_t11.05_t20.90_sc0.22_ss0.24 raw=16.69 bg=1.79 nom=4 crash=0.61
+TRIAL g1y0.45_g2y0.56_t11.05_t20.90_sc0.26_ss0.20 raw=16.69 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.40_g2y0.52_t10.85_t20.90_sc0.30_ss0.24 raw=16.64 bg=1.79 nom=4 crash=0.68
+DONE best g1y0.35_g2y0.56_t10.85_t20.80_sc0.26_ss0.28 16.693747658954496
+BEST_START {"raw_score_100": 16.710888267321682, "name": "g1y0.35_g2y0.48_t10.95_t20.90_sc0.30_ss0.28", "nominal_bg": 4, "mean_bg": 1.7857142857142858}
+TRIAL g1y0.35_g2y0.56_t10.95_t20.80_sc0.22_ss0.20 raw=16.68 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.35_g2y0.48_t10.85_t20.90_sc0.26_ss0.20 raw=16.71 bg=1.79 nom=4 crash=0.71
+TRIAL g1y0.35_g2y0.56_t11.05_t20.90_sc0.22_ss0.24 raw=16.71 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.50_g2y0.60_t11.05_t20.70_sc0.22_ss0.28 raw=16.68 bg=1.79 nom=4 crash=0.54
+TRIAL g1y0.35_g2y0.48_t10.95_t20.70_sc0.26_ss0.24 raw=16.65 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.50_g2y0.60_t10.85_t20.80_sc0.30_ss0.20 raw=16.64 bg=1.79 nom=4 crash=0.68
+DONE best g1y0.35_g2y0.48_t10.95_t20.90_sc0.30_ss0.28 16.710888267321682
+BEST_START {"raw_score_100": 16.710888267321682, "name": "g1y0.35_g2y0.48_t10.95_t20.90_sc0.30_ss0.28", "nominal_bg": 4, "mean_bg": 1.7857142857142858}
+TRIAL g1y0.45_g2y0.48_t11.05_t20.70_sc0.30_ss0.20 raw=16.62 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.40_g2y0.52_t10.95_t20.80_sc0.26_ss0.24 raw=16.67 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.45_g2y0.60_t11.05_t20.80_sc0.26_ss0.20 raw=16.69 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.35_g2y0.56_t10.85_t20.90_sc0.30_ss0.24 raw=16.66 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.40_g2y0.48_t10.95_t20.70_sc0.30_ss0.20 raw=16.63 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.40_g2y0.56_t11.05_t20.90_sc0.26_ss0.28 raw=16.69 bg=1.79 nom=4 crash=0.68
+DONE best g1y0.35_g2y0.48_t10.95_t20.90_sc0.30_ss0.28 16.710888267321682
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL g1y0.50_g2y0.56_t10.85_t20.70_sc0.30_ss0.28 raw=16.68 bg=1.79 nom=4 crash=0.68
+TRIAL g1y0.50_g2y0.60_t10.95_t20.70_sc0.22_ss0.24 raw=16.68 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.45_g2y0.48_t10.95_t20.70_sc0.26_ss0.24 raw=16.68 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.40_g2y0.60_t10.85_t20.70_sc0.22_ss0.20 raw=16.69 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.40_g2y0.56_t10.95_t20.70_sc0.30_ss0.24 raw=16.71 bg=1.79 nom=4 crash=0.71
+TRIAL g1y0.45_g2y0.56_t10.85_t20.90_sc0.26_ss0.28 raw=16.69 bg=1.79 nom=4 crash=0.61
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL g1y0.45_g2y0.56_t10.95_t20.80_sc0.22_ss0.24 raw=16.69 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.45_g2y0.60_t11.05_t20.80_sc0.26_ss0.28 raw=16.69 bg=1.79 nom=4 crash=0.61
+TRIAL g1y0.40_g2y0.60_t10.95_t20.80_sc0.30_ss0.24 raw=16.71 bg=1.79 nom=4 crash=0.71
+TRIAL g1y0.45_g2y0.48_t10.95_t20.90_sc0.26_ss0.28 raw=16.69 bg=1.79 nom=4 crash=0.61
+TRIAL g1y0.50_g2y0.48_t11.05_t20.80_sc0.22_ss0.24 raw=16.69 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.40_g2y0.52_t10.85_t20.90_sc0.30_ss0.28 raw=16.70 bg=1.79 nom=4 crash=0.68
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL g1y0.45_g2y0.56_t10.85_t20.80_sc0.22_ss0.28 raw=16.69 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.35_g2y0.56_t11.05_t20.70_sc0.26_ss0.24 raw=16.68 bg=1.79 nom=4 crash=0.71
+TRIAL g1y0.40_g2y0.56_t10.95_t20.90_sc0.26_ss0.20 raw=16.69 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.45_g2y0.52_t10.95_t20.70_sc0.22_ss0.24 raw=16.68 bg=1.79 nom=4 crash=0.64
+TRIAL g1y0.45_g2y0.60_t11.05_t20.90_sc0.26_ss0.20 raw=16.69 bg=1.79 nom=4 crash=0.61
+TRIAL g1y0.35_g2y0.60_t10.95_t20.80_sc0.30_ss0.20 raw=16.69 bg=1.79 nom=4 crash=0.71
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.04_w20.06_y10.30_y20.46_b0.50_t10.90_t20.95 raw=15.87 bg=1.79 nom=3 crash=0.71
+TRIAL w10.05_w20.06_y10.34_y20.46_b0.55_t11.00_t20.95 raw=16.81 bg=1.82 nom=4 crash=0.71
+TRIAL w10.04_w20.06_y10.32_y20.50_b0.50_t11.00_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.05_w20.06_y10.30_y20.46_b0.60_t10.95_t20.95 raw=15.85 bg=1.79 nom=3 crash=0.71
+TRIAL w10.04_w20.06_y10.30_y20.48_b0.60_t10.90_t20.85 raw=15.87 bg=1.79 nom=3 crash=0.71
+TRIAL w10.05_w20.06_y10.32_y20.46_b0.55_t10.90_t20.95 raw=16.80 bg=1.82 nom=4 crash=0.75
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.05_w20.08_y10.32_y20.50_b0.55_t11.00_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.05_w20.10_y10.34_y20.48_b0.55_t10.90_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.68
+TRIAL w10.04_w20.08_y10.30_y20.46_b0.55_t11.00_t20.95 raw=15.87 bg=1.79 nom=3 crash=0.71
+TRIAL w10.06_w20.10_y10.32_y20.48_b0.55_t10.90_t20.95 raw=16.71 bg=1.79 nom=4 crash=0.64
+TRIAL w10.04_w20.10_y10.34_y20.48_b0.50_t10.95_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.68
+TRIAL w10.05_w20.08_y10.30_y20.46_b0.60_t11.00_t20.85 raw=15.87 bg=1.79 nom=3 crash=0.71
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.06_w20.08_y10.34_y20.50_b0.50_t11.00_t20.90 raw=16.60 bg=1.79 nom=4 crash=0.68
+TRIAL w10.05_w20.06_y10.34_y20.46_b0.55_t10.90_t20.85 raw=16.80 bg=1.82 nom=4 crash=0.75
+TRIAL w10.04_w20.10_y10.32_y20.50_b0.55_t10.95_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.68
+TRIAL w10.06_w20.08_y10.34_y20.46_b0.50_t11.00_t20.85 raw=16.69 bg=1.79 nom=4 crash=0.68
+TRIAL w10.04_w20.10_y10.34_y20.50_b0.50_t10.95_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.68
+TRIAL w10.05_w20.06_y10.30_y20.46_b0.60_t11.00_t20.90 raw=15.85 bg=1.79 nom=3 crash=0.71
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.04_w20.08_y10.34_y20.50_b0.50_t10.90_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.04_w20.08_y10.30_y20.46_b0.60_t10.95_t20.90 raw=15.87 bg=1.79 nom=3 crash=0.71
+TRIAL w10.04_w20.06_y10.30_y20.48_b0.50_t10.95_t20.90 raw=15.87 bg=1.79 nom=3 crash=0.71
+TRIAL w10.06_w20.10_y10.30_y20.50_b0.60_t10.95_t20.95 raw=15.74 bg=1.75 nom=3 crash=0.64
+TRIAL w10.06_w20.10_y10.34_y20.46_b0.60_t11.00_t20.95 raw=16.71 bg=1.79 nom=4 crash=0.64
+TRIAL w10.04_w20.10_y10.34_y20.48_b0.55_t10.95_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.68
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.04_w20.06_y10.32_y20.46_b0.60_t11.00_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.04_w20.10_y10.30_y20.46_b0.60_t11.00_t20.95 raw=15.87 bg=1.79 nom=3 crash=0.68
+TRIAL w10.04_w20.10_y10.30_y20.48_b0.50_t10.90_t20.90 raw=15.87 bg=1.79 nom=3 crash=0.68
+TRIAL w10.06_w20.06_y10.34_y20.50_b0.60_t10.90_t20.85 raw=16.71 bg=1.79 nom=4 crash=0.64
+TRIAL w10.04_w20.08_y10.32_y20.50_b0.50_t10.95_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.05_w20.08_y10.32_y20.46_b0.55_t11.00_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.71
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.04_w20.08_y10.34_y20.48_b0.55_t10.90_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.04_w20.10_y10.34_y20.46_b0.55_t10.95_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.68
+TRIAL w10.04_w20.06_y10.32_y20.50_b0.55_t10.90_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.06_w20.06_y10.32_y20.46_b0.60_t10.90_t20.95 raw=16.71 bg=1.79 nom=4 crash=0.64
+TRIAL w10.06_w20.08_y10.34_y20.46_b0.55_t11.00_t20.95 raw=16.69 bg=1.79 nom=4 crash=0.68
+TRIAL w10.06_w20.06_y10.34_y20.46_b0.60_t10.90_t20.85 raw=16.71 bg=1.79 nom=4 crash=0.64
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.05_w20.10_y10.30_y20.50_b0.55_t10.95_t20.95 raw=15.87 bg=1.79 nom=3 crash=0.64
+TRIAL w10.05_w20.10_y10.34_y20.46_b0.55_t10.95_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.64
+TRIAL w10.06_w20.06_y10.32_y20.46_b0.60_t10.90_t20.90 raw=16.63 bg=1.79 nom=4 crash=0.64
+TRIAL w10.05_w20.10_y10.30_y20.48_b0.60_t10.95_t20.95 raw=15.87 bg=1.79 nom=3 crash=0.64
+TRIAL w10.05_w20.08_y10.32_y20.48_b0.55_t11.00_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.04_w20.08_y10.32_y20.46_b0.60_t10.90_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.71
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.05_w20.08_y10.32_y20.46_b0.50_t10.95_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.06_w20.06_y10.34_y20.48_b0.50_t10.90_t20.90 raw=16.63 bg=1.79 nom=4 crash=0.64
+TRIAL w10.06_w20.06_y10.30_y20.48_b0.50_t11.00_t20.95 raw=15.75 bg=1.75 nom=3 crash=0.64
+TRIAL w10.04_w20.08_y10.30_y20.48_b0.55_t11.00_t20.85 raw=15.87 bg=1.79 nom=3 crash=0.71
+TRIAL w10.05_w20.10_y10.34_y20.48_b0.60_t10.95_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.64
+TRIAL w10.05_w20.06_y10.34_y20.50_b0.60_t11.00_t20.90 raw=16.81 bg=1.82 nom=4 crash=0.71
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.06_w20.08_y10.32_y20.46_b0.55_t11.00_t20.90 raw=16.60 bg=1.79 nom=4 crash=0.68
+TRIAL w10.06_w20.06_y10.30_y20.48_b0.55_t11.00_t20.90 raw=15.67 bg=1.75 nom=3 crash=0.64
+TRIAL w10.06_w20.08_y10.34_y20.48_b0.55_t10.95_t20.85 raw=16.59 bg=1.79 nom=4 crash=0.68
+TRIAL w10.04_w20.08_y10.32_y20.50_b0.60_t11.00_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.04_w20.08_y10.30_y20.48_b0.50_t10.90_t20.90 raw=15.87 bg=1.79 nom=3 crash=0.71
+TRIAL w10.06_w20.06_y10.32_y20.50_b0.60_t10.90_t20.95 raw=16.71 bg=1.79 nom=4 crash=0.64
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.05_w20.06_y10.30_y20.46_b0.60_t10.90_t20.85 raw=15.84 bg=1.79 nom=3 crash=0.75
+TRIAL w10.04_w20.08_y10.34_y20.46_b0.55_t11.00_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.06_w20.06_y10.32_y20.46_b0.55_t10.95_t20.95 raw=16.61 bg=1.79 nom=4 crash=0.64
+TRIAL w10.06_w20.06_y10.30_y20.46_b0.50_t11.00_t20.90 raw=15.67 bg=1.75 nom=3 crash=0.64
+TRIAL w10.05_w20.10_y10.34_y20.46_b0.55_t10.90_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.68
+TRIAL w10.05_w20.06_y10.30_y20.50_b0.50_t10.90_t20.90 raw=15.84 bg=1.79 nom=3 crash=0.75
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.05_w20.08_y10.32_y20.46_b0.60_t11.00_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.06_w20.06_y10.30_y20.46_b0.60_t11.00_t20.90 raw=15.67 bg=1.75 nom=3 crash=0.64
+TRIAL w10.06_w20.08_y10.34_y20.50_b0.60_t10.95_t20.90 raw=16.67 bg=1.79 nom=4 crash=0.68
+TRIAL w10.05_w20.06_y10.34_y20.46_b0.50_t11.00_t20.85 raw=16.81 bg=1.82 nom=4 crash=0.71
+TRIAL w10.05_w20.08_y10.32_y20.46_b0.60_t10.90_t20.95 raw=16.82 bg=1.82 nom=4 crash=0.75
+TRIAL w10.04_w20.10_y10.30_y20.50_b0.55_t10.90_t20.85 raw=15.87 bg=1.79 nom=3 crash=0.68
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.06_w20.06_y10.32_y20.48_b0.60_t11.00_t20.90 raw=16.62 bg=1.79 nom=4 crash=0.64
+TRIAL w10.06_w20.08_y10.32_y20.50_b0.55_t10.95_t20.95 raw=16.59 bg=1.79 nom=4 crash=0.68
+TRIAL w10.05_w20.06_y10.30_y20.50_b0.60_t10.95_t20.85 raw=15.85 bg=1.79 nom=3 crash=0.71
+TRIAL w10.05_w20.08_y10.32_y20.46_b0.60_t10.95_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.06_w20.10_y10.34_y20.48_b0.60_t10.90_t20.95 raw=16.71 bg=1.79 nom=4 crash=0.64
+TRIAL w10.06_w20.06_y10.30_y20.46_b0.60_t10.90_t20.90 raw=15.67 bg=1.75 nom=3 crash=0.64
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.05_w20.10_y10.32_y20.50_b0.60_t10.95_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.64
+TRIAL w10.05_w20.08_y10.34_y20.46_b0.60_t10.95_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.04_w20.06_y10.32_y20.50_b0.60_t11.00_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.05_w20.08_y10.32_y20.46_b0.50_t10.90_t20.90 raw=16.82 bg=1.82 nom=4 crash=0.75
+TRIAL w10.04_w20.10_y10.32_y20.50_b0.55_t11.00_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.68
+TRIAL w10.06_w20.10_y10.34_y20.48_b0.60_t11.00_t20.85 raw=16.71 bg=1.79 nom=4 crash=0.64
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.05_w20.06_y10.34_y20.46_b0.55_t10.95_t20.90 raw=16.81 bg=1.82 nom=4 crash=0.71
+TRIAL w10.05_w20.08_y10.30_y20.50_b0.60_t11.00_t20.95 raw=15.87 bg=1.79 nom=3 crash=0.71
+TRIAL w10.05_w20.10_y10.32_y20.48_b0.60_t10.95_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.64
+TRIAL w10.04_w20.10_y10.32_y20.46_b0.55_t10.95_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.68
+TRIAL w10.05_w20.10_y10.34_y20.48_b0.55_t10.95_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.64
+TRIAL w10.06_w20.06_y10.32_y20.50_b0.60_t10.90_t20.90 raw=16.63 bg=1.79 nom=4 crash=0.64
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.04_w20.06_y10.32_y20.48_b0.55_t10.95_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.04_w20.08_y10.32_y20.46_b0.55_t11.00_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.06_w20.10_y10.32_y20.50_b0.50_t11.00_t20.90 raw=16.71 bg=1.79 nom=4 crash=0.64
+TRIAL w10.06_w20.06_y10.32_y20.48_b0.60_t10.90_t20.90 raw=16.63 bg=1.79 nom=4 crash=0.64
+TRIAL w10.05_w20.10_y10.34_y20.48_b0.60_t10.90_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.68
+TRIAL w10.06_w20.06_y10.30_y20.48_b0.50_t10.90_t20.90 raw=15.67 bg=1.75 nom=3 crash=0.64
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.06_w20.06_y10.34_y20.46_b0.60_t11.00_t20.95 raw=16.71 bg=1.79 nom=4 crash=0.64
+TRIAL w10.05_w20.10_y10.34_y20.46_b0.50_t10.95_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.64
+TRIAL w10.04_w20.10_y10.32_y20.50_b0.55_t10.90_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.68
+TRIAL w10.05_w20.08_y10.32_y20.50_b0.60_t10.95_t20.95 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.06_w20.08_y10.30_y20.50_b0.60_t10.95_t20.90 raw=15.72 bg=1.75 nom=3 crash=0.68
+TRIAL w10.04_w20.06_y10.32_y20.46_b0.60_t10.95_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.71
+DONE best policy_v118 16.83
+BEST_START {"raw_score_100": 16.83, "name": "policy_v118", "nominal_bg": 4, "mean_bg": 1.82}
+TRIAL w10.05_w20.06_y10.34_y20.48_b0.50_t10.95_t20.90 raw=16.81 bg=1.82 nom=4 crash=0.71
+TRIAL w10.06_w20.06_y10.30_y20.46_b0.55_t10.90_t20.90 raw=15.67 bg=1.75 nom=3 crash=0.64
+TRIAL w10.04_w20.10_y10.30_y20.48_b0.60_t11.00_t20.90 raw=15.87 bg=1.79 nom=3 crash=0.68
+TRIAL w10.05_w20.08_y10.32_y20.48_b0.60_t10.95_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.71
+TRIAL w10.05_w20.10_y10.32_y20.46_b0.50_t10.95_t20.85 raw=16.83 bg=1.82 nom=4 crash=0.64
+TRIAL w10.04_w20.08_y10.34_y20.46_b0.60_t11.00_t20.90 raw=16.83 bg=1.82 nom=4 crash=0.71
+DONE best policy_v118 16.83

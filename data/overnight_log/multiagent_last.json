@@ -1,0 +1,83 @@
+{
+  "stamp": "20260714T193525Z",
+  "champ": {
+    "raw_score_100": 17.76550788422368,
+    "mean_bg": 2.0357142857142856,
+    "mean_win": 0.21428571428571427,
+    "crash_rate": 0.0,
+    "nominal_bg": 4,
+    "nominal_win": 0,
+    "nominal_sc": 0.7119791936779466,
+    "name": "policy_v229",
+    "path": "/mnt/openfoam/pingpong-venv/repair_work/policy_v229.py",
+    "stamp": "20260714T192247Z",
+    "note": "L1c tend~arm_ym composed on v228 antiscrub",
+    "hist": {
+      "1": 9,
+      "2": 12,
+      "3": 4,
+      "4": 3
+    }
+  },
+  "elapsed_s": 8.461270809173584,
+  "n_candidates": 3,
+  "results": [
+    {
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L1d_band1_tend.py",
+      "focus_ok": false,
+      "focus_raw": 24.40322253939587,
+      "focus_elapsed_s": 3.0267622470855713,
+      "skipped_full": true,
+      "raw_score_100": null
+    },
+    {
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L3d_earlier_race.py",
+      "focus_ok": false,
+      "focus_raw": 23.593942539395872,
+      "focus_elapsed_s": 3.36033034324646,
+      "skipped_full": true,
+      "raw_score_100": null
+    },
+    {
+      "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L2d_short_sep.py",
+      "focus_ok": true,
+      "focus_raw": 25.237436513815453,
+      "focus_elapsed_s": 2.8378190994262695,
+      "skipped_full": false,
+      "raw_score_100": 17.76550788422368,
+      "mean_bg": 2.0357142857142856,
+      "q25": 0.15059999999999998,
+      "hist": {
+        "1": 9,
+        "2": 12,
+        "3": 4,
+        "4": 3
+      },
+      "nominal_bg": 4,
+      "nominal_sc": 0.7119791936779466,
+      "mean_win": 0.21428571428571427,
+      "elapsed_s": 8.001593351364136
+    }
+  ],
+  "winner": {
+    "path": "/mnt/openfoam/pingpong-venv/repair_work/ma_variants/policy_ma_L2d_short_sep.py",
+    "focus_ok": true,
+    "focus_raw": 25.237436513815453,
+    "focus_elapsed_s": 2.8378190994262695,
+    "skipped_full": false,
+    "raw_score_100": 17.76550788422368,
+    "mean_bg": 2.0357142857142856,
+    "q25": 0.15059999999999998,
+    "hist": {
+      "1": 9,
+      "2": 12,
+      "3": 4,
+      "4": 3
+    },
+    "nominal_bg": 4,
+    "nominal_sc": 0.7119791936779466,
+    "mean_win": 0.21428571428571427,
+    "elapsed_s": 8.001593351364136
+  },
+  "installed": false
+}

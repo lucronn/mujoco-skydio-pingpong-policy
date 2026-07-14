@@ -1,0 +1,11 @@
+{
+  "error": "ty_gain needle missing",
+  "conf": {
+    "name": "ym0.90_zs0.05_ty0.70_s0.12_w0.00",
+    "y_miss": 0.9,
+    "z_slop": 0.05,
+    "ty_gain": 0.7,
+    "sep": 0.12,
+    "win4": 0.0
+  }
+}

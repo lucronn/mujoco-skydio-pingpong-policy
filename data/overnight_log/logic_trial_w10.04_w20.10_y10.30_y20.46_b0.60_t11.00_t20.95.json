@@ -1,0 +1,26 @@
+{
+  "conf": {
+    "name": "w10.04_w20.10_y10.30_y20.46_b0.60_t11.00_t20.95",
+    "wait_g1": 0.04,
+    "wait_g2": 0.1,
+    "x_lo_g1": 0.1,
+    "x_lo_g2": 0.14,
+    "y_g1": 0.3,
+    "y_g2": 0.46,
+    "blend": 0.6,
+    "ty_g1": 1.0,
+    "ty_g2": 0.95
+  },
+  "raw_score_100": 15.87194652964461,
+  "mean": 0.1967724421607435,
+  "q25": 0.1452,
+  "mean_bg": 1.7857142857142858,
+  "mean_win": 0.14285714285714285,
+  "crash_rate": 0.6785714285714286,
+  "nominal_bg": 3,
+  "nominal_win": 0,
+  "nominal_sc": 0.2646,
+  "count": 28,
+  "stamp": "20260714T105839Z",
+  "path": "/mnt/openfoam/pingpong-venv/repair_work/policy_logic_w1004_w2010_y1030_y2046_b060_t1100_t2095.py"
+}

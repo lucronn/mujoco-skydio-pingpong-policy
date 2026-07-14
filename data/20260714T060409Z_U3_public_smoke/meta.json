@@ -1,0 +1,7 @@
+{
+  "label": "U3_public_smoke",
+  "created_utc": "20260714T060409Z",
+  "run_dir": "progression/20260714T060409Z_U3_public_smoke",
+  "policy_path": "repair_work/policy_named.py",
+  "policy_sha256": "5e1778704552c97ce64bd08e0818742852ce755ddcc1a9a077670368a84d9404"
+}

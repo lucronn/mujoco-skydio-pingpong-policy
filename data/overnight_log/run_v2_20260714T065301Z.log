@@ -1,0 +1,18 @@
+BEST_START {"raw_score_100": 16.6, "name": "v111_post_g1_rescue", "nominal_bg": 4, "mean_bg": 1.79}
+FAIL ym0.55_zs0.30_ty1.10_s0.28_w0.00 ty_gain needle missing
+FAIL ym0.65_zs0.05_ty1.10_s0.12_w0.55 ty_gain needle missing
+FAIL ym0.90_zs0.05_ty0.90_s0.28_w0.90 ty_gain needle missing
+FAIL ym0.65_zs0.15_ty0.70_s0.12_w0.90 ty_gain needle missing
+FAIL ym0.80_zs0.30_ty0.55_s0.28_w0.55 ty_gain needle missing
+FAIL ym0.90_zs0.05_ty1.10_s0.28_w0.90 ty_gain needle missing
+FAIL ym0.90_zs0.05_ty0.70_s0.12_w0.00 ty_gain needle missing
+FAIL ym0.90_zs0.05_ty0.55_s0.12_w0.90 ty_gain needle missing
+FAIL ym0.80_zs0.05_ty0.90_s0.18_w0.00 ty_gain needle missing
+FAIL ym0.90_zs0.30_ty1.10_s0.28_w0.00 ty_gain needle missing
+FAIL ym0.90_zs0.15_ty0.70_s0.18_w0.90 ty_gain needle missing
+FAIL ym0.70_zs0.30_ty0.55_s0.28_w0.55 ty_gain needle missing
+FAIL ym0.65_zs0.15_ty1.10_s0.28_w0.55 ty_gain needle missing
+FAIL ym0.65_zs0.15_ty0.70_s0.18_w0.90 ty_gain needle missing
+FAIL ym0.90_zs0.05_ty0.70_s0.18_w0.55 ty_gain needle missing
+FAIL ym0.80_zs0.30_ty1.10_s0.18_w0.90 ty_gain needle missing
+DONE best v111_post_g1_rescue 16.6

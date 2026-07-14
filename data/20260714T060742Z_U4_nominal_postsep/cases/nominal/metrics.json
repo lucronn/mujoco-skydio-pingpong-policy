@@ -1,0 +1,35 @@
+{
+  "score": 0.24924000000000002,
+  "hard_success": 0,
+  "bounced_gate_passes": 3,
+  "bounced_gate_pass": [
+    1,
+    1,
+    1,
+    0
+  ],
+  "raw_gates_passed": 4,
+  "drone_windows_passed": 0,
+  "target_box_score": 0.0,
+  "target_box_entered": 0,
+  "safety_score": 1.0,
+  "drone_crash": 0,
+  "max_tilt_deg": 48.55311874767716,
+  "max_action_N": 12.941668201624289,
+  "final_ball_pos": [
+    13.517416426830941,
+    6.255124274620782,
+    0.05995235506751467
+  ],
+  "final_drone_pos": [
+    25.229521762296155,
+    13.855288218696472,
+    0.6914434493457022
+  ],
+  "contacts": 94,
+  "observation_mode": "partial",
+  "scenario_name": "nominal",
+  "policy_path": "repair_work/policy_named.py",
+  "policy_sha256": "6511aeb8972dce84bbc0f9db357cdefd52c2bc9e020294804a8c6095e4f6768e",
+  "phase_notes": null
+}

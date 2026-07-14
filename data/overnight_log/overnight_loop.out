@@ -1,0 +1,7 @@
+EVOLVE_ALREADY_RUNNING 20260714T195457Z pid=1862509
+EVOLVE_ALREADY_RUNNING 20260714T200957Z pid=1892979
+LOGIC_DRIVE_PAUSED (CEM continuous is primary; param grid off)
+AGENT_LOOP_TICK_logicdev {"prompt":"Logic wake: keep continuous CEM alive (repair_work/keep_evolve_running.sh / evolve_volley.py --until-raw 50 --resume). Do NOT use finite --gens. Check evolve_continuous.log + best.json; update STATUS.md. Progression via --detach only. Aim raw>50."}
+EVOLVE_ALREADY_RUNNING 20260714T202457Z pid=1892979
+LOGIC_DRIVE_PAUSED (CEM continuous is primary; param grid off)
+AGENT_LOOP_TICK_logicdev {"prompt":"Logic wake: keep continuous CEM alive (repair_work/keep_evolve_running.sh / evolve_volley.py --until-raw 50 --resume). Do NOT use finite --gens. Check evolve_continuous.log + best.json; update STATUS.md. Progression via --detach only. Aim raw>50."}

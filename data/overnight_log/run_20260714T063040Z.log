@@ -1,0 +1,15 @@
+Scoring baseline v85...
+BASE {"raw_score_100": 16.330495597996205, "mean_bg": 1.7857142857142858, "mean_win": 0.10714285714285714, "nominal_bg": 4}
+TRIAL s0.18_w0.00_S0.12_W0.00 raw=16.35 bg=1.79 win=0.14 nom=4/0 crash=0.64
+TRIAL s0.18_w0.00_S0.12_W0.35 raw=16.35 bg=1.79 win=0.14 nom=4/0 crash=0.64
+TRIAL s0.18_w0.00_S0.12_W0.55 raw=16.35 bg=1.79 win=0.14 nom=4/0 crash=0.64
+TRIAL s0.18_w0.00_S0.18_W0.00 raw=16.35 bg=1.79 win=0.11 nom=4/0 crash=0.64
+TRIAL s0.18_w0.00_S0.18_W0.35 raw=16.35 bg=1.79 win=0.14 nom=4/0 crash=0.68
+TRIAL s0.18_w0.00_S0.18_W0.55 raw=16.35 bg=1.79 win=0.11 nom=4/0 crash=0.71
+TRIAL s0.18_w0.18_S0.12_W0.00 raw=16.08 bg=1.75 win=0.07 nom=4/0 crash=0.64
+TRIAL s0.18_w0.18_S0.12_W0.35 raw=16.08 bg=1.75 win=0.07 nom=4/0 crash=0.64
+TRIAL s0.18_w0.18_S0.12_W0.55 raw=16.08 bg=1.75 win=0.07 nom=4/0 crash=0.64
+TRIAL s0.18_w0.18_S0.18_W0.00 raw=16.08 bg=1.75 win=0.07 nom=4/0 crash=0.64
+TRIAL s0.18_w0.18_S0.18_W0.35 raw=16.08 bg=1.75 win=0.07 nom=4/0 crash=0.64
+TRIAL s0.18_w0.18_S0.18_W0.55 raw=16.08 bg=1.75 win=0.07 nom=4/0 crash=0.64
+DONE best v85 16.330495597996205

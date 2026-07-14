@@ -1,0 +1,2 @@
+EVOLVE_ALREADY_RUNNING 20260714T201529Z pid=1892979
+AGENT_LOOP_TICK_overnight {"prompt":"Overnight wake: ensure continuous CEM (bash repair_work/keep_evolve_running.sh 50). Read best.json + evolve_continuous.log + evolve_volley_last.json; update STATUS.md. Do NOT restart finite --gens or autodriver. Progression --detach only. Aim raw>50."}
