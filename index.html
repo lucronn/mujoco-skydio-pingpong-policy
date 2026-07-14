@@ -1754,6 +1754,9 @@
         if (caseVal !== 'all' && c.name !== caseVal) return;
 
         c.videos.forEach(v => {
+          // Archive grid uses <video> tags, so we only display MP4 files
+          if (!v.filename.endsWith('.mp4')) return;
+
           // Check render type filter
           if (renderVal !== 'all' && v.filename !== renderVal) return;
 
