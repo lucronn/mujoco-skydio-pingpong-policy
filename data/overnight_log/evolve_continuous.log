@@ -782,3 +782,777 @@ SIGMA_REFRESH gen=39 stall champ=18.1430 (was 18.1430)
   gen40[3] FAIL
   gen40[0] raw=17.777
   gen40[2] raw=17.742
+  gen40[5] FAIL
+  gen40[7] FAIL
+  gen40[4] raw=17.800
+  gen40[8] FAIL
+  gen40[6] raw=17.763
+  gen40[9] raw=17.492
+  gen40[10] raw=17.884
+  gen40[11] raw=17.757
+GEN 40 best_raw=17.8841 elite_mean=17.8205 champ=18.1430 [37.1s]
+  gen41[0] raw=17.872
+  gen41[1] raw=17.764
+  gen41[2] raw=17.801
+  gen41[3] raw=17.747
+  gen41[4] raw=17.798
+  gen41[5] raw=17.868
+  gen41[6] FAIL
+  gen41[8] raw=17.735
+  gen41[7] raw=17.746
+  gen41[9] raw=17.900
+  gen41[10] raw=17.839
+  gen41[11] raw=17.798
+GEN 41 best_raw=17.9005 elite_mean=17.8798 champ=18.1430 [53.8s]
+  gen42[2] raw=17.870
+  gen42[1] raw=17.868
+  gen42[0] raw=17.899
+  gen42[3] raw=17.867
+  gen42[4] raw=17.866
+  gen42[5] raw=17.863
+  gen42[6] raw=17.867
+  gen42[7] raw=17.898
+  gen42[8] raw=17.897
+  gen42[9] raw=17.798
+  gen42[10] raw=17.897
+  gen42[11] raw=17.931
+GEN 42 best_raw=17.9309 elite_mean=17.9091 champ=18.1430 [52.1s]
+  gen43[0] raw=17.866
+  gen43[2] raw=17.796
+  gen43[1] raw=17.868
+  gen43[3] raw=17.801
+  gen43[4] raw=17.797
+  gen43[5] raw=17.792
+  gen43[7] FAIL
+  gen43[6] raw=17.867
+  gen43[8] raw=17.870
+  gen43[10] FAIL
+  gen43[9] raw=17.866
+  gen43[11] raw=17.726
+GEN 43 best_raw=17.8698 elite_mean=17.8680 champ=18.1430 [44.6s]
+  gen44[1] raw=17.865
+  gen44[2] raw=17.866
+  gen44[0] raw=17.734
+  gen44[5] raw=17.890
+  gen44[4] raw=17.918
+  gen44[3] raw=17.888
+  gen44[6] raw=17.892
+  gen44[7] raw=17.869
+  gen44[8] raw=17.776
+  gen44[9] raw=17.891
+  gen44[10] raw=17.866
+  gen44[11] raw=17.889
+GEN 44 best_raw=17.9184 elite_mean=17.9006 champ=18.1430 [49.5s]
+  gen45[1] raw=17.897
+  gen45[0] raw=17.916
+  gen45[2] raw=17.896
+  gen45[3] raw=17.867
+  gen45[5] raw=17.914
+  gen45[4] raw=17.914
+  gen45[7] FAIL
+  gen45[6] raw=17.760
+  gen45[8] raw=17.919
+  gen45[10] FAIL
+  gen45[9] raw=17.888
+  gen45[11] raw=17.734
+GEN 45 best_raw=17.9189 elite_mean=17.9166 champ=18.1430 [44.9s]
+  gen46[2] FAIL
+  gen46[3] FAIL
+  gen46[4] FAIL
+  gen46[5] FAIL
+  gen46[0] raw=17.919
+  gen46[1] raw=17.918
+  gen46[6] FAIL
+  gen46[8] raw=17.734
+  gen46[7] raw=17.922
+  gen46[9] raw=17.788
+  gen46[10] raw=17.856
+  gen46[11] raw=17.864
+GEN 46 best_raw=17.9218 elite_mean=17.9197 champ=18.1430 [33.6s]
+  gen47[0] FAIL
+  gen47[2] raw=17.762
+  gen47[1] raw=17.729
+  gen47[3] raw=17.727
+  gen47[6] FAIL
+  gen47[4] raw=17.888
+  gen47[5] raw=17.654
+  gen47[7] raw=17.895
+  gen47[8] raw=17.895
+  gen47[9] raw=17.919
+  gen47[10] raw=17.748
+  gen47[11] raw=17.808
+GEN 47 best_raw=17.9185 elite_mean=17.9028 champ=18.1430 [43.6s]
+SIGMA_REFRESH gen=47 stall champ=18.1430 (was 18.1430)
+  gen48[2] FAIL
+  gen48[0] FAIL
+  gen48[1] FAIL
+  gen48[3] raw=17.742
+  gen48[5] raw=17.581
+  gen48[4] raw=17.893
+  gen48[7] FAIL
+  gen48[9] FAIL
+  gen48[10] FAIL
+  gen48[11] FAIL
+  gen48[6] raw=17.497
+  gen48[8] raw=17.851
+GEN 48 best_raw=17.8935 elite_mean=17.8290 champ=18.1430 [26.4s]
+  gen49[1] raw=17.854
+  gen49[2] raw=17.901
+  gen49[0] raw=17.831
+  gen49[3] raw=17.866
+  gen49[4] raw=17.897
+  gen49[5] raw=17.904
+  gen49[7] FAIL
+  gen49[6] raw=17.887
+  gen49[8] raw=17.796
+  gen49[9] raw=17.866
+  gen49[10] raw=17.890
+  gen49[11] raw=17.721
+GEN 49 best_raw=17.9037 elite_mean=17.9004 champ=18.1430 [47.2s]
+  gen50[1] raw=17.875
+  gen50[0] raw=17.898
+  gen50[2] raw=17.733
+  gen50[5] FAIL
+  gen50[6] FAIL
+  gen50[3] raw=17.842
+  gen50[4] raw=17.908
+  gen50[7] raw=17.868
+  gen50[8] raw=17.768
+  gen50[9] raw=17.920
+  gen50[10] raw=17.899
+  gen50[11] raw=17.898
+GEN 50 best_raw=17.9195 elite_mean=17.9086 champ=18.1430 [48.3s]
+  gen51[1] FAIL
+  gen51[3] FAIL
+  gen51[2] raw=18.020
+  gen51[0] raw=17.897
+  gen51[4] raw=17.898
+  gen51[5] raw=17.886
+  gen51[6] raw=17.762
+  gen51[7] raw=17.882
+  gen51[8] raw=17.897
+  gen51[9] raw=17.881
+  gen51[10] raw=17.990
+  gen51[11] raw=17.855
+GEN 51 best_raw=18.0202 elite_mean=17.9693 champ=18.1430 [48.7s]
+  gen52[2] FAIL
+  gen52[0] raw=17.870
+  gen52[1] raw=17.857
+  gen52[3] raw=18.015
+  gen52[4] raw=17.929
+  gen52[5] raw=18.020
+  gen52[6] raw=17.736
+  gen52[8] FAIL
+  gen52[7] raw=18.011
+  gen52[9] raw=17.775
+  gen52[10] raw=17.861
+  gen52[11] raw=17.916
+GEN 52 best_raw=18.0198 elite_mean=18.0150 champ=18.1430 [46.1s]
+  gen53[2] FAIL
+  gen53[0] raw=17.745
+  gen53[1] raw=17.768
+  gen53[3] raw=18.013
+  gen53[4] FAIL
+  gen53[5] FAIL
+  gen53[6] raw=17.745
+  gen53[7] raw=17.991
+  gen53[8] raw=17.992
+  gen53[9] raw=17.988
+  gen53[10] raw=18.014
+  gen53[11] raw=17.991
+GEN 53 best_raw=18.0140 elite_mean=18.0061 champ=18.1430 [39.8s]
+  gen54[1] FAIL
+  gen54[0] raw=17.908
+  gen54[2] raw=17.741
+  gen54[3] raw=17.978
+  gen54[6] FAIL
+  gen54[4] raw=18.017
+  gen54[5] raw=17.982
+  gen54[7] raw=18.018
+  gen54[9] raw=17.890
+  gen54[8] raw=17.896
+  gen54[11] FAIL
+  gen54[10] raw=17.989
+GEN 54 best_raw=18.0183 elite_mean=18.0080 champ=18.1430 [39.6s]
+  gen55[1] FAIL
+  gen55[0] raw=17.978
+  gen55[2] raw=17.984
+  gen55[3] raw=18.018
+  gen55[5] FAIL
+  gen55[4] raw=17.858
+  gen55[6] raw=18.006
+  gen55[7] raw=17.919
+  gen55[8] FAIL
+  gen55[9] raw=17.895
+  gen55[10] raw=17.883
+  gen55[11] raw=18.008
+GEN 55 best_raw=18.0177 elite_mean=18.0105 champ=18.1430 [39.0s]
+SIGMA_REFRESH gen=55 stall champ=18.1430 (was 18.1430)
+  gen56[2] FAIL
+  gen56[3] FAIL
+  gen56[4] FAIL
+  gen56[5] FAIL
+  gen56[0] raw=17.919
+  gen56[1] raw=17.890
+  gen56[7] FAIL
+  gen56[8] FAIL
+  gen56[6] raw=17.386
+  gen56[11] FAIL
+  gen56[9] raw=17.767
+  gen56[10] raw=17.884
+GEN 56 best_raw=17.9190 elite_mean=17.8976 champ=18.1430 [29.0s]
+  gen57[2] FAIL
+  gen57[1] FAIL
+  gen57[0] FAIL
+  gen57[5] FAIL
+  gen57[4] FAIL
+  gen57[3] raw=17.879
+  gen57[6] raw=17.892
+  gen57[7] raw=17.840
+  gen57[9] FAIL
+  gen57[8] raw=17.892
+  gen57[10] raw=17.752
+  gen57[11] raw=17.894
+GEN 57 best_raw=17.8938 elite_mean=17.8929 champ=18.1430 [34.4s]
+  gen58[2] raw=17.884
+  gen58[1] raw=17.743
+  gen58[0] raw=17.892
+  gen58[5] raw=17.767
+  gen58[3] raw=17.788
+  gen58[4] raw=17.852
+  gen58[6] FAIL
+  gen58[9] FAIL
+  gen58[8] raw=17.885
+  gen58[7] raw=17.879
+  gen58[11] FAIL
+  gen58[10] raw=17.900
+GEN 58 best_raw=17.9002 elite_mean=17.8925 champ=18.1430 [45.6s]
+  gen59[0] FAIL
+  gen59[2] raw=17.887
+  gen59[1] raw=17.874
+  gen59[3] raw=17.788
+  gen59[5] FAIL
+  gen59[4] raw=17.870
+  gen59[8] FAIL
+  gen59[6] raw=17.792
+  gen59[7] raw=17.879
+  gen59[11] FAIL
+  gen59[9] raw=17.895
+  gen59[10] raw=17.753
+GEN 59 best_raw=17.8950 elite_mean=17.8870 champ=18.1430 [41.2s]
+  gen60[2] FAIL
+  gen60[0] FAIL
+  gen60[4] FAIL
+  gen60[1] raw=17.890
+  gen60[3] raw=17.885
+  gen60[5] raw=17.752
+  gen60[6] raw=17.879
+  gen60[7] raw=17.895
+  gen60[8] raw=17.887
+  gen60[11] FAIL
+  gen60[9] raw=17.891
+  gen60[10] raw=17.863
+GEN 60 best_raw=17.8946 elite_mean=17.8916 champ=18.1430 [45.8s]
+  gen61[2] raw=17.872
+  gen61[0] raw=17.883
+  gen61[1] raw=17.889
+  gen61[3] FAIL
+  gen61[4] raw=17.872
+  gen61[5] raw=17.871
+  gen61[6] raw=17.851
+  gen61[8] raw=17.892
+  gen61[7] raw=17.893
+  gen61[9] raw=17.899
+  gen61[10] raw=17.883
+  gen61[11] raw=17.887
+GEN 61 best_raw=17.8993 elite_mean=17.8945 champ=18.1430 [55.4s]
+  gen62[2] raw=17.858
+  gen62[0] raw=17.888
+  gen62[1] raw=17.860
+  gen62[4] FAIL
+  gen62[5] FAIL
+  gen62[7] FAIL
+  gen62[3] raw=17.759
+  gen62[6] raw=17.869
+  gen62[8] raw=17.648
+  gen62[9] raw=17.877
+  gen62[10] raw=17.864
+  gen62[11] raw=17.750
+GEN 62 best_raw=17.8885 elite_mean=17.8781 champ=18.1430 [83.3s]
+  gen63[1] raw=17.883
+  gen63[0] raw=17.890
+  gen63[2] raw=17.723
+  gen63[4] raw=17.890
+  gen63[3] raw=17.854
+  gen63[5] raw=17.716
+  gen63[6] FAIL
+  gen63[7] raw=17.890
+  gen63[8] raw=17.770
+  gen63[9] raw=17.873
+  gen63[10] raw=17.909
+  gen63[11] raw=17.755
+GEN 63 best_raw=17.9095 elite_mean=17.8966 champ=18.1430 [76.7s]
+SIGMA_REFRESH gen=63 stall champ=18.1430 (was 18.1430)
+  gen64[1] FAIL
+  gen64[3] FAIL
+  gen64[4] FAIL
+  gen64[5] FAIL
+  gen64[0] raw=17.655
+  gen64[2] raw=17.436
+  gen64[6] FAIL
+  gen64[7] FAIL
+  gen64[9] FAIL
+  gen64[10] FAIL
+  gen64[8] raw=17.635
+  gen64[11] raw=17.574
+GEN 64 best_raw=17.6551 elite_mean=17.6211 champ=18.1430 [49.5s]
+  gen65[0] FAIL
+  gen65[1] FAIL
+  gen65[2] raw=17.576
+  gen65[3] raw=17.708
+  gen65[4] raw=17.648
+  gen65[5] raw=17.604
+  gen65[7] raw=17.705
+  gen65[6] raw=17.786
+  gen65[8] raw=17.572
+  gen65[9] raw=17.594
+  gen65[10] raw=17.631
+  gen65[11] FAIL
+GEN 65 best_raw=17.7864 elite_mean=17.7331 champ=18.1430 [84.0s]
+  gen66[1] raw=17.871
+  gen66[0] raw=17.584
+  gen66[2] raw=17.854
+  gen66[3] raw=17.551
+  gen66[5] raw=17.726
+  gen66[4] raw=17.626
+  gen66[6] raw=17.751
+  gen66[7] raw=17.722
+  gen66[8] raw=17.749
+  gen66[11] raw=17.857
+  gen66[9] raw=17.647
+  gen66[10] raw=17.748
+GEN 66 best_raw=17.8707 elite_mean=17.8606 champ=18.1430 [79.4s]
+  gen67[1] raw=17.712
+  gen67[0] raw=17.866
+  gen67[2] raw=17.801
+  gen67[3] raw=17.870
+  gen67[5] raw=17.866
+  gen67[4] raw=17.879
+  gen67[6] raw=17.805
+  gen67[7] raw=17.698
+  gen67[8] raw=17.720
+  gen67[9] raw=17.560
+  gen67[11] raw=17.730
+  gen67[10] raw=17.719
+GEN 67 best_raw=17.8785 elite_mean=17.8713 champ=18.1430 [52.2s]
+  gen68[0] raw=17.732
+  gen68[2] raw=17.858
+  gen68[1] raw=17.899
+  gen68[4] raw=17.773
+  gen68[3] raw=17.867
+  gen68[5] raw=17.708
+  gen68[6] raw=17.906
+  gen68[7] raw=17.732
+  gen68[8] raw=17.868
+  gen68[9] raw=17.882
+  gen68[10] raw=17.889
+  gen68[11] raw=17.836
+GEN 68 best_raw=17.9057 elite_mean=17.8977 champ=18.1430 [50.3s]
+  gen69[1] raw=17.892
+  gen69[2] raw=17.736
+  gen69[0] raw=17.737
+  gen69[4] raw=17.745
+  gen69[3] raw=17.866
+  gen69[5] raw=17.898
+  gen69[7] raw=17.726
+  gen69[6] raw=17.727
+  gen69[8] raw=17.729
+  gen69[11] FAIL
+  gen69[9] raw=17.906
+  gen69[10] raw=17.858
+GEN 69 best_raw=17.9064 elite_mean=17.8985 champ=18.1430 [47.3s]
+  gen70[1] raw=17.747
+EVOLVE_START 20260714T205659Z until-raw=50
+CEM evolve_volley continuous=True until_raw>=50.0 pop=12 elite=3 start_gen=70 champ_raw=18.1430
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen70[1] raw=17.751
+  gen70[2] raw=17.479
+  gen70[0] raw=17.970
+  gen70[3] raw=17.715
+  gen70[5] raw=17.601
+  gen70[4] raw=17.860
+  gen70[11] FAIL
+  gen70[6] raw=17.873
+  gen70[9] raw=17.707
+  gen70[7] raw=17.878
+  gen70[10] raw=17.861
+  gen70[8] raw=17.951
+GEN 70 best_raw=17.9696 elite_mean=17.9327 champ=18.1430 [47.4s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen71[3] raw=17.748
+  gen71[4] raw=17.724
+  gen71[0] raw=17.768
+  gen71[1] raw=17.991
+  gen71[2] raw=17.825
+  gen71[5] raw=17.873
+  gen71[7] raw=17.723
+  gen71[6] raw=17.588
+  gen71[10] raw=17.556
+  gen71[8] raw=17.723
+  gen71[9] raw=17.988
+  gen71[11] raw=17.841
+GEN 71 best_raw=17.9906 elite_mean=17.9503 champ=18.1430 [52.5s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen72[5] raw=17.974
+  gen72[1] raw=17.957
+  gen72[3] raw=17.956
+  gen72[4] raw=18.091
+  gen72[0] raw=17.984
+  gen72[2] raw=17.980
+  gen72[6] raw=17.584
+  gen72[9] raw=18.108
+  gen72[8] raw=17.934
+  gen72[10] raw=17.983
+  gen72[7] raw=17.869
+  gen72[11] raw=18.123
+GEN 72 best_raw=18.1230 elite_mean=18.1074 champ=18.1430 [52.7s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen73[1] raw=17.857
+  gen73[2] raw=17.844
+  gen73[0] raw=17.993
+  gen73[5] raw=18.088
+  gen73[4] raw=17.828
+  gen73[3] raw=17.966
+  gen73[9] raw=17.825
+  gen73[7] raw=17.858
+  gen73[6] raw=17.974
+  gen73[10] raw=17.840
+  gen73[8] raw=17.965
+  gen73[11] raw=17.860
+GEN 73 best_raw=18.0875 elite_mean=18.0181 champ=18.1430 [49.9s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen74[1] raw=17.486
+  gen74[2] raw=17.704
+  gen74[4] raw=17.834
+  gen74[3] raw=17.861
+  gen74[5] raw=17.873
+  gen74[0] raw=17.852
+  gen74[6] raw=17.974
+  gen74[10] raw=17.871
+  gen74[8] raw=18.101
+  gen74[7] raw=17.708
+  gen74[9] raw=17.873
+  gen74[11] raw=17.991
+GEN 74 best_raw=18.1008 elite_mean=18.0218 champ=18.1430 [49.8s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen75[1] raw=17.986
+  gen75[2] raw=17.701
+  gen75[0] raw=18.110
+  gen75[5] raw=17.806
+  gen75[3] raw=17.853
+  gen75[4] raw=17.991
+  gen75[7] raw=17.861
+  gen75[6] raw=17.982
+  gen75[8] raw=17.774
+  gen75[9] raw=17.861
+  gen75[11] raw=17.558
+  gen75[10] raw=17.948
+GEN 75 best_raw=18.1104 elite_mean=18.0292 champ=18.1430 [48.9s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen76[1] raw=17.853
+  gen76[3] raw=17.718
+  gen76[4] raw=17.857
+  gen76[5] raw=17.862
+  gen76[0] raw=17.873
+  gen76[2] raw=17.951
+  gen76[8] raw=17.861
+  gen76[6] raw=18.111
+  gen76[7] raw=17.793
+  gen76[10] raw=17.961
+  gen76[9] raw=18.117
+  gen76[11] raw=17.750
+GEN 76 best_raw=18.1172 elite_mean=18.0629 champ=18.1430 [51.1s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen77[5] raw=17.862
+  gen77[4] raw=17.988
+  gen77[2] raw=17.974
+  gen77[1] raw=17.989
+  gen77[3] raw=18.111
+  gen77[0] raw=17.723
+  gen77[6] raw=17.859
+  gen77[7] raw=17.873
+  gen77[8] raw=17.971
+  gen77[11] raw=17.707
+  gen77[9] raw=17.971
+  gen77[10] raw=17.839
+GEN 77 best_raw=18.1106 elite_mean=18.0295 champ=18.1430 [45.8s]
+SIGMA_REFRESH gen=77 stall champ=18.1430 (was 18.1430)
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen78[4] FAIL
+  gen78[3] FAIL
+  gen78[2] FAIL
+  gen78[5] FAIL
+  gen78[0] FAIL
+  gen78[6] FAIL
+  gen78[9] FAIL
+  gen78[8] FAIL
+  gen78[10] FAIL
+  gen78[7] FAIL
+  gen78[1] raw=17.659
+  gen78[11] raw=17.591
+GEN 78 best_raw=17.6589 elite_mean=11.4166 champ=18.1430 [19.9s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen79[0] FAIL
+  gen79[5] FAIL
+  gen79[4] FAIL
+  gen79[2] FAIL
+  gen79[9] FAIL
+  gen79[7] FAIL
+  gen79[3] raw=17.553
+  gen79[1] raw=17.533
+  gen79[6] raw=17.631
+  gen79[8] raw=17.818
+  gen79[11] raw=17.725
+  gen79[10] raw=17.992
+GEN 79 best_raw=17.9923 elite_mean=17.8452 champ=18.1430 [27.1s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen80[0] raw=17.882
+  gen80[2] raw=17.829
+  gen80[1] raw=17.718
+  gen80[3] raw=17.845
+  gen80[5] raw=17.730
+  gen80[4] raw=17.727
+  gen80[10] FAIL
+  gen80[8] raw=17.842
+  gen80[9] raw=17.541
+  gen80[11] raw=17.840
+  gen80[6] raw=17.795
+  gen80[7] raw=17.730
+GEN 80 best_raw=17.8816 elite_mean=17.8561 champ=18.1430 [42.0s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen81[0] raw=17.833
+  gen81[4] raw=17.675
+  gen81[1] raw=17.891
+  gen81[5] raw=17.785
+  gen81[2] raw=17.864
+  gen81[3] raw=17.697
+  gen81[6] raw=17.810
+  gen81[8] raw=17.664
+  gen81[9] raw=17.870
+  gen81[10] raw=17.839
+  gen81[11] raw=17.829
+  gen81[7] raw=17.718
+GEN 81 best_raw=17.8905 elite_mean=17.8748 champ=18.1430 [43.9s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen82[0] FAIL
+  gen82[2] FAIL
+  gen82[4] FAIL
+  gen82[7] FAIL
+  gen82[5] raw=17.844
+  gen82[1] raw=17.857
+  gen82[3] raw=17.701
+  gen82[8] raw=17.794
+  gen82[6] raw=17.867
+  gen82[9] raw=17.737
+  gen82[11] raw=17.714
+  gen82[10] raw=17.988
+GEN 82 best_raw=17.9878 elite_mean=17.9039 champ=18.1430 [35.3s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen83[4] FAIL
+  gen83[5] raw=17.716
+  gen83[1] raw=17.844
+  gen83[2] raw=17.850
+  gen83[3] raw=17.995
+  gen83[0] raw=17.978
+  gen83[7] FAIL
+  gen83[8] FAIL
+  gen83[6] raw=17.686
+  gen83[9] raw=17.850
+  gen83[10] raw=17.857
+  gen83[11] raw=17.844
+GEN 83 best_raw=17.9954 elite_mean=17.9435 champ=18.1430 [36.0s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen84[4] FAIL
+  gen84[5] raw=17.849
+  gen84[3] raw=17.858
+  gen84[2] raw=17.864
+  gen84[0] raw=17.850
+  gen84[1] raw=17.850
+  gen84[10] FAIL
+  gen84[6] raw=17.988
+  gen84[9] raw=17.862
+  gen84[7] raw=17.973
+  gen84[8] raw=17.842
+  gen84[11] raw=17.857
+GEN 84 best_raw=17.9885 elite_mean=17.9420 champ=18.1430 [39.3s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen85[2] raw=17.720
+  gen85[3] raw=17.854
+  gen85[4] raw=17.874
+  gen85[1] raw=17.758
+  gen85[0] raw=17.874
+  gen85[5] raw=17.986
+  gen85[9] FAIL
+  gen85[7] FAIL
+  gen85[8] FAIL
+  gen85[10] raw=17.823
+  gen85[6] raw=17.865
+  gen85[11] raw=17.718
+GEN 85 best_raw=17.9858 elite_mean=17.9114 champ=18.1430 [36.2s]
+SIGMA_REFRESH gen=85 stall champ=18.1430 (was 18.1430)
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen86[4] FAIL
+  gen86[5] FAIL
+  gen86[3] FAIL
+  gen86[0] FAIL
+  gen86[2] FAIL
+  gen86[10] FAIL
+  gen86[1] raw=17.732
+  gen86[7] raw=17.736
+  gen86[6] raw=17.583
+  gen86[8] raw=17.571
+  gen86[9] raw=17.888
+  gen86[11] raw=17.865
+GEN 86 best_raw=17.8876 elite_mean=17.8293 champ=18.1430 [27.1s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen87[2] FAIL
+  gen87[4] FAIL
+  gen87[6] FAIL
+  gen87[3] raw=17.881
+  gen87[5] raw=17.679
+  gen87[0] raw=17.737
+  gen87[1] raw=17.737
+  gen87[7] raw=17.727
+  gen87[8] raw=17.732
+  gen87[10] raw=17.840
+  gen87[11] raw=17.701
+  gen87[9] raw=17.710
+GEN 87 best_raw=17.8808 elite_mean=17.8194 champ=18.1430 [36.8s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen88[2] FAIL
+  gen88[5] raw=17.871
+  gen88[3] raw=17.549
+  gen88[4] raw=17.695
+  gen88[0] raw=17.848
+  gen88[1] raw=17.714
+  gen88[7] FAIL
+  gen88[6] raw=17.871
+  gen88[9] FAIL
+  gen88[8] raw=17.862
+  gen88[10] raw=17.864
+  gen88[11] raw=17.748
+GEN 88 best_raw=17.8709 elite_mean=17.8687 champ=18.1430 [43.8s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen89[2] raw=17.749
+  gen89[0] raw=17.859
+  gen89[5] raw=17.871
+  gen89[1] raw=17.866
+  gen89[3] raw=17.867
+  gen89[4] raw=17.845
+  gen89[7] raw=17.859
+  gen89[11] raw=17.847
+  gen89[10] raw=17.705
+  gen89[6] raw=17.846
+  gen89[9] raw=17.549
+  gen89[8] raw=17.869
+GEN 89 best_raw=17.8706 elite_mean=17.8688 champ=18.1430 [58.1s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen90[4] FAIL
+  gen90[1] raw=17.861
+  gen90[0] raw=17.696
+  gen90[5] raw=17.704
+  gen90[3] raw=17.735
+  gen90[2] raw=17.747
+  gen90[9] FAIL
+  gen90[6] raw=17.582
+  gen90[10] raw=17.876
+  gen90[8] raw=17.861
+  gen90[7] raw=17.845
+  gen90[11] raw=17.732
+GEN 90 best_raw=17.8757 elite_mean=17.8657 champ=18.1430 [53.7s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen91[0] FAIL
+  gen91[2] raw=17.636
+  gen91[1] raw=17.870
+  gen91[3] raw=17.872
+  gen91[4] raw=17.846
+  gen91[5] raw=17.867
+  gen91[6] raw=17.770
+  gen91[7] raw=17.859
+  gen91[8] raw=17.815
+  gen91[9] raw=17.861
+  gen91[10] raw=17.884
+  gen91[11] raw=17.860
+GEN 91 best_raw=17.8844 elite_mean=17.8753 champ=18.1430 [45.6s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen92[2] FAIL
+  gen92[5] raw=17.837
+  gen92[3] raw=17.845
+  gen92[0] raw=17.865
+  gen92[4] raw=17.859
+  gen92[1] raw=17.730
+  gen92[6] raw=17.862
+  gen92[7] FAIL
+  gen92[9] FAIL
+  gen92[8] raw=17.903
+  gen92[10] raw=17.869
+  gen92[11] raw=17.876
+GEN 92 best_raw=17.9025 elite_mean=17.8825 champ=18.1430 [39.3s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen93[3] raw=17.730
+  gen93[1] raw=17.874
+  gen93[0] raw=17.876
+  gen93[5] raw=17.869
+  gen93[2] raw=17.868
+  gen93[4] raw=17.864
+  gen93[8] raw=17.862
+  gen93[7] raw=17.885
+  gen93[6] raw=17.852
+  gen93[10] raw=17.730
+  gen93[9] raw=17.888
+  gen93[11] raw=17.846
+GEN 93 best_raw=17.8875 elite_mean=17.8828 champ=18.1430 [51.9s]
+SIGMA_REFRESH gen=93 stall champ=18.1430 (was 18.1430)
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen94[1] FAIL
+  gen94[4] FAIL
+  gen94[0] FAIL
+  gen94[2] FAIL
+  gen94[5] FAIL
+  gen94[8] FAIL
+  gen94[6] FAIL
+  gen94[7] FAIL
+  gen94[9] FAIL
+  gen94[11] FAIL
+  gen94[3] raw=17.718
+  gen94[10] raw=17.343
+GEN 94 best_raw=17.7181 elite_mean=11.3536 champ=18.1430 [46.0s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen95[0] FAIL
+  gen95[2] FAIL
+  gen95[4] FAIL
+  gen95[6] FAIL
+  gen95[8] FAIL
+  gen95[5] raw=17.676
+  gen95[3] raw=17.855
+  gen95[1] raw=17.591
+  gen95[7] raw=17.690
+  gen95[9] raw=18.001
+  gen95[10] raw=17.860
+  gen95[11] raw=17.739
+GEN 95 best_raw=18.0014 elite_mean=17.9056 champ=18.1430 [68.0s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
+  gen96[1] FAIL
+  gen96[3] FAIL
+  gen96[5] raw=17.873
+  gen96[0] raw=17.727
+  gen96[2] raw=17.885
+  gen96[4] raw=17.834
+  gen96[6] raw=17.710
+  gen96[7] raw=17.705
+  gen96[9] raw=17.827
+  gen96[8] raw=17.864
+  gen96[11] raw=17.379
+  gen96[10] raw=17.866
+GEN 96 best_raw=17.8854 elite_mean=17.8747 champ=18.1430 [63.3s]
+  pool pol_workers=6 case_workers=2 (cpus=12)
