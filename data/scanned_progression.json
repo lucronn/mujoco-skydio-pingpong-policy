@@ -49,8 +49,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -98,8 +106,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_000/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_000/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -147,8 +163,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_002/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_002/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -196,8 +220,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_006/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_006/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -245,8 +277,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_011/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T201031Z_policy_evolved_g12_focus/cases/range_424242_011/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -307,8 +347,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -356,8 +404,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_000/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_000/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -405,8 +461,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_002/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_002/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -454,8 +518,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_006/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_006/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -503,8 +575,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_011/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200804Z_policy_evolved_g9_focus/cases/range_424242_011/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -565,8 +645,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -614,8 +702,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_000/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_000/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -663,8 +759,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_002/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_002/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -712,8 +816,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_006/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_006/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -761,8 +873,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_011/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200611Z_policy_evolved_g7_focus/cases/range_424242_011/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -823,8 +943,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -872,8 +1000,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_000/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_000/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -921,8 +1057,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_002/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_002/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -970,8 +1114,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_006/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_006/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1019,8 +1171,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_011/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T200420Z_policy_evolved_g5_focus/cases/range_424242_011/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1081,8 +1241,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1130,8 +1298,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_000/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_000/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1179,8 +1355,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_002/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_002/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1228,8 +1412,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_006/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_006/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1277,8 +1469,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_011/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T195745Z_policy_evolved_g10_focus/cases/range_424242_011/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1339,8 +1539,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1388,8 +1596,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_000/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_000/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1437,8 +1653,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_002/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_002/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1486,8 +1710,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_006/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_006/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1535,8 +1767,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_011/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T195252Z_policy_evolved_g5_focus/cases/range_424242_011/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1597,8 +1837,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1646,8 +1894,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_000/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_000/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1695,8 +1951,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_002/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_002/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1744,8 +2008,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_006/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_006/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1793,8 +2065,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_011/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194647Z_evolved_g3_focus/cases/range_424242_011/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1855,8 +2135,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1904,8 +2192,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_000/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_000/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -1953,8 +2249,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_002/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_002/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2002,8 +2306,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_006/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_006/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2051,8 +2363,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_011/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194624Z_detach_smoke_v229/cases/range_424242_011/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2113,8 +2433,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2162,8 +2490,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_000/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_000/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2211,8 +2547,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_002/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_002/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2260,8 +2604,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_006/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_006/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2309,8 +2661,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_011/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T194442Z_v229_focus_smoke/cases/range_424242_011/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2371,8 +2731,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/ball_x_pos/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/ball_x_pos/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/ball_x_pos/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2420,8 +2788,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/ball_y_pos/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/ball_y_pos/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/ball_y_pos/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2469,8 +2845,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_crosswind_a/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_crosswind_a/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_crosswind_a/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2518,8 +2902,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_crosswind_b/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_crosswind_b/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_crosswind_b/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2567,8 +2959,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_high_slow_delay3/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_high_slow_delay3/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_high_slow_delay3/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2616,8 +3016,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_initial_offsets_a/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_initial_offsets_a/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_initial_offsets_a/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2665,8 +3073,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_initial_offsets_b/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_initial_offsets_b/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_initial_offsets_b/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2714,8 +3130,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_jitter_only/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_jitter_only/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_jitter_only/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2763,8 +3187,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_low_fast_delay6/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_low_fast_delay6/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_low_fast_delay6/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2812,8 +3244,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_noise_delay6/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_noise_delay6/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/edge_noise_delay6/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2861,8 +3301,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/low_fast/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/low_fast/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/low_fast/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2910,8 +3358,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T064458Z_U_overnight_v109_public/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -2972,8 +3428,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/ball_x_pos/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/ball_x_pos/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/ball_x_pos/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -3021,8 +3485,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/ball_y_pos/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/ball_y_pos/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/ball_y_pos/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -3070,8 +3542,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/low_fast/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/low_fast/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/low_fast/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -3119,8 +3599,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T062348Z_flyaway_fix_public/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -3181,8 +3669,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T060742Z_U4_nominal_postsep/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T060742Z_U4_nominal_postsep/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T060742Z_U4_nominal_postsep/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -3243,8 +3739,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/ball_x_pos/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/ball_x_pos/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/ball_x_pos/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -3292,8 +3796,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/ball_y_pos/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/ball_y_pos/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/ball_y_pos/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -3341,8 +3853,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/low_fast/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/low_fast/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/low_fast/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -3390,8 +3910,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T060409Z_U3_public_smoke/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",
@@ -3452,8 +3980,16 @@
         },
         "videos": [
           {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260714T055836Z_U1_nominal/cases/nominal/render_2d.gif"
+          },
+          {
             "filename": "render_2d.mp4",
             "rel_path": "data/20260714T055836Z_U1_nominal/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260714T055836Z_U1_nominal/cases/nominal/render_3d.gif"
           },
           {
             "filename": "render_3d.mp4",

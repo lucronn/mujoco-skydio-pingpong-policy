@@ -266,7 +266,7 @@
     box-shadow: 0 4px 12px rgba(0, 242, 254, 0.35);
   }
 
-  .mini-video-wrapper video {
+  .mini-video-wrapper video, .mini-video-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1333,8 +1333,9 @@
       const videos2d = [];
       
       sortedCases.forEach(c => {
-        const v3d = c.videos.find(v => v.filename === 'render_3d.mp4');
-        const v2d = c.videos.find(v => v.filename === 'render_2d.mp4');
+        // Look for GIF first, fallback to MP4
+        const v3d = c.videos.find(v => v.filename === 'render_3d.gif') || c.videos.find(v => v.filename === 'render_3d.mp4');
+        const v2d = c.videos.find(v => v.filename === 'render_2d.gif') || c.videos.find(v => v.filename === 'render_2d.mp4');
         if (v3d) videos3d.push({ video: v3d, caseName: c.name, type: '3D' });
         if (v2d) videos2d.push({ video: v2d, caseName: c.name, type: '2D' });
       });
@@ -1360,12 +1361,23 @@
       allRenders.forEach(item => {
         const cleanCaseName = item.caseName.replace(/_/g, ' ');
         const tooltipText = `${cleanCaseName} (${item.type})`;
-        miniGridHtml += `
-          <div class="mini-video-wrapper">
-            <video src="${item.video.rel_path}" autoplay loop muted playsinline preload="metadata"></video>
-            <div class="mini-video-tooltip">${tooltipText}</div>
-          </div>
-        `;
+        const isGif = item.video.rel_path.endsWith('.gif');
+        
+        if (isGif) {
+          miniGridHtml += `
+            <div class="mini-video-wrapper">
+              <img src="${item.video.rel_path}" alt="${tooltipText}" loading="lazy">
+              <div class="mini-video-tooltip">${tooltipText}</div>
+            </div>
+          `;
+        } else {
+          miniGridHtml += `
+            <div class="mini-video-wrapper">
+              <video src="${item.video.rel_path}" autoplay loop muted playsinline preload="metadata"></video>
+              <div class="mini-video-tooltip">${tooltipText}</div>
+            </div>
+          `;
+        }
       });
       miniGridHtml += `</div>`;
 
