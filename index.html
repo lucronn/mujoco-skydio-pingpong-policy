@@ -909,6 +909,120 @@
   .text-danger { color: var(--color-rose); }
   .text-warn { color: var(--color-orange); }
 
+  /* Matrix Wall Mode CSS */
+  .wall-container-box {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    background: #000;
+  }
+
+  .wall-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: #000;
+  }
+
+  .wall-cell {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #000;
+    cursor: pointer;
+  }
+
+  .wall-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .wall-cell:hover img {
+    transform: scale(1.15);
+    z-index: 2;
+  }
+
+  .wall-cell .wall-tooltip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    color: #fff;
+    font-size: 0.58rem;
+    font-weight: 500;
+    padding: 3px 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 10;
+  }
+
+  .wall-cell:hover .wall-tooltip {
+    opacity: 1;
+  }
+
+  /* Fullscreen styles */
+  .wall-grid.fullscreen-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    background: #000;
+  }
+
+  .wall-grid.fullscreen-active .wall-cell {
+    aspect-ratio: unset;
+    height: 100%;
+    width: 100%;
+  }
+
+  .fullscreen-close-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    z-index: 100000;
+    backdrop-filter: blur(4px);
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+
+  .fullscreen-close-btn:hover {
+    background: var(--color-rose);
+    border-color: var(--color-rose);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
   /* Utility footer */
   footer {
     margin-top: 60px;
@@ -993,6 +1107,32 @@
       </div>
     </div>
   </section>
+
+  <!-- Matrix Wall Mode Section (8x5 Grid Wall) -->
+  <div class="section-title-container">
+    <h2>
+      <svg height="18" width="18" fill="var(--color-emerald)" viewBox="0 0 24 24"><path d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm6 0h4v4h-4V4zM4 10h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 16h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z"/></svg>
+      Evolution Video Wall
+      <span class="tag" style="background: rgba(16, 185, 129, 0.15); color: var(--color-emerald);">8x5 Matrix Wall</span>
+    </h2>
+    <div class="btn-actions">
+      <button class="action-btn" id="btn-fullscreen-wall" onclick="toggleFullscreenWall()">
+        <svg height="14" width="14" fill="currentColor" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+        Fullscreen Wall Mode
+      </button>
+    </div>
+  </div>
+  <p class="section-desc">A compacted, zero-gap 8x5 grid displaying the 40 most recent rollout renders simultaneously in an infinite loop.</p>
+
+  <div class="wall-container-box">
+    <div class="wall-grid" id="wall-grid-element">
+      <!-- Rendered dynamically -->
+    </div>
+  </div>
+
+  <button class="fullscreen-close-btn" id="btn-close-fullscreen-wall" onclick="exitFullscreenWall()" style="display:none;">
+    Exit Fullscreen Wall (Esc)
+  </button>
 
   <!-- 3x3 Grid Section (Last 9 Videos) -->
   <div class="section-title-container">
@@ -1157,6 +1297,9 @@
 
     // Populate charts
     renderProgressionChart();
+
+    // Render Matrix Wall (8x5 grid)
+    renderMatrixWall();
 
     // Render 3x3 grid (last 9 nominal videos)
     renderLatest9Grid();
@@ -1415,6 +1558,111 @@
       gridContainer.appendChild(card);
     });
   }
+
+  // Render the 8x5 Matrix Video Wall using the 40 latest renders
+  function renderMatrixWall() {
+    const wallGrid = document.getElementById('wall-grid-element');
+    if (!wallGrid) return;
+    wallGrid.innerHTML = '';
+
+    // Collect all case renders from the newest runs down
+    let allRenders = [];
+    
+    // Sort runs newest first
+    for (let run of progressionData) {
+      // Sort cases by name (nominal first, then range cases)
+      const sortedCases = [...run.cases].sort((a, b) => {
+        if (a.name === 'nominal') return -1;
+        if (b.name === 'nominal') return 1;
+        return a.name.localeCompare(b.name);
+      });
+
+      for (let c of sortedCases) {
+        // Look for GIF first, fallback to MP4
+        const v3d = c.videos.find(v => v.filename === 'render_3d.gif') || c.videos.find(v => v.filename === 'render_3d.mp4');
+        const v2d = c.videos.find(v => v.filename === 'render_2d.gif') || c.videos.find(v => v.filename === 'render_2d.mp4');
+        
+        const runLabel = (run.meta.label || run.dir_name).replace('_focus', '').replace('policy_evolved_', 'Evolved ');
+
+        if (v3d) {
+          allRenders.push({
+            run: run,
+            caseName: c.name,
+            video: v3d,
+            type: '3D',
+            runLabel: runLabel
+          });
+        }
+        if (v2d) {
+          allRenders.push({
+            run: run,
+            caseName: c.name,
+            video: v2d,
+            type: '2D',
+            runLabel: runLabel
+          });
+        }
+      }
+    }
+
+    // Take the 40 latest renders (to fill the 8x5 grid)
+    const latest40Renders = allRenders.slice(0, 40);
+
+    latest40Renders.forEach(item => {
+      const cleanCaseName = item.caseName.replace(/_/g, ' ');
+      const tooltipText = `${item.runLabel} · ${cleanCaseName} (${item.type})`;
+      const isGif = item.video.rel_path.endsWith('.gif');
+
+      const cell = document.createElement('div');
+      cell.className = 'wall-cell';
+      cell.onclick = () => openModal(item.run, item.caseName);
+
+      if (isGif) {
+        cell.innerHTML = `
+          <img src="${item.video.rel_path}" alt="${tooltipText}" loading="lazy">
+          <div class="wall-tooltip">${tooltipText}</div>
+        `;
+      } else {
+        cell.innerHTML = `
+          <video src="${item.video.rel_path}" autoplay loop muted playsinline preload="metadata"></video>
+          <div class="wall-tooltip">${tooltipText}</div>
+        `;
+      }
+
+      wallGrid.appendChild(cell);
+    });
+  }
+
+  // Toggle Fullscreen Wall Mode
+  function toggleFullscreenWall() {
+    const wallGrid = document.getElementById('wall-grid-element');
+    const closeBtn = document.getElementById('btn-close-fullscreen-wall');
+    
+    if (wallGrid.classList.contains('fullscreen-active')) {
+      exitFullscreenWall();
+    } else {
+      wallGrid.classList.add('fullscreen-active');
+      closeBtn.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Lock main page scrolling
+    }
+  }
+
+  // Exit Fullscreen Wall Mode
+  function exitFullscreenWall() {
+    const wallGrid = document.getElementById('wall-grid-element');
+    const closeBtn = document.getElementById('btn-close-fullscreen-wall');
+    
+    wallGrid.classList.remove('fullscreen-active');
+    closeBtn.style.display = 'none';
+    document.body.style.overflow = ''; // Restore main page scrolling
+  }
+
+  // Handle Escape key to exit fullscreen wall
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      exitFullscreenWall();
+    }
+  });
 
   // Format ISO timestamp (e.g. 20260714T201031Z) to human-readable format
   function formatTimestamp(ts) {
