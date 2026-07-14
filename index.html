@@ -238,6 +238,64 @@
     object-fit: cover;
   }
 
+  .mini-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 4px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .mini-video-wrapper {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+  }
+
+  .mini-video-wrapper:hover {
+    border-color: var(--color-cyan);
+    transform: scale(1.15);
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 242, 254, 0.35);
+  }
+
+  .mini-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mini-video-wrapper .mini-video-tooltip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 2px 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .mini-video-wrapper:hover .mini-video-tooltip {
+    opacity: 1;
+  }
+
   .cell-meta {
     padding: 16px;
     flex-grow: 1;
@@ -1263,28 +1321,57 @@
     const latest9Runs = progressionData.slice(0, 9);
 
     latest9Runs.forEach((run, index) => {
-      const nominalCase = run.cases.find(c => c.name === 'nominal');
-      if (!nominalCase) return;
+      // Find all videos in this run/progression
+      // Sort cases by name: nominal first, then range cases.
+      const sortedCases = [...run.cases].sort((a, b) => {
+        if (a.name === 'nominal') return -1;
+        if (b.name === 'nominal') return 1;
+        return a.name.localeCompare(b.name);
+      });
+      
+      const videos3d = [];
+      const videos2d = [];
+      
+      sortedCases.forEach(c => {
+        const v3d = c.videos.find(v => v.filename === 'render_3d.mp4');
+        const v2d = c.videos.find(v => v.filename === 'render_2d.mp4');
+        if (v3d) videos3d.push({ video: v3d, caseName: c.name, type: '3D' });
+        if (v2d) videos2d.push({ video: v2d, caseName: c.name, type: '2D' });
+      });
 
-      const video3d = nominalCase.videos.find(v => v.filename === 'render_3d.mp4');
-      if (!video3d) return;
+      // Combined list: Row 1 is 3D renders, Row 2 is 2D renders
+      const allRenders = [...videos3d, ...videos2d];
 
-      const metrics = nominalCase.metrics || {};
       const label = run.meta.label || run.dir_name;
       const cleanLabel = label.replace('_focus', '').replace('policy_evolved_', 'Evolved ');
       const cleanTime = formatTimestamp(run.meta.created_utc);
       
       const card = document.createElement('article');
       card.className = 'grid-cell';
-      card.onclick = () => openModal(run, nominalCase.name);
+      card.onclick = () => openModal(run, 'nominal');
 
+      let nominalCase = run.cases.find(c => c.name === 'nominal');
+      const metrics = nominalCase ? (nominalCase.metrics || {}) : {};
       const isCrashed = metrics.drone_crash === 1 || metrics.drone_crash === true;
       const crashBadge = isCrashed ? '<span class="cell-badge crash">CRASH</span>' : '<span class="cell-badge success">SUCCESS</span>';
 
+      // Build mini-videos HTML
+      let miniGridHtml = `<div class="mini-videos-grid">`;
+      allRenders.forEach(item => {
+        const cleanCaseName = item.caseName.replace(/_/g, ' ');
+        const tooltipText = `${cleanCaseName} (${item.type})`;
+        miniGridHtml += `
+          <div class="mini-video-wrapper">
+            <video src="${item.video.rel_path}" autoplay loop muted playsinline preload="metadata"></video>
+            <div class="mini-video-tooltip">${tooltipText}</div>
+          </div>
+        `;
+      });
+      miniGridHtml += `</div>`;
+
       card.innerHTML = `
-        <div class="video-container">
-          <video src="${video3d.rel_path}" autoplay loop muted playsinline preload="metadata"></video>
-          <div class="cell-overlay">Nominal 3D</div>
+        <div class="video-container" style="aspect-ratio: unset; height: auto;">
+          ${miniGridHtml}
         </div>
         <div class="cell-meta">
           <div>
@@ -1293,13 +1380,13 @@
               <span class="time">${cleanTime}</span>
             </h3>
             <div style="font-size: 0.82rem; color: var(--text-secondary);">
-              Gates: <span style="color:#fff; font-weight:600">${metrics.raw_gates_passed || 0}</span> · 
-              Bounces: <span style="color:#fff; font-weight:600">${metrics.bounced_gate_passes || 0}</span> ·
+              Nominal Score: <span style="color:#fff; font-weight:600">${metrics.score ? metrics.score.toFixed(3) : 'N/A'}</span> · 
+              Gates: <span style="color:#fff; font-weight:600">${metrics.raw_gates_passed || 0}</span> ·
               Windows: <span style="color:#fff; font-weight:600">${metrics.drone_windows_passed || 0}</span>
             </div>
           </div>
           <div class="cell-stats">
-            <span class="cell-badge score">Score: ${metrics.score ? metrics.score.toFixed(3) : 'N/A'}</span>
+            <span class="cell-badge" style="color: var(--color-violet); border-color: rgba(162, 155, 254, 0.2); background: rgba(162, 155, 254, 0.05);">Renders: ${allRenders.length}</span>
             ${crashBadge}
           </div>
         </div>
