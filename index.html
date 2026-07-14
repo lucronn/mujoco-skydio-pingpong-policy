@@ -1559,7 +1559,7 @@
     });
   }
 
-  // Render the 8x5 Matrix Video Wall using the 40 latest renders
+  // Render the 8x5 Matrix Video Wall using the 40 latest MP4 renders (high-res)
   function renderMatrixWall() {
     const wallGrid = document.getElementById('wall-grid-element');
     if (!wallGrid) return;
@@ -1578,9 +1578,9 @@
       });
 
       for (let c of sortedCases) {
-        // Look for GIF first, fallback to MP4
-        const v3d = c.videos.find(v => v.filename === 'render_3d.gif') || c.videos.find(v => v.filename === 'render_3d.mp4');
-        const v2d = c.videos.find(v => v.filename === 'render_2d.gif') || c.videos.find(v => v.filename === 'render_2d.mp4');
+        // Query original MP4 renders specifically to prevent blurriness
+        const v3d = c.videos.find(v => v.filename === 'render_3d.mp4');
+        const v2d = c.videos.find(v => v.filename === 'render_2d.mp4');
         
         const runLabel = (run.meta.label || run.dir_name).replace('_focus', '').replace('policy_evolved_', 'Evolved ');
 
@@ -1611,23 +1611,16 @@
     latest40Renders.forEach(item => {
       const cleanCaseName = item.caseName.replace(/_/g, ' ');
       const tooltipText = `${item.runLabel} · ${cleanCaseName} (${item.type})`;
-      const isGif = item.video.rel_path.endsWith('.gif');
 
       const cell = document.createElement('div');
       cell.className = 'wall-cell';
       cell.onclick = () => openModal(item.run, item.caseName);
 
-      if (isGif) {
-        cell.innerHTML = `
-          <img src="${item.video.rel_path}" alt="${tooltipText}" loading="lazy">
-          <div class="wall-tooltip">${tooltipText}</div>
-        `;
-      } else {
-        cell.innerHTML = `
-          <video src="${item.video.rel_path}" autoplay loop muted playsinline preload="metadata"></video>
-          <div class="wall-tooltip">${tooltipText}</div>
-        `;
-      }
+      // Render as paused MP4 video. No autoplay by default on the dashboard page.
+      cell.innerHTML = `
+        <video src="${item.video.rel_path}" loop muted playsinline preload="metadata"></video>
+        <div class="wall-tooltip">${tooltipText}</div>
+      `;
 
       wallGrid.appendChild(cell);
     });
@@ -1641,9 +1634,22 @@
     if (wallGrid.classList.contains('fullscreen-active')) {
       exitFullscreenWall();
     } else {
+      // Pause all other videos in the background (like the archive gallery)
+      document.querySelectorAll('video').forEach(v => {
+        if (!wallGrid.contains(v)) {
+          v.pause();
+        }
+      });
+
+      // Enter fullscreen wall
       wallGrid.classList.add('fullscreen-active');
       closeBtn.style.display = 'block';
       document.body.style.overflow = 'hidden'; // Lock main page scrolling
+
+      // Play all 40 high-res videos simultaneously in fullscreen
+      wallGrid.querySelectorAll('video').forEach(v => {
+        v.play().catch(e => console.log('Autoplay blocked or failed:', e));
+      });
     }
   }
 
@@ -1652,6 +1658,13 @@
     const wallGrid = document.getElementById('wall-grid-element');
     const closeBtn = document.getElementById('btn-close-fullscreen-wall');
     
+    if (!wallGrid.classList.contains('fullscreen-active')) return;
+
+    // Pause all 40 wall videos in the background to free system resources
+    wallGrid.querySelectorAll('video').forEach(v => {
+      v.pause();
+    });
+
     wallGrid.classList.remove('fullscreen-active');
     closeBtn.style.display = 'none';
     document.body.style.overflow = ''; // Restore main page scrolling
