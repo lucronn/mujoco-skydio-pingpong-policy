@@ -149,3 +149,21 @@ PROGRESSION /mnt/openfoam/pingpong-venv/progression/20260714T201031Z_policy_evol
     sc=0.2099 bg=2
 AGGREGATE raw=28.1991 mbg=3.000 -> /mnt/openfoam/pingpong-venv/progression/20260714T201031Z_policy_evolved_g12_focus
 POINTER /mnt/openfoam/pingpong-venv/progression/overnight_log/last_progression.json
+
+# evolve install progression 20260715T004846Z
+
+# detach 2026-07-15T00:48:46.587233+00:00 /mnt/openfoam/pingpong-venv/.venv/bin/python /mnt/openfoam/pingpong-venv/repair_work/write_champ_progression.py --policy /mnt/openfoam/pingpong-venv/progression/_staging/20260715T004846Z_policy_evolved_g396/policy.py --suite focus --root /mnt/openfoam/pingpong-venv/progression --no-snapshot --label policy_evolved_g396_focus
+PROGRESSION_DETACHED pid=2568721 staging=/mnt/openfoam/pingpong-venv/progression/_staging/20260715T004846Z_policy_evolved_g396 log=/mnt/openfoam/pingpong-venv/progression/overnight_log/progression_write.log
+PROGRESSION /mnt/openfoam/pingpong-venv/progression/20260715T004847Z_policy_evolved_g396_focus policy=/mnt/openfoam/pingpong-venv/progression/_staging/20260715T004846Z_policy_evolved_g396/policy.py suite=focus n=5
+  [1/5] render nominal ...
+    sc=0.7120 bg=4
+  [2/5] render range_424242_000 ...
+    sc=0.2730 bg=3
+  [3/5] render range_424242_002 ...
+    sc=0.2117 bg=2
+  [4/5] render range_424242_006 ...
+    sc=0.2646 bg=3
+  [5/5] render range_424242_011 ...
+    sc=0.2022 bg=2
+AGGREGATE raw=25.8888 mbg=2.800 -> /mnt/openfoam/pingpong-venv/progression/20260715T004847Z_policy_evolved_g396_focus
+POINTER /mnt/openfoam/pingpong-venv/progression/overnight_log/last_progression.json

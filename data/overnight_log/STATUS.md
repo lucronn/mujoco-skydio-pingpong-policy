@@ -15,3 +15,8 @@ Target **>50**; still **8 bg=1**. Soft CEM climb only — mechanism leap still n
 
 ## Not primary
 Hand multiagent bands · finite `--gens` · autodriver · cold-start RL
+
+## Progression pack 20260715T005011Z
+- `20260715T004847Z_policy_evolved_g396_focus` suite=focus raw=25.89 mbg=2.80
+- policy `policy_evolved_g396.py` (rendered from staging snapshot)
+

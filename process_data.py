@@ -9,8 +9,10 @@ if not os.path.exists(data_dir):
     print(f"Error: data directory not found at {data_dir}")
     exit(1)
 
-# Find run directories matching 20260714T* in the data_dir
-run_dirs = sorted([d for d in os.listdir(data_dir) if d.startswith("20260714T") and os.path.isdir(os.path.join(data_dir, d))], reverse=True)
+import re
+
+# Find run directories matching timestamp prefix in the data_dir
+run_dirs = sorted([d for d in os.listdir(data_dir) if re.match(r"^\d{8}T\d{6}Z_", d) and os.path.isdir(os.path.join(data_dir, d))], reverse=True)
 
 runs = []
 for run_dir_name in run_dirs:
