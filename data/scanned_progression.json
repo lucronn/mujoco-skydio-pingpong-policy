@@ -1,5 +1,1390 @@
 [
   {
+    "dir_name": "20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout",
+    "meta": {
+      "label": "policy_evolved_ci_20260716T164450Z_heldout",
+      "created_utc": "20260716T164450Z",
+      "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout",
+      "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+      "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+      "rel_policy_path": "data/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py"
+    },
+    "cases": [
+      {
+        "name": "ball_x_pos",
+        "metrics": {
+          "score": 0.2646,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 60.81158486453905,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            17.009685490098825,
+            2.2090252970407604,
+            0.0599622794287539
+          ],
+          "final_drone_pos": [
+            7.567016788058838,
+            1.7604500730183443,
+            1.3652967217330712
+          ],
+          "contacts": 20,
+          "observation_mode": "partial",
+          "scenario_name": "ball_x_pos",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/ball_x_pos/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/ball_x_pos/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/ball_x_pos/trajectory_2d.png"
+      },
+      {
+        "name": "ball_y_pos",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 152.79078524255527,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            2.7407690117951424,
+            9.333884473573885,
+            0.05995309520655086
+          ],
+          "final_drone_pos": [
+            8.417131161757164,
+            14.92073312893453,
+            1.3491003742979832
+          ],
+          "contacts": 10,
+          "observation_mode": "partial",
+          "scenario_name": "ball_y_pos",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/ball_y_pos/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/ball_y_pos/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/ball_y_pos/trajectory_2d.png"
+      },
+      {
+        "name": "edge_crosswind_a",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 153.6796173802637,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            4.131891313227861,
+            2.745304504088343,
+            0.05994788054173749
+          ],
+          "final_drone_pos": [
+            3.8457296467482163,
+            1.198190957727204,
+            0.32403417555947656
+          ],
+          "contacts": 15,
+          "observation_mode": "partial",
+          "scenario_name": "edge_crosswind_a",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_crosswind_a/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_crosswind_a/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_crosswind_a/trajectory_2d.png"
+      },
+      {
+        "name": "edge_crosswind_b",
+        "metrics": {
+          "score": 0.13979999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 118.62905635129398,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            17.5452082219426,
+            -2.188330156392246,
+            0.0599638384100309
+          ],
+          "final_drone_pos": [
+            1.9004423758251248,
+            0.7535698728159884,
+            0.14497707940054994
+          ],
+          "contacts": 5,
+          "observation_mode": "partial",
+          "scenario_name": "edge_crosswind_b",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_crosswind_b/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_crosswind_b/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_crosswind_b/trajectory_2d.png"
+      },
+      {
+        "name": "edge_high_slow_delay3",
+        "metrics": {
+          "score": 0.20219999999999996,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 179.38724395715843,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            15.2817770319304,
+            5.4074209223327365,
+            0.05998148023592413
+          ],
+          "final_drone_pos": [
+            9.501095597916558,
+            4.7333831639488295,
+            1.3773963414296448
+          ],
+          "contacts": 10,
+          "observation_mode": "partial",
+          "scenario_name": "edge_high_slow_delay3",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_high_slow_delay3/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_high_slow_delay3/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_high_slow_delay3/trajectory_2d.png"
+      },
+      {
+        "name": "edge_initial_offsets_a",
+        "metrics": {
+          "score": 0.126,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 1,
+          "drone_windows_passed": 3,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 59.652241614130716,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            2.021253310271825,
+            -9.755015997486908,
+            0.05996907765373229
+          ],
+          "final_drone_pos": [
+            5.8164306670097465,
+            -2.306968649166973,
+            1.5922806133710383
+          ],
+          "contacts": 159,
+          "observation_mode": "partial",
+          "scenario_name": "edge_initial_offsets_a",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_initial_offsets_a/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_initial_offsets_a/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_initial_offsets_a/trajectory_2d.png"
+      },
+      {
+        "name": "edge_initial_offsets_b",
+        "metrics": {
+          "score": 0.1344,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 1,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 134.71856569269232,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            -2.137179261581261,
+            3.0113628771932173,
+            0.05995085892362967
+          ],
+          "final_drone_pos": [
+            4.091245262826912,
+            2.3571859683073373,
+            2.409274781473614
+          ],
+          "contacts": 1,
+          "observation_mode": "partial",
+          "scenario_name": "edge_initial_offsets_b",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_initial_offsets_b/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_initial_offsets_b/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_initial_offsets_b/trajectory_2d.png"
+      },
+      {
+        "name": "edge_jitter_only",
+        "metrics": {
+          "score": 0.19512,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 177.9084286905054,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            4.656811327899646,
+            0.345882858771094,
+            0.05994788072571027
+          ],
+          "final_drone_pos": [
+            4.627610244237598,
+            1.9413000239006963,
+            0.2699268212551369
+          ],
+          "contacts": 82,
+          "observation_mode": "partial",
+          "scenario_name": "edge_jitter_only",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_jitter_only/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_jitter_only/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_jitter_only/trajectory_2d.png"
+      },
+      {
+        "name": "edge_low_fast_delay6",
+        "metrics": {
+          "score": 0.20736000000000002,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 110.1346442948669,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            -5.736314845747457,
+            -3.8417750289563886,
+            0.06000590834156409
+          ],
+          "final_drone_pos": [
+            3.849379522681862,
+            0.8739941910709528,
+            0.38864205656330997
+          ],
+          "contacts": 31,
+          "observation_mode": "partial",
+          "scenario_name": "edge_low_fast_delay6",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_low_fast_delay6/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_low_fast_delay6/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_low_fast_delay6/trajectory_2d.png"
+      },
+      {
+        "name": "edge_noise_delay6",
+        "metrics": {
+          "score": 0.19344,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 68.01581071135284,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            4.5157998267052095,
+            -2.304012454870247,
+            0.05995155285275604
+          ],
+          "final_drone_pos": [
+            3.7791499692813018,
+            2.177916036564753,
+            1.6661327950446876
+          ],
+          "contacts": 89,
+          "observation_mode": "partial",
+          "scenario_name": "edge_noise_delay6",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_noise_delay6/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_noise_delay6/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/edge_noise_delay6/trajectory_2d.png"
+      },
+      {
+        "name": "low_fast",
+        "metrics": {
+          "score": 0.5009999999998519,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.9999999999975313,
+          "target_box_entered": 1,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 104.26768975598338,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            6.754067451997316,
+            2.6943316302975053,
+            0.10891543788444139
+          ],
+          "final_drone_pos": [
+            4.504759702794257,
+            0.8156692007050584,
+            0.3589098471943738
+          ],
+          "contacts": 28,
+          "observation_mode": "partial",
+          "scenario_name": "low_fast",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/low_fast/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/low_fast/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/low_fast/trajectory_2d.png"
+      },
+      {
+        "name": "nominal",
+        "metrics": {
+          "score": 0.7744088297748335,
+          "hard_success": 0,
+          "bounced_gate_passes": 4,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 2,
+          "target_box_score": 0.9999999999712519,
+          "target_box_entered": 1,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 149.29098015432515,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            6.524562222873674,
+            2.7669309395073833,
+            0.10891543788444136
+          ],
+          "final_drone_pos": [
+            3.773346341446041,
+            -0.054478941438988224,
+            1.291723256937714
+          ],
+          "contacts": 15,
+          "observation_mode": "partial",
+          "scenario_name": "nominal",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/nominal/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/nominal/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_000",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 179.99998453750163,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            7.8011153927907655,
+            5.146257896014367,
+            0.05994788077116185
+          ],
+          "final_drone_pos": [
+            4.205022308477311,
+            2.1259969258723963,
+            1.3049793606068905
+          ],
+          "contacts": 9,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_000",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_000/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_000/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_001",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 90.382202909173,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            0.5099793707146631,
+            5.777441768671308,
+            0.059948812493602496
+          ],
+          "final_drone_pos": [
+            3.153710678899677,
+            1.3826645164129785,
+            0.35952309517255304
+          ],
+          "contacts": 6,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_001",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_001/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_001/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_001/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_002",
+        "metrics": {
+          "score": 0.2646,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 1,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 146.3417799770311,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            6.932894645096418,
+            2.8247347973333206,
+            0.10891543756942908
+          ],
+          "final_drone_pos": [
+            3.153633539624949,
+            1.4011708078139544,
+            0.35956915328647443
+          ],
+          "contacts": 4,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_002",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_002/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_002/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_003",
+        "metrics": {
+          "score": 0.13683199999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 120.02978606333684,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            7.321178553860961,
+            0.1401002537183947,
+            0.0599478808174887
+          ],
+          "final_drone_pos": [
+            4.928130206514923,
+            1.94229883010231,
+            1.500568246346285
+          ],
+          "contacts": 98,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_003",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_003/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_003/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_003/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_004",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 178.5183618863367,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            -1.1186342853405795,
+            5.802151195411521,
+            0.05995274374184817
+          ],
+          "final_drone_pos": [
+            2.002196169495882,
+            4.651308270153846,
+            0.287592842363645
+          ],
+          "contacts": 6,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_004",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_004/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_004/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_004/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_005",
+        "metrics": {
+          "score": 0.20519999999999997,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 63.02714571935139,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            15.351028128692763,
+            6.1904330823499425,
+            0.05995607180348202
+          ],
+          "final_drone_pos": [
+            20.512586436993,
+            5.807505625125884,
+            1.382919126725435
+          ],
+          "contacts": 40,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_005",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_005/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_005/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_005/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_006",
+        "metrics": {
+          "score": 0.5175491298213277,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.9915377134655143,
+          "target_box_entered": 1,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 152.43387630419764,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            6.5031084397024115,
+            2.788977909474865,
+            0.1089154374681901
+          ],
+          "final_drone_pos": [
+            5.856205871656529,
+            1.607890894366918,
+            0.358045887082345
+          ],
+          "contacts": 5,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_006",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_006/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_006/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_007",
+        "metrics": {
+          "score": 0.20219999999999996,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 178.503459260512,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            5.127978813395555,
+            3.6187978536368375,
+            0.05994788073876197
+          ],
+          "final_drone_pos": [
+            6.584012202759457,
+            4.6213859113659765,
+            0.29414745263792297
+          ],
+          "contacts": 5,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_007",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_007/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_007/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_007/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_008",
+        "metrics": {
+          "score": 0.13979999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 153.8422707792394,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            15.686472250535726,
+            5.5306833592996565,
+            0.059968846461675746
+          ],
+          "final_drone_pos": [
+            5.862313440059525,
+            1.8502755108502231,
+            0.9073309176643706
+          ],
+          "contacts": 25,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_008",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_008/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_008/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_008/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_009",
+        "metrics": {
+          "score": 0.19655999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 153.92611754126017,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            4.396604688971251,
+            2.291529116206877,
+            0.05994788082164152
+          ],
+          "final_drone_pos": [
+            5.419459192299758,
+            0.58079992310702,
+            0.561885726075986
+          ],
+          "contacts": 76,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_009",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_009/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_009/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_009/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_010",
+        "metrics": {
+          "score": 0.2646,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.8423194146309021,
+          "drone_crash": 0,
+          "max_tilt_deg": 68.94201463422745,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            9.961193147120525,
+            7.841486390248479,
+            0.059964228571519736
+          ],
+          "final_drone_pos": [
+            9.479420157244867,
+            0.23231406220977824,
+            1.3782221954406604
+          ],
+          "contacts": 14,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_010",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_010/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_010/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_010/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_011",
+        "metrics": {
+          "score": 0.20954787723403395,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 156.33033620706672,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            7.39048757464961,
+            4.951979584746624,
+            0.05995791056494844
+          ],
+          "final_drone_pos": [
+            -1.8423091095637927,
+            -6.71641764604252,
+            1.3828605756919166
+          ],
+          "contacts": 3,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_011",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_011/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_011/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_012",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 179.99999295960217,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            6.056664798530711,
+            -0.13774144226317778,
+            0.05994788073849928
+          ],
+          "final_drone_pos": [
+            5.548525291994335,
+            -1.4158416211807818,
+            0.24796828462313672
+          ],
+          "contacts": 7,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_012",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_012/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_012/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_012/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_013",
+        "metrics": {
+          "score": 0.13979999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 2,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 172.0026484948634,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            3.233525006822516,
+            3.55025130477045,
+            0.05994788119430622
+          ],
+          "final_drone_pos": [
+            8.11216770986037,
+            1.0066489555047533,
+            0.17366222206126314
+          ],
+          "contacts": 21,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_013",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_013/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_013/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_013/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_014",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 2,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 0,
+          "max_tilt_deg": 45.394159381918854,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            1.8318418029089658,
+            3.4447241981239936,
+            0.059947880379574076
+          ],
+          "final_drone_pos": [
+            4.5467361780493185,
+            0.8117290344893642,
+            1.4545028884260702
+          ],
+          "contacts": 5,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_014",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_014/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_014/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_014/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_015",
+        "metrics": {
+          "score": 0.15059999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 1,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 177.27058198738655,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            2.8807676898387085,
+            -0.23315750673456329,
+            0.05994788070766968
+          ],
+          "final_drone_pos": [
+            2.3713316364684673,
+            0.6792127526339514,
+            0.29518572121765724
+          ],
+          "contacts": 20,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_015",
+          "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T164450Z_policy_evolved_ci_20260716T164450Z/policy.py",
+          "policy_sha256": "ffdafe1fb57764e4fd3651a12872af0e11b7cee06ec23518539d0d9737ab9fb6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_015/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_015/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260716T164450Z_policy_evolved_ci_20260716T164450Z_heldout/cases/range_424242_015/trajectory_2d.png"
+      }
+    ]
+  },
+  {
     "dir_name": "20260716T042938Z_policy_evolved_ci_20260716T042938Z_heldout",
     "meta": {
       "label": "policy_evolved_ci_20260716T042938Z_heldout",
