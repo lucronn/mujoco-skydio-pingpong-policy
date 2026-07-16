@@ -1,10 +1,10 @@
 {
-  "stamp": "20260716T100818Z",
+  "stamp": "20260716T101821Z",
   "mode": "until_raw>=50.0|hist_curriculum",
   "target_raw": 50.0,
   "history": [
     {
-      "gen": 332,
+      "gen": 0,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -15,11 +15,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.2793731689453125,
+      "elapsed_s": 4.319185495376587,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 333,
+      "gen": 1,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -30,11 +30,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.202769994735718,
+      "elapsed_s": 4.257422685623169,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 334,
+      "gen": 2,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -45,11 +45,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.171642303466797,
+      "elapsed_s": 4.255527973175049,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 335,
+      "gen": 3,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -60,11 +60,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.354786157608032,
+      "elapsed_s": 4.117606163024902,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 336,
+      "gen": 4,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -75,11 +75,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.434546947479248,
+      "elapsed_s": 4.22180962562561,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 337,
+      "gen": 5,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -90,11 +90,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.337429523468018,
+      "elapsed_s": 4.219910621643066,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 338,
+      "gen": 6,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -105,11 +105,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.55920672416687,
+      "elapsed_s": 4.260455131530762,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 339,
+      "gen": 7,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -120,11 +120,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.2804856300354,
+      "elapsed_s": 4.283964157104492,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 340,
+      "gen": 8,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -135,11 +135,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.278504133224487,
+      "elapsed_s": 4.196460008621216,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 341,
+      "gen": 9,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -150,11 +150,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.357113361358643,
+      "elapsed_s": 4.27486252784729,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 342,
+      "gen": 10,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -165,11 +165,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.296798229217529,
+      "elapsed_s": 4.211621046066284,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 343,
+      "gen": 11,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -180,11 +180,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.196072578430176,
+      "elapsed_s": 4.330890417098999,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 344,
+      "gen": 12,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -195,11 +195,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.4999964237213135,
+      "elapsed_s": 4.195600509643555,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 345,
+      "gen": 13,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -210,11 +210,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.301321744918823,
+      "elapsed_s": 4.304165363311768,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 346,
+      "gen": 14,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -225,11 +225,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.237269163131714,
+      "elapsed_s": 4.340018033981323,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 347,
+      "gen": 15,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -240,11 +240,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.391037225723267,
+      "elapsed_s": 4.256692409515381,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 348,
+      "gen": 16,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -255,11 +255,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.286330699920654,
+      "elapsed_s": 4.360395908355713,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 349,
+      "gen": 17,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -270,11 +270,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.220122337341309,
+      "elapsed_s": 4.2680840492248535,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 350,
+      "gen": 18,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -285,11 +285,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.319659948348999,
+      "elapsed_s": 4.30147647857666,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 351,
+      "gen": 19,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -300,11 +300,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.261089324951172,
+      "elapsed_s": 4.312228202819824,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 352,
+      "gen": 20,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -315,11 +315,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.438859462738037,
+      "elapsed_s": 4.513263702392578,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 353,
+      "gen": 21,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -330,11 +330,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.3564043045043945,
+      "elapsed_s": 4.246898651123047,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 354,
+      "gen": 22,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -345,11 +345,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.515615463256836,
+      "elapsed_s": 4.294216156005859,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 355,
+      "gen": 23,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -360,11 +360,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.234637975692749,
+      "elapsed_s": 4.324401140213013,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 356,
+      "gen": 24,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -375,11 +375,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.260608434677124,
+      "elapsed_s": 4.451251983642578,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 357,
+      "gen": 25,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -390,11 +390,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.3087592124938965,
+      "elapsed_s": 4.297351837158203,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 358,
+      "gen": 26,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -405,11 +405,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.427577018737793,
+      "elapsed_s": 4.288414239883423,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 359,
+      "gen": 27,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -420,11 +420,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.159326076507568,
+      "elapsed_s": 4.260390043258667,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 360,
+      "gen": 28,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -435,11 +435,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.170703411102295,
+      "elapsed_s": 4.3531410694122314,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 361,
+      "gen": 29,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -450,11 +450,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.306321620941162,
+      "elapsed_s": 4.159812688827515,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 362,
+      "gen": 30,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -465,11 +465,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.356431722640991,
+      "elapsed_s": 4.3079142570495605,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 363,
+      "gen": 31,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -480,11 +480,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.315292835235596,
+      "elapsed_s": 4.233724117279053,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 364,
+      "gen": 32,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -495,11 +495,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.432570457458496,
+      "elapsed_s": 4.126936197280884,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 365,
+      "gen": 33,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -510,11 +510,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.448244094848633,
+      "elapsed_s": 4.185666561126709,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 366,
+      "gen": 34,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -525,11 +525,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.326694488525391,
+      "elapsed_s": 4.314454793930054,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 367,
+      "gen": 35,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -540,11 +540,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.3066418170928955,
+      "elapsed_s": 4.231513738632202,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 368,
+      "gen": 36,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -555,11 +555,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.438154935836792,
+      "elapsed_s": 4.207115888595581,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 369,
+      "gen": 37,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -570,11 +570,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.244709253311157,
+      "elapsed_s": 4.204163074493408,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 370,
+      "gen": 38,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -585,11 +585,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.278273582458496,
+      "elapsed_s": 4.2684125900268555,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 371,
+      "gen": 39,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -600,11 +600,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.362657308578491,
+      "elapsed_s": 4.424685478210449,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 372,
+      "gen": 40,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -615,11 +615,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.309277534484863,
+      "elapsed_s": 4.27817702293396,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 373,
+      "gen": 41,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -630,11 +630,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.130539894104004,
+      "elapsed_s": 4.366061210632324,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 374,
+      "gen": 42,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -645,11 +645,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.340909957885742,
+      "elapsed_s": 4.530775547027588,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 375,
+      "gen": 43,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -660,11 +660,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.379099607467651,
+      "elapsed_s": 4.240232706069946,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 376,
+      "gen": 44,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -675,11 +675,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.313040256500244,
+      "elapsed_s": 4.367804050445557,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 377,
+      "gen": 45,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -690,11 +690,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.297000169754028,
+      "elapsed_s": 4.3965678215026855,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 378,
+      "gen": 46,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -705,11 +705,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.307272911071777,
+      "elapsed_s": 4.3974480628967285,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 379,
+      "gen": 47,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -720,11 +720,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.432761192321777,
+      "elapsed_s": 4.248284101486206,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 380,
+      "gen": 48,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -735,11 +735,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.346596956253052,
+      "elapsed_s": 4.504849195480347,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 381,
+      "gen": 49,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -750,11 +750,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.267849683761597,
+      "elapsed_s": 4.179197788238525,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 382,
+      "gen": 50,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -765,11 +765,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.21819543838501,
+      "elapsed_s": 4.361098527908325,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 383,
+      "gen": 51,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -780,11 +780,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.3606603145599365,
+      "elapsed_s": 4.374908685684204,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 384,
+      "gen": 52,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -795,11 +795,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.5018391609191895,
+      "elapsed_s": 4.23686957359314,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 385,
+      "gen": 53,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -810,11 +810,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.410656213760376,
+      "elapsed_s": 4.304700136184692,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 386,
+      "gen": 54,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -825,11 +825,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.388787508010864,
+      "elapsed_s": 4.162023544311523,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 387,
+      "gen": 55,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -840,11 +840,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.268003940582275,
+      "elapsed_s": 4.222865343093872,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 388,
+      "gen": 56,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -855,11 +855,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.315424203872681,
+      "elapsed_s": 4.491211891174316,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 389,
+      "gen": 57,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -870,11 +870,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.246501207351685,
+      "elapsed_s": 4.345704078674316,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 390,
+      "gen": 58,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -885,11 +885,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.579148530960083,
+      "elapsed_s": 4.259080171585083,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 391,
+      "gen": 59,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -900,11 +900,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.299493789672852,
+      "elapsed_s": 4.44887638092041,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 392,
+      "gen": 60,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -915,11 +915,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.519966125488281,
+      "elapsed_s": 4.3501136302948,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 393,
+      "gen": 61,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -930,11 +930,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.78141450881958,
+      "elapsed_s": 4.199708700180054,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 394,
+      "gen": 62,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -945,11 +945,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.23343563079834,
+      "elapsed_s": 4.316693067550659,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 395,
+      "gen": 63,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -960,11 +960,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.254995107650757,
+      "elapsed_s": 4.389248847961426,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 396,
+      "gen": 64,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -975,11 +975,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.381573677062988,
+      "elapsed_s": 4.373987913131714,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 397,
+      "gen": 65,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -990,11 +990,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.3417956829071045,
+      "elapsed_s": 4.411187648773193,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 398,
+      "gen": 66,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1005,11 +1005,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.258797883987427,
+      "elapsed_s": 4.203812599182129,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 399,
+      "gen": 67,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1020,11 +1020,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.447221040725708,
+      "elapsed_s": 4.384392499923706,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 400,
+      "gen": 68,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1035,11 +1035,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.3276073932647705,
+      "elapsed_s": 4.3952696323394775,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 401,
+      "gen": 69,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1050,11 +1050,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.272851467132568,
+      "elapsed_s": 4.347619295120239,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 402,
+      "gen": 70,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1065,11 +1065,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.152305364608765,
+      "elapsed_s": 4.21895432472229,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 403,
+      "gen": 71,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1080,11 +1080,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.2786500453948975,
+      "elapsed_s": 4.270347595214844,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 404,
+      "gen": 72,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1095,11 +1095,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.332493543624878,
+      "elapsed_s": 4.42512845993042,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 405,
+      "gen": 73,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1110,11 +1110,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.365219831466675,
+      "elapsed_s": 4.350701570510864,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 406,
+      "gen": 74,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1125,11 +1125,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.331942796707153,
+      "elapsed_s": 4.248446464538574,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 407,
+      "gen": 75,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1140,11 +1140,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.505265474319458,
+      "elapsed_s": 4.305656433105469,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 408,
+      "gen": 76,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1155,11 +1155,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.279420852661133,
+      "elapsed_s": 4.460824251174927,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 409,
+      "gen": 77,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1170,11 +1170,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.335186004638672,
+      "elapsed_s": 4.390697002410889,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 410,
+      "gen": 78,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1185,11 +1185,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.420262813568115,
+      "elapsed_s": 4.3393943309783936,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 411,
+      "gen": 79,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1200,11 +1200,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.353062152862549,
+      "elapsed_s": 4.42571759223938,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 412,
+      "gen": 80,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1215,11 +1215,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.271915912628174,
+      "elapsed_s": 4.198296070098877,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 413,
+      "gen": 81,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1230,11 +1230,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.5156495571136475,
+      "elapsed_s": 4.264941453933716,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 414,
+      "gen": 82,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1245,11 +1245,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.36643123626709,
+      "elapsed_s": 4.2929768562316895,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 415,
+      "gen": 83,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1260,11 +1260,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.360368013381958,
+      "elapsed_s": 4.166529417037964,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 416,
+      "gen": 84,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1275,11 +1275,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.267630100250244,
+      "elapsed_s": 4.394406080245972,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 417,
+      "gen": 85,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1290,11 +1290,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.5429253578186035,
+      "elapsed_s": 4.3972837924957275,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 418,
+      "gen": 86,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1305,11 +1305,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.527604341506958,
+      "elapsed_s": 4.344910621643066,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 419,
+      "gen": 87,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1320,11 +1320,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.401064157485962,
+      "elapsed_s": 4.3836798667907715,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 420,
+      "gen": 88,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1335,11 +1335,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.3028905391693115,
+      "elapsed_s": 4.641277313232422,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 421,
+      "gen": 89,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1350,11 +1350,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.553410530090332,
+      "elapsed_s": 4.48201847076416,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 422,
+      "gen": 90,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1365,11 +1365,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.396600723266602,
+      "elapsed_s": 4.3004467487335205,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 423,
+      "gen": 91,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1380,11 +1380,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.251254081726074,
+      "elapsed_s": 4.28350043296814,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 424,
+      "gen": 92,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1395,11 +1395,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.361168146133423,
+      "elapsed_s": 4.3607025146484375,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 425,
+      "gen": 93,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1410,11 +1410,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.1470396518707275,
+      "elapsed_s": 4.283748626708984,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 426,
+      "gen": 94,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1425,11 +1425,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.345921754837036,
+      "elapsed_s": 4.181217908859253,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 427,
+      "gen": 95,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1440,11 +1440,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.335749864578247,
+      "elapsed_s": 4.368384599685669,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 428,
+      "gen": 96,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1455,11 +1455,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.291534423828125,
+      "elapsed_s": 4.316420555114746,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 429,
+      "gen": 97,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1470,11 +1470,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.280633211135864,
+      "elapsed_s": 4.16842246055603,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 430,
+      "gen": 98,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1485,11 +1485,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.225474119186401,
+      "elapsed_s": 4.2644782066345215,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 431,
+      "gen": 99,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1500,11 +1500,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.209749698638916,
+      "elapsed_s": 4.277874946594238,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 432,
+      "gen": 100,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1515,11 +1515,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.407611131668091,
+      "elapsed_s": 4.3653724193573,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 433,
+      "gen": 101,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1530,11 +1530,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.292449712753296,
+      "elapsed_s": 4.263713836669922,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 434,
+      "gen": 102,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1545,11 +1545,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.33423638343811,
+      "elapsed_s": 4.476290464401245,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 435,
+      "gen": 103,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1560,11 +1560,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.279043912887573,
+      "elapsed_s": 4.18682336807251,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 436,
+      "gen": 104,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1575,11 +1575,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.228850364685059,
+      "elapsed_s": 4.420331716537476,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 437,
+      "gen": 105,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1590,11 +1590,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.373508453369141,
+      "elapsed_s": 4.234095573425293,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 438,
+      "gen": 106,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1605,11 +1605,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.335616588592529,
+      "elapsed_s": 4.362619876861572,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 439,
+      "gen": 107,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1620,11 +1620,11 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.25968337059021,
+      "elapsed_s": 4.238821983337402,
       "champ_raw": 19.29550679320724
     },
     {
-      "gen": 440,
+      "gen": 108,
       "best_raw": -1.0,
       "best_fitness": [
         -1,
@@ -1635,1372 +1635,7 @@
         -1.0
       ],
       "mean_raw_elite": -1.0,
-      "elapsed_s": 4.352477312088013,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 441,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.385057210922241,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 442,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.294033527374268,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 443,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.2856481075286865,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 444,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.329402446746826,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 445,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.319484710693359,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 446,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.260767221450806,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 447,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.559598445892334,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 448,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.375176668167114,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 449,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.258931875228882,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 450,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.293113470077515,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 451,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.326741695404053,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 452,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.255571603775024,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 453,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.320103883743286,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 454,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.234729290008545,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 455,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.166925430297852,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 456,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.28615403175354,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 457,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.49155068397522,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 458,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.386013984680176,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 459,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.159017324447632,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 460,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.447741270065308,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 461,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.3515403270721436,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 462,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.423220157623291,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 463,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.238605499267578,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 464,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.272047281265259,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 465,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.352299451828003,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 466,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.263238191604614,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 467,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.2541773319244385,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 468,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.227810859680176,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 469,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.530395984649658,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 470,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.3032591342926025,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 471,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.273339748382568,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 472,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.328534364700317,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 473,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.247989654541016,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 474,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.276819705963135,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 475,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.263319253921509,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 476,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.353370666503906,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 477,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.319037437438965,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 478,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.430090665817261,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 479,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.309777021408081,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 480,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.443226337432861,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 481,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.313600301742554,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 482,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.289217472076416,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 483,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.27289891242981,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 484,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.441577434539795,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 485,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.416089773178101,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 486,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.711230754852295,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 487,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.187647819519043,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 488,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.2541728019714355,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 489,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.359111070632935,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 490,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.274140119552612,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 491,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.394704341888428,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 492,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.530012369155884,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 493,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.213120937347412,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 494,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.311591625213623,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 495,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.245927095413208,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 496,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.29207181930542,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 497,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.2381181716918945,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 498,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.237111806869507,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 499,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.269943714141846,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 500,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.4225873947143555,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 501,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.443924903869629,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 502,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.264111757278442,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 503,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.27857518196106,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 504,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.211142063140869,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 505,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.182770252227783,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 506,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.427547454833984,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 507,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.349412441253662,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 508,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.225969076156616,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 509,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.389198064804077,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 510,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.195042133331299,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 511,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.329619646072388,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 512,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.258270502090454,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 513,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.255010604858398,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 514,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.306913137435913,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 515,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.296451807022095,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 516,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.370919227600098,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 517,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.356723785400391,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 518,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.250851392745972,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 519,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.202754020690918,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 520,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.335268259048462,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 521,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.415176630020142,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 522,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.247767448425293,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 523,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.218669891357422,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 524,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.329131126403809,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 525,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.288424015045166,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 526,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.359042167663574,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 527,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.365534067153931,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 528,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.374206304550171,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 529,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.220003604888916,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 530,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.385843515396118,
-      "champ_raw": 19.29550679320724
-    },
-    {
-      "gen": 531,
-      "best_raw": -1.0,
-      "best_fitness": [
-        -1,
-        -1,
-        -1.0,
-        -1.0,
-        -1.0,
-        -1.0
-      ],
-      "mean_raw_elite": -1.0,
-      "elapsed_s": 4.322859764099121,
+      "elapsed_s": 4.231476068496704,
       "champ_raw": 19.29550679320724
     }
   ],
@@ -3059,7 +1694,10 @@
       "launch2_scale": 1.0,
       "launch2_tx": 0.004337874157701538,
       "launch2_ty": 0.05,
-      "race_lim_span": 0.4
+      "race_lim_span": 0.4,
+      "dive_vz_kp": 5.0,
+      "dive_vz_kd": 1.3,
+      "dive_vz_max_down": -6.2
     },
     "path": null,
     "fitness": [
@@ -3115,7 +1753,10 @@
     1.0,
     0.004337874157701538,
     0.05,
-    0.4
+    0.4,
+    5.0,
+    1.3,
+    -6.2
   ],
   "final_std": [
     0.092,
@@ -3160,7 +1801,10 @@
     0.13799999999999998,
     0.046,
     0.06899999999999999,
-    0.2875
+    0.2875,
+    1.15,
+    0.345,
+    0.9199999999999999
   ],
-  "next_gen": 532
+  "next_gen": 109
 }
