@@ -1,0 +1,7 @@
+{
+  "label": "20260715T215032Z_win2_focus",
+  "created_utc": "20260715T215032Z",
+  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260715T215032Z_20260715T215032Z_win2_focus",
+  "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260715T215032Z_policy_evolved_ci_20260715T185748Z/policy.py",
+  "policy_sha256": "d61525cbc6d0e0cfad987c99017d4f368851ed7862d14bce5967a85bb7fa8404"
+}

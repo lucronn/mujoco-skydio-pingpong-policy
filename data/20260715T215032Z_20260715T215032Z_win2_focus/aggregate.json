@@ -1,0 +1,51 @@
+{
+  "stamp": "20260715T215032Z",
+  "suite": "focus",
+  "note": "win2 ship (g3 tip 1.40; nom win=2)",
+  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260715T215032Z_20260715T215032Z_win2_focus",
+  "policy": "/mnt/openfoam/pingpong-venv/progression/_staging/20260715T215032Z_policy_evolved_ci_20260715T185748Z/policy.py",
+  "source_policy": "/mnt/openfoam/pingpong-venv/repair_work/policy_evolved_ci_20260715T185748Z.py",
+  "raw_score_100": 28.965601688603783,
+  "mean_bg": 2.6,
+  "mean_win": 1.4,
+  "nominal_sc": 0.7744088297748335,
+  "nominal_bg": 4,
+  "nominal_win": 2,
+  "rows": [
+    {
+      "name": "nominal",
+      "score": 0.7744088297748335,
+      "bounced_gate_passes": 4,
+      "drone_windows_passed": 2,
+      "hard_success": false
+    },
+    {
+      "name": "range_424242_000",
+      "score": 0.20759999999999998,
+      "bounced_gate_passes": 2,
+      "drone_windows_passed": 1,
+      "hard_success": false
+    },
+    {
+      "name": "range_424242_002",
+      "score": 0.21574925700737405,
+      "bounced_gate_passes": 2,
+      "drone_windows_passed": 2,
+      "hard_success": false
+    },
+    {
+      "name": "range_424242_006",
+      "score": 0.5175491298213277,
+      "bounced_gate_passes": 3,
+      "drone_windows_passed": 1,
+      "hard_success": false
+    },
+    {
+      "name": "range_424242_011",
+      "score": 0.20954787723403395,
+      "bounced_gate_passes": 2,
+      "drone_windows_passed": 1,
+      "hard_success": false
+    }
+  ]
+}

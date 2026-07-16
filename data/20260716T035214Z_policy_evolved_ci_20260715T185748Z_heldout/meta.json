@@ -1,0 +1,7 @@
+{
+  "label": "policy_evolved_ci_20260715T185748Z_heldout",
+  "created_utc": "20260716T035214Z",
+  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260716T035214Z_policy_evolved_ci_20260715T185748Z_heldout",
+  "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260716T035214Z_policy_evolved_ci_20260715T185748Z/policy.py",
+  "policy_sha256": "57d90abce68b974106451260f5d1af1d782bba9bd23e67109f95c6225d89434f"
+}
