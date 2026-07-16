@@ -7,6 +7,10 @@ ENV PORT=8080
 # Set working directory
 WORKDIR /app
 
+# Copy requirements and install dependencies
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
 # Copy repository files into the container
 COPY . /app
 
