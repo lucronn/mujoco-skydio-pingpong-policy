@@ -4,7 +4,7 @@ import json
 import os
 import sys
 
-PORT = 8000
+PORT = int(os.environ.get("PORT", 8080))
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 FAVORITES_FILE = os.path.join(REPO_DIR, "data", "favorites.json")
 
