@@ -1165,6 +1165,17 @@
     <div style="grid-column: span 3; text-align:center; padding: 40px; color: var(--text-secondary);">Loading progression data...</div>
   </section>
 
+  <!-- Favorites Section -->
+  <div class="section-title-container" id="favorites-section-title" style="display: none; margin-top: 40px;">
+    <h2>
+      <svg height="18" width="18" fill="var(--color-orange)" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      Saved Favorites & Notes
+    </h2>
+  </div>
+  <section class="grid-3x3" id="favorites-grid" style="display: none; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-bottom: 40px;">
+    <!-- Favorited cards populated dynamically -->
+  </section>
+
   <!-- Archive / Filtering Section -->
   <div class="section-title-container" id="archive-section">
     <h2>
@@ -1271,6 +1282,26 @@
             </tbody>
           </table>
         </div>
+
+        <!-- Favorite Status Section -->
+        <div class="favorite-section" style="margin-top: 15px; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 8px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <h4 style="margin: 0; font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange)" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Favorites & Notes
+            </h4>
+            <button id="btn-favorite-toggle" class="chart-btn" style="padding: 4px 8px; font-size: 0.72rem; display: flex; align-items: center; gap: 4px;" onclick="toggleFavorite()">
+              <svg id="fav-icon-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span id="fav-toggle-text">Add to Favorites</span>
+            </button>
+          </div>
+          <div id="fav-notes-container" style="display: none; margin-top: 8px;">
+            <textarea id="fav-note-input" placeholder="Add custom notes about this scenario rollout..." style="width: 100%; height: 50px; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); border-radius: 4px; color: #fff; font-family: var(--font-sans); font-size: 0.75rem; padding: 6px; box-sizing: border-box; resize: none; margin-bottom: 6px;"></textarea>
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="chart-btn active" style="padding: 4px 10px; font-size: 0.72rem; border-radius: 4px;" onclick="saveFavoriteNote()">Save Note</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1327,6 +1358,9 @@
 
     // Intersection observer for archive videos (play only when visible)
     setupIntersectionObserver();
+
+    // Load favorites from backend/localStorage
+    loadFavorites();
   }
 
   // Calculate and update global header statistics
@@ -2016,6 +2050,9 @@
 
     // Set correct video/media tabs display
     updateModalMediaDisplay();
+
+    // Update Favorites status UI
+    updateModalFavoriteUI();
   }
 
   // Switch between 3D Video, 2D Video, and Trajectory Snapshot
@@ -2063,6 +2100,253 @@
       } else {
         imageEl.src = '';
       }
+    }
+  }
+
+  // Global favorites state
+  let favorites = [];
+
+  // Load favorites from API (or fallback to static json file or localStorage)
+  async function loadFavorites() {
+    try {
+      const response = await fetch('/api/favorites');
+      if (response.ok) {
+        const data = await response.json();
+        favorites = data.favorites || [];
+        console.log('Loaded favorites from API', favorites.length);
+        renderFavorites();
+        return;
+      }
+    } catch (e) {
+      console.warn('API favorites load failed, trying static file...', e);
+    }
+
+    try {
+      const response = await fetch('data/favorites.json');
+      if (response.ok) {
+        const data = await response.json();
+        favorites = data.favorites || [];
+        console.log('Loaded favorites from static file', favorites.length);
+        renderFavorites();
+        return;
+      }
+    } catch (e) {
+      console.warn('Static file favorites load failed, trying localStorage...', e);
+    }
+
+    try {
+      const localData = localStorage.getItem('dashboard_favorites');
+      if (localData) {
+        favorites = JSON.parse(localData) || [];
+        console.log('Loaded favorites from localStorage', favorites.length);
+      }
+    } catch (e) {
+      console.error('LocalStorage load failed', e);
+    }
+    renderFavorites();
+  }
+
+  // Save favorites to API and localStorage
+  async function saveFavoritesBackend() {
+    // Always save to localStorage first
+    try {
+      localStorage.setItem('dashboard_favorites', JSON.stringify(favorites));
+    } catch (e) {
+      console.warn('LocalStorage save failed', e);
+    }
+
+    // Try POSTing to server API
+    try {
+      const response = await fetch('/api/favorites', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ favorites: favorites })
+      });
+      if (response.ok) {
+        console.log('Saved favorites to API');
+      } else {
+        console.warn('Failed to save favorites to API server');
+      }
+    } catch (e) {
+      console.warn('API save failed (running statically on Github Pages or standard http.server)', e);
+    }
+  }
+
+  // Check if a specific rollout is favorited
+  function getFavorite(runDirName, caseName) {
+    return favorites.find(f => f.run_dir_name === runDirName && f.case_name === caseName);
+  }
+
+  // Update favorites UI inside the Details Modal
+  function updateModalFavoriteUI() {
+    if (!selectedModalRun || !selectedModalCase) return;
+    
+    const fav = getFavorite(selectedModalRun.dir_name, selectedModalCase.name);
+    const btn = document.getElementById('btn-favorite-toggle');
+    const textSpan = document.getElementById('fav-toggle-text');
+    const svgIcon = document.getElementById('fav-icon-svg');
+    const notesContainer = document.getElementById('fav-notes-container');
+    const noteInput = document.getElementById('fav-note-input');
+
+    if (!btn || !textSpan || !svgIcon || !notesContainer || !noteInput) return;
+
+    if (fav) {
+      // Favorited state
+      btn.classList.add('active-play'); // style active
+      textSpan.innerText = 'Remove Favorite';
+      svgIcon.setAttribute('fill', 'var(--color-orange)');
+      svgIcon.setAttribute('stroke', 'var(--color-orange)');
+      notesContainer.style.display = 'block';
+      noteInput.value = fav.note || '';
+    } else {
+      // Unfavorited state
+      btn.classList.remove('active-play');
+      textSpan.innerText = 'Add to Favorites';
+      svgIcon.setAttribute('fill', 'none');
+      svgIcon.setAttribute('stroke', 'currentColor');
+      notesContainer.style.display = 'none';
+      noteInput.value = '';
+    }
+  }
+
+  // Toggle Favorite state
+  function toggleFavorite() {
+    if (!selectedModalRun || !selectedModalCase) return;
+
+    const runDirName = selectedModalRun.dir_name;
+    const caseName = selectedModalCase.name;
+    const idx = favorites.findIndex(f => f.run_dir_name === runDirName && f.case_name === caseName);
+
+    if (idx !== -1) {
+      // Remove from favorites
+      favorites.splice(idx, 1);
+    } else {
+      // Add to favorites
+      favorites.push({
+        run_dir_name: runDirName,
+        case_name: caseName,
+        note: '',
+        saved_at: new Date().toISOString()
+      });
+    }
+
+    saveFavoritesBackend();
+    updateModalFavoriteUI();
+    renderFavorites();
+  }
+
+  // Save Favorite custom notes
+  function saveFavoriteNote() {
+    if (!selectedModalRun || !selectedModalCase) return;
+
+    const runDirName = selectedModalRun.dir_name;
+    const caseName = selectedModalCase.name;
+    const fav = getFavorite(runDirName, caseName);
+    
+    if (fav) {
+      const noteVal = document.getElementById('fav-note-input').value;
+      fav.note = noteVal;
+      saveFavoritesBackend();
+      renderFavorites();
+      
+      // Visual feedback (toast or temporary button text change)
+      const btn = document.querySelector('#fav-notes-container button');
+      const originalText = btn.innerText;
+      btn.innerText = 'Saved!';
+      btn.style.background = 'var(--color-emerald)';
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.background = '';
+      }, 1000);
+    }
+  }
+
+  // Render Favorites section on the main page dashboard
+  function renderFavorites() {
+    const sectionTitle = document.getElementById('favorites-section-title');
+    const grid = document.getElementById('favorites-grid');
+    if (!sectionTitle || !grid) return;
+
+    if (favorites.length === 0) {
+      sectionTitle.style.display = 'none';
+      grid.style.display = 'none';
+      grid.innerHTML = '';
+      return;
+    }
+
+    sectionTitle.style.display = 'block';
+    grid.style.display = 'grid';
+    grid.innerHTML = '';
+
+    favorites.forEach(fav => {
+      // Find corresponding run and case info to render details
+      const run = progressionData.find(r => r.dir_name === fav.run_dir_name);
+      if (!run) return;
+      const c = run.cases.find(caseItem => caseItem.name === fav.case_name);
+      if (!c) return;
+
+      const runLabel = (run.meta.label || run.dir_name).replace('_focus', '').replace('policy_evolved_', 'Evolved ');
+      const cleanCaseName = fav.case_name.replace(/_/g, ' ');
+      const isCrashed = c.metrics && (c.metrics.drone_crash === 1 || c.metrics.drone_crash === true);
+      const badgeClass = isCrashed ? 'crash' : 'success';
+      const badgeText = isCrashed ? 'CRASH' : 'CLEAR';
+      
+      const card = document.createElement('article');
+      card.className = 'grid-cell';
+      card.style.cursor = 'default';
+
+      // Left-hand snapshot preview
+      let imgHtml = '';
+      if (c.snapshot) {
+        imgHtml = `
+          <div style="position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,0.05); margin-bottom:8px; cursor:pointer;" onclick="openModalById('${fav.run_dir_name}', '${fav.case_name}')">
+            <img src="${c.snapshot}" alt="${cleanCaseName}" style="width:100%; height:100%; object-fit:cover;">
+            <div style="position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.8); border:1px solid rgba(255,255,255,0.1); border-radius:4px; padding:2px 6px; font-size:0.6rem; font-weight:600; color:#fff; display:flex; align-items:center; gap:3px;">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="var(--color-orange)" stroke="var(--color-orange)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              FAVORITE
+            </div>
+          </div>
+        `;
+      }
+
+      card.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <div class="card-run-label" style="margin:0; font-size:0.85rem;">${runLabel}</div>
+          <span class="badge ${badgeClass}" style="font-size:0.62rem; padding:1px 5px;">${badgeText}</span>
+        </div>
+        <div style="font-size:0.75rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">${cleanCaseName}</div>
+        
+        ${imgHtml}
+        
+        <!-- Note block -->
+        <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-color); border-radius:6px; padding:8px; font-size:0.75rem; color:#fff; min-height:40px; margin-bottom:10px; display:flex; flex-direction:column; justify-content:space-between;">
+          <div style="font-style:${fav.note ? 'normal' : 'italic'}; color:${fav.note ? 'var(--text-primary)' : 'var(--text-muted)'}; font-size:0.72rem; line-height:1.3; word-break:break-word;">
+            ${fav.note || 'No notes added yet.'}
+          </div>
+          <div style="font-size:0.58rem; color:var(--text-muted); text-align:right; margin-top:6px;">Saved ${new Date(fav.saved_at).toLocaleDateString()}</div>
+        </div>
+
+        <div style="display:flex; gap:8px;">
+          <button class="chart-btn active" style="flex:1; padding:6px 0; font-size:0.72rem; text-align:center; display:block;" onclick="openModalById('${fav.run_dir_name}', '${fav.case_name}')">
+            Analyze Details
+          </button>
+          <button class="chart-btn" style="padding:6px 10px; font-size:0.72rem; border-color:var(--color-rose); color:var(--color-rose);" onclick="removeFavoriteDirect('${fav.run_dir_name}', '${fav.case_name}')">
+            Remove
+          </button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // Remove helper directly from main page favorites card
+  function removeFavoriteDirect(runDirName, caseName) {
+    const idx = favorites.findIndex(f => f.run_dir_name === runDirName && f.case_name === caseName);
+    if (idx !== -1) {
+      favorites.splice(idx, 1);
+      saveFavoritesBackend();
+      renderFavorites();
+      updateModalFavoriteUI(); // Sync open modal if looking at the same case
     }
   }
 
