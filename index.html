@@ -257,6 +257,55 @@
     overflow: hidden;
   }
 
+  #grid-top-champions {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media (max-width: 1200px) {
+    #grid-top-champions { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 640px) {
+    #grid-top-champions { grid-template-columns: 1fr; }
+  }
+
+  .champion-card { position: relative; }
+
+  .champion-rank-badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    min-width: 26px;
+    height: 26px;
+    padding: 0 6px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 800;
+    z-index: 16;
+    color: #1a1206;
+    background: linear-gradient(135deg, #cbd5e1, #64748b);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+  }
+  .champion-rank-badge.rank-1 { background: linear-gradient(135deg, #ffe27a, #f59e0b); }
+  .champion-rank-badge.rank-2 { background: linear-gradient(135deg, #f1f5f9, #94a3b8); }
+  .champion-rank-badge.rank-3 { background: linear-gradient(135deg, #f3c08a, #b5651d); }
+
+  .champion-score-badge {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background: rgba(16, 185, 129, 0.92);
+    color: #04140d;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    z-index: 15;
+    pointer-events: none;
+  }
+
   .video-container video {
     width: 100%;
     height: 100%;
@@ -1106,6 +1155,21 @@
     </div>
   </section>
 
+  <!-- Top 10 Champions Showcase -->
+  <div class="section-title-container">
+    <h2>
+      <svg height="18" width="18" fill="var(--color-orange)" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      Top 10 Champions
+      <span class="tag" style="background: rgba(245, 158, 11, 0.15); color: var(--color-orange);">Best held-out raw score</span>
+    </h2>
+    <span style="color:var(--text-muted); font-size:0.85rem;">Click a card for full case-by-case detail</span>
+  </div>
+  <p class="section-desc">Ranked by the 28-case held-out raw_score_100 (60% mean score + 28% p25 score + 12% hard-success rate) — the same formula the live CEM optimizer uses to promote champions.</p>
+
+  <section class="grid-3x3" id="grid-top-champions">
+    <div style="grid-column: 1 / -1; text-align:center; padding: 40px; color: var(--text-secondary);">Loading champion rankings...</div>
+  </section>
+
   <!-- Interactive Timeline and Brief -->
   <section class="charts-container">
     <div class="chart-card">
@@ -1365,6 +1429,9 @@
     // Render Matrix Wall (8x5 grid)
     renderMatrixWall();
 
+    // Render top 10 champions leaderboard
+    renderTopChampions();
+
     // Render 3x3 grid (last 9 nominal videos)
     renderLatest9Grid();
 
@@ -1548,6 +1615,92 @@
   }
 
   // Render the 3x3 grid using the last 9 runs
+  // Linear-interpolation percentile, matching numpy's default np.quantile.
+  function percentile(sortedArr, p) {
+    if (!sortedArr.length) return 0;
+    const idx = (sortedArr.length - 1) * p;
+    const lo = Math.floor(idx), hi = Math.ceil(idx);
+    if (lo === hi) return sortedArr[lo];
+    return sortedArr[lo] + (sortedArr[hi] - sortedArr[lo]) * (idx - lo);
+  }
+
+  // Mirrors parallel_suite.py's _raw_from_scores: 100 * (0.60*mean + 0.28*p25 + 0.12*mean(hard)).
+  // Only meaningful over the full 28-case held-out suite, so packs with fewer
+  // scored cases (quick "focus"/single-case verification runs) are skipped —
+  // otherwise a partial suite could rank above a genuine full evaluation.
+  function computeChampionScore(run) {
+    const withMetrics = run.cases.filter(c => c.metrics && typeof c.metrics.score === 'number');
+    if (withMetrics.length < 20) return null;
+    const scores = withMetrics.map(c => c.metrics.score).sort((a, b) => a - b);
+    const hard = withMetrics.map(c => (c.metrics.hard_success ? 1 : 0));
+    const mean = arr => arr.reduce((s, v) => s + v, 0) / arr.length;
+    return 100 * (0.60 * mean(scores) + 0.28 * percentile(scores, 0.25) + 0.12 * mean(hard));
+  }
+
+  // Render the Top 10 Champions leaderboard, ranked by held-out raw score.
+  function renderTopChampions() {
+    const container = document.getElementById('grid-top-champions');
+    if (!container) return;
+
+    const scored = [];
+    progressionData.forEach(run => {
+      const raw = computeChampionScore(run);
+      if (raw !== null) scored.push({ run, raw });
+    });
+
+    // Same champion policy can get re-evaluated across multiple packs
+    // (progression-detached reruns after each restart) — keep only its
+    // best-scoring pack. Dedup only when we have positive proof it's the
+    // same binary (matching sha256); otherwise treat packs as distinct.
+    const bestByChamp = new Map();
+    scored.forEach(({ run, raw }) => {
+      const key = run.meta.policy_sha256 || run.dir_name;
+      const existing = bestByChamp.get(key);
+      if (!existing || raw > existing.raw) bestByChamp.set(key, { run, raw });
+    });
+
+    const top10 = Array.from(bestByChamp.values()).sort((a, b) => b.raw - a.raw).slice(0, 10);
+
+    if (!top10.length) {
+      container.innerHTML = `<div style="grid-column: 1 / -1; text-align:center; padding: 40px; color: var(--text-secondary);">No full held-out evaluations found yet.</div>`;
+      return;
+    }
+
+    container.innerHTML = '';
+    top10.forEach((entry, i) => {
+      const { run, raw } = entry;
+      const rank = i + 1;
+      const nominal = run.cases.find(c => c.name === 'nominal');
+      const v3d = nominal && nominal.videos.find(v => v.filename === 'render_3d.mp4');
+      const v2d = nominal && nominal.videos.find(v => v.filename === 'render_2d.mp4');
+      const video = v3d || v2d || (nominal && nominal.videos[0]);
+      const label = run.meta.label || run.dir_name;
+      const cleanLabel = label.replace('_heldout', '').replace('_focus', '').replace('policy_evolved_', 'Evolved ');
+
+      const card = document.createElement('article');
+      card.className = 'grid-cell champion-card';
+      card.onclick = () => openModal(run, 'nominal');
+      card.onmouseenter = () => card.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
+      card.onmouseleave = () => card.querySelectorAll('video').forEach(v => v.pause());
+
+      const rankClass = rank <= 3 ? ` rank-${rank}` : '';
+      const posterAttr = nominal && nominal.snapshot ? `poster="${nominal.snapshot}"` : '';
+      const videoHtml = video
+        ? `<video src="${video.rel_path}" ${posterAttr} loop muted playsinline preload="metadata"></video>`
+        : `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-muted);font-size:0.8rem;">No nominal render</div>`;
+
+      card.innerHTML = `
+        <div class="champion-rank-badge${rankClass}">#${rank}</div>
+        <div class="card-run-label">${cleanLabel}</div>
+        <div class="video-container">
+          ${videoHtml}
+        </div>
+        <div class="champion-score-badge">raw ${raw.toFixed(2)}</div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
   function renderLatest9Grid() {
     const gridContainer = document.getElementById('grid-latest-9');
     gridContainer.innerHTML = '';
