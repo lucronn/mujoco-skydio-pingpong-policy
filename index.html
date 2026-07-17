@@ -1872,34 +1872,13 @@
 
   function renderLatest9Grid() {
     const gridContainer = document.getElementById('grid-latest-9');
+    if (!gridContainer) return;
     gridContainer.innerHTML = '';
 
     // Take the 9 newest runs
     const latest9Runs = progressionData.slice(0, 9);
 
     latest9Runs.forEach((run, index) => {
-      // Find all videos in this run/progression
-      // Sort cases by name: nominal first, then range cases.
-      const sortedCases = [...run.cases].sort((a, b) => {
-        if (a.name === 'nominal') return -1;
-        if (b.name === 'nominal') return 1;
-        return a.name.localeCompare(b.name);
-      });
-      
-      const videos3d = [];
-      const videos2d = [];
-      
-      sortedCases.forEach(c => {
-        // Look for MP4 specifically to avoid blurry gifs on hover
-        const v3d = c.videos.find(v => v.filename === 'render_3d.mp4');
-        const v2d = c.videos.find(v => v.filename === 'render_2d.mp4');
-        if (v3d) videos3d.push({ video: v3d, caseName: c.name, type: '3D', snapshot: c.snapshot });
-        if (v2d) videos2d.push({ video: v2d, caseName: c.name, type: '2D', snapshot: c.snapshot });
-      });
-
-      // Combined list: Row 1 is 3D renders, Row 2 is 2D renders
-      const allRenders = [...videos3d, ...videos2d];
-
       const label = run.meta.label || run.dir_name;
       const cleanLabel = label.replace('_focus', '').replace('policy_evolved_', 'Evolved ');
       
@@ -1907,41 +1886,34 @@
       card.className = 'grid-cell';
       card.onclick = () => openModal(run, 'nominal');
 
-      // Hover to play/pause the mini videos inside the card
+      // Hover to play/pause the single grid video inside the card
       card.onmouseenter = () => {
-        // Only trigger if not in fullscreen wall
         const wallGrid = document.getElementById('wall-grid-element');
         if (wallGrid && !wallGrid.classList.contains('fullscreen-active')) {
-          card.querySelectorAll('video').forEach(v => {
-            v.play().catch(e => {});
-          });
+          const video = card.querySelector('video');
+          if (video) video.play().catch(e => {});
         }
       };
       card.onmouseleave = () => {
-        card.querySelectorAll('video').forEach(v => {
-          v.pause();
-        });
+        const video = card.querySelector('video');
+        if (video) video.pause();
       };
 
-      // Build mini-videos HTML using c.snapshot as the poster to avoid black screens
-      let miniGridHtml = `<div class="mini-videos-grid">`;
-      allRenders.forEach(item => {
-        const cleanCaseName = item.caseName.replace(/_/g, ' ');
-        const tooltipText = `${cleanCaseName} (${item.type})`;
-        const posterAttr = item.snapshot ? `poster="${item.snapshot}"` : '';
-        miniGridHtml += `
-          <div class="mini-video-wrapper">
-            <video src="${item.video.rel_path}" ${posterAttr} loop muted playsinline preload="metadata"></video>
-            <div class="mini-video-tooltip">${tooltipText}</div>
-          </div>
-        `;
-      });
-      miniGridHtml += `</div>`;
+      const nominal = run.cases.find(c => c.name === 'nominal');
+      const poster = nominal && nominal.snapshot ? nominal.snapshot : '';
+      
+      // Point to the compiled single-file grid render
+      const gridVideoPath = `data/${run.dir_name}/grid_renders.mp4`;
+      
+      // Fallback: If grid_renders.mp4 is missing or not copied, show nominal render video
+      const nominalCase = run.cases.find(c => c.name === 'nominal');
+      const nominalVideo = nominalCase ? nominalCase.videos.find(v => v.filename === 'render_3d.mp4') : null;
+      const fallbackVideoPath = nominalVideo ? nominalVideo.rel_path : '';
 
       card.innerHTML = `
         <div class="card-run-label">${cleanLabel}</div>
-        <div class="video-container" style="aspect-ratio: unset; height: auto;">
-          ${miniGridHtml}
+        <div class="video-container" style="position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000;">
+          <video src="${gridVideoPath}" poster="${poster}" loop muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='${fallbackVideoPath}';"></video>
         </div>
       `;
       gridContainer.appendChild(card);
