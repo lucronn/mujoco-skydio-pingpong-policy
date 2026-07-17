@@ -2414,6 +2414,18 @@
 
     const isWidescreen = window.innerWidth >= 1400;
 
+    const helperSetSrc = (el, path) => {
+      if (!el) return;
+      if (!path) {
+        el.removeAttribute('src');
+        return;
+      }
+      const current = el.src || '';
+      if (!current.endsWith(path)) {
+        el.src = path;
+      }
+    };
+
     if (isWidescreen) {
       // Widescreen double-pane behavior
       if (layoutContainer) {
@@ -2421,9 +2433,7 @@
       }
       if (video3d) {
         video3d.style.display = 'block';
-        if (v3d && video3d.getAttribute('src') !== v3d.rel_path) {
-          video3d.src = v3d.rel_path;
-        }
+        helperSetSrc(video3d, v3d ? v3d.rel_path : '');
         video3d.play().catch(e => {});
       }
       
@@ -2434,9 +2444,7 @@
         if (video2d) { video2d.pause(); video2d.style.display = 'none'; }
         if (image2d) {
           image2d.style.display = 'block';
-          if (snapshotPath && image2d.getAttribute('src') !== snapshotPath) {
-            image2d.src = snapshotPath;
-          }
+          helperSetSrc(image2d, snapshotPath || '');
         }
         if (btnPlot) btnPlot.classList.add('active');
         if (btn2d) btn2d.classList.remove('active');
@@ -2444,9 +2452,7 @@
         if (image2d) image2d.style.display = 'none';
         if (video2d) {
           video2d.style.display = 'block';
-          if (v2d && video2d.getAttribute('src') !== v2d.rel_path) {
-            video2d.src = v2d.rel_path;
-          }
+          helperSetSrc(video2d, v2d ? v2d.rel_path : '');
           video2d.play().catch(e => {});
         }
         if (btnPlot) btnPlot.classList.remove('active');
@@ -2461,20 +2467,20 @@
       if (activeModalMediaType === '3d') {
         if (video2d) video2d.pause();
         if (video3d) {
-          if (v3d && video3d.getAttribute('src') !== v3d.rel_path) video3d.src = v3d.rel_path;
+          helperSetSrc(video3d, v3d ? v3d.rel_path : '');
           video3d.play().catch(e => {});
         }
       } else if (activeModalMediaType === '2d') {
         if (video3d) video3d.pause();
         if (video2d) {
-          if (v2d && video2d.getAttribute('src') !== v2d.rel_path) video2d.src = v2d.rel_path;
+          helperSetSrc(video2d, v2d ? v2d.rel_path : '');
           video2d.play().catch(e => {});
         }
       } else if (activeModalMediaType === 'snapshot') {
         if (video3d) video3d.pause();
         if (video2d) video2d.pause();
-        if (image2d && snapshotPath && image2d.getAttribute('src') !== snapshotPath) {
-          image2d.src = snapshotPath;
+        if (image2d) {
+          helperSetSrc(image2d, snapshotPath || '');
         }
       }
     }
