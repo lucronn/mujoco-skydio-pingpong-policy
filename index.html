@@ -1677,6 +1677,10 @@
   let activeChartMetric = 'score'; // 'score' | 'gates' | 'crash'
   let archivePlayActive = false;
   let archiveMuteActive = true;
+  let filteredArchiveItems = [];
+  let archiveOffset = 0;
+  const archiveLimit = 12;
+  let scrollObserver = null;
   let selectedModalRun = null;
   let selectedModalCase = null;
   let activeModalMediaType = '3d'; // '3d' | '2d' | 'snapshot'
@@ -2239,9 +2243,14 @@
     const searchVal = document.getElementById('search-run').value.toLowerCase();
 
     const archiveGrid = document.getElementById('archive-videos-grid');
+    
+    // Clear sentinel if exists
+    const oldSentinel = document.getElementById('archive-sentinel');
+    if (oldSentinel) oldSentinel.remove();
+    
     archiveGrid.innerHTML = '';
-
-    let matchingVideos = [];
+    filteredArchiveItems = [];
+    archiveOffset = 0;
 
     progressionData.forEach(run => {
       // Check run filter
@@ -2263,7 +2272,7 @@
           // Check render type filter
           if (renderVal !== 'all' && v.filename !== renderVal) return;
 
-          matchingVideos.push({
+          filteredArchiveItems.push({
             run: run,
             case: c,
             video: v
@@ -2272,9 +2281,9 @@
       });
     });
 
-    document.getElementById('filter-count').innerText = `Showing ${matchingVideos.length} of 134 rollouts`;
+    document.getElementById('filter-count').innerText = `Showing ${filteredArchiveItems.length} of 134 rollouts`;
 
-    if (matchingVideos.length === 0) {
+    if (filteredArchiveItems.length === 0) {
       archiveGrid.innerHTML = `
         <div style="grid-column: 1/-1; text-align:center; padding: 40px; color: var(--text-secondary);">
           No matching rollouts found. Adjust filters and try again.
@@ -2283,7 +2292,18 @@
       return;
     }
 
-    matchingVideos.forEach(item => {
+    // Render first batch
+    loadMoreArchiveItems();
+
+    // Setup Sentinel Scroll Observer for lazy loading
+    setupSentinelObserver();
+  }
+
+  function loadMoreArchiveItems() {
+    const archiveGrid = document.getElementById('archive-videos-grid');
+    const batch = filteredArchiveItems.slice(archiveOffset, archiveOffset + archiveLimit);
+    
+    batch.forEach(item => {
       const run = item.run;
       const c = item.case;
       const v = item.video;
@@ -2294,8 +2314,7 @@
 
       const card = document.createElement('div');
       card.className = 'archive-cell';
-      
-      // Build play controls
+
       const playAttr = archivePlayActive ? 'autoplay' : '';
       const muteAttr = archiveMuteActive ? 'muted' : '';
 
@@ -2321,8 +2340,46 @@
       archiveGrid.appendChild(card);
     });
 
-    // Re-bind intersection observer if we just spawned new video tags
+    archiveOffset += batch.length;
+    
+    // Re-bind intersection observer for visible playing
     setupIntersectionObserver();
+  }
+
+  function setupSentinelObserver() {
+    if (scrollObserver) {
+      scrollObserver.disconnect();
+    }
+
+    // Create sentinel if not exists
+    let sentinel = document.getElementById('archive-sentinel');
+    if (!sentinel) {
+      sentinel = document.createElement('div');
+      sentinel.id = 'archive-sentinel';
+      sentinel.style.height = '20px';
+      sentinel.style.width = '100%';
+      sentinel.style.gridColumn = '1 / -1';
+      document.getElementById('archive-videos-grid').after(sentinel);
+    }
+
+    scrollObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        if (archiveOffset < filteredArchiveItems.length) {
+          loadMoreArchiveItems();
+        } else {
+          // No more items, disconnect
+          scrollObserver.disconnect();
+          const sentinelEl = document.getElementById('archive-sentinel');
+          if (sentinelEl) sentinelEl.remove();
+        }
+      }
+    }, {
+      root: null,
+      rootMargin: '200px', // trigger loading 200px before scroll hits bottom
+      threshold: 0.1
+    });
+
+    scrollObserver.observe(sentinel);
   }
 
   // Play All visible videos simultaneously toggle
