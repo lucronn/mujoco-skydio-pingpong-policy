@@ -1341,6 +1341,33 @@
     color: var(--color-cyan);
     font-weight: 600;
   }
+
+  /* Subtle Card Timestamp styling */
+  .card-timestamp {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    z-index: 15;
+    pointer-events: none;
+    letter-spacing: 0.02em;
+    font-family: monospace;
+    backdrop-filter: blur(2px);
+  }
+
+  /* Archive Cell Time styling */
+  .archive-cell-time {
+    font-size: 0.62rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-left: 6px;
+    font-family: monospace;
+  }
 </style>
 </head>
 <body>
@@ -1349,7 +1376,7 @@
     <div class="header-container">
       <div>
         <h1>Skydio X2 Ping-Pong Policy Evolution</h1>
-        <p class="header-subtitle">Interactive rollouts, evaluations, and trajectory metrics archive for the MuJoCo analytical window-gate controller progression.</p>
+        <p class="header-subtitle">Interactive rollouts, evaluations, and trajectory metrics archive for the MuJoCo analytical window-gate controller progression. <span id="header-sync-time" style="font-size:0.7rem; color:rgba(255,255,255,0.3); font-family:monospace; margin-left:8px;"></span></p>
       </div>
       <a class="repo-link" href="https://github.com/lucronn/mujoco-skydio-pingpong-policy" target="_blank">
         <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
@@ -1737,6 +1764,14 @@
     
     const crashRate = nominalCount > 0 ? (nominalCrashes / nominalCount) * 100 : 0;
     document.getElementById('stat-crash-rate').innerText = crashRate.toFixed(1) + '%';
+
+    if (progressionData.length > 0) {
+      const latestRun = progressionData[0];
+      const syncTimeEl = document.getElementById('header-sync-time');
+      if (syncTimeEl) {
+        syncTimeEl.innerText = `[Latest Run: ${formatTimestamp(latestRun.meta.created_utc || latestRun.dir_name)}]`;
+      }
+    }
   }
 
   // Render Chart.js line graph of progression
@@ -1981,6 +2016,7 @@
           ${videoHtml}
         </div>
         <div class="champion-score-badge">raw ${raw.toFixed(2)}</div>
+        <div class="card-timestamp">${formatTimestamp(run.meta.created_utc || run.dir_name)}</div>
       `;
       container.appendChild(card);
     });
@@ -2035,6 +2071,7 @@
             <span>Hover to preview grid</span>
           </div>
         </div>
+        <div class="card-timestamp">${formatTimestamp(run.meta.created_utc || run.dir_name)}</div>
       `;
       gridContainer.appendChild(card);
     });
@@ -2270,7 +2307,7 @@
         <div class="archive-cell-meta">
           <div class="archive-cell-title">
             <span style="text-transform: capitalize; color:#fff;">${c.name.replace(/_/g, ' ')}</span>
-            <span class="archive-cell-run">${cleanRunLabel}</span>
+            <span class="archive-cell-run">${cleanRunLabel} <span class="archive-cell-time">${formatTimestamp(run.meta.created_utc || run.dir_name)}</span></span>
           </div>
           <div class="archive-cell-footer">
             <span style="color:var(--text-secondary)">Score: ${metrics.score ? metrics.score.toFixed(3) : 'N/A'}</span>
