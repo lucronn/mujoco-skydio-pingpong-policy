@@ -2263,7 +2263,7 @@
       const muteAttr = archiveMuteActive ? 'muted' : '';
 
       card.innerHTML = `
-        <div class="video-container" onclick="openModalById('${run.dir_name}', '${c.name}')" style="cursor:pointer;">
+        <div class="video-container" onclick="openModalById('${run.dir_name}', '${c.name}', '${v.filename === 'render_3d.mp4' ? '3d' : '2d'}')" style="cursor:pointer;">
           <video src="${v.rel_path}" loop ${muteAttr} ${playAttr} playsinline preload="none"></video>
           <div class="cell-overlay">${typeLabel}</div>
         </div>
@@ -2396,18 +2396,25 @@
   }
 
   // Open Details Modal using directory ID
-  function openModalById(runDirName, caseName) {
+  function openModalById(runDirName, caseName, initialMediaType) {
     const run = progressionData.find(r => r.dir_name === runDirName);
     if (run) {
-      openModal(run, caseName);
+      openModal(run, caseName, initialMediaType);
     }
   }
 
   // Display deep overlay modal for detailed analysis
-  function openModal(run, caseName) {
+  function openModal(run, caseName, initialMediaType) {
     selectedModalRun = run;
     selectedModalCase = run.cases.find(c => c.name === caseName) || run.cases[0];
-    activeModalMediaType = '3d';
+    
+    // Set active media based on click context
+    activeModalMediaType = initialMediaType || '3d';
+    if (activeModalMediaType === '2d') {
+      activeWidescreenRightMedia = '2d';
+    } else {
+      activeWidescreenRightMedia = 'snapshot';
+    }
 
     const modal = document.getElementById('details-modal');
     modal.classList.add('active');
@@ -2584,6 +2591,12 @@
       }
     } else {
       // Single-pane tabbed behavior on small screens
+      document.querySelectorAll('.media-tabs .media-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      const activeTab = document.getElementById(`tab-${activeModalMediaType}`);
+      if (activeTab) activeTab.classList.add('active');
+
       if (layoutContainer) {
         layoutContainer.className = `widescreen-media-layout show-${activeModalMediaType}`;
       }
