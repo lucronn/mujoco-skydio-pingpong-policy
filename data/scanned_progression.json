@@ -1,5 +1,113 @@
 [
   {
+    "dir_name": "20260718T152101Z_policy_evolved_g202_heldout",
+    "meta": {
+      "label": "policy_evolved_g202_heldout",
+      "created_utc": "20260718T152101Z",
+      "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260718T152101Z_policy_evolved_g202_heldout",
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "nominal",
+        "metrics": {},
+        "videos": [
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T152101Z_policy_evolved_g202_heldout/cases/nominal/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T152101Z_policy_evolved_g202_heldout/cases/nominal/render_3d.mp4"
+          }
+        ],
+        "snapshot": null
+      }
+    ]
+  },
+  {
+    "dir_name": "20260718T151841Z_policy_evolved_g194_heldout",
+    "meta": {
+      "label": "policy_evolved_g194_heldout",
+      "created_utc": "20260718T151841Z",
+      "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260718T151841Z_policy_evolved_g194_heldout",
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "nominal",
+        "metrics": {},
+        "videos": [
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T151841Z_policy_evolved_g194_heldout/cases/nominal/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T151841Z_policy_evolved_g194_heldout/cases/nominal/render_3d.mp4"
+          }
+        ],
+        "snapshot": null
+      }
+    ]
+  },
+  {
+    "dir_name": "20260718T151728Z_policy_evolved_g190_heldout",
+    "meta": {
+      "label": "policy_evolved_g190_heldout",
+      "created_utc": "20260718T151728Z",
+      "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260718T151728Z_policy_evolved_g190_heldout",
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "nominal",
+        "metrics": {},
+        "videos": [
+          {
+            "filename": "nominal_actuated_rollout.mp4",
+            "rel_path": "data/20260718T151728Z_policy_evolved_g190_heldout/cases/nominal/nominal_actuated_rollout.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T151728Z_policy_evolved_g190_heldout/cases/nominal/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T151728Z_policy_evolved_g190_heldout/cases/nominal/render_3d.mp4"
+          }
+        ],
+        "snapshot": null
+      }
+    ]
+  },
+  {
+    "dir_name": "20260718T151648Z_policy_evolved_g188_heldout",
+    "meta": {
+      "label": "policy_evolved_g188_heldout",
+      "created_utc": "20260718T151648Z",
+      "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260718T151648Z_policy_evolved_g188_heldout",
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "nominal",
+        "metrics": {},
+        "videos": [
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T151648Z_policy_evolved_g188_heldout/cases/nominal/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T151648Z_policy_evolved_g188_heldout/cases/nominal/render_3d.mp4"
+          }
+        ],
+        "snapshot": null
+      }
+    ]
+  },
+  {
     "dir_name": "20260718T143102Z_policy_evolved_ci_20260718T143102Z_heldout",
     "meta": {
       "label": "policy_evolved_ci_20260718T143102Z_heldout",
