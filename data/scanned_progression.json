@@ -1,5 +1,1622 @@
 [
   {
+    "dir_name": "20260718T175806Z_policy_evolved_g814_heldout",
+    "meta": {
+      "label": "policy_evolved_g814_heldout",
+      "created_utc": "20260718T175806Z",
+      "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260718T175806Z_policy_evolved_g814_heldout",
+      "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+      "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+      "rel_policy_path": "data/_staging/20260718T175806Z_policy_evolved_g814/policy.py"
+    },
+    "cases": [
+      {
+        "name": "ball_x_pos",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 158.1957347054576,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            17.015958341676782,
+            3.3224143810950704,
+            0.059963014020297606
+          ],
+          "final_drone_pos": [
+            14.691151457359386,
+            1.5719958846298738,
+            0.7436850611835113
+          ],
+          "contacts": 8,
+          "observation_mode": "partial",
+          "scenario_name": "ball_x_pos",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/ball_x_pos/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/ball_x_pos/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/ball_x_pos/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/ball_x_pos/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/ball_x_pos/trajectory_2d.png"
+      },
+      {
+        "name": "ball_y_pos",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 179.4764566952823,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            5.4052854422730245,
+            10.141237319852271,
+            0.059957266212580705
+          ],
+          "final_drone_pos": [
+            3.765186531426186,
+            2.6598123013255313,
+            0.28354870264806287
+          ],
+          "contacts": 9,
+          "observation_mode": "partial",
+          "scenario_name": "ball_y_pos",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/ball_y_pos/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/ball_y_pos/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/ball_y_pos/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/ball_y_pos/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/ball_y_pos/trajectory_2d.png"
+      },
+      {
+        "name": "edge_crosswind_a",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 176.65644665695956,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            4.132489618502079,
+            2.7471521357749213,
+            0.059947880544001436
+          ],
+          "final_drone_pos": [
+            0.9378897354676146,
+            2.252511354969902,
+            0.2955777311700898
+          ],
+          "contacts": 15,
+          "observation_mode": "partial",
+          "scenario_name": "edge_crosswind_a",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_crosswind_a/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_crosswind_a/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_crosswind_a/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_crosswind_a/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_crosswind_a/trajectory_2d.png"
+      },
+      {
+        "name": "edge_crosswind_b",
+        "metrics": {
+          "score": 0.13979999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 121.62818623532267,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            17.542193028215703,
+            -2.1898595825565046,
+            0.0599638267424468
+          ],
+          "final_drone_pos": [
+            1.9598125532431785,
+            0.1935865466513034,
+            0.3201311096382656
+          ],
+          "contacts": 5,
+          "observation_mode": "partial",
+          "scenario_name": "edge_crosswind_b",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_crosswind_b/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_crosswind_b/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_crosswind_b/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_crosswind_b/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_crosswind_b/trajectory_2d.png"
+      },
+      {
+        "name": "edge_high_slow_delay3",
+        "metrics": {
+          "score": 0.21803999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 2,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 174.24561418896752,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            5.934833098486089,
+            -0.3998190363668171,
+            0.05994788003333189
+          ],
+          "final_drone_pos": [
+            2.7174557206322087,
+            1.2609313326288067,
+            1.595825145568127
+          ],
+          "contacts": 25,
+          "observation_mode": "partial",
+          "scenario_name": "edge_high_slow_delay3",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_high_slow_delay3/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_high_slow_delay3/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_high_slow_delay3/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_high_slow_delay3/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_high_slow_delay3/trajectory_2d.png"
+      },
+      {
+        "name": "edge_initial_offsets_a",
+        "metrics": {
+          "score": 0.126,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 1,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 54.00936893889459,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            1.8479598720723815,
+            -7.498993355243444,
+            0.05995814146378611
+          ],
+          "final_drone_pos": [
+            3.4578669466319356,
+            0.624718543448397,
+            2.910988489216739
+          ],
+          "contacts": 171,
+          "observation_mode": "partial",
+          "scenario_name": "edge_initial_offsets_a",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_initial_offsets_a/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_initial_offsets_a/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_initial_offsets_a/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_initial_offsets_a/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_initial_offsets_a/trajectory_2d.png"
+      },
+      {
+        "name": "edge_initial_offsets_b",
+        "metrics": {
+          "score": 0.1344,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 1,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 134.71821477609265,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            -2.1371792615812644,
+            3.01136287719322,
+            0.05995085892362967
+          ],
+          "final_drone_pos": [
+            5.224074529198211,
+            2.354850804311837,
+            2.1254150888843792
+          ],
+          "contacts": 1,
+          "observation_mode": "partial",
+          "scenario_name": "edge_initial_offsets_b",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_initial_offsets_b/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_initial_offsets_b/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_initial_offsets_b/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_initial_offsets_b/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_initial_offsets_b/trajectory_2d.png"
+      },
+      {
+        "name": "edge_jitter_only",
+        "metrics": {
+          "score": 0.4031999999999908,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.9999999999998469,
+          "target_box_entered": 1,
+          "safety_score": 1.0,
+          "drone_crash": 0,
+          "max_tilt_deg": 59.466656487946764,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            6.336460613965152,
+            2.8146479790562964,
+            0.1089154378844413
+          ],
+          "final_drone_pos": [
+            1.2941495430360734,
+            -9.428727909114512,
+            1.4275525073024877
+          ],
+          "contacts": 37,
+          "observation_mode": "partial",
+          "scenario_name": "edge_jitter_only",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_jitter_only/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_jitter_only/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_jitter_only/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_jitter_only/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_jitter_only/trajectory_2d.png"
+      },
+      {
+        "name": "edge_low_fast_delay6",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 161.56765807016563,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            3.6458921800838584,
+            2.0762462242349766,
+            0.059947880790501805
+          ],
+          "final_drone_pos": [
+            4.449810891756669,
+            1.838126000615385,
+            2.330754478274878
+          ],
+          "contacts": 10,
+          "observation_mode": "partial",
+          "scenario_name": "edge_low_fast_delay6",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_low_fast_delay6/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_low_fast_delay6/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_low_fast_delay6/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_low_fast_delay6/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_low_fast_delay6/trajectory_2d.png"
+      },
+      {
+        "name": "edge_noise_delay6",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 1,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 177.8113793569624,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            7.050000000009105,
+            2.6898099568822325,
+            0.10891543788296262
+          ],
+          "final_drone_pos": [
+            9.659279653455245,
+            3.320914080407663,
+            0.2848420954378884
+          ],
+          "contacts": 26,
+          "observation_mode": "partial",
+          "scenario_name": "edge_noise_delay6",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_noise_delay6/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_noise_delay6/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_noise_delay6/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_noise_delay6/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/edge_noise_delay6/trajectory_2d.png"
+      },
+      {
+        "name": "low_fast",
+        "metrics": {
+          "score": 0.7149958408340861,
+          "hard_success": 0,
+          "bounced_gate_passes": 4,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.9999999999994753,
+          "target_box_entered": 1,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 118.71920873558314,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            6.26130308854133,
+            2.5136759855946567,
+            0.10891543788444137
+          ],
+          "final_drone_pos": [
+            10.75929073751459,
+            2.3334162063311905,
+            1.278239873406403
+          ],
+          "contacts": 17,
+          "observation_mode": "partial",
+          "scenario_name": "low_fast",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/low_fast/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/low_fast/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/low_fast/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/low_fast/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/low_fast/trajectory_2d.png"
+      },
+      {
+        "name": "nominal",
+        "metrics": {
+          "score": 0.27315689265693577,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 128.3053577948944,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            3.761976779891272,
+            4.461551247730049,
+            0.05994788066698219
+          ],
+          "final_drone_pos": [
+            6.808598094148073,
+            2.3399471407931647,
+            0.3752182291794943
+          ],
+          "contacts": 5,
+          "observation_mode": "partial",
+          "scenario_name": "nominal",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/nominal/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/nominal/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/nominal/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_000",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 152.55872955770423,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            7.169613876816694,
+            4.883760891125514,
+            0.05994788076315213
+          ],
+          "final_drone_pos": [
+            2.251961579076762,
+            2.6905265236723452,
+            1.3803250304722154
+          ],
+          "contacts": 9,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_000",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_000/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_000/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_000/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_000/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_000/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_001",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 77.94335059117844,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            0.3558929505776485,
+            5.774812215656944,
+            0.05994919551976103
+          ],
+          "final_drone_pos": [
+            4.036673328296617,
+            0.9336421951036138,
+            0.6706939200891799
+          ],
+          "contacts": 6,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_001",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "range_424242_001_actuated_rollout.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_001/range_424242_001_actuated_rollout.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_001/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_001/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_001/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_001/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_001/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_002",
+        "metrics": {
+          "score": 0.2646,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 98.79953321215203,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            12.653769493737677,
+            4.7431094213233385,
+            0.05995757319960521
+          ],
+          "final_drone_pos": [
+            9.625324575331094,
+            1.2187709436245977,
+            1.4097597475581614
+          ],
+          "contacts": 4,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_002",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_002/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_002/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_002/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_002/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_002/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_003",
+        "metrics": {
+          "score": 0.13234671428571426,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 179.99981882287534,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            6.03366738134779,
+            0.7036950473816226,
+            0.05994788074388915
+          ],
+          "final_drone_pos": [
+            3.4875828241262825,
+            0.07329726301365862,
+            0.24797818578221317
+          ],
+          "contacts": 101,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_003",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_003/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_003/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_003/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_003/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_003/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_004",
+        "metrics": {
+          "score": 0.20712,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 179.7294190566146,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            -10.561444908040686,
+            -1.2079829350925841,
+            0.05998521684134059
+          ],
+          "final_drone_pos": [
+            -4.020589429732429,
+            1.2606321264975584,
+            0.303027270344461
+          ],
+          "contacts": 32,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_004",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_004/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_004/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_004/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_004/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_004/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_005",
+        "metrics": {
+          "score": 0.2646,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 96.66175124369981,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            10.273464038906068,
+            4.707814185858967,
+            0.05994788055515958
+          ],
+          "final_drone_pos": [
+            4.517316168175935,
+            0.7619112336687645,
+            0.8165216044596514
+          ],
+          "contacts": 26,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_005",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_005/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_005/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_005/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_005/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_005/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_006",
+        "metrics": {
+          "score": 0.2646,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 2,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 166.12371499960193,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            4.151540326535287,
+            7.737264369640483,
+            0.059953989316101367
+          ],
+          "final_drone_pos": [
+            2.6159885455967187,
+            0.5128879348452073,
+            1.6167921792627808
+          ],
+          "contacts": 7,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_006",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_006/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_006/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_006/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_006/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_006/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_007",
+        "metrics": {
+          "score": 0.274863724601083,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_gates_passed": 4,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 1.0,
+          "drone_crash": 0,
+          "max_tilt_deg": 55.61652261867981,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            9.233402053972974,
+            3.898163363607163,
+            0.05994788088457806
+          ],
+          "final_drone_pos": [
+            7.191777173890695,
+            1.0466911873136073,
+            1.382720021404143
+          ],
+          "contacts": 6,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_007",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_007/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_007/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_007/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_007/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_007/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_008",
+        "metrics": {
+          "score": 0.13979999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 131.37672110547373,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            0.22370360224434724,
+            5.475968210014031,
+            0.05995356824253766
+          ],
+          "final_drone_pos": [
+            20.08124282841852,
+            8.307749517260033,
+            1.361555849790886
+          ],
+          "contacts": 24,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_008",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_008/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_008/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_008/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_008/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_008/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_009",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 113.52593454459647,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            13.090921184585032,
+            2.427019210484456,
+            0.05995892489316286
+          ],
+          "final_drone_pos": [
+            13.637404971914329,
+            -6.928131663578326,
+            0.19119960044780396
+          ],
+          "contacts": 8,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_009",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_009/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_009/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_009/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_009/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_009/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_010",
+        "metrics": {
+          "score": 0.2646,
+          "hard_success": 0,
+          "bounced_gate_passes": 3,
+          "bounced_gate_pass": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_gates_passed": 3,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 179.92745296786322,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            2.6711801184164323,
+            5.7127859896629385,
+            0.05995410659283776
+          ],
+          "final_drone_pos": [
+            7.391204065737666,
+            2.5346752987545615,
+            0.4289274305533851
+          ],
+          "contacts": 5,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_010",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_010/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_010/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_010/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_010/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_010/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_011",
+        "metrics": {
+          "score": 0.13979999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 1,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 91.89122934614234,
+          "max_action_N": 12.941668201624289,
+          "final_ball_pos": [
+            2.172223660985394,
+            3.845834441584332,
+            0.05994788046664056
+          ],
+          "final_drone_pos": [
+            2.597694841638024,
+            1.7494681214899404,
+            0.8053612360574393
+          ],
+          "contacts": 8,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_011",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "range_424242_011_actuated_rollout.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_011/range_424242_011_actuated_rollout.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_011/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_011/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_011/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_011/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_011/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_012",
+        "metrics": {
+          "score": 0.20759999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 2,
+          "bounced_gate_pass": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 76.16280534809864,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            5.332639081145641,
+            -1.032351188218002,
+            0.05994788088920269
+          ],
+          "final_drone_pos": [
+            16.319370424863124,
+            10.62359617771271,
+            1.2117232718795692
+          ],
+          "contacts": 8,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_012",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_012/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_012/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_012/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_012/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_012/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_013",
+        "metrics": {
+          "score": 0.13979999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 177.6406598504423,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            4.796089821944809,
+            3.615874347458641,
+            0.05994788074761239
+          ],
+          "final_drone_pos": [
+            4.4864282659491455,
+            1.5928900566066613,
+            0.8013586142624153
+          ],
+          "contacts": 21,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_013",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_013/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_013/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_013/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_013/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_013/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_014",
+        "metrics": {
+          "score": 0.1452,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 2,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 148.33400225809245,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            1.6671359808565032,
+            4.944710035349078,
+            0.05994866965321545
+          ],
+          "final_drone_pos": [
+            10.873947899625561,
+            7.008363234732605,
+            1.3801680722449055
+          ],
+          "contacts": 4,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_014",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_014/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_014/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_014/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_014/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_014/trajectory_2d.png"
+      },
+      {
+        "name": "range_424242_015",
+        "metrics": {
+          "score": 0.15059999999999998,
+          "hard_success": 0,
+          "bounced_gate_passes": 1,
+          "bounced_gate_pass": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 1,
+          "drone_windows_passed": 1,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 0.0,
+          "drone_crash": 1,
+          "max_tilt_deg": 177.4460689198956,
+          "max_action_N": 13.0,
+          "final_ball_pos": [
+            2.800071616661148,
+            -0.1684441823590523,
+            0.059947880716490466
+          ],
+          "final_drone_pos": [
+            2.3190552876980046,
+            0.7012659658993695,
+            0.2746984447048776
+          ],
+          "contacts": 20,
+          "observation_mode": "partial",
+          "scenario_name": "range_424242_015",
+          "policy_path": "/opt/pingpong/progression/_staging/20260718T175806Z_policy_evolved_g814/policy.py",
+          "policy_sha256": "4bb0cdf8df156ebe743b4cf6ae9ae36553aa70a13b7f53d556babec72d70b6c6",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_015/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_015/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_015/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_015/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260718T175806Z_policy_evolved_g814_heldout/cases/range_424242_015/trajectory_2d.png"
+      }
+    ]
+  },
+  {
     "dir_name": "20260718T153706Z_policy_evolved_g202_heldout",
     "meta": {
       "label": "policy_evolved_g202_heldout",
