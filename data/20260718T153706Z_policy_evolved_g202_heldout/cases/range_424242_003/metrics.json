@@ -1,0 +1,35 @@
+{
+  "score": 0.13451999999999997,
+  "hard_success": 0,
+  "bounced_gate_passes": 1,
+  "bounced_gate_pass": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "raw_gates_passed": 3,
+  "drone_windows_passed": 0,
+  "target_box_score": 0.0,
+  "target_box_entered": 0,
+  "safety_score": 0.0,
+  "drone_crash": 1,
+  "max_tilt_deg": 142.81707461484564,
+  "max_action_N": 13.0,
+  "final_ball_pos": [
+    6.188400526262553,
+    1.2978350731988548,
+    0.059947880663435794
+  ],
+  "final_drone_pos": [
+    5.216671322820129,
+    0.6124202937223793,
+    1.4953221027333223
+  ],
+  "contacts": 97,
+  "observation_mode": "partial",
+  "scenario_name": "range_424242_003",
+  "policy_path": "/opt/pingpong/progression/_staging/20260718T152101Z_policy_evolved_g202/policy.py",
+  "policy_sha256": "3700811d2272dfd3258ea17c06e1857dab6db2bc83f5d4d1c6ec2511d4e4aeab",
+  "phase_notes": null
+}

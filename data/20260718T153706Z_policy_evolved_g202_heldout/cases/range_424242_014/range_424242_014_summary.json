@@ -1,0 +1,341 @@
+{
+  "scenario": {
+    "name": "range_424242_014",
+    "seed": 424242014,
+    "init_drone_pos": [
+      0.0013125933216955044,
+      -0.014881358277745109,
+      1.0145886303060094
+    ],
+    "init_ball_pos": [
+      -0.02568190085578454,
+      0.03674464328824736,
+      1.699387435185147
+    ],
+    "init_ball_vel": [
+      0.008493571638935424,
+      -0.006475034628084464,
+      -0.4870509744069022
+    ],
+    "gate_y_jitter": 0.030081841574716613,
+    "gate_height_jitter": 0.034188116860463816,
+    "target_jitter_xy": [
+      -0.04058796843191573,
+      -0.003161646090897696
+    ],
+    "sensor_delay_steps": 4,
+    "ball_pos_noise_std": 0.00608716577680362,
+    "ball_vel_noise_std": 0.01713280976154176,
+    "drone_pos_noise_std": 0.0013415549025613547,
+    "drone_vel_noise_std": 0.01302905521199548,
+    "dropout_prob": 0.0013679686087243762,
+    "wind_xy": [
+      -0.03599549650765885,
+      -0.0006909048720890459
+    ]
+  },
+  "time": 7.999999999999341,
+  "observation_mode": "partial",
+  "score": 0.21863724638535917,
+  "hard_success": false,
+  "gate_progress_score": 0.5,
+  "raw_gate_progress_score": 0.5,
+  "bounced_gate_progress_score": 0.5,
+  "bounced_gate_passes": 2,
+  "bounced_gate_pass": [
+    true,
+    true,
+    false,
+    false
+  ],
+  "gate_bounce_delay_s": [
+    0.6140000000000005,
+    0.07000000000000006,
+    null,
+    null
+  ],
+  "gate_bounce_contact_times_s": [
+    0.35200000000000026,
+    1.478000000000001,
+    null,
+    null
+  ],
+  "gate_required_after_s": [
+    null,
+    1.0460000000000007,
+    1.6280000000000012,
+    1.6280000000000012
+  ],
+  "distinct_gate_bounce_count": 2,
+  "gate_credit_contact_count": 6,
+  "gate_credit_quality_score": 0.8927579063232027,
+  "bounced_gate_clearances_m": [
+    1.0106176726472347,
+    0.8211150572247701,
+    null,
+    null
+  ],
+  "drone_window_score": 0.125,
+  "raw_drone_window_score": 0.25,
+  "safety_score": 0.0,
+  "target_score": 0.06747186167242601,
+  "target_settle_score": 0.0,
+  "target_box_score": 0.0,
+  "target_box_entered": false,
+  "target_box_exit_after_entry": false,
+  "target_box_dwell_time_s": 0.0,
+  "target_softness_score": 0.0,
+  "max_capture_zone_height_m": -1000000000.0,
+  "high_bounce_score": 0.945393017468614,
+  "eligible_mean_over_clearance_m": 0.9158663649360024,
+  "eligible_max_over_clearance_m": 1.0106176726472347,
+  "high_bounce_exclusion_radius_m": 2.75,
+  "gate_top_clearance_margin_m": 0.01,
+  "gate_required_ball_center_z_m": [
+    2.623879084019069,
+    2.7093007969179754,
+    2.673753932976097,
+    2.7531601886824584
+  ],
+  "eligible_high_bounce_gate_count": 2,
+  "bounce_objective_score": 0.9356923074442324,
+  "contact_score": 0.9065901773710876,
+  "useful_contact_score": 0.7664754434277191,
+  "mean_bounce_score": 0.4810565409504868,
+  "contact_chatter_score": 1.0,
+  "contact_time_score": 1.0,
+  "useful_contact_count": 2,
+  "total_contact_time_s": 0.04199999999999804,
+  "contact_quality_ok": false,
+  "contact_events_debug": [
+    {
+      "start": 0.19200000000000014,
+      "end": 0.19800000000000015,
+      "dwell": 0.006000000000000005,
+      "vz_in": 1.9071562968231328,
+      "vz_out": 4.751508281165614,
+      "pos_out": [
+        -0.016834377384199527,
+        0.040082995796885214,
+        1.463068660506563
+      ],
+      "vel_out": [
+        1.098015231098522,
+        0.6394754171295904,
+        4.751508281165614
+      ]
+    },
+    {
+      "start": 0.34600000000000025,
+      "end": 0.35200000000000026,
+      "dwell": 0.006000000000000005,
+      "vz_in": 4.097071390252689,
+      "vz_out": 6.138631552292444,
+      "pos_out": [
+        0.15663345849283855,
+        0.14340838920623272,
+        2.073976828916407
+      ],
+      "vel_out": [
+        2.2428105676500416,
+        1.5302433156837971,
+        6.138631552292444
+      ]
+    },
+    {
+      "start": 1.0220000000000007,
+      "end": 1.0280000000000007,
+      "dwell": 0.006000000000000005,
+      "vz_in": 0.0018148989792274861,
+      "vz_out": 1.9506862046296867,
+      "pos_out": [
+        1.4441550628551623,
+        1.1026894762494894,
+        3.5854473956202937
+      ],
+      "vel_out": [
+        2.844751458398738,
+        1.912407846642532,
+        1.9506862046296867
+      ]
+    },
+    {
+      "start": 1.472000000000001,
+      "end": 1.478000000000001,
+      "dwell": 0.006000000000000005,
+      "vz_in": -0.5868373490261736,
+      "vz_out": 0.9902266986519275,
+      "pos_out": [
+        2.6206455277604066,
+        1.9244552246886109,
+        3.4761501549810276
+      ],
+      "vel_out": [
+        1.5868414125645949,
+        1.8902923315367544,
+        0.9902266986519275
+      ]
+    },
+    {
+      "start": 2.2899999999999694,
+      "end": 2.2959999999999687,
+      "dwell": 0.005999999999999339,
+      "vz_in": -3.2163053659164693,
+      "vz_out": -1.5156857563688142,
+      "pos_out": [
+        3.785658573951147,
+        3.3209240978410115,
+        1.2131924087250223
+      ],
+      "vel_out": [
+        0.5627794165661465,
+        2.011829353384138,
+        -1.5156857563688142
+      ]
+    },
+    {
+      "start": 2.4599999999999507,
+      "end": 2.46599999999995,
+      "dwell": 0.005999999999999339,
+      "vz_in": -2.0988355668672787,
+      "vz_out": 0.2266935464453034,
+      "pos_out": [
+        3.875831577945292,
+        3.650150208018056,
+        0.8384930566795508
+      ],
+      "vel_out": [
+        -0.048056824964530544,
+        0.8052367182204145,
+        0.2266935464453034
+      ]
+    },
+    {
+      "start": 2.593999999999936,
+      "end": 2.5999999999999353,
+      "dwell": 0.005999999999999339,
+      "vz_in": 0.18786563586626404,
+      "vz_out": 0.944878914644216,
+      "pos_out": [
+        3.861119931296094,
+        3.7450672197973867,
+        0.7942526513962985
+      ],
+      "vel_out": [
+        -1.1691526516971524,
+        -0.9393219578469656,
+        0.944878914644216
+      ]
+    }
+  ],
+  "effort_score": 0.7025451175371202,
+  "gates_passed": 2,
+  "gate_pass": [
+    true,
+    true,
+    false,
+    false
+  ],
+  "raw_gates_passed": 2,
+  "raw_gate_pass": [
+    true,
+    true,
+    false,
+    false
+  ],
+  "drone_windows_passed": 1,
+  "drone_window_pass": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "contacts": 7,
+  "gate_contact": true,
+  "ball_gate_contact": false,
+  "racket_gate_contact": true,
+  "drone_gate_contact": true,
+  "drone_crash": false,
+  "action_violation": false,
+  "over_action_steps": 0,
+  "max_action_N": 13.0,
+  "max_tilt_deg": 70.15632994504713,
+  "final_ball_xy_error_m": 4.803895003928279,
+  "best_target_xy_error_m": 2.8315918479636752,
+  "final_ball_speed_mps": 0.10834878546745642,
+  "target_dwell_time_s": 0.0,
+  "gate_closest": [
+    {
+      "time": 1.0300000000000007,
+      "ball_x": 1.449840210187965,
+      "ball_y": 1.1065123324824675,
+      "ball_z": 3.5893075926462,
+      "y_error": 0.5911569093494108,
+      "gate_top_z_m": 2.5538790840190693,
+      "required_ball_center_z_m": 2.623879084019069,
+      "lower_bar_center_clearance_m": 2.865428508627131,
+      "ball_bottom_over_gate_top_clearance_m": 0.9754285086271306,
+      "over_top_clearance_m": 0.9754285086271306
+    },
+    {
+      "time": 3.8779999999997945,
+      "ball_x": 2.849615951629137,
+      "ball_y": 2.7834826414393246,
+      "ball_z": 0.059946478187873055,
+      "y_error": 1.7558620706855268,
+      "gate_top_z_m": 2.6393007969179756,
+      "required_ball_center_z_m": 2.7093007969179754,
+      "lower_bar_center_clearance_m": -0.7493543187301027,
+      "ball_bottom_over_gate_top_clearance_m": -2.6393543187301027,
+      "over_top_clearance_m": -2.6393543187301027
+    },
+    {
+      "time": 2.4619999999999505,
+      "ball_x": 3.8760236914585824,
+      "ball_y": 3.646929051592009,
+      "ball_z": 0.8375469830909137,
+      "y_error": 2.105682003655964,
+      "gate_top_z_m": 2.603753932976097,
+      "required_ball_center_z_m": 2.673753932976097,
+      "lower_bar_center_clearance_m": 0.06379305011481673,
+      "ball_bottom_over_gate_top_clearance_m": -1.8262069498851834,
+      "over_top_clearance_m": -1.8262069498851834
+    },
+    {
+      "time": 2.4619999999999505,
+      "ball_x": 3.8760236914585824,
+      "ball_y": 3.646929051592009,
+      "ball_z": 0.8375469830909137,
+      "y_error": 1.5989401604264706,
+      "gate_top_z_m": 2.6831601886824585,
+      "required_ball_center_z_m": 2.7531601886824584,
+      "lower_bar_center_clearance_m": -0.015613205591544776,
+      "ball_bottom_over_gate_top_clearance_m": -1.905613205591545,
+      "over_top_clearance_m": -1.905613205591545
+    }
+  ],
+  "final_drone_pos": [
+    0.9968304628165807,
+    1.334237645037997,
+    1.4032752211495638
+  ],
+  "final_ball_pos": [
+    1.7771902068818968,
+    1.7201075568954631,
+    0.05994845388341117
+  ],
+  "video_path": "/mnt/openfoam/pingpong-venv/progression/20260718T153706Z_policy_evolved_g202_heldout/cases/range_424242_014/range_424242_014_actuated_rollout.mp4",
+  "public_partial_tracker_visible_after_s": 0.18,
+  "public_partial_tracker_period_s": 0.04,
+  "public_partial_tracker_extra_delay_s": 0.055,
+  "public_partial_ball_pos_quant_m": [
+    0.04,
+    0.04,
+    0.06
+  ],
+  "public_partial_ball_vel_quant_mps": [
+    0.08,
+    0.08,
+    0.12
+  ]
+}
