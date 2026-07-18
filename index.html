@@ -321,6 +321,22 @@
   .champion-rank-badge.rank-2 { background: linear-gradient(135deg, #f1f5f9, #94a3b8); }
   .champion-rank-badge.rank-3 { background: linear-gradient(135deg, #f3c08a, #b5651d); }
 
+  /* Pack provenance: champion installs vs local CI candidate probes */
+  .pack-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  .pack-badge.pack-champion { background: rgba(245, 158, 11, 0.16); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.35); }
+  .pack-badge.pack-candidate { background: rgba(96, 165, 250, 0.14); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); }
+
   .champion-score-badge {
     position: absolute;
     bottom: 6px;
@@ -2015,7 +2031,7 @@
 
       card.innerHTML = `
         <div class="champion-rank-badge${rankClass}">#${rank}</div>
-        <div class="card-run-label">${cleanLabel}</div>
+        <div class="card-run-label">${cleanLabel}${packTypeBadge(label)}</div>
         <div class="video-container">
           ${videoHtml}
         </div>
@@ -2067,7 +2083,7 @@
       const fallbackVideoPath = nominalVideo ? nominalVideo.rel_path : '';
 
       card.innerHTML = `
-        <div class="card-run-label">${cleanLabel}</div>
+        <div class="card-run-label">${cleanLabel}${packTypeBadge(label)}</div>
         <div class="video-container" style="position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000;">
           <video src="${gridVideoPath}" poster="${poster}" loop muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='${fallbackVideoPath}'; this.load();"></video>
           <div class="hover-play-overlay">
@@ -2192,6 +2208,21 @@
   });
 
   // Format ISO timestamp (e.g. 20260714T201031Z) to human-readable format
+  // Pack provenance badge. Champion-install packs are written by the CEM's
+  // maybe_install for each newly installed champion; policy_evolved_ci_* packs
+  // are local mech/window-cycle candidate probes — fully rendered, but NOT
+  // necessarily the champion. The newest pack can therefore be a non-champion
+  // candidate; this badge makes the distinction visible at a glance.
+  function packTypeBadge(label) {
+    if (/policy_evolved_ci_\d{8}T\d{6}Z/.test(label)) {
+      return '<span class="pack-badge pack-candidate">CI candidate</span>';
+    }
+    if (/(^|_)(policy_)?evolved_g\d+/.test(label)) {
+      return '<span class="pack-badge pack-champion">Champion install</span>';
+    }
+    return '';
+  }
+
   function formatTimestamp(ts) {
     if (!ts) return '';
     try {
