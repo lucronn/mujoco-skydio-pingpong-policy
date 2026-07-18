@@ -1,7 +1,0 @@
-{
-  "label": "U1_nominal",
-  "created_utc": "20260714T055836Z",
-  "run_dir": "progression/20260714T055836Z_U1_nominal",
-  "policy_path": "repair_work/policy_named.py",
-  "policy_sha256": "55edc7767323a6831671af6347934f419415fec6118109ba9187ce798688efae"
-}

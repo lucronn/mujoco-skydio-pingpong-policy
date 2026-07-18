@@ -1,7 +1,0 @@
-{
-  "label": "debug_002_win2",
-  "created_utc": "20260715T214846Z",
-  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260715T214846Z_debug_002_win2",
-  "policy_path": "progression/_staging/20260715T214804Z_policy_evolved_ci_20260715T185748Z/policy.py",
-  "policy_sha256": "27490d14ad8d20b628faf2b1581bb209be6edb2375ab1bde8cf7a015c74afef4"
-}

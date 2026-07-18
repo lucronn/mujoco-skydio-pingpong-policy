@@ -1,7 +1,0 @@
-{
-  "label": "U_overnight_v109_public",
-  "created_utc": "20260714T064458Z",
-  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260714T064458Z_U_overnight_v109_public",
-  "policy_path": "/mnt/openfoam/pingpong-venv/repair_work/policy_v109.py",
-  "policy_sha256": "1ebde33bd5926232ae5680ae056803c6fdf8adcaae6993972ceed3525407d020"
-}

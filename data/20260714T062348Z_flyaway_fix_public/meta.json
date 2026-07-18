@@ -1,7 +1,0 @@
-{
-  "label": "flyaway_fix_public",
-  "created_utc": "20260714T062348Z",
-  "run_dir": "progression/20260714T062348Z_flyaway_fix_public",
-  "policy_path": "repair_work/policy_course.py",
-  "policy_sha256": "d96aef3c84a241ab79a8f0573d32738199d0d92fc616360d8536d18003cf2699"
-}
