@@ -1258,6 +1258,71 @@
       box-sizing: border-box;
     }
   }
+
+  /* Hover Play Overlay hint for grid preview card */
+  .hover-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    pointer-events: none;
+    transition: opacity 0.25s ease, background 0.25s ease;
+    z-index: 10;
+  }
+  .grid-cell:hover .hover-play-overlay {
+    opacity: 0;
+  }
+
+  /* Champion Cards Elite Rank Glows */
+  .champion-card.rank-1-card {
+    border-color: #ffe27a !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.18);
+  }
+  .champion-card.rank-1-card:hover {
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
+  }
+  
+  .champion-card.rank-2-card {
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 4px 15px rgba(148, 163, 184, 0.15);
+  }
+  .champion-card.rank-2-card:hover {
+    box-shadow: 0 12px 30px rgba(148, 163, 184, 0.35);
+  }
+
+  .champion-card.rank-3-card {
+    border-color: #f3c08a !important;
+    box-shadow: 0 4px 15px rgba(181, 101, 29, 0.15);
+  }
+  .champion-card.rank-3-card:hover {
+    box-shadow: 0 12px 30px rgba(181, 101, 29, 0.35);
+  }
+
+  /* Case List Button Indicators */
+  .case-btn.success-case {
+    border-left: 3px solid transparent;
+  }
+  .case-btn.crash-case {
+    border-left: 3px solid transparent;
+  }
+  .case-btn.success-case.active {
+    border-left: 3px solid var(--color-emerald) !important;
+  }
+  .case-btn.crash-case.active {
+    border-left: 3px solid var(--color-rose) !important;
+  }
 </style>
 </head>
 <body>
@@ -1846,8 +1911,9 @@
       const label = run.meta.label || run.dir_name;
       const cleanLabel = label.replace('_heldout', '').replace('_focus', '').replace('policy_evolved_', 'Evolved ');
 
+      const rankCardClass = rank === 1 ? ' rank-1-card' : rank === 2 ? ' rank-2-card' : rank === 3 ? ' rank-3-card' : '';
       const card = document.createElement('article');
-      card.className = 'grid-cell champion-card';
+      card.className = `grid-cell champion-card${rankCardClass}`;
       card.onclick = () => openModal(run, 'nominal');
       card.onmouseenter = () => card.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
       card.onmouseleave = () => card.querySelectorAll('video').forEach(v => v.pause());
@@ -1914,6 +1980,10 @@
         <div class="card-run-label">${cleanLabel}</div>
         <div class="video-container" style="position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000;">
           <video src="${gridVideoPath}" poster="${poster}" loop muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='${fallbackVideoPath}'; this.load();"></video>
+          <div class="hover-play-overlay">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85; margin-bottom: 2px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Hover to preview grid</span>
+          </div>
         </div>
       `;
       gridContainer.appendChild(card);
@@ -2317,8 +2387,9 @@
 
     run.cases.forEach(c => {
       const isCrashed = c.metrics && (c.metrics.drone_crash === 1 || c.metrics.drone_crash === true);
+      const caseStatusClass = isCrashed ? 'crash-case' : 'success-case';
       const btn = document.createElement('button');
-      btn.className = `case-btn ${c.name === selectedModalCase.name ? 'active' : ''}`;
+      btn.className = `case-btn ${caseStatusClass} ${c.name === selectedModalCase.name ? 'active' : ''}`;
       btn.onclick = () => selectModalCase(c.name);
 
       const bClass = isCrashed ? 'crash' : 'success';

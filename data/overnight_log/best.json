@@ -8,7 +8,7 @@
   "nominal_sc": 0.794957618291186,
   "nominal_win": null,
   "name": "policy_evolved_ci_20260718T020854Z",
-  "path": "/mnt/openfoam/pingpong-venv/repair_work/policy_evolved_ci_20260718T020854Z.py",
+  "path": "/opt/pingpong/repair_work/policy_evolved_ci_20260718T020854Z.py",
   "stamp": "20260718T020854Z",
   "note": "ci mech cycle tag=rng_mech_0",
   "hist": {
