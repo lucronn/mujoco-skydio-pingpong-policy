@@ -1,8 +1,8 @@
 {
-  "stamp": "20260718T180741Z",
-  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260718T175806Z_policy_evolved_g814_heldout",
-  "policy": "/opt/pingpong/repair_work/policy_evolved_g814.py",
+  "stamp": "20260719T190543Z",
+  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260719T190202Z_policy_win011_heldout",
+  "policy": "/mnt/openfoam/pingpong-venv/repair_work/policy_v230.py",
   "suite": "heldout",
-  "raw_score_100": 17.45477822652388,
-  "mean_bg": 1.9642857142857142
+  "raw_score_100": 24.850165782761845,
+  "mean_bg": 2.607142857142857
 }
