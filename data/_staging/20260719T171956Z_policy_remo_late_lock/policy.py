@@ -1,0 +1,72 @@
+# auto-generated evolvable candidate
+import importlib.util
+from pathlib import Path
+_THETA = {
+  "quiet_ym_hot": 0.8700867134264386,
+  "quiet_vy_hot": 2.2918597638667357,
+  "quiet_ym_mod": 0.5548875045388687,
+  "quiet_mod_dt": 0.07190145630882958,
+  "race_ym_arm": 0.5874140011485913,
+  "race_meet_back": 0.4181120217998606,
+  "race_far_y": 0.3039531583353313,
+  "race_dxy_lo": 0.109570860439003,
+  "race_dxy_hi": 0.6931135063049403,
+  "race_far_off": 0.014795344246118391,
+  "race_mix": 46.851695717822246,
+  "race_ty_far": 0.7615680078184566,
+  "race_ty_vy": 0.7589356892877094,
+  "race_ty_g": 0.47019871420047993,
+  "race_sep": 0.42972242163452,
+  "race_bvz_max": 1.959186504470472,
+  "lag_chase_x": 0.2175844799100322,
+  "lag_chase_z": 0.10245678798832106,
+  "lag_dz_lo": 0.02,
+  "lag_dxy_hi_cap": 0.3595209663499516,
+  "lag_up": 0.1,
+  "lag_mix_boost": 8.0,
+  "lag_arm_bx": 1.7,
+  "lag_behind_eps": 0.05,
+  "hot_far_soft": -0.12,
+  "coast_after_contact": 0.36904487825379667,
+  "early_tip_mix": 28.18534564274326,
+  "early_tip_ty_far": 0.8140326461332953,
+  "early_tip_ty_vy": 0.3249543647096565,
+  "band2_tend_base": 0.8872446510992271,
+  "band2_tend_span": 0.015132065775501465,
+  "b1_ym": 0.8922938890193711,
+  "b1_vy_max": 1.9019354308584566,
+  "b1_by_min": 0.1336158359888542,
+  "b1_t0": 0.4922814785242273,
+  "b1_t1": 0.5782904377312043,
+  "cold_ym_lo": 0.7924393642740979,
+  "cold_ym_hi": 0.8955070260861773,
+  "cold_ym_mid": 0.7682659492464655,
+  "cold_ym_mid_hi": 1.0533112328892913,
+  "cold_ym": 0.7682659492464655,
+  "cold_vy_max": 1.1682207044977497,
+  "cold_by_abs_max": 0.8527750241905111,
+  "cold_t0": 0.539293546378447,
+  "cold_t1": 0.7111877333388066,
+  "cold_tend": 0.9047845111737719,
+  "cold_inside": 0.1742851454580974,
+  "launch1_tx": -0.1,
+  "launch1_ty": 0.20668423533793084,
+  "launch2_scale": 1.0,
+  "launch2_tx": 0.004344440984144954,
+  "launch2_ty": 0.05,
+  "race_lim_span": 0.3956015593096685,
+  "dive_vz_kp": 3.867881158734657,
+  "dive_vz_kd": 1.0794020039551728,
+  "dive_vz_max_down": -6.129919750341207,
+  "launch2_proj_tau": 0.19981269314703753,
+  "launch2_proj_scale": 0.6171529293849409
+}
+_base_path = Path('/mnt/openfoam/pingpong-venv/progression/_staging/20260719T171956Z_policy_remo_late_lock/policy_v230.py').resolve().parents[1] / "policy_v230.py" if Path(__file__).resolve().parent.name == "evolve_cands" else Path(__file__).resolve().parent / "policy_v230.py"
+_spec = importlib.util.spec_from_file_location("_volley_base", _base_path)
+_base = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_base)
+
+class Policy(_base.Policy):
+    def reset(self, info=None):
+        super().reset(info)
+        self.theta = dict(_THETA)
