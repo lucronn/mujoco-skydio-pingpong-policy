@@ -1,5 +1,5 @@
 {
-  "raw_score_100": 20.295282802546392,
+  "raw_score_100": 21.48513477478125,
   "mean_bg": 2.0714285714285716,
   "mean_win": 0.5714285714285714,
   "hard_rate": 0.0,
@@ -7,15 +7,15 @@
   "nominal_bg": 4,
   "nominal_win": 0,
   "nominal_sc": 0.7973305158343483,
-  "name": "policy_evolved_g814",
+  "name": "ship_autoloop",
   "path": "/mnt/openfoam/pingpong-venv/repair_work/policy_evolved_g814.py",
   "stamp": "20260718T175806Z",
   "note": "evolve_volley window-gate install",
   "hist": {
-    "1": 7,
-    "2": 14,
-    "3": 5,
-    "4": 2
+    "1": 3,
+    "2": 15,
+    "3": 7,
+    "4": 3
   },
   "n_bg2_plus": 21,
   "n_bg3_plus": 7,
