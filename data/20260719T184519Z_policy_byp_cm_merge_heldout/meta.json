@@ -1,0 +1,7 @@
+{
+  "label": "policy_byp_cm_merge_heldout",
+  "created_utc": "20260719T184519Z",
+  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260719T184519Z_policy_byp_cm_merge_heldout",
+  "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260719T184519Z_policy_v230/policy.py",
+  "policy_sha256": "f6b3cba7cbc7117a69617e6cdfb85a5328a20dc316191c23a0f6088ca81131f6"
+}
