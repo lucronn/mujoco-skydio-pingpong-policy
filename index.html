@@ -1384,6 +1384,80 @@
     margin-left: 6px;
     font-family: monospace;
   }
+
+  /* Video playback overlay hiding */
+  .media-display video:playing ~ .overlay-info,
+  .media-display video:fullscreen ~ .overlay-info {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .media-display:has(video:playing) .overlay-info {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Preview Modal on Hover */
+  .render-preview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .render-preview-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .render-preview-container {
+    width: 90%;
+    max-width: 1600px;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .render-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+  }
+
+  .render-preview-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .render-preview-media {
+    flex: 1;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .render-preview-media video,
+  .render-preview-media img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
 </style>
 </head>
 <body>
@@ -1622,8 +1696,11 @@
         
         <div class="widescreen-media-layout show-3d">
           <div class="media-display-pane pane-left">
-            <h4 class="pane-title">3D Render Video</h4>
-            <div class="media-display">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 class="pane-title">3D Render Video</h4>
+              <span id="render-3d-score-label" style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 600;"></span>
+            </div>
+            <div class="media-display" id="media-display-3d">
               <video id="modal-video-3d" controls autoplay muted loop playsinline src=""></video>
             </div>
           </div>
@@ -1635,7 +1712,7 @@
                 <button class="chart-btn" id="btn-widescreen-2d" style="padding: 2px 6px; font-size: 0.68rem;" onclick="setWidescreenRightMedia('2d')">Video</button>
               </div>
             </div>
-            <div class="media-display">
+            <div class="media-display" id="media-display-2d-video">
               <video id="modal-video-2d" controls autoplay muted loop playsinline src="" style="display: none;"></video>
               <img id="modal-image-2d" src="" alt="Trajectory 2D Plot">
             </div>
@@ -2029,13 +2106,14 @@
         ? `<video src="${video.rel_path}" ${posterAttr} loop muted playsinline preload="metadata"></video>`
         : `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-muted);font-size:0.8rem;">No nominal render</div>`;
 
+      const renderType = v3d ? '3D' : v2d ? '2D' : 'unknown';
       card.innerHTML = `
         <div class="champion-rank-badge${rankClass}">#${rank}</div>
         <div class="card-run-label">${cleanLabel}${packTypeBadge(label)}</div>
         <div class="video-container">
           ${videoHtml}
         </div>
-        <div class="champion-score-badge">raw ${raw.toFixed(2)}</div>
+        <div class="champion-score-badge">raw ${raw.toFixed(2)} (${renderType})</div>
         <div class="card-timestamp">${formatTimestamp(run.meta.created_utc || run.dir_name)}</div>
       `;
       container.appendChild(card);
@@ -2607,6 +2685,15 @@
   function updateModalCaseDetails() {
     const c = selectedModalCase;
     const metrics = c.metrics || {};
+
+    // Update render type indicators
+    const v3d = c.videos.find(v => v.filename === 'render_3d.mp4');
+    const v2d = c.videos.find(v => v.filename === 'render_2d.mp4');
+
+    const render3dScoreLabel = document.getElementById('render-3d-score-label');
+    if (render3dScoreLabel) {
+      render3dScoreLabel.textContent = v3d ? '3D Render' : 'N/A';
+    }
 
     // Render metrics table
     const tbody = document.getElementById('modal-metrics-body');
