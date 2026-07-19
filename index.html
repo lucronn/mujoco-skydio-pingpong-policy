@@ -1823,6 +1823,9 @@
     // Render 3x3 grid (last 9 nominal videos)
     renderLatest9Grid();
 
+    // Set up preview modal listeners for all rendered sections
+    setupRenderPreviewListeners();
+
     // Populate archive filters
     populateFilters();
 
@@ -2126,9 +2129,6 @@
       `;
       container.appendChild(card);
     });
-
-    // Set up preview modal listeners for champions
-    setupRenderPreviewListeners();
   }
 
   function renderLatest9Grid() {
@@ -2184,9 +2184,6 @@
       `;
       gridContainer.appendChild(card);
     });
-
-    // Set up preview modal listeners for latest 9 grid
-    setupRenderPreviewListeners();
   }
 
   // Render the 8x5 Matrix Video Wall using the 40 latest GIF renders (high-res 360px)
@@ -3165,6 +3162,7 @@
         `;
         newModal.onclick = () => hidePreviewModal();
         document.body.appendChild(newModal);
+        setupModalHoverBehavior(newModal);
       } else {
         const container = document.getElementById('preview-media-container');
         if (container) {
@@ -3174,6 +3172,7 @@
         }
         document.querySelector('.render-preview-title').textContent = title || 'Preview';
         modal.classList.add('active');
+        setupModalHoverBehavior(modal);
       }
     }, 150);
   }
@@ -3192,12 +3191,26 @@
     currentPreviewElement = null;
   }
 
+  function setupModalHoverBehavior(modal) {
+    if (!modal) return;
+
+    // Keep modal open when hovering over it
+    modal.addEventListener('mouseenter', () => {
+      if (previewModalTimeout) clearTimeout(previewModalTimeout);
+    });
+
+    // Close modal when leaving it, but with a small delay to prevent flashing
+    modal.addEventListener('mouseleave', () => {
+      hidePreviewModal();
+    });
+  }
+
   // Set up preview modal listeners for archive videos
   function setupRenderPreviewListeners() {
     // Set up overlay control for all videos
     setupVideoOverlayControl();
 
-    const archiveVideos = document.querySelectorAll('.archive-cell .video-container');
+    const archiveVideos = document.querySelectorAll('.archive-cell .video-container:not([data-preview-setup])');
     archiveVideos.forEach(container => {
       const cell = container.closest('.archive-cell');
       const title = cell.querySelector('.archive-cell-title')?.textContent || 'Render Preview';
@@ -3207,11 +3220,15 @@
         const mediaSrc = video.src || video.getAttribute('src');
         container.style.cursor = 'pointer';
         container.addEventListener('mouseenter', (e) => showPreviewModal(e, mediaSrc, title));
-        container.addEventListener('mouseleave', hidePreviewModal);
+        container.addEventListener('mouseleave', () => {
+          const modal = document.getElementById('render-preview-modal');
+          if (!modal || !modal.classList.contains('active')) hidePreviewModal();
+        });
+        container.setAttribute('data-preview-setup', 'true');
       }
     });
 
-    const gridVideos = document.querySelectorAll('.grid-cell .video-container');
+    const gridVideos = document.querySelectorAll('.grid-cell .video-container:not([data-preview-setup])');
     gridVideos.forEach(container => {
       const cell = container.closest('.grid-cell');
       const title = cell.querySelector('.card-run-label')?.textContent || 'Render Preview';
@@ -3221,11 +3238,15 @@
         const mediaSrc = video.src || video.getAttribute('src');
         container.style.cursor = 'pointer';
         container.addEventListener('mouseenter', (e) => showPreviewModal(e, mediaSrc, title));
-        container.addEventListener('mouseleave', hidePreviewModal);
+        container.addEventListener('mouseleave', () => {
+          const modal = document.getElementById('render-preview-modal');
+          if (!modal || !modal.classList.contains('active')) hidePreviewModal();
+        });
+        container.setAttribute('data-preview-setup', 'true');
       }
     });
 
-    const wallCells = document.querySelectorAll('.wall-cell');
+    const wallCells = document.querySelectorAll('.wall-cell:not([data-preview-setup])');
     wallCells.forEach(cell => {
       const img = cell.querySelector('img');
       const tooltip = cell.querySelector('.wall-tooltip');
@@ -3235,7 +3256,11 @@
         const mediaSrc = img.src;
         cell.style.cursor = 'pointer';
         cell.addEventListener('mouseenter', (e) => showPreviewModal(e, mediaSrc, title));
-        cell.addEventListener('mouseleave', hidePreviewModal);
+        cell.addEventListener('mouseleave', () => {
+          const modal = document.getElementById('render-preview-modal');
+          if (!modal || !modal.classList.contains('active')) hidePreviewModal();
+        });
+        cell.setAttribute('data-preview-setup', 'true');
       }
     });
   }
