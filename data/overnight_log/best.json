@@ -1,5 +1,5 @@
 {
-  "raw_score_100": 21.924165036389525,
+  "raw_score_100": 22.350576548449908,
   "mean_bg": 2.0714285714285716,
   "mean_win": 0.5714285714285714,
   "hard_rate": 0.0,
@@ -7,7 +7,7 @@
   "nominal_bg": 4,
   "nominal_win": 0,
   "nominal_sc": 0.7973305158343483,
-  "name": "ship_cem_2192",
+  "name": "ship_cem_2235",
   "path": "/opt/pingpong/repair_work/policy_evolved_g814.py",
   "stamp": "20260718T175806Z",
   "note": "evolve_volley window-gate install",
