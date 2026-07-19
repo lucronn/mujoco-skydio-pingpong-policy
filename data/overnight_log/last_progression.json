@@ -1,8 +1,8 @@
 {
-  "stamp": "20260719T193440Z",
-  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260719T193059Z_policy_soft_hi_lf6230",
+  "stamp": "20260719T193922Z",
+  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260719T193513Z_policy_win_retro_soft_hi",
   "policy": "/mnt/openfoam/pingpong-venv/repair_work/policy_v230.py",
   "suite": "heldout",
-  "raw_score_100": 25.032073575056984,
+  "raw_score_100": 25.161198962183185,
   "mean_bg": 2.607142857142857
 }
