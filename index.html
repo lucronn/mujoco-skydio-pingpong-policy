@@ -1826,6 +1826,9 @@
     // Set up preview modal listeners for all rendered sections
     setupRenderPreviewListeners();
 
+    // Set up sequential playback for grids
+    setupSequentialPlayback();
+
     // Populate archive filters
     populateFilters();
 
@@ -2467,6 +2470,9 @@
 
     // Set up preview modal listeners for newly loaded items
     setupRenderPreviewListeners();
+
+    // Set up sequential playback for archive grid
+    setupSequentialPlayback();
   }
 
   function setupSentinelObserver() {
@@ -3131,6 +3137,89 @@
         overlay.style.opacity = '0.8';
       });
     });
+  }
+
+  // Sequential playback for grids - play renders one at a time
+  function setupSequentialPlayback() {
+    const archiveGrid = document.getElementById('archive-videos-grid');
+    if (archiveGrid) {
+      setupGridSequentialPlayback(archiveGrid);
+    }
+
+    const wallGrid = document.getElementById('wall-grid-element');
+    if (wallGrid) {
+      setupWallSequentialPlayback(wallGrid);
+    }
+  }
+
+  function setupGridSequentialPlayback(grid) {
+    const videos = grid.querySelectorAll('video');
+    if (videos.length === 0) return;
+
+    let currentIndex = 0;
+
+    function playNext() {
+      videos.forEach(v => v.pause());
+
+      if (currentIndex < videos.length) {
+        const video = videos[currentIndex];
+        video.currentTime = 0;
+        video.play().catch(() => {});
+
+        video.onended = () => {
+          currentIndex++;
+          playNext();
+        };
+
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+        playNext();
+      }
+    }
+
+    playNext();
+  }
+
+  function setupWallSequentialPlayback(grid) {
+    const cells = grid.querySelectorAll('.wall-cell');
+    if (cells.length === 0) return;
+
+    let currentIndex = 0;
+    const animatedElements = [];
+
+    cells.forEach((cell, index) => {
+      const img = cell.querySelector('img');
+      if (img && img.src.endsWith('.gif')) {
+        animatedElements.push({ cell, img, index });
+      }
+    });
+
+    if (animatedElements.length === 0) return;
+
+    function highlightNext() {
+      animatedElements.forEach(el => {
+        el.cell.style.opacity = '0.5';
+        el.cell.style.filter = 'grayscale(50%)';
+      });
+
+      if (currentIndex < animatedElements.length) {
+        const current = animatedElements[currentIndex];
+        current.cell.style.opacity = '1';
+        current.cell.style.filter = 'grayscale(0%)';
+        current.cell.style.transform = 'scale(1.02)';
+
+        setTimeout(() => {
+          currentIndex++;
+          highlightNext();
+        }, 800);
+      } else {
+        currentIndex = 0;
+        highlightNext();
+      }
+    }
+
+    highlightNext();
   }
 
   // Preview modal functionality for renders on hover
