@@ -1,5 +1,5 @@
 {
-  "raw_score_100": 20.295282802546392,
+  "raw_score_100": 20.578033657653073,
   "mean_bg": 2.0714285714285716,
   "mean_win": 0.5714285714285714,
   "hard_rate": 0.0,
@@ -7,14 +7,14 @@
   "nominal_bg": 4,
   "nominal_win": 0,
   "nominal_sc": 0.7973305158343483,
-  "name": "policy_evolved_g814",
-  "path": "/mnt/openfoam/pingpong-venv/repair_work/policy_evolved_g814.py",
+  "name": "ship_autoloop_uf",
+  "path": "/opt/pingpong/repair_work/policy_evolved_g814.py",
   "stamp": "20260718T175806Z",
   "note": "evolve_volley window-gate install",
   "hist": {
-    "1": 7,
-    "2": 14,
-    "3": 5,
+    "1": 5,
+    "2": 13,
+    "3": 8,
     "4": 2
   },
   "n_bg2_plus": 21,
