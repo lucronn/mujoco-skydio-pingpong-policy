@@ -3154,7 +3154,6 @@
           <div class="render-preview-container">
             <div class="render-preview-header">
               <span class="render-preview-title">${title || 'Preview'}</span>
-              <span style="font-size: 0.75rem; color: var(--text-muted);">Hover over render to preview</span>
             </div>
             <div class="render-preview-media" id="preview-media-container">
               ${mediaPath.endsWith('.mp4') || mediaPath.endsWith('.webm') ?
@@ -3176,7 +3175,7 @@
         document.querySelector('.render-preview-title').textContent = title || 'Preview';
         modal.classList.add('active');
       }
-    }, 300);
+    }, 150);
   }
 
   function hidePreviewModal() {
@@ -3223,6 +3222,20 @@
         container.style.cursor = 'pointer';
         container.addEventListener('mouseenter', (e) => showPreviewModal(e, mediaSrc, title));
         container.addEventListener('mouseleave', hidePreviewModal);
+      }
+    });
+
+    const wallCells = document.querySelectorAll('.wall-cell');
+    wallCells.forEach(cell => {
+      const img = cell.querySelector('img');
+      const tooltip = cell.querySelector('.wall-tooltip');
+      const title = tooltip?.textContent || 'Wall Preview';
+
+      if (img) {
+        const mediaSrc = img.src;
+        cell.style.cursor = 'pointer';
+        cell.addEventListener('mouseenter', (e) => showPreviewModal(e, mediaSrc, title));
+        cell.addEventListener('mouseleave', hidePreviewModal);
       }
     });
   }
