@@ -8,7 +8,7 @@
   "nominal_win": 0,
   "nominal_sc": 0.7973305158343483,
   "name": "policy_evolved_g814",
-  "path": "/opt/pingpong/repair_work/policy_evolved_g814.py",
+  "path": "/mnt/openfoam/pingpong-venv/repair_work/policy_evolved_g814.py",
   "stamp": "20260718T175806Z",
   "note": "evolve_volley window-gate install",
   "hist": {
