@@ -489,6 +489,14 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #fff;
     opacity: 0.8;
+    transition: opacity 0.2s ease;
+    z-index: 12;
+  }
+
+  /* Hide overlay when video is playing */
+  .video-container:has(video:playing) .cell-overlay {
+    opacity: 0;
+    pointer-events: none;
   }
 
   /* Progression timeline section */
@@ -2118,6 +2126,9 @@
       `;
       container.appendChild(card);
     });
+
+    // Set up preview modal listeners for champions
+    setupRenderPreviewListeners();
   }
 
   function renderLatest9Grid() {
@@ -2173,6 +2184,9 @@
       `;
       gridContainer.appendChild(card);
     });
+
+    // Set up preview modal listeners for latest 9 grid
+    setupRenderPreviewListeners();
   }
 
   // Render the 8x5 Matrix Video Wall using the 40 latest GIF renders (high-res 360px)
@@ -2450,9 +2464,12 @@
     });
 
     archiveOffset += batch.length;
-    
+
     // Re-bind intersection observer for visible playing
     setupIntersectionObserver();
+
+    // Set up preview modal listeners for newly loaded items
+    setupRenderPreviewListeners();
   }
 
   function setupSentinelObserver() {
@@ -3092,13 +3109,132 @@
     }
     const modal = document.getElementById('details-modal');
     modal.classList.remove('active');
-    
+
     // Pause video
     const video3d = document.getElementById('modal-video-3d');
     const video2d = document.getElementById('modal-video-2d');
     if (video3d) video3d.pause();
     if (video2d) video2d.pause();
   }
+
+  // Hide overlays when videos play - fallback for older browsers
+  function setupVideoOverlayControl() {
+    const allVideos = document.querySelectorAll('.video-container video');
+    allVideos.forEach(video => {
+      const overlay = video.closest('.video-container')?.querySelector('.cell-overlay');
+      if (!overlay) return;
+
+      video.addEventListener('play', () => {
+        overlay.style.opacity = '0';
+      });
+      video.addEventListener('pause', () => {
+        overlay.style.opacity = '0.8';
+      });
+      video.addEventListener('ended', () => {
+        overlay.style.opacity = '0.8';
+      });
+    });
+  }
+
+  // Preview modal functionality for renders on hover
+  let previewModalTimeout = null;
+  let currentPreviewElement = null;
+
+  function showPreviewModal(event, mediaPath, title) {
+    if (previewModalTimeout) clearTimeout(previewModalTimeout);
+    currentPreviewElement = event.currentTarget;
+
+    previewModalTimeout = setTimeout(() => {
+      const modal = document.getElementById('render-preview-modal');
+      if (!modal) {
+        const newModal = document.createElement('div');
+        newModal.id = 'render-preview-modal';
+        newModal.className = 'render-preview-modal active';
+        newModal.innerHTML = `
+          <div class="render-preview-container">
+            <div class="render-preview-header">
+              <span class="render-preview-title">${title || 'Preview'}</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Hover over render to preview</span>
+            </div>
+            <div class="render-preview-media" id="preview-media-container">
+              ${mediaPath.endsWith('.mp4') || mediaPath.endsWith('.webm') ?
+                `<video autoplay muted loop playsinline src="${mediaPath}" style="max-width: 100%; max-height: 100%;"></video>` :
+                `<img src="${mediaPath}" alt="Preview" style="max-width: 100%; max-height: 100%;">`
+              }
+            </div>
+          </div>
+        `;
+        newModal.onclick = () => hidePreviewModal();
+        document.body.appendChild(newModal);
+      } else {
+        const container = document.getElementById('preview-media-container');
+        if (container) {
+          container.innerHTML = mediaPath.endsWith('.mp4') || mediaPath.endsWith('.webm') ?
+            `<video autoplay muted loop playsinline src="${mediaPath}" style="max-width: 100%; max-height: 100%;"></video>` :
+            `<img src="${mediaPath}" alt="Preview" style="max-width: 100%; max-height: 100%;">`;
+        }
+        document.querySelector('.render-preview-title').textContent = title || 'Preview';
+        modal.classList.add('active');
+      }
+    }, 300);
+  }
+
+  function hidePreviewModal() {
+    if (previewModalTimeout) clearTimeout(previewModalTimeout);
+    const modal = document.getElementById('render-preview-modal');
+    if (modal) {
+      modal.classList.remove('active');
+      setTimeout(() => {
+        if (modal && modal.parentNode && !modal.classList.contains('active')) {
+          modal.remove();
+        }
+      }, 150);
+    }
+    currentPreviewElement = null;
+  }
+
+  // Set up preview modal listeners for archive videos
+  function setupRenderPreviewListeners() {
+    // Set up overlay control for all videos
+    setupVideoOverlayControl();
+
+    const archiveVideos = document.querySelectorAll('.archive-cell .video-container');
+    archiveVideos.forEach(container => {
+      const cell = container.closest('.archive-cell');
+      const title = cell.querySelector('.archive-cell-title')?.textContent || 'Render Preview';
+      const video = container.querySelector('video') || container.querySelector('img');
+
+      if (video) {
+        const mediaSrc = video.src || video.getAttribute('src');
+        container.style.cursor = 'pointer';
+        container.addEventListener('mouseenter', (e) => showPreviewModal(e, mediaSrc, title));
+        container.addEventListener('mouseleave', hidePreviewModal);
+      }
+    });
+
+    const gridVideos = document.querySelectorAll('.grid-cell .video-container');
+    gridVideos.forEach(container => {
+      const cell = container.closest('.grid-cell');
+      const title = cell.querySelector('.card-run-label')?.textContent || 'Render Preview';
+      const video = container.querySelector('video') || container.querySelector('img');
+
+      if (video) {
+        const mediaSrc = video.src || video.getAttribute('src');
+        container.style.cursor = 'pointer';
+        container.addEventListener('mouseenter', (e) => showPreviewModal(e, mediaSrc, title));
+        container.addEventListener('mouseleave', hidePreviewModal);
+      }
+    });
+  }
+
+  // Call preview listeners setup after renders are populated
+  window.addEventListener('DOMContentLoaded', () => {
+    const originalInitDashboard = window.initDashboard;
+    window.initDashboard = function() {
+      originalInitDashboard.call(this);
+      setTimeout(setupRenderPreviewListeners, 500);
+    };
+  });
 </script>
 </body>
 </html>
