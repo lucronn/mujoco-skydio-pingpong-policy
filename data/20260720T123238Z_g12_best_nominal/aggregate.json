@@ -1,0 +1,25 @@
+{
+  "stamp": "20260720T123238Z",
+  "policy": "/tmp/g12_render/policy_g12_best.py",
+  "source_policy": "g12_autodrive_best_vultr",
+  "suite": "nominal",
+  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260720T123238Z_g12_best_nominal",
+  "raw_score_100": 9.411475356204704,
+  "mean_bg": 1.0,
+  "q25": 0.09411475356204704,
+  "mean_score": 0.09411475356204704,
+  "hard_rate": 0.0,
+  "nominal_bg": 1,
+  "nominal_sc": 0.09411475356204704,
+  "label": "G12 best (Vultr search) \u2014 forward g0 through, ordered_ok=False",
+  "g12_note": "g0_ball_over -> g0_drone_through; missing g1_ball_over; wins drone_windows_passed=2",
+  "rows": [
+    {
+      "name": "nominal",
+      "score": 0.09411475356204704,
+      "bounced_gate_passes": 1,
+      "hard_success": false,
+      "drone_windows_passed": 2
+    }
+  ]
+}
