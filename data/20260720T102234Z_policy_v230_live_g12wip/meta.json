@@ -1,0 +1,7 @@
+{
+  "label": "policy_v230_live_g12wip",
+  "created_utc": "20260720T102234Z",
+  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260720T102234Z_policy_v230_live_g12wip",
+  "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260720T102234Z_policy_v230/policy.py",
+  "policy_sha256": "66bb13d0bdc15b188a3d902f8d4098baf91a4e775998b007a3688fbf517eade6"
+}
