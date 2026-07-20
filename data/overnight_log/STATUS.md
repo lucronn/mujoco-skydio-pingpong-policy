@@ -40,7 +40,3 @@ Hand multiagent bands · finite `--gens` · autodriver · cold-start RL
 - `20260718T175806Z_policy_evolved_g814_heldout` suite=heldout raw=17.45 mbg=1.96
 - policy `policy_evolved_g814.py` (rendered from staging snapshot)
 
-## Progression pack 20260720T222053Z
-- `20260720T222038Z_juggle_v1` suite=focus raw=0.77 mbg=0.00
-- policy `policy_juggle_v1.py` (rendered from staging snapshot)
-
