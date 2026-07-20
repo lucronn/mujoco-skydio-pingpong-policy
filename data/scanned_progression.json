@@ -1,5 +1,72 @@
 [
   {
+    "dir_name": "20260720T124938Z_policy_pd_chase_try_nominal",
+    "meta": {
+      "policy_path": "repair_work/policy_pd_chase_try.py",
+      "policy_sha256": "1e78933ae87268c4dde3bc4bfbbd58c4b67500f798f6bdffe54e677159e192b3",
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "nominal",
+        "metrics": {
+          "score": 0.09685088762751917,
+          "hard_success": 0,
+          "bounced_gate_passes": 0,
+          "bounced_gate_pass": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "raw_gates_passed": 0,
+          "drone_windows_passed": 0,
+          "target_box_score": 0.0,
+          "target_box_entered": 0,
+          "safety_score": 1.0,
+          "drone_crash": 0,
+          "max_tilt_deg": 53.944045523688935,
+          "max_action_N": 10.156915337082935,
+          "final_ball_pos": [
+            -2.16504662856949,
+            -0.029579616953861455,
+            0.051259160402052306
+          ],
+          "final_drone_pos": [
+            -1.2763340010296613,
+            0.024551434455105433,
+            1.1224909093567434
+          ],
+          "contacts": 5,
+          "observation_mode": "partial",
+          "scenario_name": "nominal",
+          "policy_path": "repair_work/policy_pd_chase_try.py",
+          "policy_sha256": "1e78933ae87268c4dde3bc4bfbbd58c4b67500f798f6bdffe54e677159e192b3",
+          "phase_notes": null
+        },
+        "videos": [
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260720T124938Z_policy_pd_chase_try_nominal/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260720T124938Z_policy_pd_chase_try_nominal/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260720T124938Z_policy_pd_chase_try_nominal/cases/nominal/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260720T124938Z_policy_pd_chase_try_nominal/cases/nominal/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260720T124938Z_policy_pd_chase_try_nominal/cases/nominal/trajectory_2d.png"
+      }
+    ]
+  },
+  {
     "dir_name": "20260720T123238Z_g12_best_nominal",
     "meta": {
       "policy_path": "/tmp/g12_render/policy_g12_best.py",

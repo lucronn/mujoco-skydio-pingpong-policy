@@ -1,0 +1,25 @@
+{
+  "stamp": "20260720T124938Z",
+  "policy": "/mnt/openfoam/pingpong-venv/repair_work/policy_pd_chase_try.py",
+  "source_policy": "policy_pd_chase_try",
+  "suite": "nominal",
+  "run_dir": "progression/20260720T124938Z_policy_pd_chase_try_nominal",
+  "raw_score_100": 9.685088762751917,
+  "mean_bg": 0.0,
+  "q25": 0.09685088762751917,
+  "mean_score": 0.09685088762751917,
+  "hard_rate": 0.0,
+  "nominal_bg": 0,
+  "nominal_sc": 0.09685088762751917,
+  "label": "PD chase try (user sketch adapted) \u2014 fails on real plant",
+  "note": "score~0.097 bg=0; ball goes backward; not a viable G12/soft_hi alternative",
+  "rows": [
+    {
+      "name": "nominal",
+      "score": 0.09685088762751917,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    }
+  ]
+}
