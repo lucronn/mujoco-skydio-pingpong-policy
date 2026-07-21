@@ -3,7 +3,7 @@
     "dir_name": "20260721T003708Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -13,9 +13,25 @@
           "n_vert": 4,
           "mean_vz": 3.114423735858276,
           "juggle_success": true,
-          "camera": "juggle_close"
+          "camera": "review_wide"
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T003708Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T003708Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T003708Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T003708Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T003708Z_juggle_close/cases/nominal/render_3d.gif"
@@ -25,7 +41,7 @@
             "rel_path": "data/20260721T003708Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T003708Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -33,7 +49,7 @@
     "dir_name": "20260721T003624Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -45,9 +61,25 @@
           "mean_vz": 3.0865618624424465,
           "n_contact": 5,
           "max_r": 0.24591474066956082,
-          "camera": "juggle_close"
+          "camera": "review_wide"
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T003624Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T003624Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T003624Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T003624Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T003624Z_juggle_close/cases/nominal/render_3d.gif"
@@ -57,7 +89,7 @@
             "rel_path": "data/20260721T003624Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T003624Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -65,7 +97,7 @@
     "dir_name": "20260721T003514Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -77,10 +109,26 @@
           "mean_vz": 2.638678071669053,
           "n_contact": 6,
           "max_r": 0.21604958028156865,
-          "camera": "juggle_close",
+          "camera": "review_wide",
           "note": "champ_vz264"
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T003514Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T003514Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T003514Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T003514Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T003514Z_juggle_close/cases/nominal/render_3d.gif"
@@ -90,7 +138,7 @@
             "rel_path": "data/20260721T003514Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T003514Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -98,7 +146,7 @@
     "dir_name": "20260721T003431Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -110,9 +158,25 @@
           "mean_vz": 2.3793588125588117,
           "n_contact": 9,
           "max_r": 0.22265344193242892,
-          "camera": "juggle_close"
+          "camera": "review_wide"
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T003431Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T003431Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T003431Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T003431Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T003431Z_juggle_close/cases/nominal/render_3d.gif"
@@ -122,7 +186,7 @@
             "rel_path": "data/20260721T003431Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T003431Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -130,7 +194,7 @@
     "dir_name": "20260721T003359Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -142,9 +206,25 @@
           "mean_vz": 2.638678071669053,
           "n_contact": 6,
           "max_r": 0.21604958028156865,
-          "camera": "juggle_close"
+          "camera": "review_wide"
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T003359Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T003359Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T003359Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T003359Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T003359Z_juggle_close/cases/nominal/render_3d.gif"
@@ -154,7 +234,7 @@
             "rel_path": "data/20260721T003359Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T003359Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -162,7 +242,7 @@
     "dir_name": "20260721T003249Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -173,9 +253,25 @@
           "juggle_success": true,
           "mean_vz": 2.5393924123447835,
           "n_contact": 6,
-          "camera": "juggle_close"
+          "camera": "review_wide"
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T003249Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T003249Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T003249Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T003249Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T003249Z_juggle_close/cases/nominal/render_3d.gif"
@@ -185,7 +281,7 @@
             "rel_path": "data/20260721T003249Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T003249Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -193,7 +289,7 @@
     "dir_name": "20260721T003200Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -204,7 +300,7 @@
           "juggle_success": true,
           "mean_vz": 1.9735490668250506,
           "n_contact": 14,
-          "camera": "juggle_close",
+          "camera": "review_wide",
           "fit": [
             1,
             1.9735490668250506,
@@ -216,6 +312,22 @@
         },
         "videos": [
           {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T003200Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T003200Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T003200Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T003200Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
+          {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T003200Z_juggle_close/cases/nominal/render_3d.gif"
           },
@@ -224,7 +336,7 @@
             "rel_path": "data/20260721T003200Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T003200Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -232,7 +344,7 @@
     "dir_name": "20260721T003058Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -243,9 +355,25 @@
           "juggle_success": true,
           "mean_vz": 1.7248001095276109,
           "n_contact": 28,
-          "camera": "juggle_close"
+          "camera": "review_wide"
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T003058Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T003058Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T003058Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T003058Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T003058Z_juggle_close/cases/nominal/render_3d.gif"
@@ -255,7 +383,7 @@
             "rel_path": "data/20260721T003058Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T003058Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -263,7 +391,7 @@
     "dir_name": "20260721T003029Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -274,15 +402,35 @@
           "juggle_success": false,
           "mean_vz": 1.5358949262497479,
           "n_contact": 18,
-          "camera": "juggle_close"
+          "camera": "review_wide"
         },
         "videos": [
           {
-            "filename": "nominal_actuated_rollout.mp4",
-            "rel_path": "data/20260721T003029Z_juggle_close/cases/nominal/nominal_actuated_rollout.mp4"
+            "filename": "._nominal_actuated_rollout.mp4",
+            "rel_path": "data/20260721T003029Z_juggle_close/cases/nominal/._nominal_actuated_rollout.mp4"
+          },
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T003029Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T003029Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T003029Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260721T003029Z_juggle_close/cases/nominal/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260721T003029Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T003029Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -290,7 +438,7 @@
     "dir_name": "20260721T002914Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -302,9 +450,25 @@
           "mean_vz": 1.6425724308260985,
           "max_r": 0.19191191092183943,
           "n_contact": 13,
-          "camera": "juggle_close"
+          "camera": "review_wide"
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T002914Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T002914Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T002914Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T002914Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T002914Z_juggle_close/cases/nominal/render_3d.gif"
@@ -314,7 +478,7 @@
             "rel_path": "data/20260721T002914Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T002914Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -322,7 +486,7 @@
     "dir_name": "20260721T002810Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -333,9 +497,25 @@
           "juggle_success": true,
           "mean_vz": 1.3631700904308066,
           "max_r": 0.14592704888391442,
-          "camera": "juggle_close"
+          "camera": "review_wide"
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T002810Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T002810Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T002810Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T002810Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T002810Z_juggle_close/cases/nominal/render_3d.gif"
@@ -345,7 +525,7 @@
             "rel_path": "data/20260721T002810Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T002810Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -353,7 +533,7 @@
     "dir_name": "20260721T000648Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "rel_policy_path": null
     },
     "cases": [
@@ -365,10 +545,26 @@
           "mean_vz": 1.118188169027064,
           "max_r": 0.05283534803708641,
           "drone_crash": 0,
-          "camera": "juggle_close",
+          "camera": "review_wide",
           "contacts": 116
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T000648Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T000648Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T000648Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T000648Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T000648Z_juggle_close/cases/nominal/render_3d.gif"
@@ -378,7 +574,7 @@
             "rel_path": "data/20260721T000648Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T000648Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },
@@ -386,7 +582,7 @@
     "dir_name": "20260721T000513Z_juggle_close",
     "meta": {
       "label": "juggle_close",
-      "camera": "juggle_close",
+      "camera": "review_wide",
       "stamp": "20260721T000513Z",
       "rel_policy_path": null
     },
@@ -405,9 +601,25 @@
           "max_r": 0.02871243037192385,
           "observation_mode": "partial",
           "scenario_name": "nominal",
-          "camera": "juggle_close"
+          "camera": "review_wide"
         },
         "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T000513Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T000513Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T000513Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T000513Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
           {
             "filename": "render_3d.gif",
             "rel_path": "data/20260721T000513Z_juggle_close/cases/nominal/render_3d.gif"
@@ -417,7 +629,48 @@
             "rel_path": "data/20260721T000513Z_juggle_close/cases/nominal/render_3d.mp4"
           }
         ],
-        "snapshot": null
+        "snapshot": "data/20260721T000513Z_juggle_close/cases/nominal/trajectory_2d.png"
+      }
+    ]
+  },
+  {
+    "dir_name": "20260721T000431Z_juggle_close",
+    "meta": {
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "nominal",
+        "metrics": {
+          "camera": "review_wide"
+        },
+        "videos": [
+          {
+            "filename": "._render_2d.mp4",
+            "rel_path": "data/20260721T000431Z_juggle_close/cases/nominal/._render_2d.mp4"
+          },
+          {
+            "filename": "._render_3d.mp4",
+            "rel_path": "data/20260721T000431Z_juggle_close/cases/nominal/._render_3d.mp4"
+          },
+          {
+            "filename": "render_2d.gif",
+            "rel_path": "data/20260721T000431Z_juggle_close/cases/nominal/render_2d.gif"
+          },
+          {
+            "filename": "render_2d.mp4",
+            "rel_path": "data/20260721T000431Z_juggle_close/cases/nominal/render_2d.mp4"
+          },
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260721T000431Z_juggle_close/cases/nominal/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260721T000431Z_juggle_close/cases/nominal/render_3d.mp4"
+          }
+        ],
+        "snapshot": "data/20260721T000431Z_juggle_close/cases/nominal/trajectory_2d.png"
       }
     ]
   },

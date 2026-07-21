@@ -1,0 +1,7 @@
+{
+  "run_dir": "/Users/dull/openfoam/pingpong-venv/progression/20260721T000431Z_juggle_close",
+  "camera": "review_wide",
+  "cases": [
+    "nominal"
+  ]
+}

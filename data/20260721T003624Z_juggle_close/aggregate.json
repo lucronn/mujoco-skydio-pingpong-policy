@@ -1,7 +1,7 @@
 {
-  "label": "juggle_close",
-  "stamp": "20260721T003624Z",
-  "n_vert": 4,
-  "mean_vz": 3.0865618624424465,
-  "juggle_success": true
+  "run_dir": "/Users/dull/openfoam/pingpong-venv/progression/20260721T003624Z_juggle_close",
+  "camera": "review_wide",
+  "cases": [
+    "nominal"
+  ]
 }

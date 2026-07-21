@@ -1,2 +1,18 @@
-# juggle close-up
-n=4 vz=2.54 success=True
+# Case: `nominal`
+
+- **score:** 0.004862297326276149
+- **bounced_gate_passes:** 0
+- **bounced_gate_pass:** [False, False, False, False]
+- **target_box_score:** 0.0
+- **drone_crash:** True
+- **max_tilt_deg:** 105.99244773778175
+- **phase / notes:** n/a
+
+**Verdict:** Crash; last phase/note: unknown.
+
+## Artifacts
+
+- [3D render](render_3d.mp4)
+- [2D render](render_2d.mp4)
+- [2D snapshot](trajectory_2d.png)
+- [metrics](metrics.json)
