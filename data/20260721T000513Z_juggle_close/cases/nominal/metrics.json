@@ -1,0 +1,14 @@
+{
+  "score": 0.004832588142803622,
+  "bounced_gate_passes": 0,
+  "drone_crash": 0,
+  "max_tilt_deg": 63.16717955782158,
+  "contacts": 167,
+  "n_vert": 4,
+  "juggle_success": true,
+  "mean_vz": 1.0840030494256874,
+  "max_r": 0.02871243037192385,
+  "observation_mode": "partial",
+  "scenario_name": "nominal",
+  "camera": "juggle_close"
+}

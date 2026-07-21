@@ -1,5 +1,44 @@
 [
   {
+    "dir_name": "20260721T000513Z_juggle_close",
+    "meta": {
+      "label": "juggle_close",
+      "camera": "juggle_close",
+      "stamp": "20260721T000513Z",
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "nominal",
+        "metrics": {
+          "score": 0.004832588142803622,
+          "bounced_gate_passes": 0,
+          "drone_crash": 0,
+          "max_tilt_deg": 63.16717955782158,
+          "contacts": 167,
+          "n_vert": 4,
+          "juggle_success": true,
+          "mean_vz": 1.0840030494256874,
+          "max_r": 0.02871243037192385,
+          "observation_mode": "partial",
+          "scenario_name": "nominal",
+          "camera": "juggle_close"
+        },
+        "videos": [
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260721T000513Z_juggle_close/cases/nominal/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260721T000513Z_juggle_close/cases/nominal/render_3d.mp4"
+          }
+        ],
+        "snapshot": null
+      }
+    ]
+  },
+  {
     "dir_name": "20260720T222038Z_juggle_v1",
     "meta": {
       "label": "juggle_v1",
