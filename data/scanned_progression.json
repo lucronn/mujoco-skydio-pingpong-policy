@@ -1,5 +1,32 @@
 [
   {
+    "dir_name": "20260721T003029Z_juggle_close",
+    "meta": {
+      "label": "juggle_close",
+      "camera": "juggle_close",
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "nominal",
+        "metrics": {
+          "n_vert": 3,
+          "juggle_success": false,
+          "mean_vz": 1.5358949262497479,
+          "n_contact": 18,
+          "camera": "juggle_close"
+        },
+        "videos": [
+          {
+            "filename": "nominal_actuated_rollout.mp4",
+            "rel_path": "data/20260721T003029Z_juggle_close/cases/nominal/nominal_actuated_rollout.mp4"
+          }
+        ],
+        "snapshot": null
+      }
+    ]
+  },
+  {
     "dir_name": "20260721T002914Z_juggle_close",
     "meta": {
       "label": "juggle_close",
