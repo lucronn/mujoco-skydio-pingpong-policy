@@ -1,14 +1,14 @@
 # Case: `nominal`
 
-- **score:** 0.004862297326276149
+- **score:** 0.009802436087806754
 - **bounced_gate_passes:** 0
 - **bounced_gate_pass:** [False, False, False, False]
 - **target_box_score:** 0.0
-- **drone_crash:** True
-- **max_tilt_deg:** 105.99244773778175
+- **drone_crash:** False
+- **max_tilt_deg:** 74.79233105388532
 - **phase / notes:** n/a
 
-**Verdict:** Crash; last phase/note: unknown.
+**Verdict:** Stalled after ~0 bounced gate(s); likely failing phase: unknown.
 
 ## Artifacts
 
