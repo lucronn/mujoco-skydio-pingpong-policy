@@ -3,5 +3,6 @@
   "created_utc": "20260720T222038Z",
   "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260720T222038Z_juggle_v1",
   "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260720T222038Z_policy_juggle_v1/policy.py",
-  "policy_sha256": "6bc6fca66d22a514dfb90f7848e34d2ce0f768cc7106b68d73b94afc8f781d14"
+  "policy_sha256": "6bc6fca66d22a514dfb90f7848e34d2ce0f768cc7106b68d73b94afc8f781d14",
+  "camera": "review_wide"
 }
