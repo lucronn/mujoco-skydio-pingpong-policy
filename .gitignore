@@ -2,3 +2,5 @@ sync_daemon.out
 __pycache__/
 *.pyc
 .DS_Store
+._*
+**/._*
