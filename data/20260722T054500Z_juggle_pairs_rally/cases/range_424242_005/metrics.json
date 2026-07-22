@@ -1,0 +1,28 @@
+{
+  "score": 0.18967780145736685,
+  "bounced_gate_passes": 2,
+  "drone_windows_passed": 2,
+  "pairs": 1,
+  "bounce_contact_times_s": [
+    1.376000000000001,
+    2.0080000000000005,
+    null,
+    null
+  ],
+  "window_thread_times_s": [
+    null,
+    2.6599999999999286,
+    3.219999999999867,
+    null
+  ],
+  "hard_success": false,
+  "contacts": 29,
+  "target_box_score": 0.0,
+  "final_ball_pos": [
+    5.025637133448793,
+    3.986088544556676,
+    0.05994989701410996
+  ],
+  "camera": "review_wide",
+  "scenario_name": "range_424242_005"
+}

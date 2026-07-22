@@ -1,0 +1,14 @@
+{
+  "label": "juggle_pairs_rally",
+  "stamp": "20260722T054500Z",
+  "camera": "review_wide",
+  "case": "range_424242_005",
+  "pairs": 1,
+  "bounced_gate_passes": 2,
+  "drone_windows_passed": 2,
+  "score": 0.1897,
+  "bounce_contact_times_s": [1.376, 2.008, null, null],
+  "window_thread_times_s": [null, 2.66, 3.22, null],
+  "pair_detail": "gate2 bounce t=2.01 -> window t=2.66 (lag 0.65s)",
+  "note": "First time-coupled bounce-and-thread. policy_v230 scores PAIRS=0 despite bg=4/wins=3."
+}

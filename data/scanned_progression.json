@@ -1,5 +1,60 @@
 [
   {
+    "dir_name": "20260722T054500Z_juggle_pairs_rally",
+    "meta": {
+      "label": "juggle_pairs_rally",
+      "created_utc": "20260722T054500Z",
+      "camera": "review_wide",
+      "case": "range_424242_005",
+      "note": "FIRST GENUINE INTERLEAVED RALLY. Gate 2: ball bounced over the lintel at t=2.01s, drone threaded THAT SAME gate's window at t=2.66s (lag 0.65s). Contrast policy_v230 (raw 25), which flings the ball over all 4 gates, lets it settle at t=3.61s, then flies BACKWARDS through the windows at t=4.87/6.67/7.88 - lag 2.8-6.9s, reverse order, window 1 never. New search metric PAIRS requires bounce+thread within 1.20s; v230 scores PAIRS=0.",
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "range_424242_005",
+        "metrics": {
+          "score": 0.18967780145736685,
+          "bounced_gate_passes": 2,
+          "drone_windows_passed": 2,
+          "pairs": 1,
+          "bounce_contact_times_s": [
+            1.376000000000001,
+            2.0080000000000005,
+            null,
+            null
+          ],
+          "window_thread_times_s": [
+            null,
+            2.6599999999999286,
+            3.219999999999867,
+            null
+          ],
+          "hard_success": false,
+          "contacts": 29,
+          "target_box_score": 0.0,
+          "final_ball_pos": [
+            5.025637133448793,
+            3.986088544556676,
+            0.05994989701410996
+          ],
+          "camera": "review_wide",
+          "scenario_name": "range_424242_005"
+        },
+        "videos": [
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260722T054500Z_juggle_pairs_rally/cases/range_424242_005/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260722T054500Z_juggle_pairs_rally/cases/range_424242_005/render_3d.mp4"
+          }
+        ],
+        "snapshot": null
+      }
+    ]
+  },
+  {
     "dir_name": "20260721T233341Z_juggle_p2_rally",
     "meta": {
       "label": "juggle_p2_rally",
