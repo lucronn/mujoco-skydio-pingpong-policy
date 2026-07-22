@@ -1,0 +1,7 @@
+{
+  "label": "juggle_p2_rally",
+  "created_utc": "20260721T233341Z",
+  "camera": "review_wide",
+  "policy_path": "repair_work/juggle_winners/policy_juggle_ok_20260721T231644Z.py",
+  "note": "Phase-2 milestone: first bg=4 gate rally (all 4 lintels bounced, ball to x=12.4). Drone tips over post-rally (known: fitness nocrash=0), windows 1/4, no target settle. Nominal specialist (suite raw 1.82); Phase-3 multi-case robustness search now running."
+}
