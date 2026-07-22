@@ -48,12 +48,15 @@ DATA_DIR = os.path.join(REPO_DIR, "data")
 
 # Order is load-bearing: it defines the "have" bit string consumed by index.html.
 ARTIFACTS = [
+    # index 0-4: the render contract. index.html treats have[:5] as "complete".
     "render_3d.mp4",
     "render_3d.gif",
     "render_2d.mp4",
     "render_2d.gif",
     "trajectory_2d.png",
+    # index 5+: optional extras. Append here, never insert.
     "summary.md",
+    "render_3d.jpg",   # ~5 KB card poster, so the page can preload="none"
 ]
 
 PACK_RE = re.compile(r"^(\d{8}T\d{6}Z)_(.*)$")

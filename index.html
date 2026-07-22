@@ -2030,6 +2030,16 @@ function isComplete(kase) {
   return has(kase, 'render_3d.mp4') && has(kase, 'render_2d.mp4') && has(kase, 'trajectory_2d.png');
 }
 
+/** Card poster. render_3d.jpg is a ~5 KB extracted frame; with it every card
+ *  can use preload="none" and still show real content. Without it the page had
+ *  to use preload="metadata", which downloads the whole mp4 in practice —
+ *  measured 4.1 MB of video on first paint. Falls back to nothing rather than
+ *  to trajectory_2d.png, because a white 2D plot on a "3D render" card is
+ *  actively misleading (that was the old behaviour). */
+function posterAttr(run, kase) {
+  return has(kase, 'render_3d.jpg') ? ` poster="${mediaPath(run, kase, 'render_3d.jpg')}"` : '';
+}
+
 function isCrashed(m) {
   if (!m) return false;
   return m.drone_crash === 1 || m.drone_crash === true || m.crash === 1 || m.crash === true;
@@ -2396,12 +2406,9 @@ function renderTopChampions() {
     card.onmouseenter = () => card.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
     card.onmouseleave = () => card.querySelectorAll('video').forEach(v => v.pause());
 
-    // preload="metadata" (no poster) so the card shows a real frame of the 3D
-    // scene. The old build used trajectory_2d.png as the poster, so every
-    // "3D render" champion card actually displayed a white 2D matplotlib plot.
     const v3 = nominal && has(nominal, 'render_3d.mp4');
     const media = v3
-      ? `<video src="${mediaPath(run, nominal, 'render_3d.mp4')}" loop muted playsinline preload="metadata"></video>`
+      ? `<video src="${mediaPath(run, nominal, 'render_3d.mp4')}"${posterAttr(run, nominal)} loop muted playsinline preload="none"></video>`
       : '<div class="media-missing"><strong>No 3D render</strong></div>';
 
     card.innerHTML = `
@@ -2447,7 +2454,7 @@ function renderLatest9Grid() {
       </div>
       <div class="video-container" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:#000;">
         ${src
-          ? `<video src="${src}" loop muted playsinline preload="metadata"
+          ? `<video src="${src}"${nominal ? posterAttr(run, nominal) : ''} loop muted playsinline preload="none"
                     style="width:100%;height:100%;object-fit:cover;"
                     ${gridSrc && fallback ? `onerror="this.onerror=null;this.src='${fallback}';this.load();"` : ''}></video>`
           : '<div class="media-missing"><strong>No render</strong></div>'}
@@ -2681,12 +2688,12 @@ function loadMoreArchiveItems() {
       const v = document.createElement('video');
       v.src = mediaPath(run, kase, file);
       v.loop = true; v.playsInline = true; v.muted = archiveMuteActive;
-      // metadata is enough to paint a real first frame; a full preload of 12+
-      // simultaneous mp4s is what made the archive feel heavy.
-      v.preload = 'metadata';
-      // Only the 2D video gets the plot as its poster — they show the same
-      // thing. Using it on a 3D card made 3D thumbnails look like 2D plots.
+      // Nothing downloads until the user hovers/plays — the poster carries the
+      // thumbnail. The 2D card posters with the trajectory plot (same content);
+      // the 3D card posters with an extracted 3D frame.
+      v.preload = 'none';
       if (kind === '2d' && has(kase, 'trajectory_2d.png')) v.poster = mediaPath(run, kase, 'trajectory_2d.png');
+      else if (kind === '3d' && has(kase, 'render_3d.jpg')) v.poster = mediaPath(run, kase, 'render_3d.jpg');
       slot.appendChild(v);
       if (archivePlayActive) v.play().catch(() => {});
       if (mediaObserver) mediaObserver.observe(v);
