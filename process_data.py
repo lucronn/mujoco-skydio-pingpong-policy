@@ -38,6 +38,8 @@ for run_dir_name in run_dirs:
             
             videos = []
             for video_name in sorted(os.listdir(case_path)):
+                if video_name.startswith("._"):
+                    continue
                 if video_name.endswith(".mp4") or video_name.endswith(".gif"):
                     rel_video_path = os.path.relpath(os.path.join(case_path, video_name), repo_dir)
                     videos.append({
