@@ -1,5 +1,55 @@
 [
   {
+    "dir_name": "20260722T062500Z_juggle_chain1",
+    "meta": {
+      "label": "juggle_chain1",
+      "created_utc": "20260722T062500Z",
+      "camera": "review_wide",
+      "case": "range_424242_013",
+      "chain": 1,
+      "note": "FIRST LINK OF THE HARD RULE SATISFIED. Gate 1: ball bounced over the lintel at t=0.79s, drone threaded THAT SAME gate's window at t=1.10s - lag 0.31s. Under the hard rule (credit = unbroken gate-1-anchored run of bounce+window pairs) this scores CHAIN=1. policy_v230 (raw 25) scores CHAIN=0: it never threads window 1 at all, and laps the other windows 2.8-6.9s after the ball is dead. HONEST LIMITS: only 1 of 4 gates, the drone CRASHES after threading, plant score is 0.087. This is the correct motion, not yet a working policy.",
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "range_424242_013",
+        "metrics": {
+          "chain": 1,
+          "bounced_gate_passes": 1,
+          "drone_windows_passed": 3,
+          "crash": true,
+          "contacts": 2,
+          "score": 0.08713500835397912,
+          "bounce_contact_times_s": [
+            0.7940000000000006,
+            null,
+            null,
+            null
+          ],
+          "window_thread_times_s": [
+            1.1000000000000008,
+            1.430000000000001,
+            1.8100000000000014,
+            null
+          ],
+          "camera": "review_wide",
+          "scenario_name": "range_424242_013"
+        },
+        "videos": [
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260722T062500Z_juggle_chain1/cases/range_424242_013/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260722T062500Z_juggle_chain1/cases/range_424242_013/render_3d.mp4"
+          }
+        ],
+        "snapshot": null
+      }
+    ]
+  },
+  {
     "dir_name": "20260722T054500Z_juggle_pairs_rally",
     "meta": {
       "label": "juggle_pairs_rally",

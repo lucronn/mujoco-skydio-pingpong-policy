@@ -1,0 +1,22 @@
+{
+  "chain": 1,
+  "bounced_gate_passes": 1,
+  "drone_windows_passed": 3,
+  "crash": true,
+  "contacts": 2,
+  "score": 0.08713500835397912,
+  "bounce_contact_times_s": [
+    0.7940000000000006,
+    null,
+    null,
+    null
+  ],
+  "window_thread_times_s": [
+    1.1000000000000008,
+    1.430000000000001,
+    1.8100000000000014,
+    null
+  ],
+  "camera": "review_wide",
+  "scenario_name": "range_424242_013"
+}

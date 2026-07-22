@@ -1,0 +1,17 @@
+{
+  "label": "juggle_chain1",
+  "stamp": "20260722T062500Z",
+  "camera": "review_wide",
+  "case": "range_424242_013",
+  "chain": 1,
+  "bounced_gate_passes": 1,
+  "drone_windows_passed": 3,
+  "contacts": 2,
+  "crash": true,
+  "score": 0.0871,
+  "bounce_contact_times_s": [0.79, null, null, null],
+  "window_thread_times_s": [1.10, 1.43, 1.81, null],
+  "pair_detail": "gate1 bounce t=0.79 -> gate1 window t=1.10 (lag 0.31s) = CHAIN 1",
+  "vz_out": [4.31, 3.35],
+  "note": "First hard-rule link. Only 1 of 4 gates and the drone crashes afterward. policy_v230 scores CHAIN=0."
+}

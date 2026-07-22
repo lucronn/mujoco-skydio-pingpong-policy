@@ -1,0 +1,8 @@
+{
+  "label": "juggle_chain1",
+  "created_utc": "20260722T062500Z",
+  "camera": "review_wide",
+  "case": "range_424242_013",
+  "chain": 1,
+  "note": "FIRST LINK OF THE HARD RULE SATISFIED. Gate 1: ball bounced over the lintel at t=0.79s, drone threaded THAT SAME gate's window at t=1.10s - lag 0.31s. Under the hard rule (credit = unbroken gate-1-anchored run of bounce+window pairs) this scores CHAIN=1. policy_v230 (raw 25) scores CHAIN=0: it never threads window 1 at all, and laps the other windows 2.8-6.9s after the ball is dead. HONEST LIMITS: only 1 of 4 gates, the drone CRASHES after threading, plant score is 0.087. This is the correct motion, not yet a working policy."
+}
