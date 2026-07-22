@@ -5,7 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MuJoCo Skydio X2 Ping-Pong Policy - Progression & Evaluation Dashboard</title>
 <meta name="description" content="Interactive progression dashboard and rollout comparison for the MuJoCo Skydio X2 quadrotor ping-pong window-gate task.">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<!-- No JS CDN. The progression chart used to come from chart.js on jsdelivr; if
+     that request failed, `new Chart(...)` threw inside initDashboard() and every
+     section AFTER the chart (wall, champions, grid, archive) never rendered — a
+     third-party outage took the whole dashboard down. It is now a ~120-line
+     inline SVG renderer, so the page is fully self-contained apart from webfonts,
+     which degrade gracefully to the system stack. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -1466,6 +1471,170 @@
     max-height: 100%;
     object-fit: contain;
   }
+
+  /* ===================================================================
+     2026-07-22 overhaul additions. Everything below is new; nothing above
+     was removed, so the existing visual language is preserved.
+     =================================================================== */
+
+  /* --- accessibility: every interactive element needs a visible focus ring.
+         Previously clickable <div>s had none and were unreachable by keyboard. */
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  /* --- stats row: 5 cards, wraps cleanly on narrow screens --- */
+  .stats-row { flex-wrap: wrap; }
+  .stat-card { min-width: 150px; }
+  .stat-sub {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    margin-top: 2px;
+  }
+
+  /* --- dependency-free SVG progression chart ---
+     min-width:0 on the grid/flex children is required: without it the metric
+     buttons set a min-content floor, the chart card refuses to shrink and the
+     whole page picks up ~200px of horizontal scroll on a phone. */
+  .charts-container > *, .chart-card, .brief-panel { min-width: 0; }
+  .chart-header { flex-wrap: wrap; gap: 8px; }
+  .chart-controls { flex-wrap: wrap; }
+  .canvas-wrapper svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .svg-grid { stroke: rgba(255,255,255,0.06); stroke-width: 1; }
+  .svg-axis-label { fill: #64748b; font-size: 10px; font-family: var(--font-mono); }
+  .svg-series { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .svg-point { stroke: var(--bg-base); stroke-width: 1.5; }
+  .chart-legend {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    font-size: 0.75rem; color: var(--text-secondary); margin: 4px 0 0 4px;
+  }
+  .chart-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; }
+  .chart-tip {
+    position: fixed; pointer-events: none; z-index: 900;
+    background: #0f172a; border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px; padding: 6px 9px; font-size: 0.72rem; color: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5); opacity: 0; transition: opacity .12s;
+    max-width: 260px;
+  }
+  .chart-tip.show { opacity: 1; }
+  .chart-tip b { color: var(--color-cyan); }
+
+  /* --- "newest" / status ribbons so the important runs are obvious --- */
+  .ribbon {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 2px 6px; border-radius: 4px;
+    margin-left: 6px; vertical-align: middle; white-space: nowrap;
+  }
+  .ribbon.newest { background: rgba(0,242,254,0.16); color: var(--color-cyan); border: 1px solid rgba(0,242,254,0.35); }
+  .ribbon.best   { background: rgba(245,158,11,0.16); color: var(--color-orange); border: 1px solid rgba(245,158,11,0.35); }
+  .ribbon.gap    { background: rgba(244,63,94,0.14); color: var(--color-rose); border: 1px solid rgba(244,63,94,0.32); }
+
+  /* --- archive: ONE card per episode with an inline 2D/3D switch.
+         The archive used to emit a separate card per media file, so the same
+         episode appeared twice and the counter read "Showing 2061 of 134". --- */
+  .media-switch {
+    position: absolute; top: 6px; left: 6px; z-index: 3;
+    display: flex; gap: 2px; background: rgba(0,0,0,0.62);
+    border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px;
+    backdrop-filter: blur(4px);
+  }
+  .media-switch button {
+    background: none; border: none; color: var(--text-secondary);
+    font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+    padding: 2px 6px; border-radius: 3px; cursor: pointer; line-height: 1.4;
+  }
+  .media-switch button:hover { color: #fff; }
+  .media-switch button.active { background: var(--color-cyan); color: #04121c; }
+  .media-switch button[disabled] { opacity: 0.32; cursor: not-allowed; }
+
+  .archive-cell {
+    /* keep offscreen cards out of layout/paint — the archive can hold 1000+ */
+    content-visibility: auto;
+    contain-intrinsic-size: 250px;
+  }
+  .archive-cell .video-container { position: relative; }
+
+  .media-missing {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 6px; text-align: center;
+    background: repeating-linear-gradient(45deg, #0b1020, #0b1020 8px, #0e142a 8px, #0e142a 16px);
+    color: var(--text-muted); font-size: 0.7rem; padding: 10px;
+  }
+  .media-missing strong { color: var(--color-rose); font-size: 0.72rem; display: block; }
+
+  .archive-cell-footer .chip {
+    font-family: var(--font-mono); font-size: 0.64rem;
+    padding: 1px 5px; border-radius: 3px; border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+  }
+
+  /* --- archive controls: sort + completeness filter ---
+     A <select> sizes to its widest option, and the run picker's options are
+     long ("policy_evolved_ci_20260715T185748Z_heldout — 07/16 04:06"), which
+     pushed the controls row ~215px past the viewport on a phone. */
+  .filter-group > * { min-width: 0; }
+  .filter-item { flex: 1 1 190px; min-width: 0; }
+  .filter-item select, .filter-item input { max-width: 100%; width: 100%; box-sizing: border-box; }
+  .filter-item.check {
+    flex-direction: row; align-items: center; gap: 8px; align-self: flex-end;
+    padding-bottom: 8px;
+  }
+  .filter-item.check label { margin: 0; text-transform: none; letter-spacing: 0; cursor: pointer; }
+  .filter-item.check input { width: auto; accent-color: var(--color-cyan); }
+
+  /* --- pack note: the juggle packs carry the actual research findings in
+         meta.note / aggregate.note and nothing surfaced them before --- */
+  .pack-note {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--color-cyan);
+    border-radius: 6px; padding: 10px 12px; margin: 0 0 12px;
+    font-size: 0.76rem; line-height: 1.5; color: var(--text-secondary);
+    max-height: 170px; overflow-y: auto;
+  }
+  .pack-note h5 {
+    margin: 0 0 6px; font-size: 0.7rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--text-muted);
+  }
+  .pack-kv {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;
+  }
+  .pack-kv span {
+    font-family: var(--font-mono); font-size: 0.66rem;
+    background: rgba(0,242,254,0.08); border: 1px solid rgba(0,242,254,0.2);
+    color: var(--color-cyan); padding: 2px 6px; border-radius: 4px;
+  }
+
+  /* --- wall: reserve space so lazy images do not shift layout --- */
+  .wall-cell { aspect-ratio: 16 / 9; }
+  .wall-cell img { width: 100%; height: 100%; }
+  .wall-cell.pending { background: linear-gradient(110deg, #0b1020 8%, #131b33 18%, #0b1020 33%); }
+
+  .empty-note {
+    grid-column: 1 / -1; text-align: center; padding: 36px;
+    color: var(--text-secondary); font-size: 0.85rem;
+  }
+
+  /* --- a tab/toggle that would open an empty player is disabled, not hidden,
+         so the gap stays visible instead of looking like a broken video --- */
+  .media-tab[disabled], .chart-btn[disabled] {
+    opacity: 0.35;
+    cursor: not-allowed;
+    text-decoration: line-through;
+  }
+
+  /* --- keyboard hint row in the modal --- */
+  .modal-hint {
+    font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-mono);
+    margin-top: 6px;
+  }
 </style>
 </head>
 <body>
@@ -1483,27 +1652,40 @@
     </div>
   </header>
 
-  <!-- Global Stats Cards -->
+  <!-- Global Stats Cards.
+       Fixed 2026-07-22: "Total Rollouts" counted every media FILE (mp4 + gif),
+       so 1031 episodes read as 4119; and "Best Eval Score" showed the MINIMUM
+       case score labelled "lowest penalty cost", but case_score is a REWARD in
+       [0,1] (actuated_plant.case_score) — lower was being celebrated as better.
+       The headline number is now the held-out raw_score_100, which is what the
+       CEM actually optimises. -->
   <section class="stats-row">
     <div class="stat-card">
-      <div class="stat-label">Total Evolutions</div>
-      <div class="stat-value cyan" id="stat-runs">14</div>
-      <div class="stat-desc">Distinct policy iterations tested</div>
+      <div class="stat-label">Policy Runs</div>
+      <div class="stat-value cyan" id="stat-runs">–</div>
+      <div class="stat-desc">Rendered progression packs</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Total Rollouts Archive</div>
-      <div class="stat-value violet" id="stat-rollouts">134</div>
-      <div class="stat-desc">Simulation renders compiled</div>
+      <div class="stat-label">Episodes Archived</div>
+      <div class="stat-value violet" id="stat-rollouts">–</div>
+      <div class="stat-desc">Scored rollouts (3D + 2D each)</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Best Eval Score</div>
-      <div class="stat-value emerald" id="stat-best-score">0.126</div>
-      <div class="stat-desc">Lowest penalty cost (y_pos case)</div>
+      <div class="stat-label">Best Held-Out Score</div>
+      <div class="stat-value emerald" id="stat-best-score">–</div>
+      <div class="stat-desc">raw_score_100, higher is better</div>
+      <div class="stat-sub" id="stat-best-score-run"></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Nominal Crash Rate</div>
-      <div class="stat-value rose" id="stat-crash-rate">78.5%</div>
-      <div class="stat-desc">Across all historical runs</div>
+      <div class="stat-value rose" id="stat-crash-rate">–</div>
+      <div class="stat-desc">Nominal case, all runs</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Artifact Coverage</div>
+      <div class="stat-value" id="stat-coverage" style="color:var(--color-orange)">–</div>
+      <div class="stat-desc">Cases with 3D + 2D + plot</div>
+      <div class="stat-sub" id="stat-coverage-sub"></div>
     </div>
   </section>
 
@@ -1527,36 +1709,29 @@
     <div class="chart-card">
       <div class="chart-header">
         <h3 class="chart-title">Policy Performance Progression</h3>
-        <div class="chart-controls">
-          <button class="chart-btn active" onclick="updateChartType('score')">Nominal Score</button>
-          <button class="chart-btn" onclick="updateChartType('gates')">Raw Gates Passed</button>
-          <button class="chart-btn" onclick="updateChartType('crash')">Crash Rate %</button>
+        <div class="chart-controls" id="chart-controls">
+          <button class="chart-btn active" data-metric="raw" onclick="updateChartType('raw')">Held-out raw score</button>
+          <button class="chart-btn" data-metric="score" onclick="updateChartType('score')">Nominal case score</button>
+          <button class="chart-btn" data-metric="gates" onclick="updateChartType('gates')">Gates bounced</button>
+          <button class="chart-btn" data-metric="crash" onclick="updateChartType('crash')">Crash rate %</button>
         </div>
       </div>
-      <div class="canvas-wrapper">
-        <canvas id="progressionChart"></canvas>
-      </div>
+      <div class="canvas-wrapper" id="chart-host"></div>
+      <div class="chart-legend" id="chart-legend"></div>
       <div class="chart-legend-note">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; margin-top: 2px; flex-shrink: 0; color: var(--color-cyan);"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-        <span><strong>Note on Graph Gaps:</strong> Breaks in the line graph indicate optimization plateaus. During these periods, the continuous evolutionary solver (CEM) evaluated thousands of intermediate generations but did not find a new policy that surpassed the current champion's score. STALL/RESET markers represent runner restarts.</span>
+        <span><strong>All these metrics are higher-is-better except crash rate.</strong>
+        Gaps in a line mean the pack did not evaluate that metric — a single-case
+        &ldquo;focus&rdquo; probe has no held-out raw score, and only full 28-case suite
+        packs are plotted on the raw-score series. Long flat stretches are CEM
+        plateaus: thousands of generations that never beat the incumbent champion.</span>
       </div>
     </div>
 
     <div class="brief-panel">
-      <div class="chart-card" style="height:100%; display:flex; flex-direction:column; justify-content:space-between; box-sizing:border-box;">
-        <h3 class="chart-title" style="margin-bottom:12px">Progression Summary</h3>
-        <div class="brief-card">
-          <h3>🚀 Epoch 0-15: Exploration</h3>
-          <p>Initial nominal policies (U1-U3) commanded high collective thrust. Average of 2.75 raw gates and 2.0 bounced gates, but 100% crash rates due to severe attitude tilt recovery spikes (up to 180°).</p>
-        </div>
-        <div class="brief-card" style="margin: 10px 0;">
-          <h3>🛡️ Epoch 16-30: Safety Focus</h3>
-          <p>Attitude tilt limited strictly to <70°. Collision rates dropped significantly, securing stable flight paths and a peak safety score of 0.451 at iteration 26.</p>
-        </div>
-        <div class="brief-card">
-          <h3>🎯 Epoch 31-49: Window Threading</h3>
-          <p>Prioritized controlled, low-velocity transits through vertical window targets. Reached perfect 1.0 window pass averages and a final optimal score of 0.142.</p>
-        </div>
+      <div class="chart-card" style="height:100%; display:flex; flex-direction:column; box-sizing:border-box;">
+        <h3 class="chart-title" style="margin-bottom:12px">Latest Run</h3>
+        <div id="brief-latest"></div>
       </div>
     </div>
   </section>
@@ -1629,37 +1804,45 @@
       </button>
     </div>
   </div>
-  <p class="section-desc">Search, filter, and compare any of the 134 rollout renders. Filtered videos play simultaneously when the play toggle is active.</p>
+  <p class="section-desc">One card per scored episode. Each card carries <strong>both</strong> its 3D
+  render and its 2D diagnostic — use the 3D / 2D / PLOT switch on the thumbnail, or open the card for
+  the side-by-side view and full metrics.</p>
 
   <section class="archive-controls">
     <div class="filter-group">
       <div class="filter-item">
         <label for="filter-run">Run / Evolution</label>
         <select id="filter-run" onchange="applyFilters()">
-          <option value="all">All Runs (14)</option>
+          <option value="all">All runs</option>
         </select>
       </div>
       <div class="filter-item">
         <label for="filter-case">Scenario Case</label>
         <select id="filter-case" onchange="applyFilters()">
-          <option value="all">All Cases</option>
+          <option value="all">All cases</option>
         </select>
       </div>
       <div class="filter-item">
-        <label for="filter-render">Render Type</label>
-        <select id="filter-render" onchange="applyFilters()">
-          <option value="all">All (2D & 3D)</option>
-          <option value="render_3d.mp4">3D Renders Only</option>
-          <option value="render_2d.mp4">2D Renders Only</option>
+        <label for="filter-sort">Sort by</label>
+        <select id="filter-sort" onchange="applyFilters()">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="score">Best case score</option>
+          <option value="gates">Most gates bounced</option>
+          <option value="case">Case name (A–Z)</option>
         </select>
       </div>
       <div class="filter-item">
         <label for="search-run">Search</label>
-        <input type="text" id="search-run" placeholder="e.g. g12" oninput="applyFilters()">
+        <input type="text" id="search-run" placeholder="run, case, e.g. g12" oninput="applyFilters()">
+      </div>
+      <div class="filter-item check">
+        <input type="checkbox" id="filter-incomplete" onchange="applyFilters()">
+        <label for="filter-incomplete">Only cases missing a render</label>
       </div>
     </div>
     <div style="font-size:0.85rem; color:var(--text-secondary);" id="filter-count">
-      Showing 125 of 125 rollouts
+      Loading…
     </div>
   </section>
 
@@ -1684,10 +1867,13 @@
     </div>
     <div class="modal-content">
       <div class="modal-left">
+        <div class="pack-kv" id="modal-pack-kv"></div>
+        <div class="pack-note" id="modal-pack-note" style="display:none;"></div>
         <h4 style="margin: 0 0 10px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em;">Run Scenario Cases</h4>
         <div class="case-list" id="modal-case-list">
           <!-- Populated dynamically -->
         </div>
+        <p class="modal-hint">&uarr;/&darr; switch case &nbsp;·&nbsp; Esc close</p>
 
         <div class="policy-box">
           <h4>Staged Controller Code</h4>
@@ -1708,8 +1894,12 @@
               <h4 class="pane-title">3D Render Video</h4>
               <span id="render-3d-score-label" style="font-size: 0.7rem; color: var(--text-secondary); font-weight: 600;"></span>
             </div>
-            <div class="media-display" id="media-display-3d">
+            <div class="media-display" id="media-display-3d" style="position:relative;">
               <video id="modal-video-3d" controls autoplay muted loop playsinline src=""></video>
+              <div class="media-missing" id="missing-3d" style="display:none;">
+                <strong>No 3D render</strong>
+                <span>render_3d.mp4 is missing for this case.</span>
+              </div>
             </div>
           </div>
           <div class="media-display-pane pane-right">
@@ -1720,9 +1910,13 @@
                 <button class="chart-btn" id="btn-widescreen-2d" style="padding: 2px 6px; font-size: 0.68rem;" onclick="setWidescreenRightMedia('2d')">Video</button>
               </div>
             </div>
-            <div class="media-display" id="media-display-2d-video">
+            <div class="media-display" id="media-display-2d-video" style="position:relative;">
               <video id="modal-video-2d" controls autoplay muted loop playsinline src="" style="display: none;"></video>
-              <img id="modal-image-2d" src="" alt="Trajectory 2D Plot">
+              <img id="modal-image-2d" src="" alt="2D trajectory plot: side (X-Z) and top (X-Y) views of the ball and drone paths">
+              <div class="media-missing" id="missing-2d" style="display:none;">
+                <strong>No 2D diagnostic</strong>
+                <span id="missing-2d-text">This pack was rendered 3D-only.</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1773,1599 +1967,1240 @@
 </div>
 
 <script>
-  let progressionData = [];
-  let chartInstance = null;
-  let activeChartMetric = 'score'; // 'score' | 'gates' | 'crash'
-  let archivePlayActive = false;
-  let archiveMuteActive = true;
-  let filteredArchiveItems = [];
-  let archiveOffset = 0;
-  const archiveLimit = 12;
-  let scrollObserver = null;
-  let selectedModalRun = null;
-  let selectedModalCase = null;
-  let activeModalMediaType = '3d'; // '3d' | '2d' | 'snapshot'
-  let activeWidescreenRightMedia = 'snapshot'; // 'snapshot' | '2d'
+/* ============================================================================
+   Progression dashboard — application script.
+   Rewritten 2026-07-22. Consumes data/scanned_progression.json schema 2
+   (see process_data.py) and falls back to schema 1 (a bare array) so an old
+   cached index still renders.
 
-  // Fetch the progression JSON data on page load
-  window.addEventListener('DOMContentLoaded', () => {
-    // Cache-bust: GitHub Pages sets caching headers on this JSON, so without a
-    // unique query the browser serves a stale index and newly published packs are
-    // invisible until the cache expires (hit 2026-07-22 — a freshly pushed pack was
-    // live and indexed server-side but did not appear in the page).
-    fetch('data/scanned_progression.json?v=' + Date.now(), { cache: 'no-store' })
-      .then(response => response.json())
-      .then(data => {
-        progressionData = data;
-        initDashboard();
-      })
-      .catch(err => {
-        console.error('Failed to load scanned_progression.json:', err);
-        document.getElementById('grid-latest-9').innerHTML = `
-          <div style="grid-column: span 3; text-align:center; padding: 40px; color: var(--color-rose);">
-            <h3>Error loading progression data</h3>
-            <p>Ensure that data/scanned_progression.json exists and is generated.</p>
-          </div>
-        `;
-      });
-  });
+   Score semantics, which the previous version had inverted:
+     metrics.score  = actuated_plant case_score in [0,1], HIGHER IS BETTER.
+     raw_score_100  = 100*(0.60*mean + 0.28*p25 + 0.12*hard_rate) over the
+                      28-case held-out suite. Also higher is better.
+   ========================================================================= */
+'use strict';
 
-  // Initialize all elements
-  function initDashboard() {
-    // Populate stats
-    updateStatsSummary();
+/* ---------------------------------------------------------------- state */
+let RUNS = [];                 // normalised runs, newest first
+let INDEX_META = {};           // schema / generated_utc
+let ARTIFACTS = ['render_3d.mp4','render_3d.gif','render_2d.mp4','render_2d.gif','trajectory_2d.png','summary.md'];
 
-    // Populate charts
-    renderProgressionChart();
+let activeChartMetric = 'raw'; // 'raw' | 'score' | 'gates' | 'crash'
+let archivePlayActive = false;
+let archiveMuteActive = true;
+let filteredItems = [];
+let archiveOffset = 0;
+const ARCHIVE_PAGE = 12;
+let sentinelObserver = null;
+let mediaObserver = null;
 
-    // Render Matrix Wall (8x5 grid)
-    renderMatrixWall();
+let selectedModalRun = null;
+let selectedModalCase = null;
+let activeModalMediaType = '3d';        // '3d' | '2d' | 'snapshot'
+let activeWidescreenRightMedia = 'snapshot';
 
-    // Render top 10 champions leaderboard
-    renderTopChampions();
+/* ---------------------------------------------------------------- helpers */
 
-    // Render 3x3 grid (last 9 nominal videos)
-    renderLatest9Grid();
+const esc = s => String(s == null ? '' : s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
-    // Set up preview modal listeners for all rendered sections
-    setupRenderPreviewListeners();
+const pretty = s => String(s || '').replace(/_/g, ' ');
 
-    // Set up sequential playback for grids
-    setupSequentialPlayback();
+function fmtStamp(ts) {
+  if (!ts) return '';
+  const s = String(ts);
+  if (s.length < 13) return s;
+  return `${s.substring(4, 6)}/${s.substring(6, 8)} ${s.substring(9, 11)}:${s.substring(11, 13)}`;
+}
 
-    // Populate archive filters
-    populateFilters();
+/** Media URL for a case artifact. Paths are fully derivable from the pack and
+ *  case name, which is why schema 2 stores presence bits instead of strings. */
+function mediaPath(run, kase, artifact) {
+  return `data/${run.dir}/cases/${kase.name}/${artifact}`;
+}
 
-    // Render archive list
-    applyFilters();
+function has(kase, artifact) {
+  const i = ARTIFACTS.indexOf(artifact);
+  return i >= 0 && kase.have.charAt(i) === '1';
+}
 
-    // Intersection observer for archive videos (play only when visible)
-    setupIntersectionObserver();
+/** true when the case has the whole render contract (3D + 2D video + plot). */
+function isComplete(kase) {
+  return has(kase, 'render_3d.mp4') && has(kase, 'render_2d.mp4') && has(kase, 'trajectory_2d.png');
+}
 
-    // Load favorites from backend/localStorage
-    loadFavorites();
-  }
+function isCrashed(m) {
+  if (!m) return false;
+  return m.drone_crash === 1 || m.drone_crash === true || m.crash === 1 || m.crash === true;
+}
 
-  // Calculate and update global header statistics
-  function updateStatsSummary() {
-    document.getElementById('stat-runs').innerText = progressionData.length;
-    
-    let totalRollouts = 0;
-    let bestScore = Infinity;
-    let nominalCrashes = 0;
-    let nominalCount = 0;
-    
-    progressionData.forEach(run => {
-      run.cases.forEach(c => {
-        totalRollouts += c.videos.length;
-        
-        if (c.metrics && c.metrics.score !== undefined) {
-          if (c.metrics.score < bestScore) {
-            bestScore = c.metrics.score;
-          }
-        }
-        
-        if (c.name === 'nominal' && c.metrics) {
-          nominalCount++;
-          if (c.metrics.drone_crash === 1 || c.metrics.drone_crash === true) {
-            nominalCrashes++;
-          }
-        }
-      });
+function caseScore(kase) {
+  const v = kase.metrics && kase.metrics.score;
+  return typeof v === 'number' ? v : null;
+}
+
+function bouncedGates(kase) {
+  const m = kase.metrics || {};
+  const v = m.bounced_gate_passes;
+  return typeof v === 'number' ? v : null;
+}
+
+/** numpy-compatible linear-interpolation percentile */
+function percentile(sorted, p) {
+  if (!sorted.length) return 0;
+  const idx = (sorted.length - 1) * p;
+  const lo = Math.floor(idx), hi = Math.ceil(idx);
+  if (lo === hi) return sorted[lo];
+  return sorted[lo] + (sorted[hi] - sorted[lo]) * (idx - lo);
+}
+
+/** Mirrors parallel_suite.py _raw_from_scores. Only meaningful over the full
+ *  28-case held-out suite, so partial "focus" packs return null rather than
+ *  ranking above a genuine evaluation. */
+function rawScore(run) {
+  const scored = run.cases.filter(c => typeof caseScore(c) === 'number');
+  if (scored.length < 20) return null;
+  const scores = scored.map(caseScore).sort((a, b) => a - b);
+  const hard = scored.map(c => (c.metrics.hard_success ? 1 : 0));
+  const mean = a => a.reduce((s, v) => s + v, 0) / a.length;
+  return 100 * (0.60 * mean(scores) + 0.28 * percentile(scores, 0.25) + 0.12 * mean(hard));
+}
+
+function packTypeBadge(label) {
+  if (/policy_evolved_ci_\d{8}T\d{6}Z/.test(label)) return '<span class="pack-badge pack-candidate">CI candidate</span>';
+  if (/(^|_)(policy_)?evolved_g\d+/.test(label)) return '<span class="pack-badge pack-champion">Champion install</span>';
+  return '';
+}
+
+function cleanLabel(run) {
+  return String(run.label || run.dir)
+    .replace(/^policy_evolved_/, 'Evolved ')
+    .replace(/_heldout$/, '')
+    .replace(/_focus$/, '');
+}
+
+/* ---------------------------------------------------------------- load */
+
+window.addEventListener('DOMContentLoaded', () => {
+  // Cache-bust: GitHub Pages caches this JSON, so without a unique query a
+  // freshly published pack stays invisible until the CDN entry expires.
+  fetch('data/scanned_progression.json?v=' + Date.now(), { cache: 'no-store' })
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(data => { normalise(data); initDashboard(); })
+    .catch(err => {
+      console.error('Failed to load scanned_progression.json:', err);
+      const host = document.getElementById('grid-latest-9');
+      if (host) host.innerHTML =
+        `<div class="empty-note" style="color:var(--color-rose)">
+           <h3>Could not load progression data</h3>
+           <p>data/scanned_progression.json failed to load (${esc(err.message)}).</p>
+           <p>Rebuild it: <code>python3 repair_work/dashboard_sync.py --full</code></p>
+         </div>`;
     });
-
-    document.getElementById('stat-rollouts').innerText = totalRollouts;
-    document.getElementById('stat-best-score').innerText = bestScore === Infinity ? 'N/A' : bestScore.toFixed(3);
-    
-    const crashRate = nominalCount > 0 ? (nominalCrashes / nominalCount) * 100 : 0;
-    document.getElementById('stat-crash-rate').innerText = crashRate.toFixed(1) + '%';
-
-    if (progressionData.length > 0) {
-      const latestRun = progressionData[0];
-      const syncTimeEl = document.getElementById('header-sync-time');
-      if (syncTimeEl) {
-        syncTimeEl.innerText = `[Latest Run: ${formatTimestamp(latestRun.meta.created_utc || latestRun.dir_name)}]`;
-      }
-    }
-  }
-
-  // Render Chart.js line graph of progression
-  function renderProgressionChart() {
-    const ctx = document.getElementById('progressionChart').getContext('2d');
-    
-    // Sort runs chronologically (reverse of json)
-    const chronologicalRuns = [...progressionData].reverse();
-    const labels = chronologicalRuns.map(r => r.meta.label || r.dir_name.substring(10));
-    
-    let datasets = [];
-
-    if (activeChartMetric === 'score') {
-      const scores = chronologicalRuns.map(r => {
-        const nom = r.cases.find(c => c.name === 'nominal');
-        return nom && nom.metrics ? nom.metrics.score : null;
-      });
-      datasets = [{
-        label: 'Nominal Score (Lower is Better)',
-        data: scores,
-        borderColor: '#00f2fe',
-        backgroundColor: 'rgba(0, 242, 254, 0.1)',
-        borderWidth: 2,
-        tension: 0.3,
-        fill: true,
-        pointRadius: 4,
-        pointBackgroundColor: '#00f2fe'
-      }];
-    } else if (activeChartMetric === 'gates') {
-      const rawGates = chronologicalRuns.map(r => {
-        const nom = r.cases.find(c => c.name === 'nominal');
-        return nom && nom.metrics ? nom.metrics.raw_gates_passed : null;
-      });
-      const bouncedGates = chronologicalRuns.map(r => {
-        const nom = r.cases.find(c => c.name === 'nominal');
-        return nom && nom.metrics ? nom.metrics.bounced_gate_passes : null;
-      });
-      datasets = [
-        {
-          label: 'Raw Gates Passed',
-          data: rawGates,
-          borderColor: '#10b981',
-          borderWidth: 2,
-          tension: 0.3,
-          pointRadius: 4,
-          pointBackgroundColor: '#10b981'
-        },
-        {
-          label: 'Bounced Gates Passed',
-          data: bouncedGates,
-          borderColor: '#f59e0b',
-          borderWidth: 2,
-          tension: 0.3,
-          pointRadius: 4,
-          pointBackgroundColor: '#f59e0b'
-        }
-      ];
-    } else if (activeChartMetric === 'crash') {
-      const crashRates = chronologicalRuns.map(r => {
-        let crashes = 0;
-        r.cases.forEach(c => {
-          if (c.metrics && (c.metrics.drone_crash === 1 || c.metrics.drone_crash === true)) {
-            crashes++;
-          }
-        });
-        return r.cases.length > 0 ? (crashes / r.cases.length) * 100 : 0;
-      });
-      datasets = [{
-        label: 'Overall Run Crash Rate %',
-        data: crashRates,
-        borderColor: '#f43f5e',
-        backgroundColor: 'rgba(244, 63, 94, 0.1)',
-        borderWidth: 2,
-        tension: 0.3,
-        fill: true,
-        pointRadius: 4,
-        pointBackgroundColor: '#f43f5e'
-      }];
-    }
-
-    if (chartInstance) {
-      chartInstance.destroy();
-    }
-
-    chartInstance = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: datasets
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: true,
-            labels: { color: '#94a3b8', font: { family: 'Outfit', size: 12 } }
-          },
-          tooltip: {
-            backgroundColor: '#0f172a',
-            titleColor: '#fff',
-            bodyColor: '#fff',
-            borderColor: 'rgba(255,255,255,0.1)',
-            borderWidth: 1,
-            bodyFont: { family: 'Outfit' },
-            titleFont: { family: 'Outfit', weight: 'bold' },
-            callbacks: {
-              label: function(context) {
-                let label = context.dataset.label || '';
-                if (label) {
-                  label += ': ';
-                }
-                if (context.parsed.y !== null) {
-                  if (activeChartMetric === 'score') {
-                    label += context.parsed.y.toFixed(4);
-                  } else if (activeChartMetric === 'crash') {
-                    label += context.parsed.y.toFixed(1) + '%';
-                  } else {
-                    label += context.parsed.y;
-                  }
-                }
-                return label;
-              }
-            }
-          }
-        },
-        scales: {
-          x: {
-            grid: { color: 'rgba(255,255,255,0.05)' },
-            ticks: { color: '#64748b', font: { family: 'Outfit', size: 10 } }
-          },
-          y: {
-            beginAtZero: false,
-            grid: { color: 'rgba(255,255,255,0.05)' },
-            ticks: {
-              color: '#64748b',
-              font: { family: 'Outfit', size: 11 },
-              callback: function(value) {
-                if (activeChartMetric === 'score') {
-                  return value.toFixed(3);
-                }
-                return value;
-              }
-            }
-          }
-        }
-      }
-    });
-  }
-
-  function updateChartType(type) {
-    activeChartMetric = type;
-    document.querySelectorAll('.chart-controls .chart-btn').forEach(btn => {
-      btn.classList.remove('active');
-    });
-    // Add active class to clicked button
-    const targetIdx = type === 'score' ? 0 : (type === 'gates' ? 1 : 2);
-    document.querySelectorAll('.chart-controls .chart-btn')[targetIdx].classList.add('active');
-    renderProgressionChart();
-  }
-
-  // Render the 3x3 grid using the last 9 runs
-  // Linear-interpolation percentile, matching numpy's default np.quantile.
-  function percentile(sortedArr, p) {
-    if (!sortedArr.length) return 0;
-    const idx = (sortedArr.length - 1) * p;
-    const lo = Math.floor(idx), hi = Math.ceil(idx);
-    if (lo === hi) return sortedArr[lo];
-    return sortedArr[lo] + (sortedArr[hi] - sortedArr[lo]) * (idx - lo);
-  }
-
-  // Mirrors parallel_suite.py's _raw_from_scores: 100 * (0.60*mean + 0.28*p25 + 0.12*mean(hard)).
-  // Only meaningful over the full 28-case held-out suite, so packs with fewer
-  // scored cases (quick "focus"/single-case verification runs) are skipped —
-  // otherwise a partial suite could rank above a genuine full evaluation.
-  function computeChampionScore(run) {
-    const withMetrics = run.cases.filter(c => c.metrics && typeof c.metrics.score === 'number');
-    if (withMetrics.length < 20) return null;
-    const scores = withMetrics.map(c => c.metrics.score).sort((a, b) => a - b);
-    const hard = withMetrics.map(c => (c.metrics.hard_success ? 1 : 0));
-    const mean = arr => arr.reduce((s, v) => s + v, 0) / arr.length;
-    return 100 * (0.60 * mean(scores) + 0.28 * percentile(scores, 0.25) + 0.12 * mean(hard));
-  }
-
-  // Render the Top 10 Champions leaderboard, ranked by held-out raw score.
-  function renderTopChampions() {
-    const container = document.getElementById('grid-top-champions');
-    if (!container) return;
-
-    const scored = [];
-    progressionData.forEach(run => {
-      const raw = computeChampionScore(run);
-      if (raw !== null) scored.push({ run, raw });
-    });
-
-    // Same champion policy can get re-evaluated across multiple packs
-    // (progression-detached reruns after each restart) — keep only its
-    // best-scoring pack. Dedup only when we have positive proof it's the
-    // same binary (matching sha256); otherwise treat packs as distinct.
-    const bestByChamp = new Map();
-    scored.forEach(({ run, raw }) => {
-      const key = run.meta.policy_sha256 || run.dir_name;
-      const existing = bestByChamp.get(key);
-      if (!existing || raw > existing.raw) bestByChamp.set(key, { run, raw });
-    });
-
-    const top10 = Array.from(bestByChamp.values()).sort((a, b) => b.raw - a.raw).slice(0, 10);
-
-    if (!top10.length) {
-      container.innerHTML = `<div style="grid-column: 1 / -1; text-align:center; padding: 40px; color: var(--text-secondary);">No full held-out evaluations found yet.</div>`;
-      return;
-    }
-
-    container.innerHTML = '';
-    top10.forEach((entry, i) => {
-      const { run, raw } = entry;
-      const rank = i + 1;
-      const nominal = run.cases.find(c => c.name === 'nominal');
-      const v3d = nominal && nominal.videos.find(v => v.filename === 'render_3d.mp4');
-      const v2d = nominal && nominal.videos.find(v => v.filename === 'render_2d.mp4');
-      const video = v3d || v2d || (nominal && nominal.videos[0]);
-      const label = run.meta.label || run.dir_name;
-      const cleanLabel = label.replace('_heldout', '').replace('_focus', '').replace('policy_evolved_', 'Evolved ');
-
-      const rankCardClass = rank === 1 ? ' rank-1-card' : rank === 2 ? ' rank-2-card' : rank === 3 ? ' rank-3-card' : '';
-      const card = document.createElement('article');
-      card.className = `grid-cell champion-card${rankCardClass}`;
-      card.onclick = () => openModal(run, 'nominal');
-      card.onmouseenter = () => card.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
-      card.onmouseleave = () => card.querySelectorAll('video').forEach(v => v.pause());
-
-      const rankClass = rank <= 3 ? ` rank-${rank}` : '';
-      const posterAttr = nominal && nominal.snapshot ? `poster="${nominal.snapshot}"` : '';
-      const videoHtml = video
-        ? `<video src="${video.rel_path}" ${posterAttr} loop muted playsinline preload="metadata"></video>`
-        : `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-muted);font-size:0.8rem;">No nominal render</div>`;
-
-      const renderType = v3d ? '3D' : v2d ? '2D' : 'unknown';
-      card.innerHTML = `
-        <div class="champion-rank-badge${rankClass}">#${rank}</div>
-        <div class="card-run-label">${cleanLabel}${packTypeBadge(label)}</div>
-        <div class="video-container">
-          ${videoHtml}
-        </div>
-        <div class="champion-score-badge">raw ${raw.toFixed(2)} (${renderType})</div>
-        <div class="card-timestamp">${formatTimestamp(run.meta.created_utc || run.dir_name)}</div>
-      `;
-      container.appendChild(card);
-    });
-  }
-
-  function renderLatest9Grid() {
-    const gridContainer = document.getElementById('grid-latest-9');
-    if (!gridContainer) return;
-    gridContainer.innerHTML = '';
-
-    // Take the 9 newest runs
-    const latest9Runs = progressionData.slice(0, 9);
-
-    latest9Runs.forEach((run, index) => {
-      const label = run.meta.label || run.dir_name;
-      const cleanLabel = label.replace('_focus', '').replace('policy_evolved_', 'Evolved ');
-      
-      const card = document.createElement('article');
-      card.className = 'grid-cell';
-      card.onclick = () => openModal(run, 'nominal');
-
-      // Hover to play/pause the single grid video inside the card
-      card.onmouseenter = () => {
-        const wallGrid = document.getElementById('wall-grid-element');
-        if (wallGrid && !wallGrid.classList.contains('fullscreen-active')) {
-          const video = card.querySelector('video');
-          if (video) video.play().catch(e => {});
-        }
-      };
-      card.onmouseleave = () => {
-        const video = card.querySelector('video');
-        if (video) video.pause();
-      };
-
-      const nominal = run.cases.find(c => c.name === 'nominal');
-      const poster = nominal && nominal.snapshot ? nominal.snapshot : '';
-      
-      // Point to the compiled single-file grid render
-      const gridVideoPath = `data/${run.dir_name}/grid_renders.mp4`;
-      
-      // Fallback: If grid_renders.mp4 is missing or not copied, show nominal render video
-      const nominalCase = run.cases.find(c => c.name === 'nominal');
-      const nominalVideo = nominalCase ? nominalCase.videos.find(v => v.filename === 'render_3d.mp4') : null;
-      const fallbackVideoPath = nominalVideo ? nominalVideo.rel_path : '';
-
-      card.innerHTML = `
-        <div class="card-run-label">${cleanLabel}${packTypeBadge(label)}</div>
-        <div class="video-container" style="position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000;">
-          <video src="${gridVideoPath}" poster="${poster}" loop muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src='${fallbackVideoPath}'; this.load();"></video>
-          <div class="hover-play-overlay">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85; margin-bottom: 2px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            <span>Hover to preview grid</span>
-          </div>
-        </div>
-        <div class="card-timestamp">${formatTimestamp(run.meta.created_utc || run.dir_name)}</div>
-      `;
-      gridContainer.appendChild(card);
-    });
-  }
-
-  // Render the 8x5 Matrix Video Wall using the 40 latest GIF renders (high-res 360px)
-  // Using GIFs completely bypasses browser hardware video decoder limits and prevents black screens.
-  function renderMatrixWall() {
-    const wallGrid = document.getElementById('wall-grid-element');
-    if (!wallGrid) return;
-    wallGrid.innerHTML = '';
-
-    // Collect all case renders from the newest runs down
-    let allRenders = [];
-    
-    // Sort runs newest first
-    for (let run of progressionData) {
-      // Sort cases by name (nominal first, then range cases)
-      const sortedCases = [...run.cases].sort((a, b) => {
-        if (a.name === 'nominal') return -1;
-        if (b.name === 'nominal') return 1;
-        return a.name.localeCompare(b.name);
-      });
-
-      for (let c of sortedCases) {
-        // Query GIF renders to ensure 100% reliable rendering with zero decoder overhead
-        const v3d = c.videos.find(v => v.filename === 'render_3d.gif') || c.videos.find(v => v.filename === 'render_3d.mp4');
-        const v2d = c.videos.find(v => v.filename === 'render_2d.gif') || c.videos.find(v => v.filename === 'render_2d.mp4');
-        
-        const runLabel = (run.meta.label || run.dir_name).replace('_focus', '').replace('policy_evolved_', 'Evolved ');
-
-        if (v3d) {
-          allRenders.push({
-            run: run,
-            caseName: c.name,
-            video: v3d,
-            type: '3D',
-            runLabel: runLabel
-          });
-        }
-        if (v2d) {
-          allRenders.push({
-            run: run,
-            caseName: c.name,
-            video: v2d,
-            type: '2D',
-            runLabel: runLabel
-          });
-        }
-      }
-    }
-
-    // Take the 40 latest renders (to fill the 8x5 grid)
-    const latest40Renders = allRenders.slice(0, 40);
-
-    latest40Renders.forEach(item => {
-      const cleanCaseName = item.caseName.replace(/_/g, ' ');
-      const tooltipText = `${item.runLabel} · ${cleanCaseName} (${item.type})`;
-
-      const cell = document.createElement('div');
-      cell.className = 'wall-cell';
-      cell.onclick = () => openModal(item.run, item.caseName);
-
-      // Render as <img> pointing to the high-res 360px GIF.
-      // This is sharp, loops infinitely, and has no concurrency decoding limits.
-      cell.innerHTML = `
-        <img src="${item.video.rel_path}" alt="${tooltipText}" loading="lazy">
-        <div class="wall-tooltip">${tooltipText}</div>
-      `;
-
-      wallGrid.appendChild(cell);
-    });
-  }
-
-  // Toggle Fullscreen Wall Mode
-  function toggleFullscreenWall() {
-    const wallContainer = document.querySelector('.wall-container-box');
-    const closeBtn = document.getElementById('btn-close-fullscreen-wall');
-    
-    if (wallContainer.classList.contains('fullscreen-active')) {
-      exitFullscreenWall();
-    } else {
-      // Pause all playing videos on the page to free up resources
-      document.querySelectorAll('video').forEach(v => {
-        v.pause();
-      });
-
-      // Enter fullscreen wall and hide rest of page layout
-      document.body.classList.add('fullscreen-mode-active');
-      wallContainer.classList.add('fullscreen-active');
-      closeBtn.style.display = 'block';
-      document.body.style.overflow = 'hidden'; // Lock main page scrolling
-    }
-  }
-
-  // Exit Fullscreen Wall Mode
-  function exitFullscreenWall() {
-    const wallContainer = document.querySelector('.wall-container-box');
-    const closeBtn = document.getElementById('btn-close-fullscreen-wall');
-    
-    if (!wallContainer.classList.contains('fullscreen-active')) return;
-
-    document.body.classList.remove('fullscreen-mode-active');
-    wallContainer.classList.remove('fullscreen-active');
-    closeBtn.style.display = 'none';
-    document.body.style.overflow = ''; // Restore main page scrolling
-  }
-
-  // Handle Escape key to exit fullscreen wall
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      exitFullscreenWall();
-    }
-  });
-
-  // Format ISO timestamp (e.g. 20260714T201031Z) to human-readable format
-  // Pack provenance badge. Champion-install packs are written by the CEM's
-  // maybe_install for each newly installed champion; policy_evolved_ci_* packs
-  // are local mech/window-cycle candidate probes — fully rendered, but NOT
-  // necessarily the champion. The newest pack can therefore be a non-champion
-  // candidate; this badge makes the distinction visible at a glance.
-  function packTypeBadge(label) {
-    if (/policy_evolved_ci_\d{8}T\d{6}Z/.test(label)) {
-      return '<span class="pack-badge pack-candidate">CI candidate</span>';
-    }
-    if (/(^|_)(policy_)?evolved_g\d+/.test(label)) {
-      return '<span class="pack-badge pack-champion">Champion install</span>';
-    }
-    return '';
-  }
-
-  function formatTimestamp(ts) {
-    if (!ts) return '';
-    try {
-      const year = ts.substring(0, 4);
-      const month = ts.substring(4, 6);
-      const day = ts.substring(6, 8);
-      const hour = ts.substring(9, 11);
-      const min = ts.substring(11, 13);
-      return `${month}/${day} ${hour}:${min}`;
-    } catch(e) {
-      return ts;
-    }
-  }
-
-  // Populate dynamic select list filter elements
-  function populateFilters() {
-    const runSelect = document.getElementById('filter-run');
-    const caseSelect = document.getElementById('filter-case');
-
-    // Run directories dropdown
-    progressionData.forEach(run => {
-      const label = run.meta.label || run.dir_name;
-      const cleanLabel = label.replace('policy_evolved_', '').replace('_focus', '');
-      const opt = document.createElement('option');
-      opt.value = run.dir_name;
-      opt.innerText = `${cleanLabel} (${formatTimestamp(run.meta.created_utc)})`;
-      runSelect.appendChild(opt);
-    });
-
-    // Unique cases collect
-    const casesSet = new Set();
-    progressionData.forEach(run => {
-      run.cases.forEach(c => casesSet.add(c.name));
-    });
-
-    casesSet.forEach(c => {
-      const opt = document.createElement('option');
-      opt.value = c;
-      opt.innerText = c;
-      caseSelect.appendChild(opt);
-    });
-  }
-
-  // Filter and render the rollouts archive list
-  function applyFilters() {
-    const runVal = document.getElementById('filter-run').value;
-    const caseVal = document.getElementById('filter-case').value;
-    const renderVal = document.getElementById('filter-render').value;
-    const searchVal = document.getElementById('search-run').value.toLowerCase();
-
-    const archiveGrid = document.getElementById('archive-videos-grid');
-    
-    // Clear sentinel if exists
-    const oldSentinel = document.getElementById('archive-sentinel');
-    if (oldSentinel) oldSentinel.remove();
-    
-    archiveGrid.innerHTML = '';
-    filteredArchiveItems = [];
-    archiveOffset = 0;
-
-    progressionData.forEach(run => {
-      // Check run filter
-      if (runVal !== 'all' && run.dir_name !== runVal) return;
-      
-      // Check search query
-      const runLabel = (run.meta.label || '').toLowerCase();
-      const runDirName = run.dir_name.toLowerCase();
-      if (searchVal && !runLabel.includes(searchVal) && !runDirName.includes(searchVal)) return;
-
-      run.cases.forEach(c => {
-        // Check case filter
-        if (caseVal !== 'all' && c.name !== caseVal) return;
-
-        c.videos.forEach(v => {
-          // Archive grid uses <video> tags, so we only display MP4 files
-          if (!v.filename.endsWith('.mp4')) return;
-
-          // Check render type filter
-          if (renderVal !== 'all' && v.filename !== renderVal) return;
-
-          filteredArchiveItems.push({
-            run: run,
-            case: c,
-            video: v
-          });
-        });
-      });
-    });
-
-    document.getElementById('filter-count').innerText = `Showing ${filteredArchiveItems.length} of 134 rollouts`;
-
-    if (filteredArchiveItems.length === 0) {
-      archiveGrid.innerHTML = `
-        <div style="grid-column: 1/-1; text-align:center; padding: 40px; color: var(--text-secondary);">
-          No matching rollouts found. Adjust filters and try again.
-        </div>
-      `;
-      return;
-    }
-
-    // Render first batch
-    loadMoreArchiveItems();
-
-    // Setup Sentinel Scroll Observer for lazy loading
-    setupSentinelObserver();
-  }
-
-  function loadMoreArchiveItems() {
-    const archiveGrid = document.getElementById('archive-videos-grid');
-    const batch = filteredArchiveItems.slice(archiveOffset, archiveOffset + archiveLimit);
-    
-    batch.forEach(item => {
-      const run = item.run;
-      const c = item.case;
-      const v = item.video;
-      const metrics = c.metrics || {};
-      const isCrashed = metrics.drone_crash === 1 || metrics.drone_crash === true;
-      const typeLabel = v.filename === 'render_3d.mp4' ? '3D Render' : '2D Render';
-      const cleanRunLabel = (run.meta.label || run.dir_name).replace('policy_evolved_', '').replace('_focus', '');
-
-      const card = document.createElement('div');
-      card.className = 'archive-cell';
-
-      const playAttr = archivePlayActive ? 'autoplay' : '';
-      const muteAttr = archiveMuteActive ? 'muted' : '';
-
-      card.innerHTML = `
-        <div class="video-container" onclick="openModalById('${run.dir_name}', '${c.name}', '${v.filename === 'render_3d.mp4' ? '3d' : '2d'}')" style="cursor:pointer;">
-          <video src="${v.rel_path}" loop ${muteAttr} ${playAttr} playsinline preload="none"></video>
-          <div class="cell-overlay">${typeLabel}</div>
-        </div>
-        <div class="archive-cell-meta">
-          <div class="archive-cell-title">
-            <span style="text-transform: capitalize; color:#fff;">${c.name.replace(/_/g, ' ')}</span>
-            <span class="archive-cell-run">${cleanRunLabel} <span class="archive-cell-time">${formatTimestamp(run.meta.created_utc || run.dir_name)}</span></span>
-          </div>
-          <div class="archive-cell-footer">
-            <span style="color:var(--text-secondary)">Score: ${metrics.score ? metrics.score.toFixed(3) : 'N/A'}</span>
-            <span style="color: ${isCrashed ? 'var(--color-rose)' : 'var(--color-emerald)'}">
-              ${isCrashed ? 'Crashed' : 'Success'}
-            </span>
-          </div>
-        </div>
-      `;
-
-      archiveGrid.appendChild(card);
-    });
-
-    archiveOffset += batch.length;
-
-    // Re-bind intersection observer for visible playing
-    setupIntersectionObserver();
-
-    // Set up preview modal listeners for newly loaded items
-    setupRenderPreviewListeners();
-
-    // Set up sequential playback for archive grid
-    setupSequentialPlayback();
-  }
-
-  function setupSentinelObserver() {
-    if (scrollObserver) {
-      scrollObserver.disconnect();
-    }
-
-    // Create sentinel if not exists
-    let sentinel = document.getElementById('archive-sentinel');
-    if (!sentinel) {
-      sentinel = document.createElement('div');
-      sentinel.id = 'archive-sentinel';
-      sentinel.style.height = '20px';
-      sentinel.style.width = '100%';
-      sentinel.style.gridColumn = '1 / -1';
-      document.getElementById('archive-videos-grid').after(sentinel);
-    }
-
-    scrollObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        if (archiveOffset < filteredArchiveItems.length) {
-          loadMoreArchiveItems();
-        } else {
-          // No more items, disconnect
-          scrollObserver.disconnect();
-          const sentinelEl = document.getElementById('archive-sentinel');
-          if (sentinelEl) sentinelEl.remove();
-        }
-      }
-    }, {
-      root: null,
-      rootMargin: '200px', // trigger loading 200px before scroll hits bottom
-      threshold: 0.1
-    });
-
-    scrollObserver.observe(sentinel);
-  }
-
-  // Play All visible videos simultaneously toggle
-  function toggleArchivePlay() {
-    const btn = document.getElementById('btn-toggle-play');
-    archivePlayActive = !archivePlayActive;
-
-    const videos = document.querySelectorAll('#archive-videos-grid video');
-    
-    if (archivePlayActive) {
-      btn.innerHTML = `<svg height="14" width="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause All Videos`;
-      btn.classList.add('active-play');
-      
-      // Play elements currently in view
-      videos.forEach(v => {
-        v.setAttribute('autoplay', 'true');
-        // Only trigger play if visible in viewport
-        if (v.isIntersecting) {
-          v.play().catch(e => {});
-        }
-      });
-    } else {
-      btn.innerHTML = `<svg height="14" width="14" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play All Simultaneously`;
-      btn.classList.remove('active-play');
-      videos.forEach(v => {
-        v.removeAttribute('autoplay');
-        v.pause();
-      });
-    }
-  }
-
-  // Mute All toggle
-  function toggleArchiveMute() {
-    const btn = document.getElementById('btn-toggle-mute');
-    archiveMuteActive = !archiveMuteActive;
-
-    const videos = document.querySelectorAll('#archive-videos-grid video');
-
-    if (archiveMuteActive) {
-      btn.innerHTML = `<svg height="14" width="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM12 4L9.91 6.09 12 8.18V4z"/></svg> Unmute All`;
-      btn.classList.remove('active-mute');
-      videos.forEach(v => {
-        v.muted = true;
-      });
-    } else {
-      btn.innerHTML = `<svg height="14" width="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4zm2 8c0-.77-.2-1.47-.53-2.09l4.52 4.52c.01-.14.01-.28.01-.43 0-1.77-1.02-3.29-2.5-4.03v2.03z"/></svg> Mute All`;
-      btn.classList.add('active-mute');
-      videos.forEach(v => {
-        v.muted = false;
-      });
-    }
-  }
-
-  // Intersection observer for archive video nodes: plays only visible ones to prevent CPU choke
-  let observer = null;
-  function setupIntersectionObserver() {
-    if (observer) {
-      observer.disconnect();
-    }
-
-    observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const video = entry.target;
-        video.isIntersecting = entry.isIntersecting;
-        
-        if (entry.isIntersecting) {
-          // Video entered screen
-          if (archivePlayActive) {
-            video.play().catch(e => {});
-          } else {
-            // Preload metadata to render the first frame
-            video.setAttribute('preload', 'metadata');
-          }
-        } else {
-          // Video left screen, pause immediately
-          video.pause();
-        }
-      });
-    }, {
-      root: null, // viewport
-      rootMargin: '100px', // start loading slightly before they hit screen
-      threshold: 0.1
-    });
-
-    const videos = document.querySelectorAll('#archive-videos-grid video');
-    videos.forEach(v => observer.observe(v));
-  }
-
-  // Handle widescreen secondary media toggle
-  function setWidescreenRightMedia(type) {
-    activeWidescreenRightMedia = type;
-    const btnPlot = document.getElementById('btn-widescreen-plot');
-    const btn2d = document.getElementById('btn-widescreen-2d');
-    const video2d = document.getElementById('modal-video-2d');
-    const image2d = document.getElementById('modal-image-2d');
-
-    if (type === 'snapshot') {
-      if (btnPlot) btnPlot.classList.add('active');
-      if (btn2d) btn2d.classList.remove('active');
-      if (video2d) { video2d.pause(); video2d.style.display = 'none'; }
-      if (image2d) image2d.style.display = 'block';
-    } else {
-      if (btnPlot) btnPlot.classList.remove('active');
-      if (btn2d) btn2d.classList.add('active');
-      if (video2d) { video2d.style.display = 'block'; video2d.play().catch(e => {}); }
-      if (image2d) image2d.style.display = 'none';
-    }
-  }
-
-  // Open Details Modal using directory ID
-  function openModalById(runDirName, caseName, initialMediaType) {
-    const run = progressionData.find(r => r.dir_name === runDirName);
-    if (run) {
-      openModal(run, caseName, initialMediaType);
-    }
-  }
-
-  // Display deep overlay modal for detailed analysis
-  function openModal(run, caseName, initialMediaType) {
-    selectedModalRun = run;
-    selectedModalCase = run.cases.find(c => c.name === caseName) || run.cases[0];
-    
-    // Set active media based on click context
-    activeModalMediaType = initialMediaType || '3d';
-    if (activeModalMediaType === '2d') {
-      activeWidescreenRightMedia = '2d';
-    } else {
-      activeWidescreenRightMedia = 'snapshot';
-    }
-
-    const modal = document.getElementById('details-modal');
-    modal.classList.add('active');
-
-    // Title and metadata
-    const runLabel = run.meta.label || run.dir_name;
-    document.getElementById('modal-title').innerHTML = `
-      ${runLabel.replace('policy_evolved_', 'Evolved ').replace('_focus', '')}
-      <span class="date">Evaluated on ${formatTimestamp(run.meta.created_utc)} UTC</span>
-    `;
-
-    // Policy links
-    const policyLink = document.getElementById('modal-policy-link');
-    if (run.meta.rel_policy_path) {
-      policyLink.href = run.meta.rel_policy_path;
-      policyLink.innerText = run.meta.rel_policy_path.substring(run.meta.rel_policy_path.lastIndexOf('/') + 1);
-      policyLink.style.display = 'block';
-    } else {
-      policyLink.style.display = 'none';
-    }
-    
-    document.getElementById('modal-policy-sha').innerText = `SHA256: ${run.meta.policy_sha256 ? run.meta.policy_sha256.substring(0, 16) + '...' : 'N/A'}`;
-
-    // Load case list selector
-    const caseListContainer = document.getElementById('modal-case-list');
-    caseListContainer.innerHTML = '';
-
-    run.cases.forEach(c => {
-      const isCrashed = c.metrics && (c.metrics.drone_crash === 1 || c.metrics.drone_crash === true);
-      const caseStatusClass = isCrashed ? 'crash-case' : 'success-case';
-      const btn = document.createElement('button');
-      btn.className = `case-btn ${caseStatusClass} ${c.name === selectedModalCase.name ? 'active' : ''}`;
-      btn.onclick = () => selectModalCase(c.name);
-
-      const bClass = isCrashed ? 'crash' : 'success';
-      const bText = isCrashed ? 'CRASH' : 'CLEAR';
-      btn.innerHTML = `
-        <span>${c.name.replace(/_/g, ' ')}</span>
-        <span class="badge ${bClass}">${bText}</span>
-      `;
-      caseListContainer.appendChild(btn);
-    });
-
-    // Populate display and table
-    updateModalCaseDetails();
-  }
-
-  function selectModalCase(caseName) {
-    selectedModalCase = selectedModalRun.cases.find(c => c.name === caseName);
-    
-    // Update active class on buttons
-    document.querySelectorAll('#modal-case-list .case-btn').forEach(btn => {
-      const labelText = btn.querySelector('span').innerText.toLowerCase().replace(/ /g, '_');
-      if (labelText === caseName) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-
-    updateModalCaseDetails();
-  }
-
-  // Populate metrics table and video element
-  function updateModalCaseDetails() {
-    const c = selectedModalCase;
-    const metrics = c.metrics || {};
-
-    // Update render type indicators
-    const v3d = c.videos.find(v => v.filename === 'render_3d.mp4');
-    const v2d = c.videos.find(v => v.filename === 'render_2d.mp4');
-
-    const render3dScoreLabel = document.getElementById('render-3d-score-label');
-    if (render3dScoreLabel) {
-      render3dScoreLabel.textContent = v3d ? '3D Render' : 'N/A';
-    }
-
-    // Render metrics table
-    const tbody = document.getElementById('modal-metrics-body');
-    tbody.innerHTML = '';
-
-    const attrMap = [
-      { key: 'score', label: 'Score Penalty (Lower is Better)', formatter: v => v !== undefined ? v.toFixed(5) : 'N/A' },
-      { key: 'drone_crash', label: 'Drone Collided / Crashed', formatter: v => v === 1 || v === true ? '<span class="text-danger">Yes (Failed)</span>' : '<span class="text-success">No (Success)</span>' },
-      { key: 'raw_gates_passed', label: 'Raw Gates Passed', formatter: v => v !== undefined ? v : '0' },
-      { key: 'bounced_gate_passes', label: 'Bounced Gates Passed', formatter: v => v !== undefined ? v : '0' },
-      { key: 'drone_windows_passed', label: 'Windows Traversed', formatter: v => v !== undefined ? v : '0' },
-      { key: 'max_tilt_deg', label: 'Max Tilt Angle (deg)', formatter: v => v !== undefined ? `${v.toFixed(2)}°` : 'N/A' },
-      { key: 'max_action_N', label: 'Max Motor Command (N)', formatter: v => v !== undefined ? `${v.toFixed(2)} N` : 'N/A' },
-      { key: 'target_box_entered', label: 'Entered Landing Zone', formatter: v => v === 1 || v === true ? '<span class="text-success">Yes</span>' : '<span class="text-secondary">No</span>' },
-      { key: 'safety_score', label: 'Safety Margin Metric', formatter: v => v !== undefined ? v.toFixed(4) : '0.00' },
-      { key: 'contacts', label: 'Physics Contacts Count', formatter: v => v !== undefined ? v : '0' }
-    ];
-
-    attrMap.forEach(attr => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td class="metric-name">${attr.label}</td>
-        <td class="metric-val">${attr.formatter(metrics[attr.key])}</td>
-      `;
-      tbody.appendChild(tr);
-    });
-
-    // Set correct video/media tabs display
-    updateModalMediaDisplay();
-
-    // Update Favorites status UI
-    updateModalFavoriteUI();
-  }
-
-  // Switch between 3D Video, 2D Video, and Trajectory Snapshot
-  function switchModalMedia(type) {
-    activeModalMediaType = type;
-    document.querySelectorAll('.media-tabs .media-tab').forEach(tab => {
-      tab.classList.remove('active');
-    });
-    const tabEl = document.getElementById(`tab-${type}`);
-    if (tabEl) tabEl.classList.add('active');
-    updateModalMediaDisplay();
-  }
-
-  function updateModalMediaDisplay() {
-    const video3d = document.getElementById('modal-video-3d');
-    const video2d = document.getElementById('modal-video-2d');
-    const image2d = document.getElementById('modal-image-2d');
-    const layoutContainer = document.querySelector('.widescreen-media-layout');
-
-    const c = selectedModalCase;
-    if (!c) return;
-    
-    // Find MP4 videos only (gifs cannot be played in video tags)
-    const v3d = c.videos.find(v => v.filename === 'render_3d.mp4' || (v.filename.endsWith('.mp4') && v.filename.includes('3d')));
-    const v2d = c.videos.find(v => v.filename === 'render_2d.mp4' || (v.filename.endsWith('.mp4') && (v.filename.includes('2d') || v.filename.includes('diagnostic'))));
-    const snapshotPath = c.snapshot;
-
-    const isWidescreen = window.innerWidth >= 1400;
-
-    const helperSetSrc = (el, path) => {
-      if (!el) return;
-      if (!path) {
-        el.removeAttribute('src');
-        try { el.load(); } catch (e) {}
-        return;
-      }
-      const current = el.src || '';
-      if (!current.endsWith(path)) {
-        el.src = path;
-        try { el.load(); } catch (e) {}
-      }
-    };
-
-    if (isWidescreen) {
-      // Widescreen double-pane behavior
-      if (layoutContainer) {
-        layoutContainer.className = 'widescreen-media-layout'; // reset show-X classes
-      }
-      if (video3d) {
-        video3d.style.display = 'block';
-        helperSetSrc(video3d, v3d ? v3d.rel_path : '');
-        video3d.play().catch(e => {});
-      }
-      
-      const btnPlot = document.getElementById('btn-widescreen-plot');
-      const btn2d = document.getElementById('btn-widescreen-2d');
-      
-      if (activeWidescreenRightMedia === 'snapshot') {
-        if (video2d) { video2d.pause(); video2d.style.display = 'none'; }
-        if (image2d) {
-          image2d.style.display = 'block';
-          helperSetSrc(image2d, snapshotPath || '');
-        }
-        if (btnPlot) btnPlot.classList.add('active');
-        if (btn2d) btn2d.classList.remove('active');
-      } else {
-        if (image2d) image2d.style.display = 'none';
-        if (video2d) {
-          video2d.style.display = 'block';
-          helperSetSrc(video2d, v2d ? v2d.rel_path : '');
-          video2d.play().catch(e => {});
-        }
-        if (btnPlot) btnPlot.classList.remove('active');
-        if (btn2d) btn2d.classList.add('active');
-      }
-    } else {
-      // Single-pane tabbed behavior on small screens
-      document.querySelectorAll('.media-tabs .media-tab').forEach(tab => {
-        tab.classList.remove('active');
-      });
-      const activeTab = document.getElementById(`tab-${activeModalMediaType}`);
-      if (activeTab) activeTab.classList.add('active');
-
-      if (layoutContainer) {
-        layoutContainer.className = `widescreen-media-layout show-${activeModalMediaType}`;
-      }
-
-      if (activeModalMediaType === '3d') {
-        if (video2d) video2d.pause();
-        if (video3d) {
-          helperSetSrc(video3d, v3d ? v3d.rel_path : '');
-          video3d.play().catch(e => {});
-        }
-      } else if (activeModalMediaType === '2d') {
-        if (video3d) video3d.pause();
-        if (video2d) {
-          helperSetSrc(video2d, v2d ? v2d.rel_path : '');
-          video2d.play().catch(e => {});
-        }
-      } else if (activeModalMediaType === 'snapshot') {
-        if (video3d) video3d.pause();
-        if (video2d) video2d.pause();
-        if (image2d) {
-          helperSetSrc(image2d, snapshotPath || '');
-        }
-      }
-    }
-  }
-  
-  // Update display dynamically on browser resize
-  window.addEventListener('resize', updateModalMediaDisplay);
-
-  // Global favorites state
-  let favorites = [];
-
-  // Load favorites from API (or fallback to static json file or localStorage)
-  async function loadFavorites() {
-    try {
-      const response = await fetch('/api/favorites');
-      if (response.ok) {
-        const data = await response.json();
-        favorites = data.favorites || [];
-        console.log('Loaded favorites from API', favorites.length);
-        renderFavorites();
-        return;
-      }
-    } catch (e) {
-      console.warn('API favorites load failed, trying static file...', e);
-    }
-
-    try {
-      const response = await fetch('data/favorites.json');
-      if (response.ok) {
-        const data = await response.json();
-        favorites = data.favorites || [];
-        console.log('Loaded favorites from static file', favorites.length);
-        renderFavorites();
-        return;
-      }
-    } catch (e) {
-      console.warn('Static file favorites load failed, trying localStorage...', e);
-    }
-
-    try {
-      const localData = localStorage.getItem('dashboard_favorites');
-      if (localData) {
-        favorites = JSON.parse(localData) || [];
-        console.log('Loaded favorites from localStorage', favorites.length);
-      }
-    } catch (e) {
-      console.error('LocalStorage load failed', e);
-    }
-    renderFavorites();
-  }
-
-  // Save favorites to API and localStorage
-  async function saveFavoritesBackend() {
-    // Always save to localStorage first
-    try {
-      localStorage.setItem('dashboard_favorites', JSON.stringify(favorites));
-    } catch (e) {
-      console.warn('LocalStorage save failed', e);
-    }
-
-    // Try POSTing to server API
-    try {
-      const response = await fetch('/api/favorites', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ favorites: favorites })
-      });
-      if (response.ok) {
-        console.log('Saved favorites to API');
-      } else {
-        console.warn('Failed to save favorites to API server');
-      }
-    } catch (e) {
-      console.warn('API save failed (running statically on Github Pages or standard http.server)', e);
-    }
-  }
-
-  // Check if a specific rollout is favorited
-  function getFavorite(runDirName, caseName) {
-    return favorites.find(f => f.run_dir_name === runDirName && f.case_name === caseName);
-  }
-
-  // Update favorites UI inside the Details Modal
-  function updateModalFavoriteUI() {
-    if (!selectedModalRun || !selectedModalCase) return;
-    
-    const fav = getFavorite(selectedModalRun.dir_name, selectedModalCase.name);
-    const btn = document.getElementById('btn-favorite-toggle');
-    const textSpan = document.getElementById('fav-toggle-text');
-    const svgIcon = document.getElementById('fav-icon-svg');
-    const notesContainer = document.getElementById('fav-notes-container');
-    const noteInput = document.getElementById('fav-note-input');
-
-    if (!btn || !textSpan || !svgIcon || !notesContainer || !noteInput) return;
-
-    if (fav) {
-      // Favorited state
-      btn.classList.add('active-play'); // style active
-      textSpan.innerText = 'Remove Favorite';
-      svgIcon.setAttribute('fill', 'var(--color-orange)');
-      svgIcon.setAttribute('stroke', 'var(--color-orange)');
-      notesContainer.style.display = 'block';
-      noteInput.value = fav.note || '';
-    } else {
-      // Unfavorited state
-      btn.classList.remove('active-play');
-      textSpan.innerText = 'Add to Favorites';
-      svgIcon.setAttribute('fill', 'none');
-      svgIcon.setAttribute('stroke', 'currentColor');
-      notesContainer.style.display = 'none';
-      noteInput.value = '';
-    }
-  }
-
-  // Toggle Favorite state
-  function toggleFavorite() {
-    if (!selectedModalRun || !selectedModalCase) return;
-
-    const runDirName = selectedModalRun.dir_name;
-    const caseName = selectedModalCase.name;
-    const idx = favorites.findIndex(f => f.run_dir_name === runDirName && f.case_name === caseName);
-
-    if (idx !== -1) {
-      // Remove from favorites
-      favorites.splice(idx, 1);
-    } else {
-      // Add to favorites
-      favorites.push({
-        run_dir_name: runDirName,
-        case_name: caseName,
-        note: '',
-        saved_at: new Date().toISOString()
-      });
-    }
-
-    saveFavoritesBackend();
-    updateModalFavoriteUI();
-    renderFavorites();
-  }
-
-  // Save Favorite custom notes
-  function saveFavoriteNote() {
-    if (!selectedModalRun || !selectedModalCase) return;
-
-    const runDirName = selectedModalRun.dir_name;
-    const caseName = selectedModalCase.name;
-    const fav = getFavorite(runDirName, caseName);
-    
-    if (fav) {
-      const noteVal = document.getElementById('fav-note-input').value;
-      fav.note = noteVal;
-      saveFavoritesBackend();
-      renderFavorites();
-      
-      // Visual feedback (toast or temporary button text change)
-      const btn = document.querySelector('#fav-notes-container button');
-      const originalText = btn.innerText;
-      btn.innerText = 'Saved!';
-      btn.style.background = 'var(--color-emerald)';
-      setTimeout(() => {
-        btn.innerText = originalText;
-        btn.style.background = '';
-      }, 1000);
-    }
-  }
-
-  // Render Favorites section on the main page dashboard
-  function renderFavorites() {
-    const sectionTitle = document.getElementById('favorites-section-title');
-    const grid = document.getElementById('favorites-grid');
-    if (!sectionTitle || !grid) return;
-
-    if (favorites.length === 0) {
-      sectionTitle.style.display = 'none';
-      grid.style.display = 'none';
-      grid.innerHTML = '';
-      return;
-    }
-
-    sectionTitle.style.display = 'block';
-    grid.style.display = 'grid';
-    grid.innerHTML = '';
-
-    favorites.forEach(fav => {
-      // Find corresponding run and case info to render details
-      const run = progressionData.find(r => r.dir_name === fav.run_dir_name);
-      if (!run) return;
-      const c = run.cases.find(caseItem => caseItem.name === fav.case_name);
-      if (!c) return;
-
-      const runLabel = (run.meta.label || run.dir_name).replace('_focus', '').replace('policy_evolved_', 'Evolved ');
-      const cleanCaseName = fav.case_name.replace(/_/g, ' ');
-      const isCrashed = c.metrics && (c.metrics.drone_crash === 1 || c.metrics.drone_crash === true);
-      const badgeClass = isCrashed ? 'crash' : 'success';
-      const badgeText = isCrashed ? 'CRASH' : 'CLEAR';
-      
-      const card = document.createElement('article');
-      card.className = 'grid-cell';
-      card.style.cursor = 'default';
-
-      // Left-hand snapshot preview
-      let imgHtml = '';
-      if (c.snapshot) {
-        imgHtml = `
-          <div style="position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,0.05); margin-bottom:8px; cursor:pointer;" onclick="openModalById('${fav.run_dir_name}', '${fav.case_name}')">
-            <img src="${c.snapshot}" alt="${cleanCaseName}" style="width:100%; height:100%; object-fit:cover;">
-            <div style="position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.8); border:1px solid rgba(255,255,255,0.1); border-radius:4px; padding:2px 6px; font-size:0.6rem; font-weight:600; color:#fff; display:flex; align-items:center; gap:3px;">
-              <svg width="8" height="8" viewBox="0 0 24 24" fill="var(--color-orange)" stroke="var(--color-orange)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              FAVORITE
-            </div>
-          </div>
-        `;
-      }
-
-      card.innerHTML = `
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-          <div class="card-run-label" style="margin:0; font-size:0.85rem;">${runLabel}</div>
-          <span class="badge ${badgeClass}" style="font-size:0.62rem; padding:1px 5px;">${badgeText}</span>
-        </div>
-        <div style="font-size:0.75rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; margin-bottom:8px;">${cleanCaseName}</div>
-        
-        ${imgHtml}
-        
-        <!-- Note block -->
-        <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-color); border-radius:6px; padding:8px; font-size:0.75rem; color:#fff; min-height:40px; margin-bottom:10px; display:flex; flex-direction:column; justify-content:space-between;">
-          <div style="font-style:${fav.note ? 'normal' : 'italic'}; color:${fav.note ? 'var(--text-primary)' : 'var(--text-muted)'}; font-size:0.72rem; line-height:1.3; word-break:break-word;">
-            ${fav.note || 'No notes added yet.'}
-          </div>
-          <div style="font-size:0.58rem; color:var(--text-muted); text-align:right; margin-top:6px;">Saved ${new Date(fav.saved_at).toLocaleDateString()}</div>
-        </div>
-
-        <div style="display:flex; gap:8px;">
-          <button class="chart-btn active" style="flex:1; padding:6px 0; font-size:0.72rem; text-align:center; display:block;" onclick="openModalById('${fav.run_dir_name}', '${fav.case_name}')">
-            Analyze Details
-          </button>
-          <button class="chart-btn" style="padding:6px 10px; font-size:0.72rem; border-color:var(--color-rose); color:var(--color-rose);" onclick="removeFavoriteDirect('${fav.run_dir_name}', '${fav.case_name}')">
-            Remove
-          </button>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-  }
-
-  // Remove helper directly from main page favorites card
-  function removeFavoriteDirect(runDirName, caseName) {
-    const idx = favorites.findIndex(f => f.run_dir_name === runDirName && f.case_name === caseName);
-    if (idx !== -1) {
-      favorites.splice(idx, 1);
-      saveFavoritesBackend();
-      renderFavorites();
-      updateModalFavoriteUI(); // Sync open modal if looking at the same case
-    }
-  }
-
-  // Close details modal overlay
-  function closeModal(event) {
-    if (event && event.target !== document.getElementById('details-modal') && !event.target.classList.contains('modal-close')) {
-      return;
-    }
-    const modal = document.getElementById('details-modal');
-    modal.classList.remove('active');
-
-    // Pause video
-    const video3d = document.getElementById('modal-video-3d');
-    const video2d = document.getElementById('modal-video-2d');
-    if (video3d) video3d.pause();
-    if (video2d) video2d.pause();
-  }
-
-  // Hide overlays when videos play - fallback for older browsers
-  function setupVideoOverlayControl() {
-    const allVideos = document.querySelectorAll('.video-container video');
-    allVideos.forEach(video => {
-      const overlay = video.closest('.video-container')?.querySelector('.cell-overlay');
-      if (!overlay) return;
-
-      video.addEventListener('play', () => {
-        overlay.style.opacity = '0';
-      });
-      video.addEventListener('pause', () => {
-        overlay.style.opacity = '0.8';
-      });
-      video.addEventListener('ended', () => {
-        overlay.style.opacity = '0.8';
-      });
-    });
-  }
-
-  // Sequential playback for grids - play renders one at a time
-  function setupSequentialPlayback() {
-    const archiveGrid = document.getElementById('archive-videos-grid');
-    if (archiveGrid) {
-      setupGridSequentialPlayback(archiveGrid);
-    }
-
-    const wallGrid = document.getElementById('wall-grid-element');
-    if (wallGrid) {
-      setupWallSequentialPlayback(wallGrid);
-    }
-  }
-
-  function setupGridSequentialPlayback(grid) {
-    const videos = grid.querySelectorAll('video');
-    if (videos.length === 0) return;
-
-    let currentIndex = 0;
-
-    function playNext() {
-      videos.forEach(v => v.pause());
-
-      if (currentIndex < videos.length) {
-        const video = videos[currentIndex];
-        video.currentTime = 0;
-        video.play().catch(() => {});
-
-        video.onended = () => {
-          currentIndex++;
-          playNext();
+});
+
+/** Accept schema 2 (object) or schema 1 (array of runs with a videos list). */
+function normalise(data) {
+  if (Array.isArray(data)) {
+    // legacy shape — synthesise the "have" bitmap from the videos list
+    RUNS = data.map(r => ({
+      dir: r.dir_name,
+      stamp: (r.dir_name || '').substring(0, 16),
+      label: (r.meta && r.meta.label) || r.dir_name,
+      meta: r.meta || {},
+      aggregate: {},
+      grid: true,
+      cases: (r.cases || []).map(c => {
+        const names = new Set((c.videos || []).map(v => v.filename));
+        if (c.snapshot) names.add('trajectory_2d.png');
+        return {
+          name: c.name,
+          metrics: c.metrics || {},
+          have: ARTIFACTS.map(a => (names.has(a) ? '1' : '0')).join(''),
         };
-
-        currentIndex++;
-      } else {
-        currentIndex = 0;
-        playNext();
-      }
-    }
-
-    playNext();
+      }),
+    }));
+    INDEX_META = { schema: 1 };
+  } else {
+    ARTIFACTS = data.artifacts || ARTIFACTS;
+    RUNS = data.runs || [];
+    INDEX_META = { schema: data.schema, generated_utc: data.generated_utc };
   }
+  RUNS.forEach(r => {
+    r.meta = r.meta || {};
+    r.aggregate = r.aggregate || {};
+    r.cases = r.cases || [];
+    r.raw = rawScore(r);
+    r.when = r.meta.created_utc || r.stamp || r.dir;
+  });
+  // newest first, and stable even when created_utc is missing
+  RUNS.sort((a, b) => String(b.stamp || b.dir).localeCompare(String(a.stamp || a.dir)));
+}
 
-  function setupWallSequentialPlayback(grid) {
-    const cells = grid.querySelectorAll('.wall-cell');
-    if (cells.length === 0) return;
+function initDashboard() {
+  updateStats();
+  renderChart();
+  renderLatestBrief();
+  renderTopChampions();
+  renderLatest9Grid();
+  renderMatrixWall();
+  populateFilters();
+  applyFilters();
+  loadFavorites();
+}
 
-    let currentIndex = 0;
-    const animatedElements = [];
+/* ---------------------------------------------------------------- stats */
 
-    cells.forEach((cell, index) => {
-      const img = cell.querySelector('img');
-      if (img && img.src.endsWith('.gif')) {
-        animatedElements.push({ cell, img, index });
-      }
-    });
+function updateStats() {
+  const nEpisodes = RUNS.reduce((s, r) => s + r.cases.length, 0);
+  let nominalTotal = 0, nominalCrash = 0, complete = 0;
+  RUNS.forEach(r => r.cases.forEach(c => {
+    if (isComplete(c)) complete++;
+    if (c.name === 'nominal') { nominalTotal++; if (isCrashed(c.metrics)) nominalCrash++; }
+  }));
 
-    if (animatedElements.length === 0) return;
+  const best = RUNS.filter(r => r.raw !== null).sort((a, b) => b.raw - a.raw)[0];
 
-    function highlightNext() {
-      animatedElements.forEach(el => {
-        el.cell.style.opacity = '0.5';
-        el.cell.style.filter = 'grayscale(50%)';
-      });
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.innerText = v; };
+  set('stat-runs', RUNS.length);
+  set('stat-rollouts', nEpisodes);
+  set('stat-best-score', best ? best.raw.toFixed(2) : 'N/A');
+  set('stat-best-score-run', best ? cleanLabel(best) : '');
+  set('stat-crash-rate', nominalTotal ? ((nominalCrash / nominalTotal) * 100).toFixed(1) + '%' : 'N/A');
+  const pct = nEpisodes ? (complete / nEpisodes) * 100 : 0;
+  set('stat-coverage', pct.toFixed(1) + '%');
+  set('stat-coverage-sub', `${nEpisodes - complete} incomplete`);
+  const cov = document.getElementById('stat-coverage');
+  if (cov) cov.style.color = pct >= 99.9 ? 'var(--color-emerald)' : 'var(--color-orange)';
 
-      if (currentIndex < animatedElements.length) {
-        const current = animatedElements[currentIndex];
-        current.cell.style.opacity = '1';
-        current.cell.style.filter = 'grayscale(0%)';
-        current.cell.style.transform = 'scale(1.02)';
-
-        setTimeout(() => {
-          currentIndex++;
-          highlightNext();
-        }, 800);
-      } else {
-        currentIndex = 0;
-        highlightNext();
-      }
-    }
-
-    highlightNext();
+  const sync = document.getElementById('header-sync-time');
+  if (sync && RUNS.length) {
+    sync.innerText = `[latest run ${fmtStamp(RUNS[0].when)} · index ${fmtStamp(INDEX_META.generated_utc)}]`;
   }
+}
 
-  // Preview modal functionality for renders on hover
-  let previewModalTimeout = null;
-  let currentPreviewElement = null;
+/* ------------------------------------------------------- progression chart
+   Hand-rolled SVG. Replaces chart.js: a CDN failure used to throw inside
+   initDashboard() and abort every section after the chart. */
 
-  function showPreviewModal(event, mediaPath, title) {
-    if (previewModalTimeout) clearTimeout(previewModalTimeout);
-    currentPreviewElement = event.currentTarget;
+const CHART_SERIES = {
+  raw: [{ key: 'raw', label: 'Held-out raw_score_100', color: '#00f2fe' }],
+  score: [{ key: 'nominalScore', label: 'Nominal case score (0–1)', color: '#00f2fe' }],
+  gates: [
+    { key: 'bounced', label: 'Bounced gates (nominal)', color: '#f59e0b' },
+    { key: 'rawGates', label: 'Raw gates passed (nominal)', color: '#10b981' },
+  ],
+  crash: [{ key: 'crashRate', label: 'Crash rate across all cases %', color: '#f43f5e' }],
+};
 
-    previewModalTimeout = setTimeout(() => {
-      const modal = document.getElementById('render-preview-modal');
-      if (!modal) {
-        const newModal = document.createElement('div');
-        newModal.id = 'render-preview-modal';
-        newModal.className = 'render-preview-modal active';
-        newModal.innerHTML = `
-          <div class="render-preview-container">
-            <div class="render-preview-header">
-              <span class="render-preview-title">${title || 'Preview'}</span>
-            </div>
-            <div class="render-preview-media" id="preview-media-container">
-              ${mediaPath.endsWith('.mp4') || mediaPath.endsWith('.webm') ?
-                `<video autoplay muted loop playsinline src="${mediaPath}" style="max-width: 100%; max-height: 100%;"></video>` :
-                `<img src="${mediaPath}" alt="Preview" style="max-width: 100%; max-height: 100%;">`
-              }
-            </div>
-          </div>
-        `;
-        newModal.onclick = () => hidePreviewModal();
-        document.body.appendChild(newModal);
-        setupModalHoverBehavior(newModal);
-      } else {
-        const container = document.getElementById('preview-media-container');
-        if (container) {
-          container.innerHTML = mediaPath.endsWith('.mp4') || mediaPath.endsWith('.webm') ?
-            `<video autoplay muted loop playsinline src="${mediaPath}" style="max-width: 100%; max-height: 100%;"></video>` :
-            `<img src="${mediaPath}" alt="Preview" style="max-width: 100%; max-height: 100%;">`;
-        }
-        document.querySelector('.render-preview-title').textContent = title || 'Preview';
-        modal.classList.add('active');
-        setupModalHoverBehavior(modal);
-      }
-    }, 1000);
-  }
-
-  function hidePreviewModal() {
-    if (previewModalTimeout) clearTimeout(previewModalTimeout);
-    const modal = document.getElementById('render-preview-modal');
-    if (modal) {
-      modal.classList.remove('active');
-      setTimeout(() => {
-        if (modal && modal.parentNode && !modal.classList.contains('active')) {
-          modal.remove();
-        }
-      }, 150);
-    }
-    currentPreviewElement = null;
-  }
-
-  function setupModalHoverBehavior(modal) {
-    if (!modal) return;
-
-    // Keep modal open when hovering over it
-    modal.addEventListener('mouseenter', () => {
-      if (previewModalTimeout) clearTimeout(previewModalTimeout);
-    });
-
-    // Close modal when leaving it, but with a small delay to prevent flashing
-    modal.addEventListener('mouseleave', () => {
-      hidePreviewModal();
-    });
-  }
-
-  // Set up preview modal listeners for archive videos
-  function setupRenderPreviewListeners() {
-    // Set up overlay control for all videos
-    setupVideoOverlayControl();
-
-    const archiveVideos = document.querySelectorAll('.archive-cell .video-container:not([data-preview-setup])');
-    archiveVideos.forEach(container => {
-      const cell = container.closest('.archive-cell');
-      const title = cell.querySelector('.archive-cell-title')?.textContent || 'Render Preview';
-      const video = container.querySelector('video') || container.querySelector('img');
-
-      if (video) {
-        const mediaSrc = video.src || video.getAttribute('src');
-        container.style.cursor = 'pointer';
-        container.addEventListener('mouseenter', (e) => showPreviewModal(e, mediaSrc, title));
-        container.addEventListener('mouseleave', () => {
-          const modal = document.getElementById('render-preview-modal');
-          if (!modal || !modal.classList.contains('active')) hidePreviewModal();
-        });
-        container.setAttribute('data-preview-setup', 'true');
-      }
-    });
-
-    const gridVideos = document.querySelectorAll('.grid-cell .video-container:not([data-preview-setup])');
-    gridVideos.forEach(container => {
-      const cell = container.closest('.grid-cell');
-      const title = cell.querySelector('.card-run-label')?.textContent || 'Render Preview';
-      const video = container.querySelector('video') || container.querySelector('img');
-
-      if (video) {
-        const mediaSrc = video.src || video.getAttribute('src');
-        container.style.cursor = 'pointer';
-        container.addEventListener('mouseenter', (e) => showPreviewModal(e, mediaSrc, title));
-        container.addEventListener('mouseleave', () => {
-          const modal = document.getElementById('render-preview-modal');
-          if (!modal || !modal.classList.contains('active')) hidePreviewModal();
-        });
-        container.setAttribute('data-preview-setup', 'true');
-      }
-    });
-
-    const wallCells = document.querySelectorAll('.wall-cell:not([data-preview-setup])');
-    wallCells.forEach(cell => {
-      const img = cell.querySelector('img');
-      const tooltip = cell.querySelector('.wall-tooltip');
-      const title = tooltip?.textContent || 'Wall Preview';
-
-      if (img) {
-        const mediaSrc = img.src;
-        cell.style.cursor = 'pointer';
-        cell.addEventListener('mouseenter', (e) => showPreviewModal(e, mediaSrc, title));
-        cell.addEventListener('mouseleave', () => {
-          const modal = document.getElementById('render-preview-modal');
-          if (!modal || !modal.classList.contains('active')) hidePreviewModal();
-        });
-        cell.setAttribute('data-preview-setup', 'true');
-      }
-    });
-  }
-
-  // Call preview listeners setup after renders are populated
-  window.addEventListener('DOMContentLoaded', () => {
-    const originalInitDashboard = window.initDashboard;
-    window.initDashboard = function() {
-      originalInitDashboard.call(this);
-      setTimeout(setupRenderPreviewListeners, 500);
+function chartPoints() {
+  return [...RUNS].reverse().map(r => {
+    const nom = r.cases.find(c => c.name === 'nominal');
+    const nm = (nom && nom.metrics) || {};
+    const crashed = r.cases.filter(c => isCrashed(c.metrics)).length;
+    return {
+      run: r,
+      label: cleanLabel(r),
+      when: fmtStamp(r.when),
+      raw: r.raw,
+      nominalScore: typeof nm.score === 'number' ? nm.score : null,
+      bounced: typeof nm.bounced_gate_passes === 'number' ? nm.bounced_gate_passes : null,
+      rawGates: typeof nm.raw_gates_passed === 'number' ? nm.raw_gates_passed : null,
+      crashRate: r.cases.length ? (crashed / r.cases.length) * 100 : null,
     };
   });
+}
+
+function renderChart() {
+  const host = document.getElementById('chart-host');
+  const legendHost = document.getElementById('chart-legend');
+  if (!host) return;
+  const pts = chartPoints();
+  const series = CHART_SERIES[activeChartMetric] || CHART_SERIES.raw;
+
+  const W = 800, H = 260, PAD = { l: 46, r: 12, t: 12, b: 26 };
+  const iw = W - PAD.l - PAD.r, ih = H - PAD.t - PAD.b;
+
+  let lo = Infinity, hi = -Infinity;
+  series.forEach(s => pts.forEach(p => {
+    const v = p[s.key];
+    if (typeof v === 'number' && isFinite(v)) { lo = Math.min(lo, v); hi = Math.max(hi, v); }
+  }));
+  if (!isFinite(lo)) { lo = 0; hi = 1; }
+  if (hi === lo) { hi = lo + 1; }
+  const padY = (hi - lo) * 0.08;
+  lo = Math.max(0, lo - padY); hi = hi + padY;
+
+  const X = i => PAD.l + (pts.length <= 1 ? iw / 2 : (i / (pts.length - 1)) * iw);
+  const Y = v => PAD.t + ih - ((v - lo) / (hi - lo)) * ih;
+
+  let svg = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img"
+     aria-label="${esc(series.map(s => s.label).join(' and '))} across ${pts.length} runs">`;
+
+  // horizontal gridlines + y labels
+  for (let g = 0; g <= 4; g++) {
+    const v = lo + ((hi - lo) * g) / 4;
+    const y = Y(v);
+    svg += `<line class="svg-grid" x1="${PAD.l}" y1="${y.toFixed(1)}" x2="${W - PAD.r}" y2="${y.toFixed(1)}"/>`;
+    svg += `<text class="svg-axis-label" x="${PAD.l - 6}" y="${(y + 3).toFixed(1)}" text-anchor="end">${
+      activeChartMetric === 'score' ? v.toFixed(2) : v.toFixed(hi - lo < 6 ? 1 : 0)}</text>`;
+  }
+
+  // series: break the path wherever the metric is missing rather than
+  // interpolating across a pack that never measured it
+  series.forEach(s => {
+    let d = '', open = false, dots = '';
+    pts.forEach((p, i) => {
+      const v = p[s.key];
+      if (typeof v !== 'number' || !isFinite(v)) { open = false; return; }
+      const x = X(i), y = Y(v);
+      d += (open ? ' L' : ' M') + x.toFixed(1) + ' ' + y.toFixed(1);
+      open = true;
+      dots += `<circle class="svg-point" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3" fill="${s.color}"/>`;
+    });
+    svg += `<path class="svg-series" d="${d.trim()}" stroke="${s.color}"/>${dots}`;
+  });
+
+  // x labels: first, middle, last only — 70 packs will not fit
+  [0, Math.floor(pts.length / 2), pts.length - 1].forEach((i, k) => {
+    if (!pts[i]) return;
+    const anchor = k === 0 ? 'start' : k === 2 ? 'end' : 'middle';
+    svg += `<text class="svg-axis-label" x="${X(i).toFixed(1)}" y="${H - 8}" text-anchor="${anchor}">${esc(pts[i].when)}</text>`;
+  });
+
+  // invisible hover columns drive the tooltip
+  pts.forEach((p, i) => {
+    const w = pts.length > 1 ? iw / (pts.length - 1) : iw;
+    svg += `<rect x="${(X(i) - w / 2).toFixed(1)}" y="${PAD.t}" width="${w.toFixed(1)}" height="${ih}"
+             fill="transparent" data-i="${i}" style="cursor:pointer"/>`;
+  });
+  svg += '</svg>';
+  host.innerHTML = svg;
+
+  if (legendHost) {
+    legendHost.innerHTML = series
+      .map(s => `<span><i style="background:${s.color}"></i>${esc(s.label)}</span>`)
+      .join('');
+  }
+
+  // tooltip + click-through to the run
+  let tip = document.getElementById('chart-tip');
+  if (!tip) {
+    tip = document.createElement('div');
+    tip.id = 'chart-tip';
+    tip.className = 'chart-tip';
+    document.body.appendChild(tip);
+  }
+  host.querySelectorAll('rect[data-i]').forEach(rect => {
+    const p = pts[+rect.dataset.i];
+    rect.addEventListener('mousemove', e => {
+      const rows = series.map(s => {
+        const v = p[s.key];
+        const txt = typeof v === 'number'
+          ? (activeChartMetric === 'score' ? v.toFixed(4)
+            : activeChartMetric === 'crash' ? v.toFixed(1) + '%'
+            : v.toFixed(activeChartMetric === 'raw' ? 2 : 0))
+          : '—';
+        return `${esc(s.label)}: <b>${txt}</b>`;
+      }).join('<br>');
+      tip.innerHTML = `<div style="font-weight:600;margin-bottom:3px">${esc(p.label)}</div>
+                       <div style="color:#94a3b8;font-size:0.66rem;margin-bottom:4px">${esc(p.when)}</div>${rows}`;
+      tip.style.left = Math.min(e.clientX + 14, window.innerWidth - 280) + 'px';
+      tip.style.top = (e.clientY + 14) + 'px';
+      tip.classList.add('show');
+    });
+    rect.addEventListener('mouseleave', () => tip.classList.remove('show'));
+    rect.addEventListener('click', () => openModal(p.run, 'nominal'));
+  });
+}
+
+function updateChartType(type) {
+  activeChartMetric = type;
+  document.querySelectorAll('#chart-controls .chart-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.metric === type);
+  });
+  renderChart();
+}
+window.addEventListener('resize', () => { /* SVG is viewBox-scaled; nothing to redo */ });
+
+/* ------------------------------------------------------------ latest brief
+   Surfaces meta.note / aggregate.note. Those fields hold the actual research
+   findings for every juggle pack and nothing in the old UI ever showed them. */
+
+function renderLatestBrief() {
+  const host = document.getElementById('brief-latest');
+  if (!host || !RUNS.length) return;
+  const r = RUNS[0];
+  const note = r.meta.note || r.aggregate.note || '';
+  const chips = [];
+  ['chain', 'chain_under_hard_rule', 'pairs', 'bounced_gate_passes', 'drone_windows_passed', 'score', 'stage']
+    .forEach(k => {
+      const v = r.aggregate[k] !== undefined ? r.aggregate[k] : r.meta[k];
+      if (v !== undefined && v !== null && v !== '') {
+        chips.push(`<span>${esc(k)} = ${esc(typeof v === 'number' ? (Number.isInteger(v) ? v : v.toFixed(4)) : v)}</span>`);
+      }
+    });
+  host.innerHTML = `
+    <div class="brief-card">
+      <h3>${esc(cleanLabel(r))} <span class="ribbon newest">newest</span></h3>
+      <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);margin:0 0 8px">
+        ${esc(fmtStamp(r.when))} UTC · ${r.cases.length} case${r.cases.length === 1 ? '' : 's'}
+      </p>
+      ${chips.length ? `<div class="pack-kv">${chips.join('')}</div>` : ''}
+      ${note ? `<p style="max-height:190px;overflow:auto">${esc(note)}</p>` : '<p>No pack note recorded.</p>'}
+      <p style="margin-top:10px">
+        <button class="chart-btn active" onclick="openModalById('${esc(r.dir)}','${esc((r.cases[0] || {}).name || 'nominal')}')">
+          Open run detail
+        </button>
+      </p>
+    </div>`;
+}
+
+/* ------------------------------------------------------------- champions */
+
+function renderTopChampions() {
+  const container = document.getElementById('grid-top-champions');
+  if (!container) return;
+
+  const scored = RUNS.filter(r => r.raw !== null).map(r => ({ run: r, raw: r.raw }));
+  // The same champion binary is re-evaluated across packs; keep its best pack.
+  const bestByChamp = new Map();
+  scored.forEach(({ run, raw }) => {
+    const key = run.meta.policy_sha256 || run.dir;
+    const cur = bestByChamp.get(key);
+    if (!cur || raw > cur.raw) bestByChamp.set(key, { run, raw });
+  });
+  const top = [...bestByChamp.values()].sort((a, b) => b.raw - a.raw).slice(0, 10);
+
+  if (!top.length) {
+    container.innerHTML = '<div class="empty-note">No full held-out evaluations found yet.</div>';
+    return;
+  }
+
+  container.innerHTML = '';
+  top.forEach(({ run, raw }, i) => {
+    const rank = i + 1;
+    const nominal = run.cases.find(c => c.name === 'nominal') || run.cases[0];
+    const card = document.createElement('article');
+    card.className = 'grid-cell champion-card' + (rank <= 3 ? ` rank-${rank}-card` : '');
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `Rank ${rank}, ${cleanLabel(run)}, raw score ${raw.toFixed(2)}`);
+    const open = () => openModal(run, nominal ? nominal.name : 'nominal');
+    card.onclick = open;
+    card.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } };
+    card.onmouseenter = () => card.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
+    card.onmouseleave = () => card.querySelectorAll('video').forEach(v => v.pause());
+
+    // preload="metadata" (no poster) so the card shows a real frame of the 3D
+    // scene. The old build used trajectory_2d.png as the poster, so every
+    // "3D render" champion card actually displayed a white 2D matplotlib plot.
+    const v3 = nominal && has(nominal, 'render_3d.mp4');
+    const media = v3
+      ? `<video src="${mediaPath(run, nominal, 'render_3d.mp4')}" loop muted playsinline preload="metadata"></video>`
+      : '<div class="media-missing"><strong>No 3D render</strong></div>';
+
+    card.innerHTML = `
+      <div class="champion-rank-badge${rank <= 3 ? ` rank-${rank}` : ''}">#${rank}</div>
+      <div class="card-run-label">${esc(cleanLabel(run))}${packTypeBadge(run.label)}${rank === 1 ? '<span class="ribbon best">best</span>' : ''}</div>
+      <div class="video-container">${media}</div>
+      <div class="champion-score-badge">raw ${raw.toFixed(2)}</div>
+      <div class="card-timestamp">${esc(fmtStamp(run.when))}</div>`;
+    container.appendChild(card);
+  });
+}
+
+/* ------------------------------------------------------------ latest grid */
+
+function renderLatest9Grid() {
+  const grid = document.getElementById('grid-latest-9');
+  if (!grid) return;
+  grid.innerHTML = '';
+
+  RUNS.slice(0, 9).forEach((run, idx) => {
+    const nominal = run.cases.find(c => c.name === 'nominal') || run.cases[0];
+    const card = document.createElement('article');
+    card.className = 'grid-cell';
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `${cleanLabel(run)}, ${run.cases.length} cases`);
+    const open = () => openModal(run, nominal ? nominal.name : 'nominal');
+    card.onclick = open;
+    card.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } };
+    card.onmouseenter = () => { const v = card.querySelector('video'); if (v) v.play().catch(() => {}); };
+    card.onmouseleave = () => { const v = card.querySelector('video'); if (v) v.pause(); };
+
+    const gridSrc = run.grid ? `data/${run.dir}/grid_renders.mp4` : '';
+    const fallback = nominal && has(nominal, 'render_3d.mp4') ? mediaPath(run, nominal, 'render_3d.mp4') : '';
+    const src = gridSrc || fallback;
+    const gaps = run.cases.filter(c => !isComplete(c)).length;
+
+    card.innerHTML = `
+      <div class="card-run-label">
+        ${esc(cleanLabel(run))}${packTypeBadge(run.label)}
+        ${idx === 0 ? '<span class="ribbon newest">newest</span>' : ''}
+        ${gaps ? `<span class="ribbon gap" title="${gaps} case(s) missing a render">${gaps} gap${gaps > 1 ? 's' : ''}</span>` : ''}
+      </div>
+      <div class="video-container" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:#000;">
+        ${src
+          ? `<video src="${src}" loop muted playsinline preload="metadata"
+                    style="width:100%;height:100%;object-fit:cover;"
+                    ${gridSrc && fallback ? `onerror="this.onerror=null;this.src='${fallback}';this.load();"` : ''}></video>`
+          : '<div class="media-missing"><strong>No render</strong></div>'}
+        <div class="hover-play-overlay">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.85;margin-bottom:2px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>Hover to preview grid</span>
+        </div>
+      </div>
+      <div class="card-timestamp">${esc(fmtStamp(run.when))} · ${run.cases.length} case${run.cases.length === 1 ? '' : 's'}</div>`;
+    grid.appendChild(card);
+  });
+}
+
+/* --------------------------------------------------------------- the wall
+   40 render_3d.gif files average ~390 KB each — eagerly mounting them cost
+   ~15 MB before the user had even scrolled to the section. The cells now
+   stay empty until the wall itself intersects the viewport. */
+
+function renderMatrixWall() {
+  const wall = document.getElementById('wall-grid-element');
+  if (!wall) return;
+  wall.innerHTML = '';
+
+  const items = [];
+  for (const run of RUNS) {
+    const cases = [...run.cases].sort((a, b) =>
+      a.name === 'nominal' ? -1 : b.name === 'nominal' ? 1 : a.name.localeCompare(b.name));
+    for (const c of cases) {
+      if (has(c, 'render_3d.gif')) items.push({ run, kase: c, art: 'render_3d.gif', type: '3D' });
+      if (has(c, 'render_2d.gif')) items.push({ run, kase: c, art: 'render_2d.gif', type: '2D' });
+      if (items.length >= 40) break;
+    }
+    if (items.length >= 40) break;
+  }
+
+  items.slice(0, 40).forEach(item => {
+    const title = `${cleanLabel(item.run)} · ${pretty(item.kase.name)} (${item.type})`;
+    const cell = document.createElement('button');
+    cell.className = 'wall-cell pending';
+    cell.type = 'button';
+    cell.setAttribute('aria-label', title);
+    cell.dataset.src = mediaPath(item.run, item.kase, item.art);
+    cell.onclick = () => openModal(item.run, item.kase.name, item.type === '2D' ? '2d' : '3d');
+    cell.innerHTML = `<div class="wall-tooltip">${esc(title)}</div>`;
+    wall.appendChild(cell);
+  });
+
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const cell = en.target;
+      if (!cell.dataset.src) return;
+      const img = document.createElement('img');
+      img.src = cell.dataset.src;
+      img.alt = cell.getAttribute('aria-label') || '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      cell.insertBefore(img, cell.firstChild);
+      cell.classList.remove('pending');
+      delete cell.dataset.src;
+      obs.unobserve(cell);
+    });
+  }, { rootMargin: '150px' });
+  wall.querySelectorAll('.wall-cell').forEach(c => io.observe(c));
+}
+
+function toggleFullscreenWall() {
+  const box = document.querySelector('.wall-container-box');
+  const btn = document.getElementById('btn-close-fullscreen-wall');
+  if (!box) return;
+  if (box.classList.contains('fullscreen-active')) { exitFullscreenWall(); return; }
+  document.querySelectorAll('video').forEach(v => v.pause());
+  document.body.classList.add('fullscreen-mode-active');
+  box.classList.add('fullscreen-active');
+  if (btn) btn.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function exitFullscreenWall() {
+  const box = document.querySelector('.wall-container-box');
+  const btn = document.getElementById('btn-close-fullscreen-wall');
+  if (!box || !box.classList.contains('fullscreen-active')) return;
+  document.body.classList.remove('fullscreen-mode-active');
+  box.classList.remove('fullscreen-active');
+  if (btn) btn.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+/* --------------------------------------------------------------- archive */
+
+function populateFilters() {
+  const runSel = document.getElementById('filter-run');
+  const caseSel = document.getElementById('filter-case');
+  if (!runSel || !caseSel) return;
+
+  // 14 packs share the label "juggle_close"; without the stamp the picker had
+  // fourteen indistinguishable rows, several reading "juggle_close ()".
+  RUNS.forEach(run => {
+    const o = document.createElement('option');
+    o.value = run.dir;
+    o.textContent = `${cleanLabel(run)} — ${fmtStamp(run.when)}`;
+    runSel.appendChild(o);
+  });
+
+  const cases = new Map();
+  RUNS.forEach(r => r.cases.forEach(c => cases.set(c.name, (cases.get(c.name) || 0) + 1)));
+  [...cases.entries()].sort((a, b) => a[0].localeCompare(b[0])).forEach(([name, n]) => {
+    const o = document.createElement('option');
+    o.value = name;
+    o.textContent = `${name} (${n})`;
+    caseSel.appendChild(o);
+  });
+}
+
+function applyFilters() {
+  const runVal = (document.getElementById('filter-run') || {}).value || 'all';
+  const caseVal = (document.getElementById('filter-case') || {}).value || 'all';
+  const sortVal = (document.getElementById('filter-sort') || {}).value || 'newest';
+  const q = ((document.getElementById('search-run') || {}).value || '').toLowerCase().trim();
+  const onlyGaps = !!(document.getElementById('filter-incomplete') || {}).checked;
+
+  const grid = document.getElementById('archive-videos-grid');
+  const old = document.getElementById('archive-sentinel');
+  if (old) old.remove();
+  if (sentinelObserver) sentinelObserver.disconnect();
+  grid.innerHTML = '';
+  filteredItems = [];
+  archiveOffset = 0;
+
+  const total = RUNS.reduce((s, r) => s + r.cases.length, 0);
+
+  RUNS.forEach(run => {
+    if (runVal !== 'all' && run.dir !== runVal) return;
+    const hay = `${run.label} ${run.dir}`.toLowerCase();
+    run.cases.forEach(c => {
+      if (caseVal !== 'all' && c.name !== caseVal) return;
+      if (onlyGaps && isComplete(c)) return;
+      if (q && !hay.includes(q) && !c.name.toLowerCase().includes(q)) return;
+      filteredItems.push({ run, kase: c });
+    });
+  });
+
+  const num = v => (typeof v === 'number' ? v : -Infinity);
+  const cmp = {
+    newest: (a, b) => String(b.run.stamp).localeCompare(String(a.run.stamp)) || a.kase.name.localeCompare(b.kase.name),
+    oldest: (a, b) => String(a.run.stamp).localeCompare(String(b.run.stamp)) || a.kase.name.localeCompare(b.kase.name),
+    score: (a, b) => num(caseScore(b.kase)) - num(caseScore(a.kase)),
+    gates: (a, b) => num(bouncedGates(b.kase)) - num(bouncedGates(a.kase)),
+    case: (a, b) => a.kase.name.localeCompare(b.kase.name) || String(b.run.stamp).localeCompare(String(a.run.stamp)),
+  }[sortVal];
+  if (cmp) filteredItems.sort(cmp);
+
+  document.getElementById('filter-count').innerText =
+    `Showing ${filteredItems.length} of ${total} episodes`;
+
+  if (!filteredItems.length) {
+    grid.innerHTML = '<div class="empty-note">No matching episodes. Adjust the filters and try again.</div>';
+    return;
+  }
+  loadMoreArchiveItems();
+  setupSentinel();
+}
+
+/** One card per EPISODE with an inline 3D / 2D / PLOT switch, so both renders
+ *  are one click apart. Previously each media file got its own card, which is
+ *  why the archive claimed thousands of "rollouts" for 1031 episodes. */
+function loadMoreArchiveItems() {
+  const grid = document.getElementById('archive-videos-grid');
+  const batch = filteredItems.slice(archiveOffset, archiveOffset + ARCHIVE_PAGE);
+
+  batch.forEach(({ run, kase }) => {
+    const m = kase.metrics || {};
+    const crashed = isCrashed(m);
+    const score = caseScore(kase);
+    const bg = bouncedGates(kase);
+    const v3 = has(kase, 'render_3d.mp4');
+    const v2 = has(kase, 'render_2d.mp4');
+    const png = has(kase, 'trajectory_2d.png');
+
+    const card = document.createElement('div');
+    card.className = 'archive-cell';
+    card.innerHTML = `
+      <div class="video-container">
+        <div class="media-switch" role="group" aria-label="Render type">
+          <button type="button" class="active" data-kind="3d" ${v3 ? '' : 'disabled'}>3D</button>
+          <button type="button" data-kind="2d" ${v2 ? '' : 'disabled'}>2D</button>
+          <button type="button" data-kind="plot" ${png ? '' : 'disabled'}>PLOT</button>
+        </div>
+        <div class="media-slot" style="position:absolute;inset:0;"></div>
+        <div class="cell-overlay">${v3 ? '3D render' : v2 ? '2D render' : 'no render'}</div>
+      </div>
+      <div class="archive-cell-meta">
+        <div class="archive-cell-title">
+          <span style="text-transform:capitalize;color:#fff;">${esc(pretty(kase.name))}</span>
+          <span class="archive-cell-run">${esc(cleanLabel(run))}
+            <span class="archive-cell-time">${esc(fmtStamp(run.when))}</span></span>
+        </div>
+        <div class="archive-cell-footer">
+          <span class="chip" title="case_score in [0,1] — higher is better">${score === null ? 'score n/a' : 'score ' + score.toFixed(3)}</span>
+          ${bg === null ? '' : `<span class="chip" title="bounced gate passes">bg ${bg}</span>`}
+          <span style="color:${crashed ? 'var(--color-rose)' : 'var(--color-emerald)'}">${crashed ? 'Crashed' : 'Clear'}</span>
+        </div>
+      </div>`;
+
+    const slot = card.querySelector('.media-slot');
+    const overlay = card.querySelector('.cell-overlay');
+    const buttons = [...card.querySelectorAll('.media-switch button')];
+
+    const show = kind => {
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.kind === kind));
+      slot.innerHTML = '';
+      if (kind === 'plot' && png) {
+        overlay.textContent = 'Trajectory plot';
+        const img = document.createElement('img');
+        img.src = mediaPath(run, kase, 'trajectory_2d.png');
+        img.alt = `Trajectory plot for ${kase.name}`;
+        img.loading = 'lazy';
+        img.style.cssText = 'width:100%;height:100%;object-fit:contain;background:#fff;';
+        slot.appendChild(img);
+        return;
+      }
+      const file = kind === '2d' ? 'render_2d.mp4' : 'render_3d.mp4';
+      if (!has(kase, file)) {
+        overlay.textContent = '';
+        slot.innerHTML = `<div class="media-missing">
+            <strong>No ${kind.toUpperCase()} render</strong>
+            <span>${esc(file)} was never produced for this pack.</span></div>`;
+        return;
+      }
+      overlay.textContent = kind === '2d' ? '2D render' : '3D render';
+      const v = document.createElement('video');
+      v.src = mediaPath(run, kase, file);
+      v.loop = true; v.playsInline = true; v.muted = archiveMuteActive;
+      // metadata is enough to paint a real first frame; a full preload of 12+
+      // simultaneous mp4s is what made the archive feel heavy.
+      v.preload = 'metadata';
+      // Only the 2D video gets the plot as its poster — they show the same
+      // thing. Using it on a 3D card made 3D thumbnails look like 2D plots.
+      if (kind === '2d' && has(kase, 'trajectory_2d.png')) v.poster = mediaPath(run, kase, 'trajectory_2d.png');
+      slot.appendChild(v);
+      if (archivePlayActive) v.play().catch(() => {});
+      if (mediaObserver) mediaObserver.observe(v);
+    };
+
+    buttons.forEach(b => {
+      b.onclick = e => { e.stopPropagation(); if (!b.disabled) show(b.dataset.kind); };
+    });
+    card.querySelector('.video-container').onclick = () => {
+      const kind = (buttons.find(b => b.classList.contains('active')) || {}).dataset;
+      openModal(run, kase.name, kind && kind.kind === '2d' ? '2d' : kind && kind.kind === 'plot' ? 'snapshot' : '3d');
+    };
+    card.querySelector('.video-container').style.cursor = 'pointer';
+
+    show(v3 ? '3d' : v2 ? '2d' : png ? 'plot' : '3d');
+    grid.appendChild(card);
+  });
+
+  archiveOffset += batch.length;
+  setupMediaObserver();
+}
+
+function setupSentinel() {
+  const grid = document.getElementById('archive-videos-grid');
+  let sentinel = document.getElementById('archive-sentinel');
+  if (!sentinel) {
+    sentinel = document.createElement('div');
+    sentinel.id = 'archive-sentinel';
+    sentinel.style.cssText = 'height:20px;width:100%;grid-column:1/-1;';
+    grid.after(sentinel);
+  }
+  if (sentinelObserver) sentinelObserver.disconnect();
+  sentinelObserver = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) return;
+    if (archiveOffset < filteredItems.length) loadMoreArchiveItems();
+    else { sentinelObserver.disconnect(); sentinel.remove(); }
+  }, { rootMargin: '300px', threshold: 0 });
+  sentinelObserver.observe(sentinel);
+}
+
+/** Pause offscreen video so a long archive scroll does not keep dozens of
+ *  decoders alive. (The old build additionally started a fresh recursive
+ *  "sequential playback" loop on every lazy-load batch; those loops stacked
+ *  and fought each other for the same <video> elements.) */
+function setupMediaObserver() {
+  if (!mediaObserver) {
+    mediaObserver = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        const v = en.target;
+        if (en.isIntersecting) { if (archivePlayActive) v.play().catch(() => {}); }
+        else v.pause();
+      });
+    }, { threshold: 0.25 });
+  }
+  document.querySelectorAll('#archive-videos-grid video').forEach(v => mediaObserver.observe(v));
+}
+
+function toggleArchivePlay() {
+  const btn = document.getElementById('btn-toggle-play');
+  archivePlayActive = !archivePlayActive;
+  const videos = document.querySelectorAll('#archive-videos-grid video');
+  if (archivePlayActive) {
+    videos.forEach(v => v.play().catch(() => {}));
+    btn.classList.add('active-play');
+    btn.innerHTML = '<svg height="14" width="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> Pause all videos';
+  } else {
+    videos.forEach(v => v.pause());
+    btn.classList.remove('active-play');
+    btn.innerHTML = '<svg height="14" width="14" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play all simultaneously';
+  }
+}
+
+function toggleArchiveMute() {
+  const btn = document.getElementById('btn-toggle-mute');
+  archiveMuteActive = !archiveMuteActive;
+  document.querySelectorAll('#archive-videos-grid video').forEach(v => { v.muted = archiveMuteActive; });
+  if (archiveMuteActive) {
+    btn.classList.remove('active-mute');
+    btn.innerHTML = '<svg height="14" width="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM12 4L9.91 6.09 12 8.18V4z"/></svg> Unmute all';
+  } else {
+    btn.classList.add('active-mute');
+    btn.innerHTML = '<svg height="14" width="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3z"/></svg> Mute all';
+  }
+}
+
+/* ----------------------------------------------------------------- modal */
+
+function openModalById(dir, caseName, mediaType) {
+  const run = RUNS.find(r => r.dir === dir);
+  if (run) openModal(run, caseName, mediaType);
+}
+
+function openModal(run, caseName, initialMediaType) {
+  selectedModalRun = run;
+  selectedModalCase = run.cases.find(c => c.name === caseName) || run.cases[0];
+  if (!selectedModalCase) return;
+
+  activeModalMediaType = initialMediaType || '3d';
+  activeWidescreenRightMedia = activeModalMediaType === '2d' ? '2d' : 'snapshot';
+
+  document.getElementById('details-modal').classList.add('active');
+
+  document.getElementById('modal-title').innerHTML =
+    `${esc(cleanLabel(run))}<span class="date">${esc(fmtStamp(run.when))} UTC · ${run.cases.length} case${run.cases.length === 1 ? '' : 's'}${run.raw !== null ? ` · raw ${run.raw.toFixed(2)}` : ''}</span>`;
+
+  // pack-level metrics + note (previously invisible in the UI)
+  const kv = document.getElementById('modal-pack-kv');
+  const noteBox = document.getElementById('modal-pack-note');
+  const chips = [];
+  Object.entries(run.aggregate || {}).forEach(([k, v]) => {
+    if (['label', 'stamp', 'note', 'cases', 'hard_rule', 'pair_detail', 'champion_comparison'].includes(k)) return;
+    if (v === null || v === undefined || typeof v === 'object') return;
+    chips.push(`<span>${esc(k)} = ${esc(typeof v === 'number' && !Number.isInteger(v) ? v.toFixed(4) : v)}</span>`);
+  });
+  kv.innerHTML = chips.join('');
+  const note = run.meta.note || run.aggregate.note || '';
+  if (note) {
+    noteBox.style.display = 'block';
+    noteBox.innerHTML = `<h5>Pack note</h5>${esc(note)}`;
+  } else {
+    noteBox.style.display = 'none';
+  }
+
+  const link = document.getElementById('modal-policy-link');
+  if (run.meta.rel_policy_path) {
+    link.href = run.meta.rel_policy_path;
+    link.innerText = run.meta.rel_policy_path.split('/').pop();
+    link.style.display = 'block';
+  } else {
+    link.style.display = 'none';
+  }
+  document.getElementById('modal-policy-sha').innerText =
+    'SHA256: ' + (run.meta.policy_sha256 ? run.meta.policy_sha256.substring(0, 16) + '…' : 'not recorded');
+
+  const list = document.getElementById('modal-case-list');
+  list.innerHTML = '';
+  run.cases.forEach(c => {
+    const crashed = isCrashed(c.metrics);
+    const btn = document.createElement('button');
+    btn.className = `case-btn ${crashed ? 'crash-case' : 'success-case'} ${c.name === selectedModalCase.name ? 'active' : ''}`;
+    btn.dataset.case = c.name;
+    btn.onclick = () => selectModalCase(c.name);
+    btn.innerHTML = `<span>${esc(pretty(c.name))}${isComplete(c) ? '' : ' <span class="ribbon gap">no 2D</span>'}</span>
+                     <span class="badge ${crashed ? 'crash' : 'success'}">${crashed ? 'CRASH' : 'CLEAR'}</span>`;
+    list.appendChild(btn);
+  });
+
+  updateModalCaseDetails();
+}
+
+function selectModalCase(caseName) {
+  if (!selectedModalRun) return;
+  selectedModalCase = selectedModalRun.cases.find(c => c.name === caseName) || selectedModalCase;
+  // Previously matched on the button's rendered TEXT, so any case whose display
+  // name differed from its id silently failed to highlight.
+  document.querySelectorAll('#modal-case-list .case-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.case === caseName);
+  });
+  updateModalCaseDetails();
+}
+
+function stepModalCase(delta) {
+  if (!selectedModalRun || !selectedModalCase) return;
+  const i = selectedModalRun.cases.findIndex(c => c.name === selectedModalCase.name);
+  const next = selectedModalRun.cases[i + delta];
+  if (next) {
+    selectModalCase(next.name);
+    const btn = document.querySelector(`#modal-case-list .case-btn[data-case="${CSS.escape(next.name)}"]`);
+    if (btn) btn.scrollIntoView({ block: 'nearest' });
+  }
+}
+
+/** Metric rows. The old table hard-coded ten keys and labelled `score` as a
+ *  penalty; juggle packs report an entirely different key set (n_high, chain,
+ *  vz_out_per_contact…) and showed a table of "N/A". Known keys are rendered
+ *  with friendly labels; anything else is appended verbatim. */
+const METRIC_ROWS = [
+  ['score', 'Case score (0–1, higher better)', v => v.toFixed(5)],
+  ['hard_success', 'Hard success', v => (v ? '<span class="text-success">Yes</span>' : '<span class="text-secondary">No</span>')],
+  ['bounced_gate_passes', 'Bounced gates passed', v => v],
+  ['raw_gates_passed', 'Raw gates passed', v => v],
+  ['drone_windows_passed', 'Drone windows traversed', v => v],
+  ['chain', 'Chain (gate-1-anchored pairs)', v => v],
+  ['pairs', 'Bounce+window pairs', v => v],
+  ['n_high', 'Hard vertical bounces', v => v],
+  ['mean_high_vz', 'Mean bounce vz (m/s)', v => v.toFixed(2)],
+  ['verticality_up', 'Bounce verticality (vz/|v|)', v => v.toFixed(3)],
+  ['vz_out_per_contact', 'vz out per contact', v => Array.isArray(v) ? v.join(', ') : v],
+  ['target_box_score', 'Target box score', v => (typeof v === 'number' ? v.toFixed(3) : v)],
+  ['target_box_entered', 'Entered landing zone', v => (v ? '<span class="text-success">Yes</span>' : '<span class="text-secondary">No</span>')],
+  ['safety_score', 'Safety margin', v => (typeof v === 'number' ? v.toFixed(4) : v)],
+  ['max_tilt_deg', 'Max tilt (deg)', v => v.toFixed(2) + '°'],
+  ['max_action_N', 'Max motor command (N)', v => v.toFixed(2) + ' N'],
+  ['contacts', 'Physics contacts', v => v],
+  ['drone_crash', 'Crashed', v => (v ? '<span class="text-danger">Yes</span>' : '<span class="text-success">No</span>')],
+  ['crash', 'Crashed', v => (v ? '<span class="text-danger">Yes</span>' : '<span class="text-success">No</span>')],
+];
+const SKIP_METRIC_KEYS = new Set(['scenario_name', 'policy_path', 'policy_sha256', 'phase_notes', 'camera']);
+
+function updateModalCaseDetails() {
+  const c = selectedModalCase;
+  if (!c) return;
+  const m = c.metrics || {};
+  const tbody = document.getElementById('modal-metrics-body');
+  tbody.innerHTML = '';
+  const shown = new Set();
+
+  const addRow = (label, html) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="metric-name">${label}</td><td class="metric-val">${html}</td>`;
+    tbody.appendChild(tr);
+  };
+
+  METRIC_ROWS.forEach(([key, label, fmt]) => {
+    if (!(key in m) || shown.has(label)) return;
+    const v = m[key];
+    if (v === null || v === undefined) return;
+    shown.add(label);
+    let out;
+    try { out = fmt(v); } catch (e) { out = String(v); }
+    addRow(esc(label), out);
+  });
+  Object.entries(m).forEach(([k, v]) => {
+    if (SKIP_METRIC_KEYS.has(k) || METRIC_ROWS.some(r => r[0] === k)) return;
+    if (v === null || v === undefined) return;
+    addRow(esc(k), esc(Array.isArray(v) ? v.map(x => (typeof x === 'number' ? +x.toFixed(3) : x)).join(', ')
+      : typeof v === 'number' && !Number.isInteger(v) ? v.toFixed(4) : v));
+  });
+  if (!tbody.children.length) addRow('—', 'No metrics recorded for this case.');
+
+  const label = document.getElementById('render-3d-score-label');
+  if (label) {
+    const missing = ARTIFACTS.slice(0, 5).filter(a => !has(c, a));
+    label.innerHTML = missing.length
+      ? `<span style="color:var(--color-rose)">missing: ${esc(missing.join(', '))}</span>`
+      : '<span style="color:var(--color-emerald)">all artifacts present</span>';
+  }
+
+  updateModalMediaDisplay();
+  updateModalFavoriteUI();
+}
+
+function switchModalMedia(type) {
+  activeModalMediaType = type;
+  document.querySelectorAll('.media-tabs .media-tab').forEach(t => t.classList.remove('active'));
+  const t = document.getElementById('tab-' + type);
+  if (t) t.classList.add('active');
+  updateModalMediaDisplay();
+}
+
+function setWidescreenRightMedia(type) {
+  activeWidescreenRightMedia = type;
+  updateModalMediaDisplay();
+}
+
+function updateModalMediaDisplay() {
+  const run = selectedModalRun, c = selectedModalCase;
+  if (!run || !c) return;
+  const v3d = document.getElementById('modal-video-3d');
+  const v2d = document.getElementById('modal-video-2d');
+  const img = document.getElementById('modal-image-2d');
+  const miss3 = document.getElementById('missing-3d');
+  const miss2 = document.getElementById('missing-2d');
+  const miss2text = document.getElementById('missing-2d-text');
+  const layout = document.querySelector('.widescreen-media-layout');
+
+  const p3 = has(c, 'render_3d.mp4') ? mediaPath(run, c, 'render_3d.mp4') : '';
+  const p2 = has(c, 'render_2d.mp4') ? mediaPath(run, c, 'render_2d.mp4') : '';
+  const pp = has(c, 'trajectory_2d.png') ? mediaPath(run, c, 'trajectory_2d.png') : '';
+
+  const setSrc = (el, path) => {
+    if (!el) return;
+    if (!path) { el.removeAttribute('src'); if (el.load) { try { el.load(); } catch (e) {} } return; }
+    if (!String(el.getAttribute('src') || '').endsWith(path)) {
+      el.setAttribute('src', path);
+      if (el.load) { try { el.load(); } catch (e) {} }
+    }
+  };
+
+  // 3D pane
+  if (v3d) {
+    v3d.style.display = p3 ? 'block' : 'none';
+    setSrc(v3d, p3);
+    if (p3) v3d.play().catch(() => {}); else v3d.pause();
+  }
+  if (miss3) miss3.style.display = p3 ? 'none' : 'flex';
+
+  // Right pane: plot or 2D video. Empty players used to be shown with no
+  // explanation whenever a pack was rendered 3D-only.
+  // Breakpoint must match the `@media (min-width: 1400px)` rule that switches
+  // the modal from tabbed to side-by-side; innerWidth can read 0 in some
+  // embedded/headless contexts, so fall back rather than mis-branching.
+  const vw = window.innerWidth || document.documentElement.clientWidth || 1400;
+  const wide = vw >= 1400;
+
+  // Never leave a tab that leads to an empty player.
+  const tab2d = document.getElementById('tab-2d');
+  const tabSnap = document.getElementById('tab-snapshot');
+  if (tab2d) tab2d.disabled = !p2;
+  if (tabSnap) tabSnap.disabled = !pp;
+  if (!wide) {
+    if (activeModalMediaType === '2d' && !p2 && pp) activeModalMediaType = 'snapshot';
+    if (activeModalMediaType === 'snapshot' && !pp && p2) activeModalMediaType = '2d';
+  } else {
+    if (activeWidescreenRightMedia === 'snapshot' && !pp && p2) activeWidescreenRightMedia = '2d';
+    if (activeWidescreenRightMedia === '2d' && !p2 && pp) activeWidescreenRightMedia = 'snapshot';
+  }
+  const wantVideo = wide ? activeWidescreenRightMedia === '2d' : activeModalMediaType === '2d';
+  const wantPlot = wide ? activeWidescreenRightMedia === 'snapshot' : activeModalMediaType === 'snapshot';
+
+  document.querySelectorAll('.media-tabs .media-tab').forEach(t => t.classList.remove('active'));
+  const tab = document.getElementById('tab-' + activeModalMediaType);
+  if (tab) tab.classList.add('active');
+  if (layout) layout.className = wide ? 'widescreen-media-layout' : `widescreen-media-layout show-${activeModalMediaType}`;
+
+  const btnPlot = document.getElementById('btn-widescreen-plot');
+  const btn2d = document.getElementById('btn-widescreen-2d');
+  if (btnPlot) { btnPlot.classList.toggle('active', wantPlot); btnPlot.disabled = !pp; }
+  if (btn2d) { btn2d.classList.toggle('active', wantVideo); btn2d.disabled = !p2; }
+
+  let show2Missing = false, msg = '';
+  if (wantVideo) {
+    if (p2) {
+      if (img) img.style.display = 'none';
+      v2d.style.display = 'block';
+      setSrc(v2d, p2);
+      v2d.play().catch(() => {});
+    } else {
+      if (img) img.style.display = 'none';
+      v2d.style.display = 'none';
+      show2Missing = true;
+      msg = 'render_2d.mp4 was never produced for this pack.';
+    }
+  } else {
+    v2d.pause();
+    v2d.style.display = 'none';
+    if (pp) {
+      img.style.display = 'block';
+      setSrc(img, pp);
+    } else {
+      img.style.display = 'none';
+      show2Missing = true;
+      msg = 'trajectory_2d.png was never produced for this pack.';
+    }
+  }
+  if (miss2) miss2.style.display = show2Missing ? 'flex' : 'none';
+  if (miss2text && show2Missing) miss2text.textContent = msg;
+  if (!wide && activeModalMediaType === '3d' && miss2) miss2.style.display = 'none';
+}
+
+window.addEventListener('resize', () => { if (selectedModalCase) updateModalMediaDisplay(); });
+
+function closeModal(event) {
+  if (event && event.target !== document.getElementById('details-modal')
+      && !event.target.classList.contains('modal-close')) return;
+  document.getElementById('details-modal').classList.remove('active');
+  ['modal-video-3d', 'modal-video-2d'].forEach(id => {
+    const v = document.getElementById(id);
+    if (v) v.pause();
+  });
+}
+
+/* Escape used to close only the fullscreen wall, never the details modal. */
+window.addEventListener('keydown', e => {
+  const modalOpen = document.getElementById('details-modal').classList.contains('active');
+  if (e.key === 'Escape') {
+    if (modalOpen) closeModal();
+    else exitFullscreenWall();
+    return;
+  }
+  if (!modalOpen) return;
+  if (e.key === 'ArrowDown') { e.preventDefault(); stepModalCase(1); }
+  if (e.key === 'ArrowUp') { e.preventDefault(); stepModalCase(-1); }
+});
+
+/* ------------------------------------------------------------- favorites
+   Stored in localStorage. The POST/GET to /api/favorites only exists when the
+   bundled server.py is running; on GitHub Pages it 404s, so it is skipped
+   entirely rather than logging a failed request on every load. */
+
+let favorites = [];
+const HAS_API = ['localhost', '127.0.0.1', '0.0.0.0'].includes(location.hostname);
+
+async function loadFavorites() {
+  if (HAS_API) {
+    try {
+      const r = await fetch('/api/favorites');
+      if (r.ok) { favorites = (await r.json()).favorites || []; renderFavorites(); return; }
+    } catch (e) { /* fall through */ }
+  }
+  try {
+    const local = localStorage.getItem('dashboard_favorites');
+    if (local) favorites = JSON.parse(local) || [];
+  } catch (e) { console.warn('favorites: localStorage unavailable', e); }
+  renderFavorites();
+}
+
+async function saveFavorites() {
+  try { localStorage.setItem('dashboard_favorites', JSON.stringify(favorites)); }
+  catch (e) { console.warn('favorites: localStorage write failed', e); }
+  if (!HAS_API) return;
+  try {
+    await fetch('/api/favorites', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ favorites }),
+    });
+  } catch (e) { /* static hosting */ }
+}
+
+const getFavorite = (dir, name) => favorites.find(f => f.run_dir_name === dir && f.case_name === name);
+
+function updateModalFavoriteUI() {
+  if (!selectedModalRun || !selectedModalCase) return;
+  const fav = getFavorite(selectedModalRun.dir, selectedModalCase.name);
+  const btn = document.getElementById('btn-favorite-toggle');
+  const text = document.getElementById('fav-toggle-text');
+  const icon = document.getElementById('fav-icon-svg');
+  const notes = document.getElementById('fav-notes-container');
+  const input = document.getElementById('fav-note-input');
+  if (!btn || !text || !icon || !notes || !input) return;
+  if (fav) {
+    btn.classList.add('active-play');
+    text.innerText = 'Remove favorite';
+    icon.setAttribute('fill', 'var(--color-orange)');
+    icon.setAttribute('stroke', 'var(--color-orange)');
+    notes.style.display = 'block';
+    input.value = fav.note || '';
+  } else {
+    btn.classList.remove('active-play');
+    text.innerText = 'Add to favorites';
+    icon.setAttribute('fill', 'none');
+    icon.setAttribute('stroke', 'currentColor');
+    notes.style.display = 'none';
+    input.value = '';
+  }
+}
+
+function toggleFavorite() {
+  if (!selectedModalRun || !selectedModalCase) return;
+  const dir = selectedModalRun.dir, name = selectedModalCase.name;
+  const i = favorites.findIndex(f => f.run_dir_name === dir && f.case_name === name);
+  if (i !== -1) favorites.splice(i, 1);
+  else favorites.push({ run_dir_name: dir, case_name: name, note: '', saved_at: new Date().toISOString() });
+  saveFavorites();
+  updateModalFavoriteUI();
+  renderFavorites();
+}
+
+function saveFavoriteNote() {
+  if (!selectedModalRun || !selectedModalCase) return;
+  const fav = getFavorite(selectedModalRun.dir, selectedModalCase.name);
+  if (!fav) return;
+  fav.note = document.getElementById('fav-note-input').value;
+  saveFavorites();
+  renderFavorites();
+  const btn = document.querySelector('#fav-notes-container button');
+  if (btn) {
+    const orig = btn.innerText;
+    btn.innerText = 'Saved!';
+    setTimeout(() => { btn.innerText = orig; }, 1000);
+  }
+}
+
+function removeFavoriteDirect(dir, name) {
+  const i = favorites.findIndex(f => f.run_dir_name === dir && f.case_name === name);
+  if (i === -1) return;
+  favorites.splice(i, 1);
+  saveFavorites();
+  renderFavorites();
+  updateModalFavoriteUI();
+}
+
+function renderFavorites() {
+  const title = document.getElementById('favorites-section-title');
+  const grid = document.getElementById('favorites-grid');
+  if (!title || !grid) return;
+  if (!favorites.length) {
+    title.style.display = 'none'; grid.style.display = 'none'; grid.innerHTML = '';
+    return;
+  }
+  title.style.display = 'block';
+  grid.style.display = 'grid';
+  grid.innerHTML = '';
+  favorites.forEach(fav => {
+    const run = RUNS.find(r => r.dir === fav.run_dir_name);
+    if (!run) return;
+    const c = run.cases.find(x => x.name === fav.case_name);
+    if (!c) return;
+    const crashed = isCrashed(c.metrics);
+    const card = document.createElement('article');
+    card.className = 'grid-cell';
+    card.style.cursor = 'default';
+    const png = has(c, 'trajectory_2d.png') ? mediaPath(run, c, 'trajectory_2d.png') : '';
+    card.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <div class="card-run-label" style="margin:0;font-size:0.85rem;">${esc(cleanLabel(run))}</div>
+        <span class="badge ${crashed ? 'crash' : 'success'}" style="font-size:0.62rem;padding:1px 5px;">${crashed ? 'CRASH' : 'CLEAR'}</span>
+      </div>
+      <div style="font-size:0.75rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;">${esc(pretty(fav.case_name))}</div>
+      ${png ? `<div style="aspect-ratio:16/9;overflow:hidden;border-radius:6px;margin-bottom:8px;">
+                 <img src="${png}" alt="${esc(fav.case_name)} trajectory" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>` : ''}
+      <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border-color);border-radius:6px;padding:8px;font-size:0.72rem;color:${fav.note ? 'var(--text-primary)' : 'var(--text-muted)'};min-height:40px;margin-bottom:10px;">
+        ${esc(fav.note || 'No notes added yet.')}
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button class="chart-btn active" style="flex:1;padding:6px 0;font-size:0.72rem;">Analyze details</button>
+        <button class="chart-btn" style="padding:6px 10px;font-size:0.72rem;border-color:var(--color-rose);color:var(--color-rose);">Remove</button>
+      </div>`;
+    const [openBtn, rmBtn] = card.querySelectorAll('div:last-child button');
+    openBtn.onclick = () => openModalById(fav.run_dir_name, fav.case_name);
+    rmBtn.onclick = () => removeFavoriteDirect(fav.run_dir_name, fav.case_name);
+    grid.appendChild(card);
+  });
+}
 </script>
 </body>
 </html>
