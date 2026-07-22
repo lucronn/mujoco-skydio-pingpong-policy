@@ -1789,7 +1789,11 @@
 
   // Fetch the progression JSON data on page load
   window.addEventListener('DOMContentLoaded', () => {
-    fetch('data/scanned_progression.json')
+    // Cache-bust: GitHub Pages sets caching headers on this JSON, so without a
+    // unique query the browser serves a stale index and newly published packs are
+    // invisible until the cache expires (hit 2026-07-22 — a freshly pushed pack was
+    // live and indexed server-side but did not appear in the page).
+    fetch('data/scanned_progression.json?v=' + Date.now(), { cache: 'no-store' })
       .then(response => response.json())
       .then(data => {
         progressionData = data;
