@@ -6,7 +6,8 @@
       "created_utc": "20260722T054500Z",
       "camera": "review_wide",
       "case": "range_424242_005",
-      "note": "FIRST GENUINE INTERLEAVED RALLY. Gate 2: ball bounced over the lintel at t=2.01s, drone threaded THAT SAME gate's window at t=2.66s (lag 0.65s). Contrast policy_v230 (raw 25), which flings the ball over all 4 gates, lets it settle at t=3.61s, then flies BACKWARDS through the windows at t=4.87/6.67/7.88 - lag 2.8-6.9s, reverse order, window 1 never. New search metric PAIRS requires bounce+thread within 1.20s; v230 scores PAIRS=0.",
+      "chain_under_hard_rule": 0,
+      "note": "SUPERSEDED / DOES NOT SATISFY THE HARD RULE. This run pairs gate 2 (bounce t=2.01 -> window t=2.66, lag 0.65s) but NEVER threads gate 1's window, so under the hard rule (credit is a strict gate-1-anchored chain of bounce+window pairs) it scores CHAIN=0. Kept for contrast only. It is still strictly better-behaved than policy_v230 (raw 25), which flings the ball over all 4 gates, lets it settle at 3.61s, then flies BACKWARDS through the windows at 4.87/6.67/7.88 - that also scores CHAIN=0.",
       "rel_policy_path": null
     },
     "cases": [
