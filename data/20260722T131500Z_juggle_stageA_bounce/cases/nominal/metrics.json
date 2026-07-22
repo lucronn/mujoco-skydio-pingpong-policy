@@ -1,0 +1,15 @@
+{
+  "n_high": 3,
+  "contacts": 4,
+  "crash": false,
+  "mean_high_vz": 3.52,
+  "verticality_up": 0.952,
+  "vz_out_per_contact": [
+    3.37,
+    3.95,
+    3.25,
+    0.42
+  ],
+  "camera": "review_wide",
+  "scenario_name": "nominal"
+}

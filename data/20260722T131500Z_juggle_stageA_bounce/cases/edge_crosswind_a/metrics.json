@@ -1,0 +1,12 @@
+{
+  "n_high": 1,
+  "contacts": 1,
+  "crash": false,
+  "mean_high_vz": 5.43,
+  "verticality_up": 0.999,
+  "vz_out_per_contact": [
+    5.43
+  ],
+  "camera": "review_wide",
+  "scenario_name": "edge_crosswind_a"
+}

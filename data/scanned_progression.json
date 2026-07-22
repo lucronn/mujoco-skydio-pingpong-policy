@@ -1,5 +1,102 @@
 [
   {
+    "dir_name": "20260722T131500Z_juggle_stageA_bounce",
+    "meta": {
+      "label": "juggle_stageA_bounce",
+      "created_utc": "20260722T131500Z",
+      "camera": "review_wide",
+      "stage": "A (bounce mastery \u2014 gates and windows deliberately IGNORED)",
+      "note": "SUSTAINED HARD VERTICAL BOUNCING. ball_y_pos lands 4 consecutive qualifying bounces with NO decay (vz 3.75/3.62/3.27/3.92 \u2014 the last is the strongest) and every single contact qualifies. Compare the raw-25 champion, whose bounce chain decays 4.18/4.05/1.79/0.50/negative. Verticality 0.95-1.00, zero crashes. Root cause fixed was an ALTITUDE RATCHET: the drone climbed 1.34->2.66m chasing the ball and never descended, because the between-bounce hold was anchored to the last hit height AND the punch drove the drone itself to +1.89m/s which a 0.88*hover floor could only arrest in 1.6s while the ball returned in 0.64s. Added an absolute base height plus a hard ARREST phase. edge_crosswind_a is included as the CURRENT FAILURE MODE: one perfect 5.43 m/s strike (above the ~5.2 needed to clear a lintel) then the crosswind carries the ball laterally out of reach and it is never touched again \u2014 a lost-ball failure, not a dribble. Next: lateral pursuit.",
+      "rel_policy_path": null
+    },
+    "cases": [
+      {
+        "name": "ball_y_pos",
+        "metrics": {
+          "n_high": 4,
+          "contacts": 4,
+          "crash": false,
+          "mean_high_vz": 3.64,
+          "verticality_up": 0.957,
+          "vz_out_per_contact": [
+            3.75,
+            3.62,
+            3.27,
+            3.92
+          ],
+          "camera": "review_wide",
+          "scenario_name": "ball_y_pos"
+        },
+        "videos": [
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260722T131500Z_juggle_stageA_bounce/cases/ball_y_pos/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260722T131500Z_juggle_stageA_bounce/cases/ball_y_pos/render_3d.mp4"
+          }
+        ],
+        "snapshot": null
+      },
+      {
+        "name": "edge_crosswind_a",
+        "metrics": {
+          "n_high": 1,
+          "contacts": 1,
+          "crash": false,
+          "mean_high_vz": 5.43,
+          "verticality_up": 0.999,
+          "vz_out_per_contact": [
+            5.43
+          ],
+          "camera": "review_wide",
+          "scenario_name": "edge_crosswind_a"
+        },
+        "videos": [
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260722T131500Z_juggle_stageA_bounce/cases/edge_crosswind_a/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260722T131500Z_juggle_stageA_bounce/cases/edge_crosswind_a/render_3d.mp4"
+          }
+        ],
+        "snapshot": null
+      },
+      {
+        "name": "nominal",
+        "metrics": {
+          "n_high": 3,
+          "contacts": 4,
+          "crash": false,
+          "mean_high_vz": 3.52,
+          "verticality_up": 0.952,
+          "vz_out_per_contact": [
+            3.37,
+            3.95,
+            3.25,
+            0.42
+          ],
+          "camera": "review_wide",
+          "scenario_name": "nominal"
+        },
+        "videos": [
+          {
+            "filename": "render_3d.gif",
+            "rel_path": "data/20260722T131500Z_juggle_stageA_bounce/cases/nominal/render_3d.gif"
+          },
+          {
+            "filename": "render_3d.mp4",
+            "rel_path": "data/20260722T131500Z_juggle_stageA_bounce/cases/nominal/render_3d.mp4"
+          }
+        ],
+        "snapshot": null
+      }
+    ]
+  },
+  {
     "dir_name": "20260722T062500Z_juggle_chain1",
     "meta": {
       "label": "juggle_chain1",
