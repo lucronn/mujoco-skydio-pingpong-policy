@@ -2692,6 +2692,17 @@ function loadMoreArchiveItems() {
       if (mediaObserver) mediaObserver.observe(v);
     };
 
+    // Hover to preview without turning on "play all" — the fastest way to scan
+    // a filtered set. Leaving the card rewinds so the next hover starts clean.
+    card.addEventListener('mouseenter', () => {
+      const v = slot.querySelector('video');
+      if (v) v.play().catch(() => {});
+    });
+    card.addEventListener('mouseleave', () => {
+      const v = slot.querySelector('video');
+      if (v && !archivePlayActive) { v.pause(); v.currentTime = 0; }
+    });
+
     buttons.forEach(b => {
       b.onclick = e => { e.stopPropagation(); if (!b.disabled) show(b.dataset.kind); };
     });
