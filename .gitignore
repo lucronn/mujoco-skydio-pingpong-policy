@@ -13,3 +13,11 @@ data/**/winner*.json
 data/**/*.py
 data/**/juggle_autodrive.py
 data/**/theta*.json
+
+# Legacy demo policies (anti-cheat)
+policy_one.py
+policy_three.py
+policy_*.py
+!process_data.py
+!server.py
+!convert_all_to_gif.py
