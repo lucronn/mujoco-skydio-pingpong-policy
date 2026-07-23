@@ -1,0 +1,46 @@
+{
+  "score": 0.274828570724801,
+  "hard_success": 0,
+  "bounced_gate_passes": 4,
+  "bounced_gate_pass": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "raw_gates_passed": 4,
+  "drone_windows_passed": 4,
+  "target_box_score": 0.0,
+  "target_box_entered": 0,
+  "safety_score": 0.0,
+  "drone_crash": 1,
+  "max_tilt_deg": 153.78239930445616,
+  "max_action_N": 9.772336967815981,
+  "final_ball_pos": [
+    14.923383471606144,
+    -0.8768493530351043,
+    0.05991391355990091
+  ],
+  "final_drone_pos": [
+    13.424103542903296,
+    -6.869224524852336,
+    0.3010061132541917
+  ],
+  "contacts": 7,
+  "observation_mode": "partial",
+  "scenario_name": "ball_x_pos",
+  "policy_path": "/Users/dull/openfoam/pingpong-venv/progression/20260723T043410Z_juggle_chain4_ball_x_pos/staged/policy.py",
+  "policy_sha256": "11188feac3e8f6cdc28af46919d515e67f6b1970f516e72b4ac5d157d18bfa90",
+  "phase_notes": null,
+  "chain": 4,
+  "training_fit": [
+    5,
+    0,
+    8,
+    0,
+    0.67727,
+    -6,
+    0.07953
+  ],
+  "note": "CHAIN=4 on ball_x_pos: bounce over all 4 lintels + thread all 4 windows (gate-1-anchored, time-coupled). Episode still crashes after."
+}

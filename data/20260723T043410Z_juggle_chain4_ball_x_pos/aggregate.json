@@ -1,0 +1,20 @@
+{
+  "n_cases": 1,
+  "chain": 4,
+  "bg": 4,
+  "wins": 4,
+  "crash": true,
+  "score": 0.274828570724801,
+  "plant_score": 0.07952882640781517,
+  "fit": [
+    5,
+    0,
+    8,
+    0,
+    0.67727,
+    -6,
+    0.07953
+  ],
+  "note": "First published CHAIN=4 rally: ball_x_pos with policy_juggle_ok_20260723T034814Z (bg=4 wins=4 chain=4, crash after).",
+  "camera": "review_wide"
+}

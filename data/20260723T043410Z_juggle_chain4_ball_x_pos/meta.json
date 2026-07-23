@@ -1,0 +1,9 @@
+{
+  "label": "juggle_chain4_ball_x_pos",
+  "created_utc": "20260723T043410Z",
+  "camera": "review_wide",
+  "policy_path": "repair_work/juggle_winners/policy_juggle_ok_20260723T034814Z.py",
+  "policy_sha256": "11188feac3e8f6cdc28af46919d515e67f6b1970f516e72b4ac5d157d18bfa90",
+  "winner_json": "winner_params.json",
+  "note": "First published CHAIN=4 rally: ball_x_pos with policy_juggle_ok_20260723T034814Z (bg=4 wins=4 chain=4, crash after)."
+}
