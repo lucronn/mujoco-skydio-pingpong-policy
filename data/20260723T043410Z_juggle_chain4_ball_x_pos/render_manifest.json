@@ -9,12 +9,13 @@
   "scenarios": [
     "ball_x_pos"
   ],
-  "policy_path": "repair_work/juggle_winners/policy_juggle_ok_20260723T034814Z.py",
+  "policy_path": "redacted",
   "policy_sha256": "11188feac3e8f6cdc28af46919d515e67f6b1970f516e72b4ac5d157d18bfa90",
-  "params_file": "winner_params.json",
-  "module": "juggle_autodrive",
+  "params_file": "redacted",
+  "module": "redacted",
   "stage": "rally",
   "chain": 4,
   "case": "ball_x_pos",
-  "winner": "winner_ok_20260723T034814Z.json"
+  "winner": "winner_ok_20260723T034814Z.json",
+  "policy_id": "11188feac3e8"
 }

@@ -2,6 +2,7 @@
   "label": "policy_evolved_ci_20260717T092150Z_heldout",
   "created_utc": "20260717T092151Z",
   "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260717T092151Z_policy_evolved_ci_20260717T092150Z_heldout",
-  "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260717T092151Z_policy_evolved_ci_20260717T092150Z/policy.py",
-  "policy_sha256": "4f54b95cd1256927a4e2ed02aefbd2e52a4a90a0525f7e3270b1fac16d51f6fb"
+  "policy_path": "redacted",
+  "policy_sha256": "4f54b95cd1256927a4e2ed02aefbd2e52a4a90a0525f7e3270b1fac16d51f6fb",
+  "policy_id": "4f54b95cd125"
 }

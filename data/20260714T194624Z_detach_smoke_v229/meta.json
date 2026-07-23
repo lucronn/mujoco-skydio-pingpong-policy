@@ -2,6 +2,7 @@
   "label": "detach_smoke_v229",
   "created_utc": "20260714T194624Z",
   "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260714T194624Z_detach_smoke_v229",
-  "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260714T194624Z_policy_v229/policy.py",
-  "policy_sha256": "9b5711919dfc6b9510437c9373d8f5725d6658b8a5ffca30b3215ece0e53701f"
+  "policy_path": "redacted",
+  "policy_sha256": "9b5711919dfc6b9510437c9373d8f5725d6658b8a5ffca30b3215ece0e53701f",
+  "policy_id": "9b5711919dfc"
 }

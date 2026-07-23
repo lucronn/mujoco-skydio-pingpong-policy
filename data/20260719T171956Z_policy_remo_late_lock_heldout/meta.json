@@ -2,6 +2,7 @@
   "label": "policy_remo_late_lock_heldout",
   "created_utc": "20260719T171956Z",
   "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260719T171956Z_policy_remo_late_lock_heldout",
-  "policy_path": "/mnt/openfoam/pingpong-venv/progression/_staging/20260719T171956Z_policy_remo_late_lock/policy.py",
-  "policy_sha256": "2dcc97a037363793d0f488006d34b06a6dde1221860fb9f81283a1e9ecd61fe1"
+  "policy_path": "redacted",
+  "policy_sha256": "2dcc97a037363793d0f488006d34b06a6dde1221860fb9f81283a1e9ecd61fe1",
+  "policy_id": "2dcc97a03736"
 }
