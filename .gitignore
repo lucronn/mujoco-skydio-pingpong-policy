@@ -4,3 +4,12 @@ __pycache__/
 .DS_Store
 ._*
 **/._*
+
+# Anti-cheat: never commit reconstructible policies into Pages data/
+data/_staging/
+data/**/staged/
+data/**/winner_params.json
+data/**/winner*.json
+data/**/*.py
+data/**/juggle_autodrive.py
+data/**/theta*.json
