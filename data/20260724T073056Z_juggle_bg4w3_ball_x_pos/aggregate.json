@@ -1,0 +1,7 @@
+{
+  "stamp": "20260724T073056Z",
+  "case": "ball_x_pos",
+  "rule": "bg>=4 and wins>=3",
+  "camera": "review_wide",
+  "note": "bg>=4 wins>=4 auto-render (ball_x_pos); pre-survive-coast era — may still crash after"
+}

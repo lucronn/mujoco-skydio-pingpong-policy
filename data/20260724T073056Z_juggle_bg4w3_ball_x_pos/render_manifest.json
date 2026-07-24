@@ -1,0 +1,6 @@
+{
+  "policy_path": "redacted",
+  "case": "ball_x_pos",
+  "camera_name": "review_wide",
+  "rule": "bg>=4 wins>=3"
+}
