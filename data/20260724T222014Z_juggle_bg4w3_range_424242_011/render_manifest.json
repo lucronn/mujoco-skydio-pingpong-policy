@@ -1,0 +1,6 @@
+{
+  "policy_path": "redacted",
+  "case": "range_424242_011",
+  "camera_name": "review_wide",
+  "rule": "bg>=4 wins>=3"
+}
