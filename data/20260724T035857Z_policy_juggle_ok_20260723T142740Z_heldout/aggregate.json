@@ -1,0 +1,214 @@
+{
+  "stamp": "20260724T040048Z",
+  "policy": "/mnt/openfoam/pingpong-venv/progression/_staging/20260724T035857Z_policy_juggle_ok_20260723T142740Z/policy.py",
+  "source_policy": "/mnt/openfoam/pingpong-venv/repair_work/juggle_winners/policy_juggle_ok_20260723T142740Z.py",
+  "suite": "heldout",
+  "run_dir": "/mnt/openfoam/pingpong-venv/progression/20260724T035857Z_policy_juggle_ok_20260723T142740Z_heldout",
+  "staging": "/mnt/openfoam/pingpong-venv/progression/_staging/20260724T035857Z_policy_juggle_ok_20260723T142740Z",
+  "raw_score_100": 4.813855143469674,
+  "mean_bg": 0.39285714285714285,
+  "q25": 0.026634331533777755,
+  "mean_score": 0.06780156434206495,
+  "hard_rate": 0.0,
+  "nominal_bg": 1,
+  "nominal_sc": 0.09912928655975031,
+  "champ_meta": {},
+  "rows": [
+    {
+      "name": "nominal",
+      "score": 0.09912928655975031,
+      "bounced_gate_passes": 1,
+      "hard_success": false,
+      "drone_windows_passed": 1
+    },
+    {
+      "name": "ball_x_pos",
+      "score": 0.6551767770965545,
+      "bounced_gate_passes": 4,
+      "hard_success": false,
+      "drone_windows_passed": 4
+    },
+    {
+      "name": "ball_y_pos",
+      "score": 0.1038823996153795,
+      "bounced_gate_passes": 1,
+      "hard_success": false,
+      "drone_windows_passed": 1
+    },
+    {
+      "name": "low_fast",
+      "score": 0.11728309440588397,
+      "bounced_gate_passes": 1,
+      "hard_success": false,
+      "drone_windows_passed": 2
+    },
+    {
+      "name": "range_424242_000",
+      "score": 0.027101948693710836,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "range_424242_001",
+      "score": 0.03340319931073631,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "range_424242_002",
+      "score": 0.026660363198883163,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "range_424242_003",
+      "score": 0.02825968702402407,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 1
+    },
+    {
+      "name": "range_424242_004",
+      "score": 0.05694602215966697,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 1
+    },
+    {
+      "name": "range_424242_005",
+      "score": 0.1582079056999121,
+      "bounced_gate_passes": 2,
+      "hard_success": false,
+      "drone_windows_passed": 2
+    },
+    {
+      "name": "range_424242_006",
+      "score": 0.01575555821284848,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "range_424242_007",
+      "score": 0.016294240024062323,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 1
+    },
+    {
+      "name": "range_424242_008",
+      "score": 0.016825906153846153,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "range_424242_009",
+      "score": 0.09351467668067248,
+      "bounced_gate_passes": 1,
+      "hard_success": false,
+      "drone_windows_passed": 2
+    },
+    {
+      "name": "range_424242_010",
+      "score": 0.03625877308043497,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 1
+    },
+    {
+      "name": "range_424242_011",
+      "score": 0.027096993897999064,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "range_424242_012",
+      "score": 0.027582644378682,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "range_424242_013",
+      "score": 0.07229523222883773,
+      "bounced_gate_passes": 1,
+      "hard_success": false,
+      "drone_windows_passed": 1
+    },
+    {
+      "name": "range_424242_014",
+      "score": 0.003828627064487284,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "range_424242_015",
+      "score": 0.028133595717115233,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "edge_low_fast_delay6",
+      "score": 0.02765270498199085,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "edge_high_slow_delay3",
+      "score": 0.01066804278782345,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "edge_crosswind_a",
+      "score": 0.07117429254832254,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "edge_crosswind_b",
+      "score": 0.0323817732520511,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "edge_noise_delay6",
+      "score": 0.0383954924502154,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 3
+    },
+    {
+      "name": "edge_jitter_only",
+      "score": 0.02655623653846154,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 1
+    },
+    {
+      "name": "edge_initial_offsets_a",
+      "score": 0.038297091277004786,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 0
+    },
+    {
+      "name": "edge_initial_offsets_b",
+      "score": 0.009681236538461539,
+      "bounced_gate_passes": 0,
+      "hard_success": false,
+      "drone_windows_passed": 1
+    }
+  ]
+}
