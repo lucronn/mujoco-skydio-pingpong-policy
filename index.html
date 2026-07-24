@@ -1671,9 +1671,9 @@
       <div class="stat-desc">Scored rollouts (3D + 2D each)</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Best Held-Out Score</div>
+      <div class="stat-label">Best Episode Rank</div>
       <div class="stat-value emerald" id="stat-best-score">–</div>
-      <div class="stat-desc">raw_score_100, higher is better</div>
+      <div class="stat-desc">paired gates+windows · target · survive</div>
       <div class="stat-sub" id="stat-best-score-run"></div>
     </div>
     <div class="stat-card">
@@ -1694,11 +1694,11 @@
     <h2>
       <svg height="18" width="18" fill="var(--color-orange)" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
       Top 10 Champions
-      <span class="tag" style="background: rgba(245, 158, 11, 0.15); color: var(--color-orange);">Best held-out raw score</span>
+      <span class="tag" style="background: rgba(245, 158, 11, 0.15); color: var(--color-orange);">Best task-aligned episode</span>
     </h2>
     <span style="color:var(--text-muted); font-size:0.85rem;">Click a card for full case-by-case detail</span>
   </div>
-  <p class="section-desc">Ranked by the 28-case held-out raw_score_100 (60% mean score + 28% p25 score + 12% hard-success rate) — the same formula the live CEM optimizer uses to promote champions.</p>
+  <p class="section-desc">Ranked by the task objective in <code>instruction.md</code>: bounce the ball over each gate with a distinct impulse, fly through the matching windows, settle in the target box, and stay safe. Legacy fling/lap packs (held-out raw &gt; 15) are demoted — plant <code>case_score</code> alone is gameable.</p>
 
   <section class="grid-3x3" id="grid-top-champions">
     <div style="grid-column: 1 / -1; text-align:center; padding: 40px; color: var(--text-secondary);">Loading champion rankings...</div>
@@ -1825,6 +1825,7 @@
       <div class="filter-item">
         <label for="filter-sort">Sort by</label>
         <select id="filter-sort" onchange="applyFilters()">
+          <option value="rank" selected>Best task rank</option>
           <option value="newest">Newest first</option>
           <option value="oldest">Oldest first</option>
           <option value="score">Best case score</option>
@@ -1983,6 +1984,7 @@
 /* ---------------------------------------------------------------- state */
 let RUNS = [];                 // normalised runs, newest first
 let INDEX_META = {};           // schema / generated_utc
+let RANKING = { top_episodes: [], method: '' };
 let ARTIFACTS = ['render_3d.mp4','render_3d.gif','render_2d.mp4','render_2d.gif','trajectory_2d.png','summary.md'];
 
 let activeChartMetric = 'raw'; // 'raw' | 'score' | 'gates' | 'crash'
@@ -2067,14 +2069,48 @@ function percentile(sorted, p) {
 
 /** Mirrors parallel_suite.py _raw_from_scores. Only meaningful over the full
  *  28-case held-out suite, so partial "focus" packs return null rather than
- *  ranking above a genuine evaluation. */
+ *  ranking above a genuine evaluation. Legacy fling/lap packs (raw>15) are
+ *  treated as invalid for champion / headline stats. */
 function rawScore(run) {
+  if (run.ranking_invalid || (run.aggregate && run.aggregate.ranking_invalid)) return null;
+  if (run.aggregate && run.aggregate.valid_raw_score_100 != null) {
+    const v = Number(run.aggregate.valid_raw_score_100);
+    return Number.isFinite(v) ? v : null;
+  }
   const scored = run.cases.filter(c => typeof caseScore(c) === 'number');
   if (scored.length < 20) return null;
   const scores = scored.map(caseScore).sort((a, b) => a - b);
   const hard = scored.map(c => (c.metrics.hard_success ? 1 : 0));
   const mean = a => a.reduce((s, v) => s + v, 0) / a.length;
-  return 100 * (0.60 * mean(scores) + 0.28 * percentile(scores, 0.25) + 0.12 * mean(hard));
+  const raw = 100 * (0.60 * mean(scores) + 0.28 * percentile(scores, 0.25) + 0.12 * mean(hard));
+  // Reward-hack era ceiling — plant score without interleaved rally.
+  if (raw > 15) return null;
+  return raw;
+}
+
+function episodeRankKey(kase) {
+  const r = kase && kase.rank;
+  if (r && Array.isArray(r.key)) return r.key;
+  // Fallback if index predates schema 2.1
+  const m = (kase && kase.metrics) || {};
+  const bg = Number(m.bounced_gate_passes) || 0;
+  const wins = Number(m.drone_windows_passed) || 0;
+  const tbox = Number(m.target_box_score) || 0;
+  const crash = m.drone_crash ? 1 : 0;
+  const safety = Number(m.safety_score) || 0;
+  const hard = m.hard_success ? 1 : 0;
+  const score = Number(m.score) || 0;
+  return [Math.min(bg, wins), tbox > 0.5 ? 1 : 0, crash ? 0 : 1, safety > 0.5 ? 1 : 0, hard, tbox, score, bg, wins];
+}
+
+function cmpRankKey(a, b) {
+  const ka = episodeRankKey(a), kb = episodeRankKey(b);
+  const n = Math.max(ka.length, kb.length);
+  for (let i = 0; i < n; i++) {
+    const va = Number(ka[i] || 0), vb = Number(kb[i] || 0);
+    if (vb !== va) return vb - va;
+  }
+  return 0;
 }
 
 function packTypeBadge(label) {
@@ -2115,6 +2151,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 /** Accept schema 2 (object) or schema 1 (array of runs with a videos list). */
 function normalise(data) {
+  RANKING = (data && data.ranking) || { top_episodes: [], method: '' };
   if (Array.isArray(data)) {
     // legacy shape — synthesise the "have" bitmap from the videos list
     RUNS = data.map(r => ({
@@ -2124,6 +2161,7 @@ function normalise(data) {
       meta: r.meta || {},
       aggregate: {},
       grid: true,
+      ranking_invalid: false,
       cases: (r.cases || []).map(c => {
         const names = new Set((c.videos || []).map(v => v.filename));
         if (c.snapshot) names.add('trajectory_2d.png');
@@ -2144,6 +2182,7 @@ function normalise(data) {
     r.meta = r.meta || {};
     r.aggregate = r.aggregate || {};
     r.cases = r.cases || [];
+    r.ranking_invalid = !!(r.ranking_invalid || r.aggregate.ranking_invalid);
     r.raw = rawScore(r);
     r.when = r.meta.created_utc || r.stamp || r.dir;
   });
@@ -2173,13 +2212,33 @@ function updateStats() {
     if (c.name === 'nominal') { nominalTotal++; if (isCrashed(c.metrics)) nominalCrash++; }
   }));
 
-  const best = RUNS.filter(r => r.raw !== null).sort((a, b) => b.raw - a.raw)[0];
+  const bestEp = (() => {
+    if (RANKING.top_episodes && RANKING.top_episodes.length) return RANKING.top_episodes[0];
+    let best = null;
+    RUNS.forEach(r => {
+      if (r.ranking_invalid) return;
+      r.cases.forEach(c => {
+        if (!has(c, 'render_3d.mp4')) return;
+        if (!best || cmpRankKey(c, best.kase) < 0) best = { run: r, kase: c };
+      });
+    });
+    return best ? {
+      dir: best.run.dir, case: best.kase.name, label: best.run.label,
+      rank: best.kase.rank || { paired: 0, tbox: 0, crash: true, case_score: 0, score: 0 },
+    } : null;
+  })();
 
   const set = (id, v) => { const el = document.getElementById(id); if (el) el.innerText = v; };
   set('stat-runs', RUNS.length);
   set('stat-rollouts', nEpisodes);
-  set('stat-best-score', best ? best.raw.toFixed(2) : 'N/A');
-  set('stat-best-score-run', best ? cleanLabel(best) : '');
+  if (bestEp && bestEp.rank) {
+    const rk = bestEp.rank;
+    set('stat-best-score', `P${rk.paired} · ${(rk.case_score || 0).toFixed(2)}`);
+    set('stat-best-score-run', `${pretty(bestEp.case)} · ${cleanLabel({ label: bestEp.label, dir: bestEp.dir })}`);
+  } else {
+    set('stat-best-score', 'N/A');
+    set('stat-best-score-run', '');
+  }
   set('stat-crash-rate', nominalTotal ? ((nominalCrash / nominalTotal) * 100).toFixed(1) + '%' : 'N/A');
   const pct = nEpisodes ? (complete / nEpisodes) * 100 : 0;
   set('stat-coverage', pct.toFixed(1) + '%');
@@ -2376,47 +2435,63 @@ function renderTopChampions() {
   const container = document.getElementById('grid-top-champions');
   if (!container) return;
 
-  const scored = RUNS.filter(r => r.raw !== null).map(r => ({ run: r, raw: r.raw }));
-  // The same champion binary is re-evaluated across packs; keep its best pack.
-  const bestByChamp = new Map();
-  scored.forEach(({ run, raw }) => {
-    const key = run.meta.policy_sha256 || run.dir;
-    const cur = bestByChamp.get(key);
-    if (!cur || raw > cur.raw) bestByChamp.set(key, { run, raw });
-  });
-  const top = [...bestByChamp.values()].sort((a, b) => b.raw - a.raw).slice(0, 10);
+  // Prefer precomputed ranking from process_data.py; fall back to client-side.
+  let top = (RANKING.top_episodes || []).filter(e => !e.invalid).slice(0, 10);
+  if (!top.length) {
+    const scored = [];
+    RUNS.forEach(run => {
+      if (run.ranking_invalid) return;
+      run.cases.forEach(kase => {
+        if (!has(kase, 'render_3d.mp4')) return;
+        scored.push({ run, kase });
+      });
+    });
+    scored.sort((a, b) => cmpRankKey(a.kase, b.kase));
+    top = scored.slice(0, 10).map(({ run, kase }) => ({
+      dir: run.dir, stamp: run.stamp, label: run.label, case: kase.name,
+      rank: kase.rank || { paired: 0, tbox: 0, crash: true, case_score: 0, score: 0 },
+    }));
+  }
 
   if (!top.length) {
-    container.innerHTML = '<div class="empty-note">No full held-out evaluations found yet.</div>';
+    container.innerHTML = '<div class="empty-note">No ranked episodes with 3D renders yet.</div>';
     return;
   }
 
   container.innerHTML = '';
-  top.forEach(({ run, raw }, i) => {
+  top.forEach((ep, i) => {
     const rank = i + 1;
-    const nominal = run.cases.find(c => c.name === 'nominal') || run.cases[0];
+    const run = RUNS.find(r => r.dir === ep.dir) || {
+      dir: ep.dir, stamp: ep.stamp, label: ep.label, meta: {}, cases: [],
+    };
+    const kase = (run.cases || []).find(c => c.name === ep.case) || { name: ep.case, metrics: {}, have: '10000' };
+    const rk = ep.rank || kase.rank || {};
     const card = document.createElement('article');
     card.className = 'grid-cell champion-card' + (rank <= 3 ? ` rank-${rank}-card` : '');
     card.tabIndex = 0;
     card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', `Rank ${rank}, ${cleanLabel(run)}, raw score ${raw.toFixed(2)}`);
-    const open = () => openModal(run, nominal ? nominal.name : 'nominal');
+    card.setAttribute('aria-label', `Rank ${rank}, ${ep.case}, paired ${rk.paired}`);
+    const open = () => openModal(run, ep.case);
     card.onclick = open;
     card.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } };
     card.onmouseenter = () => card.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
     card.onmouseleave = () => card.querySelectorAll('video').forEach(v => v.pause());
 
-    const v3 = nominal && has(nominal, 'render_3d.mp4');
+    const v3 = has(kase, 'render_3d.mp4');
     const media = v3
-      ? `<video src="${mediaPath(run, nominal, 'render_3d.mp4')}"${posterAttr(run, nominal)} loop muted playsinline preload="none"></video>`
+      ? `<video src="${mediaPath(run, kase, 'render_3d.mp4')}"${posterAttr(run, kase)} loop muted playsinline preload="none"></video>`
       : '<div class="media-missing"><strong>No 3D render</strong></div>';
+
+    const badge = `P${rk.paired || 0} · bg${rk.bg || 0}/w${rk.wins || 0}`
+      + (rk.tbox > 0.5 ? ' · box' : '')
+      + (rk.crash ? ' · crash' : ' · ok');
 
     card.innerHTML = `
       <div class="champion-rank-badge${rank <= 3 ? ` rank-${rank}` : ''}">#${rank}</div>
-      <div class="card-run-label">${esc(cleanLabel(run))}${packTypeBadge(run.label)}${rank === 1 ? '<span class="ribbon best">best</span>' : ''}</div>
+      <div class="card-run-label">${esc(pretty(ep.case))} · ${esc(cleanLabel(run))}${rank === 1 ? '<span class="ribbon best">best</span>' : ''}</div>
       <div class="video-container">${media}</div>
-      <div class="champion-score-badge">raw ${raw.toFixed(2)}</div>
-      <div class="card-timestamp">${esc(fmtStamp(run.when))}</div>`;
+      <div class="champion-score-badge">${esc(badge)}</div>
+      <div class="card-timestamp">${esc(fmtStamp(ep.stamp || run.when))} · score ${(rk.case_score || 0).toFixed(3)}</div>`;
     container.appendChild(card);
   });
 }
@@ -2572,7 +2647,7 @@ function populateFilters() {
 function applyFilters() {
   const runVal = (document.getElementById('filter-run') || {}).value || 'all';
   const caseVal = (document.getElementById('filter-case') || {}).value || 'all';
-  const sortVal = (document.getElementById('filter-sort') || {}).value || 'newest';
+  const sortVal = (document.getElementById('filter-sort') || {}).value || 'rank';
   const q = ((document.getElementById('search-run') || {}).value || '').toLowerCase().trim();
   const onlyGaps = !!(document.getElementById('filter-incomplete') || {}).checked;
 
@@ -2599,6 +2674,11 @@ function applyFilters() {
 
   const num = v => (typeof v === 'number' ? v : -Infinity);
   const cmp = {
+    rank: (a, b) => {
+      const inv = (a.run.ranking_invalid ? 1 : 0) - (b.run.ranking_invalid ? 1 : 0);
+      if (inv) return inv;
+      return cmpRankKey(a.kase, b.kase);
+    },
     newest: (a, b) => String(b.run.stamp).localeCompare(String(a.run.stamp)) || a.kase.name.localeCompare(b.kase.name),
     oldest: (a, b) => String(a.run.stamp).localeCompare(String(b.run.stamp)) || a.kase.name.localeCompare(b.kase.name),
     score: (a, b) => num(caseScore(b.kase)) - num(caseScore(a.kase)),
