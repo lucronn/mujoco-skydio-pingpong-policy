@@ -1,0 +1,13 @@
+{
+  "params_file": "redacted",
+  "stage": "rally",
+  "cases": [
+    "nominal",
+    "ball_x_pos",
+    "ball_y_pos",
+    "range_424242_005",
+    "range_424242_013",
+    "edge_crosswind_a"
+  ],
+  "rendered_at": "20260728T184647Z"
+}

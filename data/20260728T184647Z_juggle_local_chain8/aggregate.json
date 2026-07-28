@@ -1,0 +1,54 @@
+{
+  "stamp": "20260728T184647Z",
+  "n_cases": 6,
+  "mean_score": 0.12069412594578614,
+  "sum_bg": 8,
+  "sum_chain": 8,
+  "sum_wins": 9,
+  "breadth": 5,
+  "n_crash": 5,
+  "cases": [
+    {
+      "case": "nominal",
+      "bg": 1,
+      "chain": 1,
+      "score": 0.1009531021813368,
+      "crash": true
+    },
+    {
+      "case": "ball_x_pos",
+      "bg": 1,
+      "chain": 1,
+      "score": 0.12822036488106453,
+      "crash": true
+    },
+    {
+      "case": "ball_y_pos",
+      "bg": 3,
+      "chain": 3,
+      "score": 0.22981135849651438,
+      "crash": true
+    },
+    {
+      "case": "range_424242_005",
+      "bg": 2,
+      "chain": 2,
+      "score": 0.1382884790135602,
+      "crash": true
+    },
+    {
+      "case": "range_424242_013",
+      "bg": 1,
+      "chain": 1,
+      "score": 0.07227141851638647,
+      "crash": true
+    },
+    {
+      "case": "edge_crosswind_a",
+      "bg": 0,
+      "chain": 0,
+      "score": 0.05462003258585434,
+      "crash": false
+    }
+  ]
+}

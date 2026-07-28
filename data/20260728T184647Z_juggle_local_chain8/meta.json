@@ -1,0 +1,20 @@
+{
+  "stamp": "20260728T184647Z",
+  "policy": "JugglePolicy (juggle_autodrive.py Phase-3)",
+  "winner_file": "winner_ok_20260728T184613Z.json",
+  "fit": [
+    5,
+    8,
+    0.61946,
+    1,
+    0,
+    0,
+    -4,
+    0.12069
+  ],
+  "bg": 8,
+  "wins": 9,
+  "chain": 8,
+  "notes": "Phase-3 dynamic tap controller + hybrid launch trigger. breadth=5, sum_chain=8 across 6 training cases.",
+  "params_file": "redacted"
+}

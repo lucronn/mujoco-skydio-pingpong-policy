@@ -1,0 +1,324 @@
+{
+  "scenario": {
+    "name": "ball_y_pos",
+    "seed": 1103,
+    "init_drone_pos": [
+      0.0,
+      0.0,
+      0.95
+    ],
+    "init_ball_pos": [
+      -0.015,
+      0.03,
+      1.74
+    ],
+    "init_ball_vel": [
+      0.02,
+      0.0,
+      -0.48
+    ],
+    "gate_y_jitter": 0.0,
+    "gate_height_jitter": 0.0,
+    "target_jitter_xy": [
+      0.0,
+      0.0
+    ],
+    "sensor_delay_steps": 4,
+    "ball_pos_noise_std": 0.004,
+    "ball_vel_noise_std": 0.018,
+    "drone_pos_noise_std": 0.002,
+    "drone_vel_noise_std": 0.01,
+    "dropout_prob": 0.0,
+    "wind_xy": [
+      0.0,
+      0.0
+    ]
+  },
+  "time": 7.999999999999341,
+  "observation_mode": "partial",
+  "score": 0.22981135849651438,
+  "hard_success": false,
+  "gate_progress_score": 0.75,
+  "raw_gate_progress_score": 0.75,
+  "bounced_gate_progress_score": 0.75,
+  "bounced_gate_passes": 3,
+  "bounced_gate_pass": [
+    true,
+    true,
+    true,
+    false
+  ],
+  "gate_bounce_delay_s": [
+    0.3540000000000003,
+    0.2739999999999698,
+    0.29999999999996696,
+    null
+  ],
+  "gate_bounce_contact_times_s": [
+    1.5960000000000012,
+    2.19399999999998,
+    2.803999999999913,
+    null
+  ],
+  "gate_required_after_s": [
+    null,
+    2.0300000000000016,
+    2.54799999999995,
+    3.18399999999988
+  ],
+  "distinct_gate_bounce_count": 3,
+  "gate_credit_contact_count": 5,
+  "gate_credit_quality_score": 1.0,
+  "bounced_gate_clearances_m": [
+    0.1005860085373107,
+    0.23220228141172017,
+    0.42734324797481626,
+    null
+  ],
+  "drone_window_score": 0.5625,
+  "raw_drone_window_score": 0.75,
+  "safety_score": 0.0,
+  "target_score": 0.06749436735862022,
+  "target_settle_score": 0.0,
+  "target_box_score": 0.0,
+  "target_box_entered": false,
+  "target_box_exit_after_entry": false,
+  "target_box_dwell_time_s": 0.0,
+  "target_softness_score": 0.0,
+  "max_capture_zone_height_m": -1000000000.0,
+  "high_bounce_score": 0.2909925559452982,
+  "eligible_mean_over_clearance_m": 0.25337717930794906,
+  "eligible_max_over_clearance_m": 0.42734324797481626,
+  "high_bounce_exclusion_radius_m": 2.75,
+  "gate_top_clearance_margin_m": 0.01,
+  "gate_required_ball_center_z_m": [
+    2.59,
+    2.69,
+    2.65,
+    2.73
+  ],
+  "eligible_high_bounce_gate_count": 3,
+  "bounce_objective_score": 0.3682444169589737,
+  "contact_score": 0.6,
+  "useful_contact_score": 0.0,
+  "mean_bounce_score": 0.0,
+  "contact_chatter_score": 1.0,
+  "contact_time_score": 1.0,
+  "useful_contact_count": 0,
+  "total_contact_time_s": 0.035999999999998034,
+  "contact_quality_ok": false,
+  "contact_events_debug": [
+    {
+      "start": 0.18200000000000013,
+      "end": 0.18800000000000014,
+      "dwell": 0.006000000000000005,
+      "vz_in": 1.7912351832204445,
+      "vz_out": 4.39268169582507,
+      "pos_out": [
+        -0.0108525473778995,
+        0.030358412140791963,
+        1.5252265962426315
+      ],
+      "vel_out": [
+        0.07364673244148118,
+        0.050255649188774176,
+        4.39268169582507
+      ]
+    },
+    {
+      "start": 0.9460000000000007,
+      "end": 0.9520000000000007,
+      "dwell": 0.006000000000000005,
+      "vz_in": 0.8613963894037522,
+      "vz_out": 3.6965266977287885,
+      "pos_out": [
+        0.046492264705386074,
+        0.07945069186976063,
+        1.890345026418337
+      ],
+      "vel_out": [
+        0.7032862965776613,
+        1.3831301330386834,
+        3.6965266977287885
+      ]
+    },
+    {
+      "start": 1.5900000000000012,
+      "end": 1.5960000000000012,
+      "dwell": 0.006000000000000005,
+      "vz_in": 1.1109976321541755,
+      "vz_out": 3.232277199444276,
+      "pos_out": [
+        0.47890273230913977,
+        0.9115628097314001,
+        2.1830004362789044
+      ],
+      "vel_out": [
+        2.5248905134462927,
+        -1.381687842808425,
+        3.232277199444276
+      ]
+    },
+    {
+      "start": 2.1879999999999806,
+      "end": 2.19399999999998,
+      "dwell": 0.005999999999999339,
+      "vz_in": -0.46086543107874467,
+      "vz_out": 3.547248449532085,
+      "pos_out": [
+        1.8841981486240873,
+        0.14861716174080086,
+        2.3504225667763685
+      ],
+      "vel_out": [
+        3.214858975561262,
+        0.5614689031164782,
+        3.547248449532085
+      ]
+    },
+    {
+      "start": 2.7979999999999134,
+      "end": 2.803999999999913,
+      "dwell": 0.005999999999999339,
+      "vz_in": -0.03631962008540924,
+      "vz_out": 3.015490576894866,
+      "pos_out": [
+        3.6959150146572903,
+        0.434124945033044,
+        2.62490709291966
+      ],
+      "vel_out": [
+        1.3124573846843974,
+        0.5830384732369412,
+        3.015490576894866
+      ]
+    },
+    {
+      "start": 4.237999999999755,
+      "end": 4.243999999999755,
+      "dwell": 0.005999999999999339,
+      "vz_in": -2.719420592043468,
+      "vz_out": -4.475055902697117,
+      "pos_out": [
+        5.215585753417608,
+        1.1031965975318472,
+        0.10103355313711954
+      ],
+      "vel_out": [
+        7.1394512537265795,
+        -2.8754800693943396,
+        -4.475055902697117
+      ]
+    }
+  ],
+  "effort_score": 0.7458953116056553,
+  "gates_passed": 3,
+  "gate_pass": [
+    true,
+    true,
+    true,
+    false
+  ],
+  "raw_gates_passed": 3,
+  "raw_gate_pass": [
+    true,
+    true,
+    true,
+    false
+  ],
+  "drone_windows_passed": 3,
+  "drone_window_pass": [
+    true,
+    true,
+    true,
+    false
+  ],
+  "contacts": 6,
+  "gate_contact": true,
+  "ball_gate_contact": false,
+  "racket_gate_contact": true,
+  "drone_gate_contact": true,
+  "drone_crash": true,
+  "action_violation": false,
+  "over_action_steps": 0,
+  "max_action_N": 10.542887711525726,
+  "max_tilt_deg": 177.85804276057775,
+  "final_ball_xy_error_m": 2.5900533086648765,
+  "best_target_xy_error_m": 1.9163094258842046,
+  "final_ball_speed_mps": 0.10738425605913389,
+  "target_dwell_time_s": 0.0,
+  "gate_closest": [
+    {
+      "time": 2.002000000000001,
+      "ball_x": 1.4494430931344011,
+      "ball_y": 0.3789070770560271,
+      "ball_z": 2.6492665419278145,
+      "y_error": -0.12109292294397289,
+      "gate_top_z_m": 2.52,
+      "required_ball_center_z_m": 2.59,
+      "lower_bar_center_clearance_m": 1.9592665419278146,
+      "ball_bottom_over_gate_top_clearance_m": 0.06926654192781445,
+      "over_top_clearance_m": 0.06926654192781445
+    },
+    {
+      "time": 2.5059999999999456,
+      "ball_x": 2.849500904849462,
+      "ball_y": 0.30607606730724135,
+      "ball_z": 2.9296964853590137,
+      "y_error": -0.6939239326927586,
+      "gate_top_z_m": 2.62,
+      "required_ball_center_z_m": 2.69,
+      "lower_bar_center_clearance_m": 2.1396964853590137,
+      "ball_bottom_over_gate_top_clearance_m": 0.24969648535901356,
+      "over_top_clearance_m": 0.24969648535901356
+    },
+    {
+      "time": 3.1979999999998694,
+      "ball_x": 4.199558574670421,
+      "ball_y": 0.6533573789504625,
+      "ball_z": 3.0225074462615082,
+      "y_error": -0.8966426210495375,
+      "gate_top_z_m": 2.58,
+      "required_ball_center_z_m": 2.65,
+      "lower_bar_center_clearance_m": 2.2725074462615082,
+      "ball_bottom_over_gate_top_clearance_m": 0.3825074462615081,
+      "over_top_clearance_m": 0.3825074462615081
+    },
+    {
+      "time": 4.595999999999716,
+      "ball_x": 5.549599587989631,
+      "ball_y": 0.8320052448226275,
+      "ball_z": 0.059962690643332116,
+      "y_error": -1.2179947551773722,
+      "gate_top_z_m": 2.66,
+      "required_ball_center_z_m": 2.73,
+      "lower_bar_center_clearance_m": -0.7700373093566679,
+      "ball_bottom_over_gate_top_clearance_m": -2.660037309356668,
+      "over_top_clearance_m": -2.660037309356668
+    }
+  ],
+  "final_drone_pos": [
+    4.908103069141165,
+    1.019090421716064,
+    0.2579822921959574
+  ],
+  "final_ball_pos": [
+    6.392778342601352,
+    -0.03527706294135867,
+    0.05994788020899798
+  ],
+  "video_path": "/Users/dull/openfoam/pingpong-venv/progression/20260728T184647Z_juggle_local_chain8/cases/ball_y_pos/ball_y_pos_actuated_rollout.mp4",
+  "public_partial_tracker_visible_after_s": 0.18,
+  "public_partial_tracker_period_s": 0.04,
+  "public_partial_tracker_extra_delay_s": 0.055,
+  "public_partial_ball_pos_quant_m": [
+    0.04,
+    0.04,
+    0.06
+  ],
+  "public_partial_ball_vel_quant_mps": [
+    0.08,
+    0.08,
+    0.12
+  ]
+}

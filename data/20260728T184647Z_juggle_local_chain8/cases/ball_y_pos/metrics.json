@@ -1,0 +1,10 @@
+{
+  "case": "ball_y_pos",
+  "bg": 3,
+  "chain": 3,
+  "wins": 3,
+  "crash": true,
+  "score": 0.22981135849651438,
+  "shape": 0.66207,
+  "max_r": 6.393
+}
