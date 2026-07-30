@@ -1,0 +1,60 @@
+{
+  "score": 0.03755023676836459,
+  "hard_success": 0,
+  "bounced_gate_passes": 0,
+  "bounced_gate_pass": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "raw_gates_passed": 0,
+  "drone_windows_passed": 1,
+  "drone_window_pass": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "gate_bounce_contact_times_s": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "target_box_score": 0.0,
+  "target_box_entered": 0,
+  "safety_score": 0.0,
+  "drone_crash": 0,
+  "max_tilt_deg": 36.2773796881311,
+  "max_action_N": 9.239800762723835,
+  "final_ball_pos": [
+    1.134658171388378,
+    1.5204377146688952,
+    0.048257121441505554
+  ],
+  "final_drone_pos": [
+    2.153747582050987,
+    1.4464744133968883,
+    1.6517715141132105
+  ],
+  "contacts": 4,
+  "observation_mode": "partial",
+  "scenario_name": "nominal",
+  "policy_path": "/Users/dull/openfoam/pingpong-venv/progression/20260730T050033Z_juggle_fullsolve_ball_x_pos_20260723/staged/policy.py",
+  "policy_sha256": "d70e312c2bffea43568423a3eca545ef1dc99feea7d5595b5bf485d49df972a0",
+  "phase_notes": null,
+  "bg": 0,
+  "wins": 1,
+  "crash": false,
+  "pairs": 1,
+  "training_note": "Baseline full solve: ball_x_pos bg=4 wins=4 chain=4 tbox~0.65 (winner_ok_20260723T142740Z). nominal for contrast.",
+  "training_fit_case": {
+    "bg": 1,
+    "wins": 1,
+    "chain": 1,
+    "crash": true,
+    "pairs": 1
+  },
+  "training_chain": 1
+}

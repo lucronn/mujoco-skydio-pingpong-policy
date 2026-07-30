@@ -1,0 +1,10 @@
+{
+  "label": "juggle_jul23_params_REGRESSION_under_current_controller",
+  "created_utc": "20260730T050033Z",
+  "camera": "review_wide",
+  "policy_path": "redacted",
+  "policy_sha256": "d70e312c2bffea43568423a3eca545ef1dc99feea7d5595b5bf485d49df972a0",
+  "winner_json": "redacted",
+  "note": "DIAGNOSTIC: winner_ok_20260723T142740Z params under CURRENT juggle_autodrive. Live plant: ball_x_pos bg=0 score~0.02 (does NOT reproduce historical tbox~0.65). Authentic full-solve video remains pack 20260724T035857Z_policy_juggle_ok_20260723T142740Z_heldout.",
+  "policy_id": "d70e312c2bff"
+}

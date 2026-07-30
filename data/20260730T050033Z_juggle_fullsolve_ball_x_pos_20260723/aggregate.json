@@ -1,0 +1,57 @@
+{
+  "n_cases": 2,
+  "sum_bg": 0,
+  "sum_chain": 5,
+  "sum_wins": 2,
+  "breadth": 0,
+  "n_crash": 1,
+  "mean_score": 0.02928358585177937,
+  "cases": [
+    {
+      "case": "ball_x_pos",
+      "bg": 0,
+      "wins": 1,
+      "score": 0.02101693493519415,
+      "crash": true,
+      "target_box_score": 0.0,
+      "training_fit_case": {
+        "bg": 4,
+        "wins": 4,
+        "chain": 4,
+        "crash": true,
+        "pairs": 4
+      }
+    },
+    {
+      "case": "nominal",
+      "bg": 0,
+      "wins": 1,
+      "score": 0.03755023676836459,
+      "crash": false,
+      "target_box_score": 0.0,
+      "training_fit_case": {
+        "bg": 1,
+        "wins": 1,
+        "chain": 1,
+        "crash": true,
+        "pairs": 1
+      }
+    }
+  ],
+  "note": "DIAGNOSTIC: winner_ok_20260723T142740Z params under CURRENT juggle_autodrive. Live plant: ball_x_pos bg=0 score~0.02 (does NOT reproduce historical tbox~0.65). Authentic full-solve video remains pack 20260724T035857Z_policy_juggle_ok_20260723T142740Z_heldout.",
+  "camera": "review_wide",
+  "fit": [
+    6,
+    0,
+    10,
+    0,
+    0.64968,
+    -4,
+    0.13696
+  ],
+  "bg": 10,
+  "wins": 11,
+  "chain": 10,
+  "note_honesty": "Case bg/wins/score are LIVE plant metrics under the staged controller at render time. training_fit_case holds the original winner JSON values (may not reproduce after code drift).",
+  "label": "juggle_jul23_params_REGRESSION_under_current_controller"
+}

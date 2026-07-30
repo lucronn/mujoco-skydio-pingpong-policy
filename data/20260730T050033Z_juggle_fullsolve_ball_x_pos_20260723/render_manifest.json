@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "written_utc": "20260730T050045Z",
+  "camera": "review_wide",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "scenario_source": "repair_work/parallel_suite.py:held_out_cases()",
+  "scenarios": [
+    "ball_x_pos",
+    "nominal"
+  ],
+  "policy_path": "redacted",
+  "policy_sha256": "d70e312c2bffea43568423a3eca545ef1dc99feea7d5595b5bf485d49df972a0",
+  "params_file": "redacted",
+  "module": "redacted",
+  "stage": "rally",
+  "label": "juggle_fullsolve_ball_x_pos_20260723",
+  "winner": "winner_ok_20260723T142740Z.json",
+  "policy_id": "d70e312c2bff"
+}
