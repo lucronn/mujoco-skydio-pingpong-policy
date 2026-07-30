@@ -1,0 +1,60 @@
+{
+  "score": 0.010007036623815985,
+  "hard_success": 0,
+  "bounced_gate_passes": 0,
+  "bounced_gate_pass": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "raw_gates_passed": 0,
+  "drone_windows_passed": 0,
+  "drone_window_pass": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "gate_bounce_contact_times_s": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "target_box_score": 0.0,
+  "target_box_entered": 0,
+  "safety_score": 0.0,
+  "drone_crash": 1,
+  "max_tilt_deg": 120.61478611326133,
+  "max_action_N": 9.6589829576747,
+  "final_ball_pos": [
+    0.2911081529240738,
+    -0.04189009749071439,
+    0.04793909615598337
+  ],
+  "final_drone_pos": [
+    -2.0522738514174295,
+    3.3809776548699046,
+    2.112770707710291
+  ],
+  "contacts": 2,
+  "observation_mode": "partial",
+  "scenario_name": "edge_crosswind_a",
+  "policy_path": "/Users/dull/openfoam/pingpong-venv/progression/20260730T050045Z_juggle_breadth_champ_20260729/staged/policy.py",
+  "policy_sha256": "1f9d7bc0c9dc58a1ce4b5b36ca3f006caf6ab2061344377d2b36609b70c5b7d0",
+  "phase_notes": null,
+  "bg": 0,
+  "wins": 0,
+  "crash": true,
+  "pairs": 0,
+  "training_note": "Live breadth champ winner_ok_20260729T101136Z: breadth=5 sum_chain=10 across 6 training cases (max_chain_alive=1).",
+  "training_fit_case": {
+    "bg": 0,
+    "wins": 0,
+    "chain": 0,
+    "crash": true,
+    "pairs": 0
+  },
+  "training_chain": 0
+}

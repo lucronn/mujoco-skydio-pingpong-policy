@@ -1,0 +1,10 @@
+{
+  "label": "juggle_breadth_champ_20260729",
+  "created_utc": "20260730T050045Z",
+  "camera": "review_wide",
+  "policy_path": "redacted",
+  "policy_sha256": "1f9d7bc0c9dc58a1ce4b5b36ca3f006caf6ab2061344377d2b36609b70c5b7d0",
+  "winner_json": "redacted",
+  "note": "Live breadth champ winner_ok_20260729T101136Z: breadth=5 sum_chain=10 across 6 training cases (max_chain_alive=1). | LIVE render under CURRENT staged juggle_autodrive; training CHAIN numbers may not match video.",
+  "policy_id": "1f9d7bc0c9dc"
+}

@@ -1,0 +1,117 @@
+{
+  "n_cases": 6,
+  "sum_bg": 5,
+  "sum_chain": 10,
+  "sum_wins": 4,
+  "breadth": 4,
+  "n_crash": 6,
+  "mean_score": 0.08088427740527653,
+  "cases": [
+    {
+      "case": "ball_x_pos",
+      "bg": 1,
+      "wins": 1,
+      "score": 0.08894185559907052,
+      "crash": true,
+      "target_box_score": 0.0,
+      "training_fit_case": {
+        "bg": 2,
+        "wins": 3,
+        "chain": 2,
+        "crash": true,
+        "pairs": 2
+      }
+    },
+    {
+      "case": "ball_y_pos",
+      "bg": 0,
+      "wins": 0,
+      "score": 0.02176513437367318,
+      "crash": true,
+      "target_box_score": 0.0,
+      "training_fit_case": {
+        "bg": 4,
+        "wins": 4,
+        "chain": 4,
+        "crash": true,
+        "pairs": 4
+      }
+    },
+    {
+      "case": "edge_crosswind_a",
+      "bg": 0,
+      "wins": 0,
+      "score": 0.010007036623815985,
+      "crash": true,
+      "target_box_score": 0.0,
+      "training_fit_case": {
+        "bg": 0,
+        "wins": 0,
+        "chain": 0,
+        "crash": true,
+        "pairs": 0
+      }
+    },
+    {
+      "case": "nominal",
+      "bg": 1,
+      "wins": 1,
+      "score": 0.12874098110364945,
+      "crash": true,
+      "target_box_score": 0.0,
+      "training_fit_case": {
+        "bg": 1,
+        "wins": 1,
+        "chain": 1,
+        "crash": false,
+        "pairs": 1
+      }
+    },
+    {
+      "case": "range_424242_005",
+      "bg": 2,
+      "wins": 1,
+      "score": 0.16033487466250756,
+      "crash": true,
+      "target_box_score": 0.0,
+      "training_fit_case": {
+        "bg": 2,
+        "wins": 3,
+        "chain": 2,
+        "crash": true,
+        "pairs": 2
+      }
+    },
+    {
+      "case": "range_424242_013",
+      "bg": 1,
+      "wins": 1,
+      "score": 0.07551578206894245,
+      "crash": true,
+      "target_box_score": 0.0,
+      "training_fit_case": {
+        "bg": 1,
+        "wins": 1,
+        "chain": 1,
+        "crash": true,
+        "pairs": 1
+      }
+    }
+  ],
+  "note": "Live breadth champ winner_ok_20260729T101136Z: breadth=5 sum_chain=10 across 6 training cases (max_chain_alive=1).",
+  "camera": "review_wide",
+  "fit": [
+    5,
+    10,
+    0.74496,
+    1,
+    1,
+    0,
+    -11,
+    0.1411
+  ],
+  "bg": 10,
+  "wins": 12,
+  "chain": 10,
+  "note_honesty": "Case bg/wins/score are LIVE plant metrics under the staged controller at render time. training_fit_case holds the original winner JSON values (may not reproduce after code drift)."
+}

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "written_utc": "20260730T050108Z",
+  "camera": "review_wide",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "scenario_source": "repair_work/parallel_suite.py:held_out_cases()",
+  "scenarios": [
+    "nominal",
+    "ball_x_pos",
+    "ball_y_pos",
+    "range_424242_005",
+    "range_424242_013",
+    "edge_crosswind_a"
+  ],
+  "policy_path": "redacted",
+  "policy_sha256": "1f9d7bc0c9dc58a1ce4b5b36ca3f006caf6ab2061344377d2b36609b70c5b7d0",
+  "params_file": "redacted",
+  "module": "redacted",
+  "stage": "rally",
+  "label": "juggle_breadth_champ_20260729",
+  "winner": "winner_ok_20260729T101136Z.json",
+  "policy_id": "1f9d7bc0c9dc"
+}
