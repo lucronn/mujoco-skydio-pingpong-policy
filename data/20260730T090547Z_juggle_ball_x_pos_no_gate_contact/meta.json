@@ -1,0 +1,9 @@
+{
+  "label": "juggle_ball_x_pos_no_gate_contact",
+  "created_utc": "20260730T090547Z",
+  "camera": "review_wide",
+  "policy_sha256": "1d43f0ddf67a615748f1c7e56b48b1e6a574ad936f25971818fab1d771bbb1f0",
+  "winner_json": "redacted",
+  "note": "Current no-gate-contact gate-4 routing milestone: ball_x_pos reaches bg=4, wins=4, target_box_score≈1, and clears both ball_gate_contact and drone_gate_contact, but still crashes afterward from a high-tilt thread exit.",
+  "policy_id": "1d43f0ddf67a"
+}

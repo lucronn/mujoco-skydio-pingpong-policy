@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "written_utc": "20260730T090556Z",
+  "camera": "review_wide",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "scenario_source": "repair_work/parallel_suite.py:held_out_cases()",
+  "scenarios": [
+    "ball_x_pos"
+  ],
+  "policy_path": "redacted",
+  "policy_sha256": "1d43f0ddf67a615748f1c7e56b48b1e6a574ad936f25971818fab1d771bbb1f0",
+  "params_file": "redacted",
+  "module": "redacted",
+  "stage": "rally",
+  "milestone": "no_gate_contact",
+  "winner": "winner_bg4w3_ball_x_pos_20260724T073056Z.json",
+  "policy_id": "1d43f0ddf67a"
+}

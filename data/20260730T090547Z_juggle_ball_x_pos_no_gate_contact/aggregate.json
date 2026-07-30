@@ -1,0 +1,20 @@
+{
+  "n_cases": 1,
+  "cases": [
+    {
+      "case": "ball_x_pos",
+      "score": 0.6129492468899028,
+      "bg": 4,
+      "wins": 4,
+      "hard_success": false,
+      "crash": 1,
+      "ball_gate_contact": 0,
+      "drone_gate_contact": 0,
+      "tbox": 0.9999999970083716
+    }
+  ],
+  "note": "Current no-gate-contact gate-4 routing milestone: ball_x_pos reaches bg=4, wins=4, target_box_score≈1, and clears both ball_gate_contact and drone_gate_contact, but still crashes afterward from a high-tilt thread exit.",
+  "camera": "review_wide",
+  "score": 0.6129492468899028,
+  "mean_score": 0.6129492468899028
+}

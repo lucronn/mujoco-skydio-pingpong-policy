@@ -1,0 +1,49 @@
+{
+  "score": 0.6129492468899028,
+  "hard_success": 0,
+  "bounced_gate_passes": 4,
+  "bounced_gate_pass": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "raw_gates_passed": 4,
+  "drone_windows_passed": 4,
+  "drone_window_pass": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "gate_bounce_contact_times_s": [
+    1.402000000000001,
+    1.9540000000000015,
+    2.545999999999941,
+    3.211999999999868
+  ],
+  "target_box_score": 0.9999999970083716,
+  "target_box_entered": 1,
+  "safety_score": 0.0,
+  "drone_crash": 1,
+  "max_tilt_deg": 134.59201152702514,
+  "max_action_N": 10.091051966922734,
+  "final_ball_pos": [
+    6.812775937184247,
+    2.387175060811869,
+    0.10891543788444143
+  ],
+  "final_drone_pos": [
+    5.2467730177968965,
+    1.3421849637349703,
+    1.11954085008255
+  ],
+  "contacts": 6,
+  "observation_mode": "partial",
+  "scenario_name": "ball_x_pos",
+  "policy_path": "/Users/dull/openfoam/pingpong-venv/progression/20260730T090547Z_juggle_ball_x_pos_no_gate_contact/staged/policy.py",
+  "policy_sha256": "1d43f0ddf67a615748f1c7e56b48b1e6a574ad936f25971818fab1d771bbb1f0",
+  "phase_notes": null,
+  "note": "Current no-gate-contact gate-4 routing milestone: ball_x_pos reaches bg=4, wins=4, target_box_score\u22481, and clears both ball_gate_contact and drone_gate_contact, but still crashes afterward from a high-tilt thread exit.",
+  "winner_json": "winner_bg4w3_ball_x_pos_20260724T073056Z.json"
+}
