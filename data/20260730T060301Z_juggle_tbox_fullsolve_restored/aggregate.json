@@ -1,0 +1,40 @@
+{
+  "n_cases": 4,
+  "cases": [
+    {
+      "case": "ball_x_pos",
+      "score": 0.6388070953897862,
+      "bg": 4,
+      "wins": 4,
+      "tbox": 0.9999999991445232,
+      "crash": 1
+    },
+    {
+      "case": "nominal",
+      "score": 0.09345524543331866,
+      "bg": 1,
+      "wins": 1,
+      "tbox": 0.0,
+      "crash": 1
+    },
+    {
+      "case": "ball_y_pos",
+      "score": 0.077997530056346,
+      "bg": 1,
+      "wins": 1,
+      "tbox": 0.0,
+      "crash": 1
+    },
+    {
+      "case": "range_424242_005",
+      "score": 0.14321413985933706,
+      "bg": 2,
+      "wins": 1,
+      "tbox": 0.0,
+      "crash": 1
+    }
+  ],
+  "note": "Restored staged CHAIN-4 controller + winner_bg4w3_ball_x_pos_20260724T073056Z (suite raw~4.90). ball_x_pos tbox~0.64.",
+  "camera": "review_wide",
+  "mean_score": 0.23836850268469698
+}

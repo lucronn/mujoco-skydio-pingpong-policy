@@ -1,0 +1,47 @@
+{
+  "score": 0.14321413985933706,
+  "hard_success": 0,
+  "bounced_gate_passes": 2,
+  "bounced_gate_pass": [
+    1,
+    1,
+    0,
+    0
+  ],
+  "raw_gates_passed": 2,
+  "drone_windows_passed": 1,
+  "drone_window_pass": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "gate_bounce_contact_times_s": [
+    1.386000000000001,
+    2.0799999999999925,
+    null,
+    null
+  ],
+  "target_box_score": 0.0,
+  "target_box_entered": 0,
+  "safety_score": 0.0,
+  "drone_crash": 1,
+  "max_tilt_deg": 176.10762391187464,
+  "max_action_N": 10.005325464232527,
+  "final_ball_pos": [
+    3.860927196691519,
+    1.993298185534954,
+    0.05994788083023456
+  ],
+  "final_drone_pos": [
+    5.17967552034669,
+    8.178429733066615,
+    0.4201322722089456
+  ],
+  "contacts": 4,
+  "observation_mode": "partial",
+  "scenario_name": "range_424242_005",
+  "policy_path": "/Users/dull/openfoam/pingpong-venv/progression/20260730T060301Z_juggle_tbox_fullsolve_restored/staged/policy.py",
+  "policy_sha256": "d3b3fe127270948191a90b6e0fb36b072b1efea2d725c026702af2f4ee71ba4c",
+  "phase_notes": null
+}

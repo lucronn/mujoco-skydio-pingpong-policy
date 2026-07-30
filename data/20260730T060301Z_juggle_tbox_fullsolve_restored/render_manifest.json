@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "written_utc": "20260730T060320Z",
+  "camera": "review_wide",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "scenario_source": "repair_work/parallel_suite.py:held_out_cases()",
+  "scenarios": [
+    "ball_x_pos",
+    "nominal",
+    "ball_y_pos",
+    "range_424242_005"
+  ],
+  "policy_path": "redacted",
+  "policy_sha256": "d3b3fe127270948191a90b6e0fb36b072b1efea2d725c026702af2f4ee71ba4c",
+  "params_file": "redacted",
+  "module": "redacted",
+  "stage": "rally",
+  "suite_raw": 4.8968,
+  "policy_id": "d3b3fe127270"
+}

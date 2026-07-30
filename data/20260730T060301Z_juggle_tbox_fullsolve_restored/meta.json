@@ -1,0 +1,9 @@
+{
+  "label": "juggle_tbox_fullsolve_restored",
+  "created_utc": "20260730T060301Z",
+  "camera": "review_wide",
+  "note": "Restored staged CHAIN-4 controller + winner_bg4w3_ball_x_pos_20260724T073056Z (suite raw~4.90). ball_x_pos tbox~0.64.",
+  "policy_sha256": "d3b3fe127270948191a90b6e0fb36b072b1efea2d725c026702af2f4ee71ba4c",
+  "winner_json": "redacted",
+  "policy_id": "d3b3fe127270"
+}
