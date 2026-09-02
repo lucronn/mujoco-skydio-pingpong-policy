@@ -1,12 +1,11 @@
 # MuJoCo Skydio X2 Ping-Pong Window-Gate Policy Evolution
+# Click here -> **[GitHub Pages Dashboard](https://lucronn.github.io/mujoco-skydio-pingpong-policy/)**
 
 Closed-loop controller evolution logs and rollout visualizer database for the MuJoCo Skydio X2 quadrotor ping-pong window-gate task.
 
 ## 📊 Live Progression Dashboard & Archive
 
-We have built a fully interactive progression dashboard served by GitHub Pages:
 
-👉 **[Interactive Comparison Gallery & Progression Dashboard](https://lucronn.github.io/mujoco-skydio-pingpong-policy/)**
 
 The dashboard features:
 - **Timeline Analytics Chart**: Plot nominal score penalty cost curves, raw/bounced gate clearance counts, and overall crash rates plotted across all historical training runs via Chart.js.
