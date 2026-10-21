@@ -1,0 +1,1015 @@
+{
+  "label": "Stepping Stage 0 \u2014 Baseline (8-profile open-loop juggler)",
+  "stepping_stage": "stage0_baseline",
+  "n_rendered_cases": 4,
+  "cases": [
+    {
+      "case": "nominal",
+      "score": 0.605033375431421,
+      "paired": 4,
+      "bg": 4,
+      "wins": 4,
+      "crash": 0,
+      "tbox": 0.9999999931578828
+    },
+    {
+      "case": "low_fast",
+      "score": 0.5309999999478622,
+      "paired": 3,
+      "bg": 3,
+      "wins": 3,
+      "crash": 0,
+      "tbox": 0.9999999991310375
+    },
+    {
+      "case": "actuated_high_delay",
+      "score": 0.1588559823032438,
+      "paired": 2,
+      "bg": 2,
+      "wins": 2,
+      "crash": 1,
+      "tbox": 0.0
+    },
+    {
+      "case": "holdout_303_00",
+      "score": 0.12163572450171271,
+      "paired": 1,
+      "bg": 1,
+      "wins": 1,
+      "crash": 1,
+      "tbox": 0.0
+    }
+  ],
+  "holdout_24": {
+    "num_cases": 24,
+    "suite_score_100": 1.926,
+    "mean_score": 0.0257,
+    "q25_score": 0.0138,
+    "hard_success_rate": 0.0,
+    "total_paired_gates": 2,
+    "max_possible_gates": 96,
+    "total_bounced_gates": 4,
+    "total_windows_passed": 2,
+    "crashes": 5,
+    "gate_contacts": 18,
+    "mean_target_score": 0.0149,
+    "mean_safety_score": 0.2083,
+    "cases": [
+      {
+        "name": "holdout_303_00",
+        "score": 0.12163572450171271,
+        "paired_gate_passes": 1,
+        "bounced_gate_passes": 1,
+        "drone_windows_passed": 1,
+        "hard_success": false,
+        "crash": true,
+        "gate_contact": true,
+        "target_score": 0.06895346294513492,
+        "safety_score": 0.0,
+        "effort_score": 0.8321123321123322,
+        "contact_score": 0.6,
+        "gate_bounce_contact_times_s": [
+          1.330000000000001,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          1.8540000000000014,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          0.2937795840697013,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_01",
+        "score": 0.009053395829465466,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": true,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.832112332112332,
+        "contact_score": 0.10828591564777262,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          1.7660000000000013,
+          2.2419999999999747,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_02",
+        "score": 0.010434523809523808,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.8015873015873016,
+        "contact_score": 0.15,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_03",
+        "score": 0.0168,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": false,
+        "target_score": 0.04648932335770284,
+        "safety_score": 1.0,
+        "effort_score": 0.7322926668220856,
+        "contact_score": 0.0,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_04",
+        "score": 0.010881651431270525,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.011628220063037072,
+        "safety_score": 0.0,
+        "effort_score": 0.9202703610938391,
+        "contact_score": 0.10572380952381448,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          1.290000000000001,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_05",
+        "score": 0.02004,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.8631606463521431,
+        "contact_score": 0.44999999999999996,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          1.2040000000000008,
+          1.8540000000000014,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_06",
+        "score": 0.007006247700853246,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.031364960350522074,
+        "safety_score": 0.0,
+        "effort_score": 0.5404087431317663,
+        "contact_score": 0.0,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_07",
+        "score": 0.02294206521595687,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.9388948591132193,
+        "contact_score": 0.8530646133273433,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_08",
+        "score": 0.010434523809523808,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.8015873015873016,
+        "contact_score": 0.15,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_09",
+        "score": 0.018911999999999998,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": false,
+        "target_score": 0.0,
+        "safety_score": 1.0,
+        "effort_score": 0.7156786148397807,
+        "contact_score": 0.29333333333333333,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_10",
+        "score": 0.016059523809523808,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.8015873015873016,
+        "contact_score": 0.3,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_11",
+        "score": 0.01896,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": false,
+        "target_score": 0.0,
+        "safety_score": 1.0,
+        "effort_score": 0.7746617583514154,
+        "contact_score": 0.3,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_12",
+        "score": 0.01538077596303018,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.6884626605050298,
+        "contact_score": 0.3,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_13",
+        "score": 0.01788,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": false,
+        "target_score": 0.0,
+        "safety_score": 1.0,
+        "effort_score": 0.7078939208043596,
+        "contact_score": 0.15,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          1.1760000000000008,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_14",
+        "score": 0.014783999999999999,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 1,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": true,
+        "gate_contact": true,
+        "target_score": 0.06076007846320223,
+        "safety_score": 0.0,
+        "effort_score": 0.8166294039326073,
+        "contact_score": 0.6,
+        "gate_bounce_contact_times_s": [
+          2.4959999999999467,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          3.7339999999998104,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          0.051629577321945064,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_15",
+        "score": 0.015873675826268342,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 1,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": true,
+        "gate_contact": true,
+        "target_score": 0.06937049754340446,
+        "safety_score": 0.0,
+        "effort_score": 0.8015873015873016,
+        "contact_score": 0.8162055210849887,
+        "gate_bounce_contact_times_s": [
+          2.637999999999931,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          0.6019616514196793,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_16",
+        "score": 0.02112,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.4993336538461538,
+        "contact_score": 0.6,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_17",
+        "score": 0.016825906153846153,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.9293176923076922,
+        "contact_score": 0.3,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_18",
+        "score": 0.1512,
+        "paired_gate_passes": 1,
+        "bounced_gate_passes": 1,
+        "drone_windows_passed": 1,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.06867175100278013,
+        "safety_score": 0.0,
+        "effort_score": 0.9084249084249084,
+        "contact_score": 0.44999999999999996,
+        "gate_bounce_contact_times_s": [
+          1.484000000000001,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          2.037999999999997,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          0.6405446066891844,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_19",
+        "score": 0.010130406881030441,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.7509011468384069,
+        "contact_score": 0.15,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          1.1740000000000008,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_20",
+        "score": 0.01705952380952381,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": true,
+        "gate_contact": false,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.8015873015873016,
+        "contact_score": 0.3266666666666667,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_21",
+        "score": 0.015539838615858463,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.7149731026430772,
+        "contact_score": 0.3,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_22",
+        "score": 0.0168,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": false,
+        "target_score": 0.0,
+        "safety_score": 1.0,
+        "effort_score": 0.6102660487589923,
+        "contact_score": 0.0,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "holdout_303_23",
+        "score": 0.02004,
+        "paired_gate_passes": 0,
+        "bounced_gate_passes": 0,
+        "drone_windows_passed": 0,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.0,
+        "safety_score": 0.0,
+        "effort_score": 0.9629321064779127,
+        "contact_score": 0.44999999999999996,
+        "gate_bounce_contact_times_s": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          1.8120000000000014,
+          null,
+          null,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  "public_4": {
+    "num_cases": 4,
+    "suite_score_100": 45.85,
+    "mean_score": 0.5269,
+    "q25_score": 0.5084,
+    "hard_success_rate": 0.0,
+    "total_paired_gates": 12,
+    "max_possible_gates": 16,
+    "total_bounced_gates": 12,
+    "total_windows_passed": 12,
+    "crashes": 0,
+    "gate_contacts": 4,
+    "mean_target_score": 0.9354,
+    "mean_safety_score": 0.0,
+    "cases": [
+      {
+        "name": "nominal",
+        "score": 0.605033375431421,
+        "paired_gate_passes": 4,
+        "bounced_gate_passes": 4,
+        "drone_windows_passed": 4,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.8826702866680052,
+        "safety_score": 0.0,
+        "effort_score": 0.9953827169386994,
+        "contact_score": 0.6,
+        "gate_bounce_contact_times_s": [
+          1.402000000000001,
+          1.9960000000000016,
+          2.527999999999943,
+          2.809999999999912
+        ],
+        "drone_window_times_s": [
+          1.7400000000000013,
+          2.2339999999999756,
+          2.6419999999999306,
+          3.9759999999997837
+        ],
+        "bounced_gate_clearances_m": [
+          0.05863666419140312,
+          0.03593713319646774,
+          0.010060538896264681,
+          0.02259084128203792
+        ]
+      },
+      {
+        "name": "ball_x_pos",
+        "score": 0.5309999999882101,
+        "paired_gate_passes": 3,
+        "bounced_gate_passes": 3,
+        "drone_windows_passed": 3,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.9329587202411888,
+        "safety_score": 0.0,
+        "effort_score": 0.6712687394034642,
+        "contact_score": 0.6,
+        "gate_bounce_contact_times_s": [
+          1.402000000000001,
+          1.9540000000000015,
+          2.5339999999999425,
+          null
+        ],
+        "drone_window_times_s": [
+          1.6420000000000012,
+          2.3439999999999634,
+          2.8179999999999112,
+          null
+        ],
+        "bounced_gate_clearances_m": [
+          0.018352482512809853,
+          0.10818617299127942,
+          0.3011480434123426,
+          null
+        ]
+      },
+      {
+        "name": "ball_y_pos",
+        "score": 0.4406229344427483,
+        "paired_gate_passes": 2,
+        "bounced_gate_passes": 2,
+        "drone_windows_passed": 2,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.9534251291854449,
+        "safety_score": 0.0,
+        "effort_score": 0.9572938997337878,
+        "contact_score": 0.8437155749687884,
+        "gate_bounce_contact_times_s": [
+          1.5160000000000011,
+          2.129999999999987,
+          null,
+          null
+        ],
+        "drone_window_times_s": [
+          1.8920000000000015,
+          2.5159999999999445,
+          3.029999999999888,
+          3.455999999999841
+        ],
+        "bounced_gate_clearances_m": [
+          0.033865971856887,
+          0.4424492612103741,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "low_fast",
+        "score": 0.5309999999478622,
+        "paired_gate_passes": 3,
+        "bounced_gate_passes": 3,
+        "drone_windows_passed": 3,
+        "hard_success": false,
+        "crash": false,
+        "gate_contact": true,
+        "target_score": 0.972369726967993,
+        "safety_score": 0.0,
+        "effort_score": 0.7639937537471619,
+        "contact_score": 0.6,
+        "gate_bounce_contact_times_s": [
+          1.426000000000001,
+          1.9940000000000015,
+          2.6419999999999306,
+          null
+        ],
+        "drone_window_times_s": [
+          1.6640000000000013,
+          2.265999999999972,
+          2.73799999999992,
+          3.4799999999998383
+        ],
+        "bounced_gate_clearances_m": [
+          0.01051228670796256,
+          0.18653071142655486,
+          0.05090915568870136,
+          null
+        ]
+      }
+    ]
+  },
+  "all_splits": {
+    "public_4": {
+      "suite_score_100": 45.85,
+      "mean_score": 0.5269,
+      "q25_score": 0.5084,
+      "total_paired_gates": 12,
+      "max_possible_gates": 16,
+      "crashes": 0
+    },
+    "structured_4": {
+      "suite_score_100": 12.827,
+      "mean_score": 0.1503,
+      "q25_score": 0.1361,
+      "total_paired_gates": 6,
+      "max_possible_gates": 16,
+      "crashes": 4
+    },
+    "train_16": {
+      "suite_score_100": 1.764,
+      "mean_score": 0.0202,
+      "q25_score": 0.0198,
+      "total_paired_gates": 0,
+      "max_possible_gates": 64,
+      "crashes": 2
+    },
+    "val_16": {
+      "suite_score_100": 1.924,
+      "mean_score": 0.0242,
+      "q25_score": 0.0168,
+      "total_paired_gates": 1,
+      "max_possible_gates": 64,
+      "crashes": 3
+    },
+    "holdout_24": {
+      "suite_score_100": 1.926,
+      "mean_score": 0.0257,
+      "q25_score": 0.0138,
+      "total_paired_gates": 2,
+      "max_possible_gates": 96,
+      "crashes": 5
+    }
+  }
+}

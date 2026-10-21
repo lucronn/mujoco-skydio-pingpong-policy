@@ -1,0 +1,8 @@
+{
+  "label": "Stepping Stage 2 \u2014 Geometry-routed hybrid (public rally + hidden corridor)",
+  "created_utc": "20261021T014200Z",
+  "stepping_stage": "stage2_hybrid_router",
+  "policy_file": "policy_stage2_hybrid.py",
+  "policy_sha256": "620136df2bea67b5813693393dad5d617290d4b5138003a81cb3e5896a92a618",
+  "note": "Stepping-stone render pack pushed from q1-pingpong-window-gate-kit-2/renders/stepping_stones (stepping_stone_eval.py, disjoint train/val/holdout)."
+}

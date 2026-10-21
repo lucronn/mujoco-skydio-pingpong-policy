@@ -1,0 +1,49 @@
+{
+  "score": 0.10999204305392912,
+  "hard_success": false,
+  "paired_gate_passes": 1,
+  "paired_gate_pass": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "bounced_gate_passes": 1,
+  "bounced_gate_pass": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "drone_windows_passed": 1,
+  "drone_window_pass": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "target_box_score": 0.0,
+  "target_score": 0.06960542025284976,
+  "safety_score": 0.0,
+  "effort_score": 0.5320918073370235,
+  "contact_score": 0.3,
+  "drone_crash": false,
+  "gate_contact": true,
+  "max_tilt_deg": 70.0203833465888,
+  "max_action_N": 13.0,
+  "contacts": 2,
+  "total_contact_time_s": 0.01200000000000001,
+  "final_ball_pos": [
+    4.083681347615472,
+    0.8835232419839528,
+    0.05994788074732594
+  ],
+  "final_drone_pos": [
+    2.198421457740234,
+    1.3312283905798061,
+    2.177742661130923
+  ],
+  "observation_mode": "partial",
+  "scenario_name": "actuated_high_delay",
+  "stepping_stage": "stage1_universal_corridor"
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Stepping Stage 1 \u2014 Universal closed-loop corridor (SE3 Gate-1)",
+  "created_utc": "20261021T014100Z",
+  "stepping_stage": "stage1_universal_corridor",
+  "policy_file": "policy_stage1_corridor.py",
+  "policy_sha256": "fb32d4e255791678f8b09439cb9a93f5165a9f30c9f72a3931dcfdfbd3c06282",
+  "note": "Stepping-stone render pack pushed from q1-pingpong-window-gate-kit-2/renders/stepping_stones (stepping_stone_eval.py, disjoint train/val/holdout)."
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Stepping Stage 3 \u2014 Safe hybrid + terminal SE3 level brake",
+  "created_utc": "20261021T014300Z",
+  "stepping_stage": "stage3_safe_hybrid",
+  "policy_file": "policy_stage3_safe_hybrid.py",
+  "policy_sha256": "99a74b52d58dddb403a9ede9a8d2cf2b8262fb29de8089aa41ce78fdc216f571",
+  "note": "Stepping-stone render pack pushed from q1-pingpong-window-gate-kit-2/renders/stepping_stones (stepping_stone_eval.py, disjoint train/val/holdout)."
+}

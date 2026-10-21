@@ -1,0 +1,8 @@
+{
+  "label": "Stepping Stage 0 \u2014 Baseline (8-profile open-loop juggler)",
+  "created_utc": "20261021T014000Z",
+  "stepping_stage": "stage0_baseline",
+  "policy_file": "policy_one.py",
+  "policy_sha256": "40d0023c8fc90f457899e18e56bff310757a54ae5da658170dfc0867fbb4b0e9",
+  "note": "Stepping-stone render pack pushed from q1-pingpong-window-gate-kit-2/renders/stepping_stones (stepping_stone_eval.py, disjoint train/val/holdout)."
+}

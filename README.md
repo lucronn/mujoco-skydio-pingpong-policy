@@ -3,6 +3,14 @@
 
 Closed-loop controller evolution logs and rollout visualizer database for the MuJoCo Skydio X2 quadrotor ping-pong window-gate task.
 
+## 🪜 Policy Stepping Stones (2026-10-21)
+
+Four stepping-stone policies rendered on identical disjoint splits (public_4, structured_4, train_16/val_16, untouched holdout_24):
+
+- **[Stepping-Stones Page](https://lucronn.github.io/mujoco-skydio-pingpong-policy/stepping_stones.html)** — filmstrips + MP4s per stage
+- Packs `20261021T014000Z_stepping_stage0_baseline` → `20261021T014300Z_stepping_stage3_safe_hybrid` are also indexed in the main archive below.
+- Headline: holdout suite 1.93 → 8.08, holdout paired gates 2/96 → 22/96, while the hybrid keeps the public suite at 45.85 (12/16 paired). Hidden Gates 2–4 remain the open bottleneck.
+
 ## 📊 Live Progression Dashboard & Archive
 
 
